@@ -145,7 +145,7 @@ nav{ display:flex; align-items:center; justify-content:space-between; padding:32
 .move-body .move-text{ display:block; font-size:15px; line-height:1.75; color:var(--muted); }
 .move-arrow{
   flex-shrink:0; align-self:center; font-size:13px; font-weight:600;
-  color:var(--gold); opacity:0; transition:opacity .15s ease;
+  color:var(--gold); opacity:.65; transition:opacity .15s ease;
 }
 .move:hover .move-arrow{ opacity:1; }
 
