@@ -41,7 +41,7 @@
     <p>Thanks — your question is in. If it's common enough, you'll see it show up as a new Situation Navigator entry.</p>
   </div>
 
-  <form id="askForm">
+  <form id="askForm" action="https://formsubmit.co/firsttimemanager1@gmail.com" method="POST">
     <div class="field">
       <label for="situation">What's going on?</label>
       <textarea id="situation" name="situation" placeholder="Describe the situation you're stuck on..." required></textarea>
@@ -50,8 +50,12 @@
       <label for="email">Email (optional, if you want a direct reply)</label>
       <input type="email" id="email" name="email" placeholder="you@company.com">
     </div>
+    <input type="hidden" name="_subject" value="New Situation Navigator question">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
     <button type="submit" class="submit-btn">Submit Question →</button>
-    <p class="form-note">This form doesn't send anywhere yet — it's a preview of the layout.</p>
+    <p class="form-note" id="formError" style="display:none;color:#e08787;">Something went wrong sending your question — please try again in a moment.</p>
   </form>
 </div>
 
@@ -63,8 +67,30 @@
 <script>
   document.getElementById('askForm').addEventListener('submit', function(e){
     e.preventDefault();
-    document.getElementById('confirmBox').classList.add('show');
-    this.reset();
+    const form = this;
+    const errorNote = document.getElementById('formError');
+    const submitBtn = form.querySelector('.submit-btn');
+    errorNote.style.display = 'none';
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+
+    fetch('https://formsubmit.co/ajax/firsttimemanager1@gmail.com', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
+    })
+      .then(res => { if (!res.ok) throw new Error('bad response'); return res.json(); })
+      .then(() => {
+        document.getElementById('confirmBox').classList.add('show');
+        form.reset();
+        submitBtn.textContent = 'Submit Question →';
+        submitBtn.disabled = false;
+      })
+      .catch(() => {
+        errorNote.style.display = 'block';
+        submitBtn.textContent = 'Submit Question →';
+        submitBtn.disabled = false;
+      });
   });
 </script>
 
