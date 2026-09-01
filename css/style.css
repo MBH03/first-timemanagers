@@ -79,7 +79,7 @@ nav{ display:flex; align-items:center; justify-content:space-between; padding:32
 .icon-bg{ position:absolute; width:220px; height:220px; opacity:.14; z-index:1; bottom:-50px; right:-40px; stroke:#fff; fill:none; stroke-width:1; }
 
 .tile-index{ position:relative; z-index:2; font-size:11px; letter-spacing:.1em; color:rgba(255,255,255,.55); font-weight:600; display:flex; justify-content:space-between; }
-.tile-index .read{ opacity:0; transition:opacity .2s ease; font-weight:600; color:#fff; }
+.tile-index .read{ opacity:.85; transition:opacity .2s ease; font-weight:600; color:#fff; }
 .tile:hover .tile-index .read{ opacity:1; }
 
 .tile-big{ position:relative; z-index:2; font-size:26px; font-weight:200; color:rgba(255,255,255,.92); }
