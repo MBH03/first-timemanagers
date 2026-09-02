@@ -25,8 +25,8 @@
 <link rel="stylesheet" href="css/style.css">
 <style>
   .hero{ position:relative; padding:60px 56px 40px; overflow:hidden; min-height:520px; }
-  .hero .arc{ position:absolute; top:-120px; right:-260px; width:900px; height:900px; border:1px solid rgba(237,235,228,.12); border-radius:50%; }
-  .hero .arc2{ position:absolute; top:-40px; right:-380px; width:1100px; height:1100px; border:1px solid rgba(237,235,228,.07); border-radius:50%; }
+  .hero .arc{ position:absolute; top:-120px; right:-260px; width:900px; height:900px; border:1px solid rgba(237,235,228,.12); border-radius:50%; pointer-events:none; }
+  .hero .arc2{ position:absolute; top:-40px; right:-380px; width:1100px; height:1100px; border:1px solid rgba(237,235,228,.07); border-radius:50%; pointer-events:none; }
   .hero h1{ font-weight:300; font-size:76px; line-height:1.02; letter-spacing:-0.01em; max-width:900px; margin:0; color:var(--text); position:relative; z-index:2; }
   .hero h1 b{ font-weight:600; color:#fff; }
   .hero p.sub{ font-size:16px; line-height:1.7; color:var(--muted); max-width:420px; margin-top:28px; font-weight:400; }
@@ -97,7 +97,7 @@
   <div class="eyebrow">the job nobody trained you for</div>
   <h1>Nobody reads<br>the manual.<br><b>So we didn't<br>write one.</b></h1>
   <p class="sub">Pick your situation. Get the exact move, not another 2,000-word article about "leadership fundamentals."</p>
-  <div style="display:flex; gap:16px; flex-wrap:wrap; margin-top:32px;">
+  <div style="display:flex; gap:16px; flex-wrap:wrap; margin-top:32px; position:relative; z-index:2;">
     <a class="ask-btn" href="leadership-style-quiz.html">Take the Leadership Quiz →</a>
     <a class="ask-btn" href="personality-quiz.html">Take the Personality Quiz →</a>
   </div>
