@@ -92,7 +92,10 @@
   <div class="principle-label" style="margin-top:44px;">Team Introduction</div>
   <p style="color:var(--muted); font-size:15px; line-height:1.7; margin-bottom:8px;">These two moves are really the same conversation, meeting your team and introducing yourself to them. Here's an agenda and a script outline you can adapt, add pictures of your family, your hobbies, your style. It makes you feel human and helps people remember. Have fun with it.</p>
 
-  <div class="principle-label" style="margin-top:32px;">What to Say: Script Outline</div>
+  <button class="submit-btn copy-btn" onclick="copyTemplateText(this,'team-intro-script')">Copy script &amp; agenda →</button>
+
+  <div id="team-intro-script" style="margin-top:16px;">
+  <div class="principle-label" style="margin-top:8px;">What to Say: Script Outline</div>
   <div class="move-detail">
     <div class="move-step">
       <div class="move-step-title">The Warm Greeting</div>
@@ -124,8 +127,13 @@
     <tr><td>Open Discussion &amp; Listening (15 min)</td><td>Ask open-ended questions to understand their current state.</td></tr>
     <tr><td>Next Steps (5 min)</td><td>Outline plans to schedule individual 1-on-1 chats with each team member.</td></tr>
   </table>
+  </div>
 
   <div class="resources">
+    <a class="resource-card" href="new-manager-action-plan-template.html">
+      <div class="kicker">Template</div>
+      <div class="title">New Manager Action Plan Template →</div>
+    </a>
     <a class="resource-card" href="curiosity-beats-correction.html">
       <div class="kicker">Lasso Lesson</div>
       <div class="title">Curiosity Beats Correction →</div>
@@ -136,6 +144,7 @@
     </a>
   </div>
 </main>
+<script src="js/copy.js"></script>
 
 <footer>
   <div>First-TimeManagers.com</div>

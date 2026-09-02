@@ -87,7 +87,10 @@
 
   <div class="principle-label" style="margin-top:44px;">Team Diagnosis Worksheet</div>
   <p style="color:var(--muted); font-size:14.5px; line-height:1.7; margin-bottom:8px;">Work through this before deciding on a fix.</p>
-  <table class="move-table">
+
+  <button class="submit-btn copy-btn" onclick="copyTemplateText(this,'team-diagnosis-worksheet')">Copy worksheet →</button>
+
+  <table class="move-table" id="team-diagnosis-worksheet" style="margin-top:16px;">
     <tr><td>Is this trust or clarity? What I'm actually observing</td><td></td></tr>
     <tr><td>One shared win we could realistically land in the next two to three weeks</td><td></td></tr>
     <tr><td>Who's quietly checked out, and what I've noticed specifically</td><td></td></tr>
@@ -96,16 +99,17 @@
   </table>
 
   <div class="resources">
+    <a class="resource-card" href="one-on-one-script.html">
+      <div class="kicker">Template</div>
+      <div class="title">One on One Script →</div>
+    </a>
     <a class="resource-card" href="belief-is-a-management-tool.html">
       <div class="kicker">Lasso Lesson</div>
       <div class="title">Belief Is a Management Tool →</div>
     </a>
-    <a class="resource-card" href="lasso-lessons.html">
-      <div class="kicker">Browse</div>
-      <div class="title">All Lasso Lessons →</div>
-    </a>
   </div>
 </main>
+<script src="js/copy.js"></script>
 
 <footer>
   <div>First-TimeManagers.com</div>

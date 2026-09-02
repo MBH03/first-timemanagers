@@ -92,7 +92,10 @@
 
   <div class="principle-label" style="margin-top:44px;">Promotion Case Builder</div>
   <p style="color:var(--muted); font-size:14.5px; line-height:1.7; margin-bottom:8px;">Fill this out now, not the week before the conversation.</p>
-  <table class="move-table">
+
+  <button class="submit-btn copy-btn" onclick="copyTemplateText(this,'promotion-case-builder')">Copy worksheet →</button>
+
+  <table class="move-table" id="promotion-case-builder" style="margin-top:16px;">
     <tr><td>Wins logged this cycle, with numbers attached</td><td></td></tr>
     <tr><td>What the next level up actually does, that I'm already doing pieces of</td><td></td></tr>
     <tr><td>My target title and timeframe</td><td></td></tr>
@@ -101,6 +104,10 @@
   </table>
 
   <div class="resources">
+    <a class="resource-card" href="accomplishments-tracker-template.html">
+      <div class="kicker">Template</div>
+      <div class="title">Accomplishments Tracker Template →</div>
+    </a>
     <a class="resource-card" href="managing-up.html">
       <div class="kicker">Career Advice</div>
       <div class="title">Managing Up →</div>
@@ -111,6 +118,7 @@
     </a>
   </div>
 </main>
+<script src="js/copy.js"></script>
 
 <footer>
   <div>First-TimeManagers.com</div>

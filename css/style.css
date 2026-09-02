@@ -379,3 +379,48 @@ footer{ display:flex; justify-content:space-between; padding:34px 56px; font-siz
 .confirm{ display:none; padding:28px 32px; border:1px solid rgba(227,166,62,.35); border-radius:2px; background:linear-gradient(155deg,#241C0F 0%,#1B1B1A 60%,#17211D 100%); }
 .confirm.show{ display:block; }
 .confirm.show + form{ display:none; }
+
+/* ---------- PRINT ---------- */
+@media print{
+  nav, .ask-badge, .mobile-toggle, footer, .up-next, .resources, .copy-btn,
+  .crumb, .finder-search, .page-head .arc, .content-hero .icon-bg{
+    display:none !important;
+  }
+  body{ background:#fff !important; color:#111 !important; }
+  a{ color:#111 !important; text-decoration:underline; }
+
+  .content-hero{
+    background:#fff !important; padding:0 0 18px !important; margin:24px 0 20px !important;
+    border-bottom:2px solid #111; min-height:0 !important;
+  }
+  .content-hero::before{ display:none !important; }
+  .content-hero .content-tag{ color:#555 !important; }
+  .content-hero h1{ color:#111 !important; }
+
+  .page-head{ padding:24px 0; }
+  .eyebrow{ color:#555 !important; }
+  .page-head h1{ color:#111 !important; }
+  .page-head p{ color:#333 !important; }
+
+  main.article{ max-width:100% !important; padding:0 !important; margin:0 !important; }
+  main.article > p.intro{ color:#333 !important; border-bottom:1px solid #ccc; }
+  main.article p{ color:#111 !important; }
+  main.article p.lead{ color:#111 !important; }
+
+  .principle-label{ color:#111 !important; }
+  .try-block{ background:#fff !important; border:1px solid #999 !important; break-inside:avoid; }
+  .try-label{ color:#111 !important; }
+
+  .move, .move-detail, .line, table{ break-inside:avoid; }
+  .move-title, .line-label, .move-step-title{ color:#111 !important; }
+  .move-text, .note, .line-text, .move-step-text{ color:#222 !important; }
+  .move{ border-bottom:1px solid #ccc; }
+  .line{ border-bottom:1px solid #ccc; }
+
+  .move-table th{ color:#111 !important; border-bottom:1px solid #999 !important; }
+  .move-table td{ color:#111 !important; border-bottom:1px solid #ccc !important; }
+  .move-table td:first-child{ color:#111 !important; }
+
+  #onboarding-plan-template, #one-on-one-agenda-template, #first-one-on-one-agenda,
+  #ai-cheat-sheet, #team-intro-script, #template-content{ color:#111 !important; }
+}

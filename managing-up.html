@@ -108,7 +108,8 @@
 
   <div class="try-block">
     <div class="try-label">A Simple Weekly Update</div>
-    <p>Wins: [what shipped or landed this week]<br>In progress: [what's actively moving, and when it's expected]<br>Blockers: [anything you need from someone above you]<br>Coming up: [what's next]</p>
+    <p id="weekly-update-template">Wins: [what shipped or landed this week]<br>In progress: [what's actively moving, and when it's expected]<br>Blockers: [anything you need from someone above you]<br>Coming up: [what's next]</p>
+    <button class="submit-btn copy-btn" onclick="copyTemplateText(this,'weekly-update-template')" style="margin-top:12px;">Copy update →</button>
   </div>
 
   <div class="try-block">
@@ -118,7 +119,10 @@
 
   <div class="principle-label" style="margin-top:44px;">Managing Up Self-Check</div>
   <p style="color:var(--muted); font-size:14.5px; line-height:1.7; margin-bottom:8px;">Fill this out once a quarter. If more than two of these are blank, that's the place to start.</p>
-  <table class="move-table">
+
+  <button class="submit-btn copy-btn" onclick="copyTemplateText(this,'managing-up-self-check')">Copy self-check →</button>
+
+  <table class="move-table" id="managing-up-self-check" style="margin-top:16px;">
     <tr><td>What my manager is actually measured on this quarter</td><td></td></tr>
     <tr><td>One problem I'm currently just flagging, that I could bring a recommendation for instead</td><td></td></tr>
     <tr><td>The last time I asked for informal feedback (not at a review)</td><td></td></tr>
@@ -142,6 +146,7 @@
     </a>
   </div>
 </main>
+<script src="js/copy.js"></script>
 
 <footer>
   <div>First-TimeManagers.com</div>

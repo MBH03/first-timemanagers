@@ -87,7 +87,10 @@
 
   <div class="principle-label" style="margin-top:44px;">After the Feedback: A Quick Worksheet</div>
   <p style="color:var(--muted); font-size:14.5px; line-height:1.7; margin-bottom:8px;">Fill this out in the gap you bought yourself, before you go back with a response.</p>
-  <table class="move-table">
+
+  <button class="submit-btn copy-btn" onclick="copyTemplateText(this,'feedback-worksheet')">Copy worksheet →</button>
+
+  <table class="move-table" id="feedback-worksheet" style="margin-top:16px;">
     <tr><td>What was actually said, as close to their words as I can get it (not my interpretation of it)</td><td></td></tr>
     <tr><td>Is there a delivery issue worth raising separately, or is that not actually the point</td><td></td></tr>
     <tr><td>One clarifying question I still need answered</td><td></td></tr>
@@ -105,6 +108,7 @@
     </a>
   </div>
 </main>
+<script src="js/copy.js"></script>
 
 <footer>
   <div>First-TimeManagers.com</div>
