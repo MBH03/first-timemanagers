@@ -30,10 +30,34 @@ nav{ display:flex; align-items:center; justify-content:space-between; padding:32
 }
 .ask-badge:hover{ border-color:var(--gold); color:var(--gold); }
 
-.mobile-toggle{ display:none; }
+.mobile-toggle{
+  display:none; flex-direction:column; justify-content:center; align-items:center;
+  gap:5px; width:40px; height:40px; background:none; border:none; cursor:pointer;
+  flex-shrink:0; padding:0; -webkit-tap-highlight-color:transparent;
+}
+.mobile-toggle span{
+  display:block; width:22px; height:2px; background:var(--text);
+  transition:transform .2s ease, opacity .2s ease;
+}
+.mobile-toggle[aria-expanded="true"] span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+.mobile-toggle[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+.mobile-toggle[aria-expanded="true"] span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
 
 @media (max-width:900px){
-  .navlinks{ display:none; }
+  nav{ padding:20px 24px; }
+  .mobile-toggle{ display:flex; }
+  .ask-badge{ width:56px; height:56px; font-size:9.5px; }
+  .navlinks{
+    display:flex; flex-direction:column; gap:0; font-size:16px;
+    position:absolute; top:100%; left:0; right:0; z-index:10;
+    background:var(--bg2); border-top:1px solid rgba(237,235,228,.1);
+    border-bottom:1px solid rgba(237,235,228,.1);
+    max-height:0; overflow:hidden; opacity:0;
+    transition:max-height .25s ease, opacity .2s ease;
+  }
+  .navlinks.open{ max-height:520px; opacity:1; }
+  .navlinks a{ padding:16px 24px; border-bottom:1px solid rgba(237,235,228,.06); }
+  .navlinks a:last-child{ border-bottom:none; }
 }
 
 /* ---------- BREADCRUMB ---------- */
