@@ -180,8 +180,8 @@ nav{ display:flex; align-items:center; justify-content:space-between; padding:32
 .move-step-title{ font-size:14.5px; font-weight:600; color:#fff; margin-bottom:6px; }
 .move-step-text{ font-size:14.5px; line-height:1.75; color:var(--muted); }
 
-.move-detail ul{ margin:0 0 20px; padding-left:20px; }
-.move-detail ul:last-child{ margin-bottom:0; }
+.move-detail ul, .move-detail ol{ margin:0 0 20px; padding-left:20px; }
+.move-detail ul:last-child, .move-detail ol:last-child{ margin-bottom:0; }
 .move-detail li{ font-size:14.5px; line-height:1.7; color:var(--muted); margin-bottom:8px; }
 .move-detail li:last-child{ margin-bottom:0; }
 .move-detail li::marker{ color:var(--gold); }
