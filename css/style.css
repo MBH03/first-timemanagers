@@ -186,6 +186,12 @@ nav{ display:flex; align-items:center; justify-content:space-between; padding:32
 .move-detail li:last-child{ margin-bottom:0; }
 .move-detail li::marker{ color:var(--gold); }
 
+.scan-list{ margin:16px 0 20px; padding-left:0; list-style:none; counter-reset:scan; }
+.scan-list li{ counter-increment:scan; position:relative; padding:11px 0 11px 38px; border-bottom:1px solid rgba(237,235,228,.08); font-size:14.5px; line-height:1.6; color:var(--muted); }
+.scan-list li:last-child{ border-bottom:none; }
+.scan-list li::before{ content:counter(scan); position:absolute; left:0; top:11px; color:var(--gold); font-weight:700; font-size:13px; width:26px; }
+.scan-list li b{ color:var(--text); font-weight:700; font-size:15.5px; }
+
 .move-table{ width:100%; border-collapse:collapse; margin:4px 0 20px; font-size:13.5px; }
 .move-table th{ text-align:left; font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--gold); font-weight:600; padding:0 16px 10px 0; border-bottom:1px solid rgba(237,235,228,.15); }
 .move-table td{ padding:12px 16px 12px 0; border-bottom:1px solid rgba(237,235,228,.08); color:var(--muted); line-height:1.6; vertical-align:top; }
