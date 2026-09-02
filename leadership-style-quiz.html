@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leadership Style Quiz | First-Time Managers</title>
+<meta name="description" content="An 18-question leadership style quiz for first-time managers. No right answers, just honest ones, and it ends with the specific things worth working on.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="First-Time Managers">
+<meta property="og:title" content="What Kind of Manager Are You, Actually? | Leadership Style Quiz">
+<meta property="og:description" content="An 18-question leadership style quiz for first-time managers. No right answers, just honest ones, and it ends with the specific things worth working on.">
+<meta property="og:url" content="https://first-timemanagers.com/leadership-style-quiz.html">
+<meta property="og:image" content="https://first-timemanagers.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What Kind of Manager Are You, Actually? | Leadership Style Quiz">
+<meta name="twitter:description" content="An 18-question leadership style quiz for first-time managers. No right answers, just honest ones, and it ends with the specific things worth working on.">
+<meta name="twitter:image" content="https://first-timemanagers.com/og-image.png">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://first-timemanagers.com/leadership-style-quiz.html">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What kind of manager are you, actually?",
+  "description": "An 18-question leadership style quiz for first-time managers. No right answers, just honest ones, and it ends with the specific things worth working on.",
+  "url": "https://first-timemanagers.com/leadership-style-quiz.html",
+  "datePublished": "2026-09-02",
+  "dateModified": "2026-09-02",
+  "author": {
+    "@type": "Organization",
+    "name": "First-Time Managers"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "First-Time Managers",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://first-timemanagers.com/apple-touch-icon.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://first-timemanagers.com/leadership-style-quiz.html"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://first-timemanagers.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Leadership Style Quiz",
+      "item": "https://first-timemanagers.com/leadership-style-quiz.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html"><span class="mark"></span> first-time managers</a>
+  <div class="navlinks">
+    <a href="playbook.html">playbook</a>
+    <a href="situations.html">everything</a>
+    <a href="lasso-lessons.html">lasso lessons</a>
+    <a href="templates.html">templates</a>
+    <a href="career-advice.html">career advice</a>
+    <a href="becoming-a-manager.html">becoming a manager</a>
+    <a href="workplace-skills.html">workplace skills</a>
+    <a href="ai-hub.html">ai hub</a>
+    <a href="about.html">about</a>
+  </div>
+  <a class="ask-badge" href="ask-a-question.html">ask a<br>question</a>
+  <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="crumb"><a href="index.html">Home</a> / Leadership Style Quiz</div>
+
+<!-- ============================================================
+LEADERSHIP STYLE QUIZ — standalone drop-in widget
+Paste this whole block wherever the quiz should live on the page
+(e.g. inside main.article on a new quiz.html, or in any container).
+
+Uses tokens already defined in css/style.css:
+--bg, --bg2, --text, --muted, --gold, --gold-deep
+If those aren't global custom properties in your stylesheet yet,
+the hex fallbacks in the CSS below will still work standalone.
+
+No external JS files needed — all quiz logic is self-contained
+in the <script> at the bottom, scoped so it won't collide with
+js/nav.js or js/copy.js already loaded on the page.
+
+v2 changes (this pass):
+- All 16 archetype descriptions and all 8 trait strength/blind-spot
+  pairs rewritten to be candid — each contains one specific,
+  slightly uncomfortable truth, not just praise with a soft caveat.
+- Trait bars now show an interpretation label (Balanced / Moderate
+  preference / Strong preference / Very strong preference) plus a
+  one-sentence explanation of what that default looks like day to day.
+- Results now open with a shareable badge (type name + the four
+  dominant trait labels + a first-person quote line).
+- Section headings reworded to be actionable: "What your team
+  probably appreciates" / "Where you unintentionally create friction".
+- Copy Result now copies the full badge + quote, not just the type
+  name. LinkedIn share button fixed (was pointing at a wrong/typo'd
+  domain — first-time-managers.com instead of first-timemanagers.com).
+- Added a one-line nudge to send the quiz to a manager or team, since
+  there's no backend here to actually store/compare multiple results.
+============================================================ -->
+<style>
+  #lsq-widget{
+    --lsq-bg2:#161615;
+    --lsq-text:#EDEBE4;
+    --lsq-muted:#8C8A82;
+    --lsq-gold:#E3A63E;
+    --lsq-gold-deep:#B9791F;
+    background:#1B1B1A;
+    max-width:680px;
+    margin:0 auto;
+    padding:48px 24px 64px;
+    color:var(--lsq-text);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  }
+  @media(max-width:640px){ #lsq-widget{ padding:36px 20px 48px; } }
+  #lsq-widget .lsq-eyebrow{
+    font-size:12px; font-weight:600; text-transform:uppercase;
+    letter-spacing:.16em; color:var(--lsq-gold); margin-bottom:14px;
+  }
+  #lsq-widget .lsq-h1{
+    font-size:36px; font-weight:300; line-height:1.2; color:var(--lsq-text);
+    margin:0 0 14px; max-width:22ch;
+  }
+  #lsq-widget .lsq-sub{
+    color:var(--lsq-muted); font-size:16px; font-weight:300; line-height:1.7; max-width:52ch; margin-bottom:8px;
+  }
+  #lsq-widget .lsq-intro{
+    font-size:15.5px; line-height:1.7; color:var(--lsq-muted);
+    border-bottom:1px solid rgba(237,235,228,.1);
+    padding-bottom:28px; margin:24px 0 28px;
+  }
+  #lsq-widget .lsq-progress-track{ height:2px; background:rgba(237,235,228,.1); margin:24px 0 8px; }
+  #lsq-widget .lsq-progress-fill{ height:100%; background:var(--lsq-gold); width:0%; transition:width .3s ease; }
+  #lsq-widget .lsq-qcount{ color:var(--lsq-muted); font-size:13px; margin-bottom:24px; }
+  #lsq-widget .lsq-qtext{ font-size:22px; font-weight:300; line-height:1.4; margin-bottom:24px; }
+  #lsq-widget .lsq-choice{
+    display:block; width:100%; text-align:left;
+    background:var(--lsq-bg2);
+    border:1px solid rgba(237,235,228,.15);
+    border-radius:2px;
+    padding:20px 22px; margin-bottom:12px;
+    color:var(--lsq-text); font-size:15.5px; font-weight:400;
+    cursor:pointer; transition:border-color .15s ease;
+  }
+  #lsq-widget .lsq-choice:hover{ border-color:var(--lsq-gold); }
+  #lsq-widget .lsq-back{
+    background:none; border:none; color:var(--lsq-muted); font-size:13px; cursor:pointer; padding:8px 0;
+  }
+  #lsq-widget .lsq-back:hover{ color:var(--lsq-gold); }
+  #lsq-widget .lsq-back:disabled{ opacity:0; pointer-events:none; }
+  #lsq-widget .lsq-btn-gold{
+    display:inline-block; border:none; border-radius:999px;
+    background:var(--lsq-gold); color:#1B1B1A; font-weight:700; font-size:13px; letter-spacing:.04em;
+    padding:16px 30px; cursor:pointer; text-decoration:none;
+  }
+  #lsq-widget .lsq-btn-gold:hover{ background:var(--lsq-gold-deep); }
+  #lsq-widget .lsq-btn-ghost{
+    display:inline-block; border:1px solid rgba(237,235,228,.25); border-radius:999px;
+    background:none; color:var(--lsq-text); font-weight:500; font-size:14px;
+    padding:15px 28px; cursor:pointer; text-decoration:none;
+  }
+  #lsq-widget .lsq-btn-ghost:hover{ border-color:var(--lsq-gold); color:var(--lsq-gold); }
+  #lsq-widget .lsq-hidden{ display:none; }
+  #lsq-widget .lsq-type-name{ font-size:32px; font-weight:300; margin:0 0 14px; line-height:1.2; }
+  #lsq-widget .lsq-type-name b{ font-weight:600; color:var(--lsq-gold); }
+  #lsq-widget .lsq-lead{ font-size:19px; font-weight:300; color:var(--lsq-text); line-height:1.6; margin-bottom:8px; }
+
+  /* shareable badge */
+  #lsq-widget .lsq-badge{
+    border:1px solid rgba(227,166,62,.25);
+    background:linear-gradient(155deg, #241C0F 0%, #1B1B1A 60%, #17211D 100%);
+    border-radius:2px; padding:32px; margin:20px 0 32px;
+  }
+  #lsq-widget .lsq-badge-eyebrow{
+    font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:.14em;
+    color:var(--lsq-gold); margin-bottom:10px;
+  }
+  #lsq-widget .lsq-badge-name{ font-size:26px; font-weight:600; color:#fff; margin-bottom:16px; }
+  #lsq-widget .lsq-badge-traits{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:18px; }
+  #lsq-widget .lsq-badge-trait{
+    font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--lsq-text); border:1px solid rgba(237,235,228,.25); border-radius:999px;
+    padding:6px 14px;
+  }
+  #lsq-widget .lsq-badge-quote{
+    font-size:16px; font-style:italic; font-weight:300; color:rgba(237,235,228,.9);
+    border-left:2px solid var(--lsq-gold); padding-left:14px; margin:0;
+  }
+
+  #lsq-widget .lsq-section-title{
+    font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:.1em;
+    color:#C24B4B; margin:44px 0 20px; border-top:1px solid rgba(237,235,228,.1); padding-top:32px;
+  }
+  #lsq-widget .lsq-trait-row{ margin-bottom:26px; }
+  #lsq-widget .lsq-trait-labels{ display:flex; justify-content:space-between; font-size:13px; color:var(--lsq-muted); margin-bottom:6px; }
+  #lsq-widget .lsq-trait-meta{ font-size:12px; color:var(--lsq-gold); font-weight:600; margin-bottom:6px; }
+  #lsq-widget .lsq-trait-track{ height:6px; background:rgba(237,235,228,.1); border-radius:2px; overflow:hidden; }
+  #lsq-widget .lsq-trait-fill{ height:100%; background:linear-gradient(90deg,var(--lsq-gold-deep),var(--lsq-gold)); }
+  #lsq-widget .lsq-trait-sentence{ font-size:14px; color:var(--lsq-muted); line-height:1.6; margin-top:8px; }
+
+  #lsq-widget .lsq-move{ display:flex; gap:24px; padding:20px 0; border-bottom:1px solid rgba(237,235,228,.08); }
+  #lsq-widget .lsq-move-num{ font-size:13px; font-weight:600; color:var(--lsq-gold); text-transform:uppercase; letter-spacing:.08em; min-width:110px; }
+  #lsq-widget .lsq-move-body{ flex:1; }
+  #lsq-widget .lsq-move-title{ font-weight:500; margin-bottom:6px; }
+  #lsq-widget .lsq-move-text{ color:var(--lsq-muted); font-size:15px; line-height:1.75; }
+  #lsq-widget .lsq-resources{ display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:8px; }
+  @media(max-width:640px){ #lsq-widget .lsq-resources{ grid-template-columns:1fr; } }
+  #lsq-widget .lsq-resource-card{
+    display:block; border:1px solid rgba(237,235,228,.15); border-radius:2px;
+    padding:22px 24px; text-decoration:none; color:var(--lsq-text); transition:border-color .15s ease;
+  }
+  #lsq-widget .lsq-resource-card:hover{ border-color:var(--lsq-gold); }
+  #lsq-widget .lsq-kicker{ font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:.08em; color:var(--lsq-gold); margin-bottom:8px; }
+  #lsq-widget .lsq-rtitle{ font-weight:600; font-size:15px; margin-bottom:4px; }
+  #lsq-widget .lsq-rdesc{ color:var(--lsq-muted); font-size:13.5px; }
+
+  #lsq-widget .lsq-share-row{ display:flex; flex-wrap:wrap; gap:12px; margin-top:16px; }
+  #lsq-widget .lsq-team-note{
+    font-size:13.5px; color:var(--lsq-muted); margin-top:18px; line-height:1.6;
+  }
+  #lsq-widget .lsq-retake-row{ margin-top:44px; }
+  #lsq-widget .lsq-copy-confirm{ font-size:13px; color:var(--lsq-gold); margin-top:10px; display:none; }
+</style>
+
+<div id="lsq-widget">
+
+  <div class="lsq-eyebrow">Leadership Style Quiz</div>
+  <h2 class="lsq-h1" id="lsqHeroTitle">What kind of manager are you, actually?</h2>
+  <p class="lsq-sub" id="lsqHeroSub">18 quick scenarios, no right answers, just honest ones. About 3 minutes, and it ends with the specific things worth working on.</p>
+
+  <div id="lsqIntro">
+    <p class="lsq-intro">Not a personality test for fun. Each answer maps to something real about how you lead, and points you to what to work on next.</p>
+    <button class="lsq-btn-gold" onclick="lsqStart()">Start the quiz →</button>
+  </div>
+
+  <div id="lsqQuiz" class="lsq-hidden">
+    <div class="lsq-progress-track"><div class="lsq-progress-fill" id="lsqProgressFill"></div></div>
+    <div class="lsq-qcount" id="lsqCount"></div>
+    <div class="lsq-qtext" id="lsqQText"></div>
+    <div id="lsqChoices"></div>
+    <button class="lsq-back" id="lsqBackBtn" onclick="lsqGoBack()">← back</button>
+  </div>
+
+  <div id="lsqResults" class="lsq-hidden"></div>
+
+</div>
+
+<script>
+(function(){
+  const SITE_URL = "https://first-timemanagers.com/leadership-style-quiz.html";
+
+  const questions = [
+    {t:"A report misses a deadline for the first time. Your first move:", a:"Sit down and tell them exactly how to get back on track.", b:"Ask them what happened before deciding anything.", trait:"dir"},
+    {t:"Someone on your team wants to try a new approach you're unsure about.", a:"Let them run it, even if you'd have done it differently.", b:"Steer them toward the approach you know works.", trait:"dir"},
+    {t:"Your team is deciding how to split up a big project.", a:"You assign the pieces based on who's best suited.", b:"You open it up and let the team sort it out together.", trait:"dir"},
+    {t:"A direct report disagrees with a decision you made in a meeting.", a:"You explain your reasoning and hold the line.", b:"You pause the meeting to actually work it out together.", trait:"dir"},
+    {t:"New quarter, new priorities. How do you plan it?", a:"Detailed plan first, then you execute against it.", b:"Rough direction first, adjust as things come up.", trait:"str"},
+    {t:"A process on your team is slow but nobody's complained.", a:"You leave it, if it's not broken it's not urgent.", b:"You start documenting a better one anyway.", trait:"str"},
+    {t:"Someone asks you a question mid-project that wasn't in the plan.", a:"You feel mildly thrown, and want to get back on track.", b:"You're used to this, plans always shift anyway.", trait:"str"},
+    {t:"Your calendar for tomorrow just got rearranged by three meetings.", a:"You're annoyed, but you replan quickly and move on.", b:"You barely notice, the day was never fixed anyway.", trait:"str"},
+    {t:"Team morale is low, but the numbers are actually fine this month.", a:"You focus on how people are doing first.", b:"You focus on protecting the numbers first.", trait:"ppl"},
+    {t:"A strong performer is burning out doing great work.", a:"You pull back their workload even if output dips.", b:"You keep the output steady, help them manage the load some other way.", trait:"ppl"},
+    {t:"Someone's personal life is clearly affecting their work this week.", a:"You check in on them before anything else.", b:"You note it, but keep expectations where they are.", trait:"ppl"},
+    {t:"You have to choose between hitting a deadline or a well-earned day off for your team.", a:"The day off wins, they've earned it.", b:"The deadline wins, you find another way to make it up to them.", trait:"ppl"},
+    {t:"You just had a genuinely great week as a manager.", a:"Your team probably already knows, you don't say much.", b:"You tell people, you're not shy about the win.", trait:"exp"},
+    {t:"Someone on your team did something frustrating today.", a:"You keep it contained, you'll address it calmly later.", b:"They'll probably know something's off before you say a word.", trait:"exp"},
+    {t:"In a room full of senior leaders, you have a strong opinion.", a:"You wait for the right moment, then say it once, clearly.", b:"You jump in, you'd rather be heard early than perfectly timed.", trait:"exp"},
+    {t:"How do people usually describe your energy at work?", a:"Steady, calm, hard to rattle.", b:"Animated, easy to read, you wear it on your face.", trait:"exp"},
+    {t:"A peer manager asks for your honest opinion on their plan, and it's not great.", a:"You tell them straight, better now than later.", b:"You soften it and let them find some of it themselves.", trait:"dir"},
+    {t:"It's been a rough quarter. What do you tell your team?", a:"The plan, clearly, and what changes starting now.", b:"How everyone's doing, first, then what's next.", trait:"ppl"}
+  ];
+
+  // ----------------------------------------------------------------
+  // TYPES — candid rewrite. Each description: one earned strength,
+  // then one specific, slightly uncomfortable truth about the cost
+  // of that strength. Every profile should land somewhere close to
+  // "ouch, that's probably true," not just "you're great, but..."
+  // ----------------------------------------------------------------
+  const TYPES = {
+    "DSPR":{name:"The Steady Hand",
+      desc:"You lead with a real plan and you don't lose sight of the people running it, that balance is rare. What's harder to see: people who are used to your plan being reliable may stay quiet when it stops working instead of telling you it's not working.",
+      quote:"I keep the plan and the people in the same conversation."},
+    "DSPE":{name:"The Anchor",
+      desc:"You're organized and direct, so nobody on your team has to guess where they stand. The part that's harder to admit: your certainty is contagious, and your team will sometimes follow it further than the facts actually support.",
+      quote:"I say what I think, and I expect the plan to hold."},
+    "DSRR":{name:"The Operator",
+      desc:"You run a tight ship. People appreciate the clarity, but some probably edit themselves before bringing you bad news. If every meeting ends in agreement, you're likely only hearing part of the story.",
+      quote:"I let the results do the talking."},
+    "DSRE":{name:"The Commander",
+      desc:"You move fast and the room falls in line, that's real leverage. The uncomfortable part: speed can look like certainty even when you're guessing, and the people who process slower than you learn to just stay quiet and catch up later.",
+      quote:"I move first, and the room usually follows."},
+    "DAPR":{name:"The Firefighter",
+      desc:"You stay calm and adjust when plans fall apart, and people notice. What's less visible to you: you've gotten so good at handling the fire that almost no one, including you, is asking why it keeps starting.",
+      quote:"I don't need the plan to survive, just my people."},
+    "DAPE":{name:"The Rallying Cry",
+      desc:"People remember being led by you, not just managed by you, and that's a real gift. It also means when you're visibly excited about something, it's harder than you think for someone to tell you it's the wrong call.",
+      quote:"I want people to remember what it felt like to work here."},
+    "DARR":{name:"The Closer",
+      desc:"You decide fast and own the outcome, which is genuinely rare under pressure. The tradeoff nobody says out loud: speed without checking means you'll occasionally be confidently wrong, and you won't hear about it until it's expensive.",
+      quote:"I'd rather decide and be wrong than wait and be late."},
+    "DARE":{name:"The Driver",
+      desc:"Momentum follows you into most rooms, and that energy is real. What it can look like from the outside is impatience, and the people who need a beat to think will start editing themselves around you instead of asking for it.",
+      quote:"Rooms move when I'm in them, that's the point."},
+    "CSPR":{name:"The Coach",
+      desc:"You build the plan with your team instead of handing it down, and they work harder for you because of it. The honest cost is speed, some decisions sit open longer than they need to while you're building consensus nobody actually asked for.",
+      quote:"I build plans with my team, not for them."},
+    "CSPE":{name:"The Connector",
+      desc:"People enjoy working with you because they feel heard, that's a real, earned skill. The downside is that difficult decisions can stay open longer than they should, leaving your strongest performers wondering who's actually making the call.",
+      quote:"I want people to feel seen, not just supervised."},
+    "CSRR":{name:"The Facilitator",
+      desc:"You can get a room to a decision without forcing it, which takes more discipline than it looks like. What that costs you: energy spent managing the process that, half the time, would've moved faster if you'd just made the call.",
+      quote:"I'd rather the room agree than just comply."},
+    "CSRE":{name:"The Producer",
+      desc:"You push for results while still building buy-in, and you hold a real bar. Eventually those two pull apart, and when they do, you'll have to actually choose, pretending you don't is its own kind of decision.",
+      quote:"I want the buy-in and the bar, not one instead of the other."},
+    "CAPR":{name:"The Gardener",
+      desc:"You let things develop at their own pace and you care how people are doing, not just what they produce. To someone who wants more direction, 'room to grow' can look identical to 'no one's actually steering this.'",
+      quote:"I'd rather grow something real than force something fast."},
+    "CAPE":{name:"The Warm Current",
+      desc:"You're who people go to first when something's wrong, and that trust is earned, not accidental. What you don't say out loud: you're absorbing more of other people's stress than is sustainable, and nobody's checking whether you're okay.",
+      quote:"People come to me first, and I take that seriously."},
+    "CARR":{name:"The Improviser",
+      desc:"You keep a room aligned without controlling every step, a real skill under pressure. What's harder to see from inside it: you're running mostly on your own instincts, and nobody else on the team could repeat what you just did.",
+      quote:"I don't need a script, I need the room."},
+    "CARE":{name:"The Spark",
+      desc:"Your energy is contagious and people move faster around you. The uncomfortable truth is that energy isn't the same as direction, a team can be fully in motion without actually agreeing on where they're going.",
+      quote:"I make momentum feel contagious, that's my whole job."}
+  };
+
+  const TRAIT_INFO = {
+    dir:{A:"Directive", B:"Collaborative"},
+    str:{A:"Structured", B:"Adaptive"},
+    ppl:{A:"People-first", B:"Results-first"},
+    exp:{A:"Reserved", B:"Expressive"}
+  };
+
+  // One-sentence, candid explanation of what each trait default looks
+  // like day to day. Shown directly under each trait bar.
+  const INTERPRETATION_SENTENCES = {
+    dir_A:"You naturally default to giving direction. Stepping back and collaborating will take a conscious choice, not an instinct.",
+    dir_B:"You naturally default to building consensus. Giving a flat, unilateral order will take a conscious push, not an instinct.",
+    str_A:"You naturally default to structure. Working without a plan will always feel effortful, even in moments when it shouldn't.",
+    str_B:"You naturally default to adapting in the moment. Sticking to a plan once nothing's changed will take real discipline.",
+    ppl_A:"You naturally default to protecting the person. Delivering a hard message on a tight deadline will take a conscious decision.",
+    ppl_B:"You naturally default to protecting the outcome. Pausing to check on how someone's actually doing will take a deliberate choice.",
+    exp_A:"You naturally default to keeping things contained. Saying the praise, or the worry, out loud will take a conscious effort.",
+    exp_B:"You naturally default to showing what you feel. Holding it back in a tense moment will take real, active effort."
+  };
+
+  // strength = what your team probably appreciates
+  // blind    = where you unintentionally create friction (the "ouch" line)
+  const TRAIT_CONTENT = {
+    dir_A:{strength:"You decide fast, and your team never has to guess where they stand.",
+           blind:"The uncomfortable part: people learn to stop bringing you half-formed ideas, because you're quick to land on an answer before they've finished the sentence.",
+           articles:[{t:"Delegate One Real Thing",u:"delegate-one-real-thing.html",k:"Playbook",s:"Clarity, capability, then trust."},
+                     {t:"Holding People Accountable",u:"holding-people-accountable.html",k:"Situation Navigator",s:"Without turning into a micromanager."}]},
+    dir_B:{strength:"People enjoy working with you because they feel heard.",
+           blind:"The downside is that difficult decisions can stay open longer than they should, leaving your strongest performers wondering who's actually making the call.",
+           articles:[{t:"Decision-Making Template",u:"decision-making-template.html",k:"Template",s:"Structure, not just a gut call."},
+                     {t:"Show Up Like an Executive in the Room",u:"act-executive-presence-in-meetings.html",k:"Leadership Skills",s:"A framework for meetings above your usual level."}]},
+    str_A:{strength:"Your team can predict you, and under real pressure that's genuinely calming.",
+           blind:"When reality stops matching the plan, 'structured' starts looking like 'won't adapt,' and your team will notice before you do.",
+           articles:[{t:"Why Your Team Needs SOPs",u:"sops-that-work.html",k:"Leadership Skills",s:"Writing process docs people actually use."},
+                     {t:"Cut the List to What Matters",u:"focus-on-what-matters.html",k:"Playbook",s:"A team with ten priorities has zero."}]},
+    str_B:{strength:"You thrive in uncertainty.",
+           blind:"Your team doesn't always. What feels like flexibility to you can feel like changing priorities to everyone else.",
+           articles:[{t:"Set Expectations Explicitly",u:"set-expectations-explicitly.html",k:"Playbook",s:"Don't assume they're shared."},
+                     {t:"Build a Real 1:1 Rhythm",u:"build-a-real-1-on-1-rhythm.html",k:"Playbook",s:"Same time, same structure, every week."}]},
+    ppl_A:{strength:"You notice the person before the problem, and people remember that about you.",
+           blind:"Say it plainly: sometimes 'giving them space' is really you avoiding a conversation you don't want to have, not actually protecting them.",
+           articles:[{t:"Giving Tough Feedback",u:"giving-tough-feedback.html",k:"Situation Navigator",s:"Feedback that's going to sting."},
+                     {t:"Deal With the Performance Issue You've Been Avoiding",u:"deal-with-the-performance-issue.html",k:"Playbook",s:"By month six there's usually one."}]},
+    ppl_B:{strength:"You keep the team focused on what actually moves the needle.",
+           blind:"The honest cost: you can watch someone burn out in real time and miss it completely, because you were looking at the number, not the person.",
+           articles:[{t:"Avoiding Burnout",u:"avoiding-burnout.html",k:"Situation Navigator",s:"You're already underwater, here's what to change."},
+                     {t:"Recognition That Actually Lands",u:"recognition-that-lands.html",k:"Playbook",s:"Specific and timely beats a generic \"great job.\""}]},
+    exp_A:{strength:"You don't rattle, and your team leans on that more than they'll ever tell you.",
+           blind:"If you never show it, your team may genuinely not know when you're proud of them, or worried about something, until it's too late for it to matter.",
+           articles:[{t:"Giving and Taking Credit at Work",u:"giving-and-taking-credit-at-work.html",k:"Workplace Skills",s:"Give it freely, take it gracefully."},
+                     {t:"Recognition That Actually Lands",u:"recognition-that-lands.html",k:"Playbook",s:"Specific and timely beats a generic \"great job.\""}]},
+    exp_B:{strength:"Nobody has to guess what you're feeling, that's rarer, and more honest, than it sounds.",
+           blind:"An unfiltered reaction from someone with authority lands harder than you think it does. That's not a character flaw, it's just physics, but it's still your job to account for it.",
+           articles:[{t:"How to Stay Calm Under Pressure",u:"how-to-stay-calm-under-pressure.html",k:"Leading Without a Title",s:"Your team can't see what you feel, only what you do."},
+                     {t:"Diffusing Tension With Warmth",u:"diffusing-tension-with-warmth.html",k:"Lasso Lesson",s:"De-escalating without dodging the hard part."}]}
+  };
+
+  let current = 0;
+  let answers = [];
+
+  window.lsqStart = function(){
+    document.getElementById('lsqIntro').classList.add('lsq-hidden');
+    document.getElementById('lsqQuiz').classList.remove('lsq-hidden');
+    document.getElementById('lsqHeroTitle').textContent = "Question by question.";
+    document.getElementById('lsqHeroSub').textContent = "No right answers, just honest ones.";
+    renderQuestion();
+  };
+
+  function renderQuestion(){
+    const q = questions[current];
+    document.getElementById('lsqCount').textContent = `Question ${current+1} of ${questions.length}`;
+    document.getElementById('lsqQText').textContent = q.t;
+    document.getElementById('lsqProgressFill').style.width = `${(current/questions.length)*100}%`;
+    const choicesEl = document.getElementById('lsqChoices');
+    choicesEl.innerHTML = '';
+    ['a','b'].forEach(k=>{
+      const btn = document.createElement('button');
+      btn.className='lsq-choice';
+      btn.textContent = q[k];
+      btn.onclick = ()=>selectAnswer(k==='a'?'A':'B');
+      choicesEl.appendChild(btn);
+    });
+    document.getElementById('lsqBackBtn').disabled = current===0;
+  }
+
+  function selectAnswer(pole){
+    answers[current] = pole;
+    if(current < questions.length-1){
+      current++;
+      renderQuestion();
+    } else {
+      showResults();
+    }
+  }
+
+  window.lsqGoBack = function(){
+    if(current>0){ current--; renderQuestion(); }
+  };
+
+  function computeType(){
+    const totals = {dir:{A:0,B:0}, str:{A:0,B:0}, ppl:{A:0,B:0}, exp:{A:0,B:0}};
+    questions.forEach((q,i)=>{ totals[q.trait][answers[i]]++; });
+    const poleChar = {}; const pct = {};
+    Object.keys(totals).forEach(tr=>{
+      const A = totals[tr].A, B = totals[tr].B, total = A+B;
+      pct[tr] = Math.round((A/total)*100);
+      poleChar[tr] = A>=B ? 'A' : 'B';
+    });
+    const key =
+      (poleChar.dir==='A'?'D':'C') +
+      (poleChar.str==='A'?'S':'A') +
+      (poleChar.ppl==='A'?'P':'R') +
+      (poleChar.exp==='A'?'R':'E');
+    return {key, pct, poleChar};
+  }
+
+  function preferenceLabel(p){
+    // p = percent leaning toward pole A (0-100). Interpret distance from 50.
+    const dist = Math.abs(p-50) + 50; // convert to "how strong toward whichever pole is dominant", 50-100 scale
+    if(dist>=85) return "Very strong preference";
+    if(dist>=70) return "Strong preference";
+    if(dist>=60) return "Moderate preference";
+    return "Balanced";
+  }
+
+  function showResults(){
+    document.getElementById('lsqQuiz').classList.add('lsq-hidden');
+    document.getElementById('lsqHeroTitle').textContent = "Your result is in.";
+    document.getElementById('lsqHeroSub').textContent = "Here's what it actually means.";
+    const {key, pct, poleChar} = computeType();
+    const type = TYPES[key] || {name:"The Balanced Lead", desc:"You sit close to the middle on most of these spectrums, adapting your approach to what the moment needs rather than leaning hard on one style.", quote:"I adjust to what the moment actually needs."};
+
+    const traitOrder = ['dir','str','ppl','exp'];
+
+    // ---- shareable badge ----
+    const badgeTraits = traitOrder.map(tr => TRAIT_INFO[tr][poleChar[tr]]);
+    const badgeHtml = `
+      <div class="lsq-badge" id="lsqBadge">
+        <div class="lsq-badge-eyebrow">Your Leadership Style</div>
+        <div class="lsq-badge-name">${type.name.toUpperCase()}</div>
+        <div class="lsq-badge-traits">
+          ${badgeTraits.map(t=>`<span class="lsq-badge-trait">${t}</span>`).join('')}
+        </div>
+        <p class="lsq-badge-quote">"${type.quote}"</p>
+      </div>`;
+
+    // ---- trait bars with interpretation label + sentence ----
+    let barsHtml = '';
+    traitOrder.forEach(tr=>{
+      const info = TRAIT_INFO[tr];
+      const dominant = poleChar[tr];
+      const displayPct = dominant==='A' ? pct[tr] : (100-pct[tr]);
+      const label = preferenceLabel(pct[tr]);
+      const sentence = INTERPRETATION_SENTENCES[`${tr}_${dominant}`];
+      barsHtml += `
+        <div class="lsq-trait-row">
+          <div class="lsq-trait-labels"><span>${info.A}</span><span>${info.B}</span></div>
+          <div class="lsq-trait-meta">${info[dominant]} — ${label} (${displayPct}%)</div>
+          <div class="lsq-trait-track"><div class="lsq-trait-fill" style="width:${pct[tr]}%;"></div></div>
+          <div class="lsq-trait-sentence">${sentence}</div>
+        </div>`;
+    });
+
+    // ---- strengths section, then friction section, then resources ----
+    let strengthsHtml = '';
+    let frictionHtml = '';
+    let resourcesHtml = '';
+    const seen = new Set();
+    traitOrder.forEach(tr=>{
+      const dominant = poleChar[tr];
+      const content = TRAIT_CONTENT[`${tr}_${dominant}`];
+      strengthsHtml += `
+        <div class="lsq-move">
+          <div class="lsq-move-num">${TRAIT_INFO[tr][dominant]}</div>
+          <div class="lsq-move-body"><div class="lsq-move-text">${content.strength}</div></div>
+        </div>`;
+      frictionHtml += `
+        <div class="lsq-move">
+          <div class="lsq-move-num">${TRAIT_INFO[tr][dominant]}</div>
+          <div class="lsq-move-body"><div class="lsq-move-text">${content.blind}</div></div>
+        </div>`;
+      content.articles.forEach(a=>{
+        if(!seen.has(a.u)){
+          seen.add(a.u);
+          resourcesHtml += `
+            <a class="lsq-resource-card" href="https://first-timemanagers.com/${a.u}" target="_blank" rel="noopener">
+              <div class="lsq-kicker">${a.k}</div>
+              <div class="lsq-rtitle">${a.t} →</div>
+              <div class="lsq-rdesc">${a.s}</div>
+            </a>`;
+        }
+      });
+    });
+
+    document.getElementById('lsqResults').innerHTML = `
+      <div class="lsq-eyebrow">your result</div>
+      <div class="lsq-type-name">You lead as <b>${type.name}</b></div>
+      <p class="lsq-lead">${type.desc}</p>
+
+      ${badgeHtml}
+
+      <h3 class="lsq-section-title">Where you naturally lead</h3>
+      ${barsHtml}
+
+      <h3 class="lsq-section-title">What your team probably appreciates</h3>
+      ${strengthsHtml}
+
+      <h3 class="lsq-section-title">Where you unintentionally create friction</h3>
+      ${frictionHtml}
+
+      <h3 class="lsq-section-title">Worth reading next</h3>
+      <div class="lsq-resources">${resourcesHtml}</div>
+
+      <h3 class="lsq-section-title">Share your result</h3>
+      <div class="lsq-share-row">
+        <button class="lsq-btn-gold" onclick="lsqCopyResult()">Copy Result</button>
+        <a class="lsq-btn-ghost" target="_blank" rel="noopener" href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(SITE_URL)}">Share on LinkedIn</a>
+        <button class="lsq-btn-ghost" onclick="lsqRetake()">Retake the quiz →</button>
+      </div>
+      <div class="lsq-copy-confirm" id="lsqCopyConfirm">Copied to clipboard.</div>
+      <p class="lsq-team-note">Curious how your manager or your team compares? Send them this quiz and see who lands where, there's no login and no result gets stored anywhere but this page.</p>
+    `;
+    document.getElementById('lsqResults').classList.remove('lsq-hidden');
+    document.getElementById('lsqResults').dataset.typeName = type.name;
+    document.getElementById('lsqResults').dataset.quote = type.quote;
+    document.getElementById('lsqResults').dataset.traits = badgeTraits.join(' · ');
+  }
+
+  window.lsqCopyResult = function(){
+    const r = document.getElementById('lsqResults');
+    const text = `I'm "${r.dataset.typeName}" — ${r.dataset.traits}\n"${r.dataset.quote}"\n\nTake the quiz: ${SITE_URL}`;
+    navigator.clipboard.writeText(text).then(()=>{
+      const confirm = document.getElementById('lsqCopyConfirm');
+      confirm.style.display = 'block';
+      setTimeout(()=>{ confirm.style.display='none'; }, 2500);
+    });
+  };
+
+  window.lsqRetake = function(){
+    current = 0; answers = [];
+    document.getElementById('lsqResults').classList.add('lsq-hidden');
+    document.getElementById('lsqHeroTitle').textContent = "What kind of manager are you, actually?";
+    document.getElementById('lsqHeroSub').textContent = "18 quick scenarios, no right answers, just honest ones. About 3 minutes, and it ends with the specific things worth working on.";
+    document.getElementById('lsqIntro').classList.remove('lsq-hidden');
+  };
+})();
+</script>
+
+
+<footer style="margin-top:60px;">
+  <div>First-TimeManagers.com</div>
+  <div>© 2024–Present First Time Managers LLC</div>
+</footer>
+
+<script src="js/nav.js"></script>
+</body>
+</html>
