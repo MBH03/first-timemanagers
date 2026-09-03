@@ -106,7 +106,7 @@
 </div>
 
 <main class="article">
-  <p class="intro">A PIP works when it's specific and genuinely actionable, not a formality on the way to a decision that's already been made. Check with HR on your company's process before using this, this is a starting structure, not a legal document.</p>
+  <p class="intro">A living record, updated in real time every week for the full length of the plan, not a form you fill out once and file away. Treat every entry as if it may someday be read by someone outside the room, HR, legal counsel, or the employee themselves. Check with your own HR and legal counsel before using this, this is a starting structure, not legal advice.</p>
 
   <div class="template-actions">
     <button class="submit-btn copy-btn" onclick="copyTemplateText(this,'template-content')">Copy template →</button>
@@ -114,40 +114,86 @@
   </div>
 
   <div id="template-content">
+
+  <div class="try-block">
+    <div class="try-label">How to use this document</div>
+    <p>Document the day it happens. Memory reconstructed at the end of the week is not a record. Be factual, not interpretive, "submitted the report three hours after the agreed deadline," not "has a bad attitude about deadlines." Log the good along with the bad, a record that only contains negatives reads as a case being built, not a plan to help someone improve. Every piece of feedback given, in a meeting, in Slack, in the hallway, gets written down the same day. Share this document with the employee and review it together at each check-in, they should never be seeing an entry for the first time in a termination meeting.</p>
+  </div>
+
   <div class="move-detail">
     <div class="move-step">
-      <div class="move-step-title">Header</div>
-      <div class="move-step-text">Employee's name: [name] · Job title: [title] · Department: [department] · Manager: [name]<br>Start date: [date] · End date: [date] · Check-in date(s): [weekly, or your cadence]</div>
+      <div class="move-step-title">Employee &amp; plan information</div>
+      <div class="move-step-text">Employee name: [name] · Job title: [title]<br>Department: [department] · Manager: [name]<br>PIP start date: [date] · PIP end date: [date]<br>Check-in schedule: [weekly, or your cadence] · HR partner (if applicable): [name]</div>
+    </div>
+    <div class="move-step">
+      <div class="move-step-title">Reason for this plan</div>
+      <div class="move-step-text">[Summarize, in plain factual language, the pattern of performance that led to this plan. This should read as a continuation of documented conversations and reviews already on file, not as a surprise.]</div>
     </div>
   </div>
 
   <table class="move-table">
-    <tr><th>Target area</th><th>Performance concern</th><th>Expected outcome</th><th>Resources / support</th></tr>
+    <tr><th>Target area</th><th>Specific performance concern</th><th>Expected outcome / measurable standard</th><th>Resources or support provided</th></tr>
     <tr><td>[area]</td><td>[specific, observed concern]</td><td>[what "improved" looks like, concretely]</td><td>[training, tools, check-ins offered]</td></tr>
     <tr><td>[area]</td><td>[specific, observed concern]</td><td>[what "improved" looks like, concretely]</td><td>[training, tools, check-ins offered]</td></tr>
   </table>
 
   <div class="move-detail">
     <div class="move-step">
-      <div class="move-step-title">Weekly check-in notes</div>
-      <div class="move-step-text">Repeat this section for each check-in on the plan.</div>
+      <div class="move-step-title">Consequences if this plan is not successfully completed</div>
+      <div class="move-step-text">[State plainly what happens if expectations are not met by the end date. This should already have been said out loud in the kickoff conversation, this section documents that it was.]</div>
+    </div>
+    <div class="move-step">
+      <div class="move-step-title">Plan acknowledgment</div>
+      <div class="move-step-text">Signing acknowledges the plan was reviewed and understood. It does not require the employee to agree with it.<br>Manager signature: ___________________ Date: _______<br>Employee signature: ___________________ Date: _______<br>HR signature (if applicable): ___________________ Date: _______</div>
+    </div>
+  </div>
+
+  <div class="principle-label" style="margin-top:44px;">Week 1</div>
+  <p style="font-size:14px; color:var(--muted); margin-top:-8px;">Repeat this full structure for each week of the plan. A four-week plan gets four of these.</p>
+
+  <div class="move-detail">
+    <div class="move-step">
+      <div class="move-step-title">Week dates &amp; check-in</div>
+      <div class="move-step-text">Week dates: [dates] · Check-in held on: [date]</div>
+    </div>
+    <div class="move-step">
+      <div class="move-step-title">Expectations for this week</div>
+      <div class="move-step-text">[Restate, in plain language, exactly what needs to happen this week. Be specific enough that there is no room for the employee to say they did not understand.]</div>
     </div>
   </div>
 
   <table class="move-table">
-    <tr><th>Week</th><th>Progress observed</th><th>Notes</th></tr>
-    <tr><td>Week 1</td><td>[specific, observed]</td><td></td></tr>
-    <tr><td>Week 2</td><td>[specific, observed]</td><td></td></tr>
-    <tr><td>Week 3</td><td>[specific, observed]</td><td></td></tr>
-    <tr><td>Week 4</td><td>[specific, observed]</td><td></td></tr>
+    <tr><th>Date</th><th>Time</th><th>Observation (factual, specific, no interpretation)</th><th>Documented by</th><th>Shared with employee?</th></tr>
+    <tr><td>[date]</td><td>[time]</td><td>[observation]</td><td>[name]</td><td>[yes/no]</td></tr>
+    <tr><td>[date]</td><td>[time]</td><td>[observation]</td><td>[name]</td><td>[yes/no]</td></tr>
   </table>
+  <p style="font-size:13px; color:var(--muted); margin-top:-16px;">Daily observation log. Log every relevant observation the day it happens, not from memory at the end of the week, and include things that went well, not only problems.</p>
+
+  <table class="move-table">
+    <tr><th>Date</th><th>Given by</th><th>What was communicated</th><th>Employee's response</th></tr>
+    <tr><td>[date]</td><td>[name]</td><td>[what was said]</td><td>[response]</td></tr>
+  </table>
+  <p style="font-size:13px; color:var(--muted); margin-top:-16px;">Feedback conversations this week. Undocumented feedback is, for these purposes, feedback that was never given.</p>
+
+  <div class="move-detail">
+    <div class="move-step">
+      <div class="move-step-title">End of week assessment</div>
+      <div class="move-step-text">Status for this week: ☐ Expectations met  ☐ Partially met  ☐ Not met<br>Manager narrative summary: [summary]<br>Employee comments (optional, employee may complete this themselves): [comments]<br>Manager signature: ___________________ Date: _______<br>Employee signature: ___________________ Date: _______</div>
+    </div>
   </div>
 
-  <p style="font-size:13px; color:var(--muted); margin-top:-6px;">Every target area needs an outcome specific enough that both of you would agree, without debate, whether it was met.</p>
+  <div class="move-detail">
+    <div class="move-step">
+      <div class="move-step-title">Final outcome</div>
+      <div class="move-step-text">Outcome: ☐ Plan successfully completed  ☐ Plan extended  ☐ Employment ended<br>Summary of final outcome: [summary]<br>Manager signature: ___________________ Date: _______<br>Employee signature: ___________________ Date: _______<br>HR signature (if applicable): ___________________ Date: _______</div>
+    </div>
+  </div>
+
+  </div>
 
   <div class="try-block" style="margin-top:32px;">
     <div class="try-label">If the plan doesn't work out</div>
-    <p>Not every PIP ends in improvement, and that's what the plan is for, giving a fair, documented shot before a harder decision. If you're at the end of this one and the outcome wasn't met, <a href="letting-someone-go.html">You Have to Let Someone Go</a> covers the four moves for that conversation, and the <a href="termination-conversation-script.html">Termination Conversation, Manager Template</a> has the script.</p>
+    <p>Not every PIP ends in improvement, and that's what the plan is for, giving a fair, documented shot before a harder decision. If you're at the end of this one and the outcome wasn't met, <a href="letting-someone-go.html">You Have to Let Someone Go</a> covers the four moves for that conversation, and the <a href="termination-conversation-script.html">Termination Conversation, Manager Checklist</a> has the script.</p>
   </div>
 </main>
 <script src="js/copy.js"></script>
