@@ -387,8 +387,15 @@ footer{ display:flex; justify-content:space-between; padding:34px 56px; font-siz
   font-size:13px; letter-spacing:.04em; font-weight:700; cursor:pointer; font-family:inherit;
 }
 .submit-btn:hover{ background:#f0b552; }
-.copy-btn{ margin:0 0 32px; display:inline-flex; align-items:center; gap:8px; }
+.copy-btn{ margin:0; display:inline-flex; align-items:center; gap:8px; }
 .copy-btn.copied{ background:var(--text); color:#1B1B1A; }
+.template-actions{ display:flex; gap:12px; flex-wrap:wrap; margin:0 0 32px; }
+.download-btn{
+  background:transparent; color:var(--text); border:1px solid rgba(237,235,228,.25); border-radius:30px;
+  padding:16px 34px; font-size:13px; letter-spacing:.04em; font-weight:700; cursor:pointer; font-family:inherit;
+  display:inline-flex; align-items:center; gap:8px; text-decoration:none;
+}
+.download-btn:hover{ border-color:var(--gold); color:var(--gold); }
 .form-note{ font-size:13px; color:var(--muted); margin-top:16px; }
 .confirm{ display:none; padding:28px 32px; border:1px solid rgba(227,166,62,.35); border-radius:2px; background:linear-gradient(155deg,#241C0F 0%,#1B1B1A 60%,#17211D 100%); }
 .confirm.show{ display:block; }
