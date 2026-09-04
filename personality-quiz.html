@@ -162,6 +162,14 @@ the Leadership Style Quiz (prefixed "lsq-") without any collision.
     padding:16px 30px; cursor:pointer; text-decoration:none;
   }
   #pq-widget .pq-btn-gold:hover{ background:var(--pq-gold-deep); }
+  #pq-widget .pq-btn-ghost{
+    display:inline-block; border:1px solid rgba(237,235,228,.25); border-radius:999px;
+    background:none; color:var(--pq-text); font-weight:500; font-size:14px;
+    padding:15px 28px; cursor:pointer; text-decoration:none;
+  }
+  #pq-widget .pq-btn-ghost:hover{ border-color:var(--pq-gold); color:var(--pq-gold); }
+  #pq-widget .pq-share-row{ display:flex; flex-wrap:wrap; gap:12px; margin-top:16px; }
+  #pq-widget .pq-copy-confirm{ font-size:13px; color:var(--pq-gold); margin-top:10px; display:none; }
   #pq-widget .pq-hidden{ display:none; }
   #pq-widget .pq-type-name{ font-size:32px; font-weight:300; margin:0 0 14px; line-height:1.2; }
   #pq-widget .pq-type-name b{ font-weight:600; color:var(--pq-gold); }
@@ -220,6 +228,7 @@ the Leadership Style Quiz (prefixed "lsq-") without any collision.
 
 <script>
 (function(){
+  const SITE_URL = "https://first-timemanagers.com/personality-quiz.html";
   // trait keys: ext (Extraversion), con (Conscientiousness), neu (Neuroticism/Emotional Stability),
   // agr (Agreeableness), opn (Openness). A = first pole below, B = second pole.
   const questions = [
@@ -312,6 +321,15 @@ the Leadership Style Quiz (prefixed "lsq-") without any collision.
 
   let current = 0;
   let answers = [];
+
+  function encodeAnswers(ans){ return ans.join(''); }
+  function decodeAnswers(str){
+    if(!str || str.length !== questions.length) return null;
+    const arr = str.toUpperCase().split('');
+    if(!arr.every(c=>c==='A'||c==='B')) return null;
+    return arr;
+  }
+  function shareUrl(ans){ return `${SITE_URL}?r=${encodeAnswers(ans)}`; }
 
   window.pqStart = function(){
     document.getElementById('pqIntro').classList.add('pq-hidden');
@@ -440,12 +458,39 @@ the Leadership Style Quiz (prefixed "lsq-") without any collision.
       <h3 class="pq-section-title">Worth reading next</h3>
       <div class="pq-resources">${resourcesHtml}</div>
 
-      <div class="pq-retake-row">
-        <button class="pq-btn-gold" onclick="pqRetake()">Retake the quiz →</button>
+      <h3 class="pq-section-title">Share your result</h3>
+      <div class="pq-share-row">
+        <button class="pq-btn-gold" onclick="pqCopyResult()">Copy Result</button>
+        <button class="pq-btn-ghost" onclick="pqCopyLink()">Copy Link to This Result</button>
+        <button class="pq-btn-ghost" onclick="pqRetake()">Retake the quiz →</button>
       </div>
+      <div class="pq-copy-confirm" id="pqCopyConfirm">Copied to clipboard.</div>
+      <p class="pq-note" style="margin-top:12px;">Curious how a friend or teammate compares? Copy the link above, it goes straight to your exact result, not just the quiz start.</p>
     `;
     document.getElementById('pqResults').classList.remove('pq-hidden');
+    document.getElementById('pqResults').dataset.typeName = typeName;
   }
+
+  window.pqCopyResult = function(){
+    const r = document.getElementById('pqResults');
+    const text = `I lean "${r.dataset.typeName}" on the First-Time Managers personality quiz.\n\nSee your own result: ${shareUrl(answers)}`;
+    navigator.clipboard.writeText(text).then(()=>{
+      const confirm = document.getElementById('pqCopyConfirm');
+      confirm.textContent = 'Copied to clipboard.';
+      confirm.style.display = 'block';
+      setTimeout(()=>{ confirm.style.display='none'; }, 2500);
+    });
+  };
+
+  window.pqCopyLink = function(){
+    const link = shareUrl(answers);
+    navigator.clipboard.writeText(link).then(()=>{
+      const confirm = document.getElementById('pqCopyConfirm');
+      confirm.textContent = 'Link copied.';
+      confirm.style.display = 'block';
+      setTimeout(()=>{ confirm.style.display='none'; confirm.textContent='Copied to clipboard.'; }, 2500);
+    });
+  };
 
   window.pqRetake = function(){
     current = 0; answers = [];
@@ -454,6 +499,16 @@ the Leadership Style Quiz (prefixed "lsq-") without any collision.
     document.getElementById('pqHeroSub').textContent = "20 quick scenarios, built on the Big Five, the personality model with the strongest science behind it. Not to label you, to help you work with what's true rather than against it.";
     document.getElementById('pqIntro').classList.remove('pq-hidden');
   };
+
+  (function initFromSharedLink(){
+    const params = new URLSearchParams(window.location.search);
+    const shared = decodeAnswers(params.get('r'));
+    if(shared){
+      answers = shared;
+      document.getElementById('pqIntro').classList.add('pq-hidden');
+      showResults();
+    }
+  })();
 })();
 </script>
 

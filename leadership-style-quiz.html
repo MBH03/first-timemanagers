@@ -414,6 +414,15 @@ v2 changes (this pass):
   let current = 0;
   let answers = [];
 
+  function encodeAnswers(ans){ return ans.join(''); }
+  function decodeAnswers(str){
+    if(!str || str.length !== questions.length) return null;
+    const arr = str.toUpperCase().split('');
+    if(!arr.every(c=>c==='A'||c==='B')) return null;
+    return arr;
+  }
+  function shareUrl(ans){ return `${SITE_URL}?r=${encodeAnswers(ans)}`; }
+
   window.lsqStart = function(){
     document.getElementById('lsqIntro').classList.add('lsq-hidden');
     document.getElementById('lsqQuiz').classList.remove('lsq-hidden');
@@ -570,11 +579,12 @@ v2 changes (this pass):
       <h3 class="lsq-section-title">Share your result</h3>
       <div class="lsq-share-row">
         <button class="lsq-btn-gold" onclick="lsqCopyResult()">Copy Result</button>
-        <a class="lsq-btn-ghost" target="_blank" rel="noopener" href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(SITE_URL)}">Share on LinkedIn</a>
+        <button class="lsq-btn-ghost" onclick="lsqCopyLink()">Copy Link to This Result</button>
+        <a class="lsq-btn-ghost" target="_blank" rel="noopener" href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl(answers))}">Share on LinkedIn</a>
         <button class="lsq-btn-ghost" onclick="lsqRetake()">Retake the quiz →</button>
       </div>
       <div class="lsq-copy-confirm" id="lsqCopyConfirm">Copied to clipboard.</div>
-      <p class="lsq-team-note">Curious how your manager or your team compares? Send them this quiz and see who lands where, there's no login and no result gets stored anywhere but this page.</p>
+      <p class="lsq-team-note">Curious how your manager or your team compares? Send them this quiz and see who lands where, there's no login and no result gets stored anywhere but this page. Or copy the link above, it goes straight to your exact result, not just the quiz start.</p>
     `;
     document.getElementById('lsqResults').classList.remove('lsq-hidden');
     document.getElementById('lsqResults').dataset.typeName = type.name;
@@ -584,11 +594,22 @@ v2 changes (this pass):
 
   window.lsqCopyResult = function(){
     const r = document.getElementById('lsqResults');
-    const text = `I'm "${r.dataset.typeName}" — ${r.dataset.traits}\n"${r.dataset.quote}"\n\nTake the quiz: ${SITE_URL}`;
+    const text = `I'm "${r.dataset.typeName}" — ${r.dataset.traits}\n"${r.dataset.quote}"\n\nSee your own result: ${shareUrl(answers)}`;
     navigator.clipboard.writeText(text).then(()=>{
       const confirm = document.getElementById('lsqCopyConfirm');
+      confirm.textContent = 'Copied to clipboard.';
       confirm.style.display = 'block';
       setTimeout(()=>{ confirm.style.display='none'; }, 2500);
+    });
+  };
+
+  window.lsqCopyLink = function(){
+    const link = shareUrl(answers);
+    navigator.clipboard.writeText(link).then(()=>{
+      const confirm = document.getElementById('lsqCopyConfirm');
+      confirm.textContent = 'Link copied.';
+      confirm.style.display = 'block';
+      setTimeout(()=>{ confirm.style.display='none'; confirm.textContent='Copied to clipboard.'; }, 2500);
     });
   };
 
@@ -599,6 +620,16 @@ v2 changes (this pass):
     document.getElementById('lsqHeroSub').textContent = "18 quick scenarios, no right answers, just honest ones. About 3 minutes, and it ends with the specific things worth working on.";
     document.getElementById('lsqIntro').classList.remove('lsq-hidden');
   };
+
+  (function initFromSharedLink(){
+    const params = new URLSearchParams(window.location.search);
+    const shared = decodeAnswers(params.get('r'));
+    if(shared){
+      answers = shared;
+      document.getElementById('lsqIntro').classList.add('lsq-hidden');
+      showResults();
+    }
+  })();
 })();
 </script>
 
