@@ -59,6 +59,29 @@
     .pillars .grid{ grid-template-columns:1fr; }
     .pillars .tile:nth-child(2), .pillars .tile:nth-child(3), .pillars .tile:nth-child(4){ margin-top:0; }
   }
+
+  .email-capture{ margin:0; padding:80px 56px; text-align:center; background:var(--bg2); border-top:1px solid rgba(237,235,228,.08); }
+  .email-capture-inner{ max-width:480px; margin:0 auto; }
+  .email-capture .eyebrow{ justify-content:center; }
+  .email-capture h3{ font-weight:300; font-size:26px; line-height:1.35; margin:0 0 14px; }
+  .email-capture p.desc{ color:var(--muted); font-size:14px; line-height:1.7; margin:0 0 28px; }
+  .capture-form{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+  .capture-form input[type=email]{
+    background:var(--bg); border:1px solid rgba(237,235,228,.18); border-radius:2px;
+    padding:14px 16px; color:var(--text); font-family:inherit; font-size:14px; min-width:230px; flex:1;
+  }
+  .capture-form input[type=email]:focus{ outline:none; border-color:var(--gold); }
+  .capture-form button{
+    background:transparent; color:var(--muted); border:1px solid rgba(237,235,228,.25); border-radius:2px;
+    padding:14px 26px; font-size:13px; letter-spacing:.02em; font-weight:600; cursor:pointer; font-family:inherit; white-space:nowrap;
+  }
+  .capture-form button:hover{ border-color:var(--gold); color:var(--gold); }
+  .capture-form button:disabled{ opacity:.6; cursor:default; }
+  .email-capture .fine-print{ color:var(--muted); font-size:11px; margin-top:16px; opacity:.7; }
+  .email-capture .capture-confirm{ display:none; color:var(--gold); font-size:14px; }
+  .email-capture .capture-confirm.show{ display:block; }
+  .email-capture .capture-confirm.show ~ form{ display:none; }
+  @media (max-width:900px){ .email-capture{ padding:56px 24px; } }
 </style>
 <script type="application/ld+json">
 {
@@ -227,10 +250,55 @@
   <a class="ask-btn" href="ask-a-question.html">Ask a Question →</a>
 </section>
 
+<section class="email-capture">
+  <div class="email-capture-inner">
+    <div class="eyebrow">not a newsletter</div>
+    <h3>Sometimes I find something too good not to pass along.</h3>
+    <p class="desc">Drop your email, I'll send it when it happens. Nothing on a schedule, no "5 tips" filler to hit a deadline. Just the good stuff, when I find it.</p>
+
+    <div class="capture-confirm" id="captureConfirm">Thanks, you're in. Talk soon.</div>
+
+    <form id="captureForm" class="capture-form" action="https://formsubmit.co/firsttimemanager1@gmail.com" method="POST">
+      <input type="email" name="email" placeholder="your@email.com" required>
+      <input type="hidden" name="_subject" value="New email signup — First-Time Managers">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <button type="submit">Count me in</button>
+    </form>
+
+    <p class="fine-print">No spam. Unsubscribe whenever.</p>
+  </div>
+</section>
+
 <footer>
   <div>First-TimeManagers.com</div>
   <div>© 2024–Present First Time Managers LLC</div>
 </footer>
+
+<script>
+  document.getElementById('captureForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const form = this;
+    const btn = form.querySelector('button');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    fetch('https://formsubmit.co/ajax/firsttimemanager1@gmail.com', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
+    })
+      .then(res => { if (!res.ok) throw new Error('bad response'); return res.json(); })
+      .then(() => {
+        document.getElementById('captureConfirm').classList.add('show');
+      })
+      .catch(() => {
+        btn.disabled = false;
+        btn.textContent = 'Count me in';
+      });
+  });
+</script>
 
 <script src="js/nav.js"></script>
 </body>
