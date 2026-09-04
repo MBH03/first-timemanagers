@@ -445,3 +445,78 @@ footer{ display:flex; justify-content:space-between; padding:34px 56px; font-siz
   #onboarding-plan-template, #one-on-one-agenda-template, #first-one-on-one-agenda,
   #ai-cheat-sheet, #team-intro-script, #template-content{ color:#111 !important; }
 }
+
+/* ---------- TED (floating smart search) ---------- */
+.ted-orb{
+  position:fixed; right:28px; bottom:28px; z-index:1000;
+  width:60px; height:60px; border-radius:50%; border:none; cursor:pointer;
+  background:radial-gradient(circle at 35% 30%, var(--gold), var(--gold-deep));
+  box-shadow:0 4px 20px rgba(227,166,62,.35);
+  display:flex; align-items:center; justify-content:center;
+  animation:ted-float 3.2s ease-in-out infinite;
+  transition:box-shadow .2s ease;
+}
+.ted-orb:hover{ box-shadow:0 4px 28px rgba(227,166,62,.55); }
+.ted-orb svg{ width:26px; height:26px; stroke:#1B1B1A; fill:none; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
+@keyframes ted-float{
+  0%,100%{ transform:translateY(0); }
+  50%{ transform:translateY(-7px); }
+}
+@media (prefers-reduced-motion:reduce){
+  .ted-orb{ animation:none; }
+}
+.ted-bubble{
+  position:fixed; right:98px; bottom:44px; z-index:999;
+  max-width:200px; background:var(--bg2); color:var(--text);
+  border:1px solid rgba(237,235,228,.15); border-radius:10px;
+  padding:10px 14px; font-size:13px; line-height:1.4;
+  opacity:0; pointer-events:none; transition:opacity .4s ease;
+}
+.ted-bubble.show{ opacity:1; }
+.ted-bubble::after{
+  content:''; position:absolute; right:-6px; bottom:18px;
+  width:12px; height:12px; background:var(--bg2);
+  border-right:1px solid rgba(237,235,228,.15); border-bottom:1px solid rgba(237,235,228,.15);
+  transform:rotate(-45deg);
+}
+.ted-panel{
+  position:fixed; right:28px; bottom:100px; z-index:1001;
+  width:360px; max-width:calc(100vw - 40px); max-height:70vh;
+  background:var(--bg2); border:1px solid rgba(237,235,228,.15); border-radius:16px;
+  box-shadow:0 20px 60px rgba(0,0,0,.5); padding:24px;
+  display:flex; flex-direction:column; gap:14px;
+  transform:translateY(12px) scale(.97); opacity:0; pointer-events:none;
+  transition:transform .2s ease, opacity .2s ease;
+}
+.ted-panel.open{ transform:translateY(0) scale(1); opacity:1; pointer-events:auto; }
+.ted-panel-header{ display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
+.ted-panel-title{ font-size:16px; font-weight:600; color:var(--text); }
+.ted-panel-tagline{ font-size:12.5px; color:var(--muted); font-style:italic; margin-top:2px; }
+.ted-close{ background:none; border:none; color:var(--muted); font-size:20px; line-height:1; cursor:pointer; padding:2px; }
+.ted-close:hover{ color:var(--gold); }
+.ted-search-input{
+  width:100%; background:var(--bg); border:1px solid rgba(237,235,228,.2); border-radius:8px;
+  padding:12px 14px; color:var(--text); font-size:14px; font-family:inherit;
+}
+.ted-search-input:focus{ outline:none; border-color:var(--gold); }
+.ted-chips{ display:flex; flex-wrap:wrap; gap:8px; }
+.ted-chip{
+  background:none; border:1px solid rgba(237,235,228,.2); border-radius:999px;
+  padding:7px 14px; font-size:12.5px; color:var(--muted); cursor:pointer; font-family:inherit;
+}
+.ted-chip:hover{ border-color:var(--gold); color:var(--gold); }
+.ted-results{ overflow-y:auto; display:flex; flex-direction:column; gap:4px; margin:0 -8px; }
+.ted-result{ display:block; padding:10px 8px; border-radius:8px; text-decoration:none; transition:background .15s ease; }
+.ted-result:hover{ background:rgba(237,235,228,.05); }
+.ted-result-title{ font-size:14px; font-weight:600; color:var(--text); margin-bottom:3px; }
+.ted-result-excerpt{ font-size:12.5px; color:var(--muted); line-height:1.5; }
+.ted-result-excerpt mark{ background:none; color:var(--gold); font-weight:600; }
+.ted-empty, .ted-no-results{ font-size:13px; color:var(--muted); padding:8px 0; }
+@media (max-width:640px){
+  .ted-orb{ right:16px; bottom:16px; width:52px; height:52px; }
+  .ted-bubble{ right:76px; bottom:34px; max-width:160px; }
+  .ted-panel{ right:12px; left:12px; bottom:12px; width:auto; max-width:none; max-height:75vh; }
+}
+@media print{
+  .ted-orb, .ted-bubble, .ted-panel{ display:none !important; }
+}
