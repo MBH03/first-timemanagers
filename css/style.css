@@ -145,9 +145,11 @@ nav{ display:flex; align-items:center; justify-content:space-between; padding:32
 
 .ltile-visual{ position:relative; overflow:hidden; border-radius:2px; padding:26px; display:flex; flex-direction:column; justify-content:space-between; transition:transform .25s ease; }
 .ltile:hover .ltile-visual{ transform:translateY(-3px); }
-.ltile.wide .ltile-visual, .ltile.narrow .ltile-visual, .ltile.full .ltile-visual{ height:380px; }
+.ltile.wide .ltile-visual, .ltile.narrow .ltile-visual{ height:380px; }
+.ltile.full .ltile-visual{ height:460px; }
 .ltile.third .ltile-visual, .ltile.half .ltile-visual{ height:280px; }
-.ltile.wide .icon-bg, .ltile.full .icon-bg{ width:280px; height:280px; }
+.ltile.wide .icon-bg{ width:280px; height:280px; }
+.ltile.full .icon-bg{ width:340px; height:340px; }
 
 .ltile .tile-index{ align-items:flex-start; }
 
