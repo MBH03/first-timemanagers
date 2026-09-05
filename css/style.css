@@ -141,29 +141,30 @@ nav{ display:flex; align-items:center; justify-content:space-between; padding:32
 .ltile.narrow{ grid-column:span 2; }
 .ltile.third, .ltile.half{ grid-column:span 2; }
 .ltile.half{ grid-column:span 3; }
+.ltile.full{ grid-column:span 6; }
 
 .ltile-visual{ position:relative; overflow:hidden; border-radius:2px; padding:26px; display:flex; flex-direction:column; justify-content:space-between; transition:transform .25s ease; }
 .ltile:hover .ltile-visual{ transform:translateY(-3px); }
-.ltile.wide .ltile-visual, .ltile.narrow .ltile-visual{ height:380px; }
+.ltile.wide .ltile-visual, .ltile.narrow .ltile-visual, .ltile.full .ltile-visual{ height:380px; }
 .ltile.third .ltile-visual, .ltile.half .ltile-visual{ height:280px; }
-.ltile.wide .icon-bg{ width:280px; height:280px; }
+.ltile.wide .icon-bg, .ltile.full .icon-bg{ width:280px; height:280px; }
 
 .ltile .tile-index{ align-items:flex-start; }
 
 .quote-block{ position:relative; z-index:2; }
 .quote-line{ font-size:15px; line-height:1.4; color:rgba(255,255,255,.97); font-weight:500; max-width:88%; }
-.ltile.wide .quote-line{ font-size:23px; max-width:70%; }
+.ltile.wide .quote-line, .ltile.full .quote-line{ font-size:23px; max-width:70%; }
 .quote-attr{ font-size:11.5px; color:rgba(255,255,255,.55); margin-top:8px; letter-spacing:.02em; }
 
 .ltile-cap{ padding-top:20px; }
 .ltile-cap .tag{ font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--gold); font-weight:600; margin-bottom:8px; }
 .ltile-cap .title{ font-size:16px; font-weight:600; margin-bottom:6px; }
-.ltile.wide .ltile-cap .title{ font-size:19px; }
+.ltile.wide .ltile-cap .title, .ltile.full .ltile-cap .title{ font-size:19px; }
 .ltile-cap .desc{ font-size:13.5px; color:var(--muted); line-height:1.6; max-width:340px; }
 
 @media (max-width:900px){
   .lgrid{ grid-template-columns:1fr; padding:0 24px 80px; }
-  .ltile.wide, .ltile.narrow, .ltile.third, .ltile.half{ grid-column:span 1; }
+  .ltile.wide, .ltile.narrow, .ltile.third, .ltile.half, .ltile.full{ grid-column:span 1; }
 }
 
 /* ---------- NUMBERED MOVES (situation navigator / playbook stage pages) ---------- */
