@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Personality Quiz | First-Time Managers</title>
-<meta name="description" content="A 20-question personality quiz for first-time managers, built on the Big Five model. Not to label you, to help you work with what's true rather than against it.">
+<title>Free Personality Quiz for Managers | First-Time Managers</title>
+<meta name="description" content="A free 20-question personality quiz for first-time managers, built on the Big Five model. Not to label you, to help you work with what's true rather than against it.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="First-Time Managers">
-<meta property="og:title" content="What's Actually True About You? | Personality Quiz">
-<meta property="og:description" content="A 20-question personality quiz for first-time managers, built on the Big Five model. Not to label you, to help you work with what's true rather than against it.">
+<meta property="og:title" content="What's Actually True About You? | Free Personality Quiz for Managers">
+<meta property="og:description" content="A free 20-question personality quiz for first-time managers, built on the Big Five model. Not to label you, to help you work with what's true rather than against it.">
 <meta property="og:url" content="https://first-timemanagers.com/personality-quiz.html">
 <meta property="og:image" content="https://first-timemanagers.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="What's Actually True About You? | Personality Quiz">
-<meta name="twitter:description" content="A 20-question personality quiz for first-time managers, built on the Big Five model. Not to label you, to help you work with what's true rather than against it.">
+<meta name="twitter:title" content="What's Actually True About You? | Free Personality Quiz for Managers">
+<meta name="twitter:description" content="A free 20-question personality quiz for first-time managers, built on the Big Five model. Not to label you, to help you work with what's true rather than against it.">
 <meta name="twitter:image" content="https://first-timemanagers.com/og-image.png">
 <link rel="icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -28,7 +28,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "What's actually true about you?",
-  "description": "A 20-question personality quiz for first-time managers, built on the Big Five model. Not to label you, to help you work with what's true rather than against it.",
+  "description": "A free 20-question personality quiz for first-time managers, built on the Big Five model. Not to label you, to help you work with what's true rather than against it.",
   "url": "https://first-timemanagers.com/personality-quiz.html",
   "datePublished": "2026-09-02",
   "dateModified": "2026-09-02",
@@ -66,7 +66,7 @@
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Personality Quiz",
+      "name": "Free Personality Quiz for Managers",
       "item": "https://first-timemanagers.com/personality-quiz.html"
     }
   ]
@@ -94,7 +94,7 @@
   </button>
 </nav>
 
-<div class="crumb"><a href="index.html">Home</a> / Personality Quiz</div>
+<div class="crumb"><a href="index.html">Home</a> / Free Personality Quiz for Managers</div>
 
 <!-- ============================================================
 PERSONALITY QUIZ — standalone drop-in widget
@@ -139,6 +139,11 @@ the Leadership Style Quiz (prefixed "lsq-") without any collision.
     border-bottom:1px solid rgba(237,235,228,.1);
     padding-bottom:28px; margin:24px 0 28px;
   }
+  #pq-widget .pq-preview{ margin:8px 0 28px; border:1px solid rgba(237,235,228,.15); border-radius:2px; padding:18px 22px; }
+  #pq-widget .pq-preview summary{ cursor:pointer; color:var(--pq-gold); font-size:14px; font-weight:600; }
+  #pq-widget .pq-preview-list{ margin:16px 0 0; padding-left:20px; }
+  #pq-widget .pq-preview-list li{ font-size:14px; color:var(--pq-muted); line-height:1.7; margin-bottom:10px; }
+  #pq-widget .pq-preview-list em{ color:var(--pq-text); font-style:normal; }
   #pq-widget .pq-progress-track{ height:2px; background:rgba(237,235,228,.1); margin:24px 0 8px; }
   #pq-widget .pq-progress-fill{ height:100%; background:var(--pq-gold); width:0%; transition:width .3s ease; }
   #pq-widget .pq-qcount{ color:var(--pq-muted); font-size:13px; margin-bottom:24px; }
@@ -207,14 +212,40 @@ the Leadership Style Quiz (prefixed "lsq-") without any collision.
 
 <div id="pq-widget">
 
-  <div class="pq-eyebrow">The Personality Quiz</div>
-  <h2 class="pq-h1" id="pqHeroTitle">What's actually true about you?</h2>
-  <p class="pq-sub" id="pqHeroSub">20 quick scenarios, built on the Big Five, the personality model with the strongest science behind it. Not to label you, to help you work with what's true rather than against it.</p>
+  <div class="pq-eyebrow">Free Personality Quiz for Managers</div>
+  <h1 class="pq-h1" id="pqHeroTitle">What's actually true about you?</h1>
+  <p class="pq-sub" id="pqHeroSub">20 quick scenarios, built on the Big Five, the personality model with the strongest science behind it. Free, no signup. Not to label you, to help you work with what's true rather than against it.</p>
 
   <div id="pqIntro">
     <p class="pq-intro">Some of this you already know about yourself. The point isn't the surprise, it's the reminder, and one concrete thing to do about each trait.</p>
     <button class="pq-btn-gold" onclick="pqStart()">Start the quiz →</button>
   </div>
+
+  <details class="pq-preview">
+    <summary>See all 20 questions first →</summary>
+    <ol class="pq-preview-list">
+      <li>It's Friday after a long week. What sounds better? <em>Grabbing drinks with the team</em>, or <em>heading home to recharge alone</em>?</li>
+      <li>You walk into a room full of people you don't know. Do you <em>start introducing yourself around</em>, or do you <em>find one person to talk to first</em>?</li>
+      <li>It's a big group brainstorm meeting. Do you <em>think out loud, in real time</em>, or would you <em>rather think it through, then share</em>?</li>
+      <li>Right after presenting to a big room: do you <em>feel energized</em>, or do you <em>feel like you need quiet time to recover</em>?</li>
+      <li>Your desk, or your inbox, right now: <em>organized, mostly under control</em>, or <em>a little, or a lot, chaotic</em>?</li>
+      <li>You're given a task with a loose deadline. Do you <em>start early, finish ahead of time</em>, or will <em>you'll get there, probably closer to the deadline</em>?</li>
+      <li>A new project starts. Your instinct: <em>build the plan first</em>, or <em>start doing, figure out the plan as you go</em>?</li>
+      <li>How do you feel about routines? <em>I like having one</em>, or do <em>they start to feel confining after a while</em>?</li>
+      <li>Something goes wrong right before a big meeting. Does <em>it rattle you for a while</em>, or do <em>you reset fast and move on</em>?</li>
+      <li>You're waiting to hear back on something important. Is <em>it hard not to think about it</em>, or do <em>you mostly forget about it until you hear something</em>?</li>
+      <li>Someone gives you sharp criticism. Does <em>it sting for a bit, even if it's fair</em>, or do <em>you take it in and move on pretty quickly</em>?</li>
+      <li>How often do you feel stressed at work? <em>More than I'd like</em>, or <em>rarely, even when things get hectic</em>?</li>
+      <li>A friend asks your honest opinion on something you don't love. Do <em>you find the kind way to say it</em>, or do <em>you just tell them</em>?</li>
+      <li>Someone on your team pushes back on your plan. Do <em>you look for the middle ground</em>, or do <em>you defend your reasoning</em>?</li>
+      <li>There's tension in the room during a meeting. Do <em>you want to smooth it over</em>, or would <em>you rather name it directly</em>?</li>
+      <li>You disagree with a decision your team made. Do <em>you go along with it, mostly</em>, or do <em>you say something, even if it's unpopular</em>?</li>
+      <li>A completely new approach is proposed for something that already works fine. Are <em>you curious, want to try it</em>, or would <em>you rather not fix what isn't broken</em>?</li>
+      <li>Your ideal weekend: <em>something new you haven't done before</em>, or <em>something familiar and comfortable</em>?</li>
+      <li>A meeting turns into a big-picture, hypothetical discussion. Are <em>you into it</em>, or would <em>you rather get back to something concrete</em>?</li>
+      <li>How do you feel about abstract ideas or theory? <em>I like exploring them</em>, or <em>I care more about what's practical</em>?</li>
+    </ol>
+  </details>
 
   <div id="pqQuiz" class="pq-hidden">
     <div class="pq-progress-track"><div class="pq-progress-fill" id="pqProgressFill"></div></div>
@@ -335,6 +366,7 @@ the Leadership Style Quiz (prefixed "lsq-") without any collision.
 
   window.pqStart = function(){
     document.getElementById('pqIntro').classList.add('pq-hidden');
+    document.querySelector('.pq-preview').classList.add('pq-hidden');
     document.getElementById('pqQuiz').classList.remove('pq-hidden');
     document.getElementById('pqHeroTitle').textContent = "Question by question.";
     document.getElementById('pqHeroSub').textContent = "No right answers, just honest ones.";
@@ -498,8 +530,9 @@ the Leadership Style Quiz (prefixed "lsq-") without any collision.
     current = 0; answers = [];
     document.getElementById('pqResults').classList.add('pq-hidden');
     document.getElementById('pqHeroTitle').textContent = "What's actually true about you?";
-    document.getElementById('pqHeroSub').textContent = "20 quick scenarios, built on the Big Five, the personality model with the strongest science behind it. Not to label you, to help you work with what's true rather than against it.";
+    document.getElementById('pqHeroSub').textContent = "20 quick scenarios, built on the Big Five, the personality model with the strongest science behind it. Free, no signup. Not to label you, to help you work with what's true rather than against it.";
     document.getElementById('pqIntro').classList.remove('pq-hidden');
+    document.querySelector('.pq-preview').classList.remove('pq-hidden');
   };
 
   (function initFromSharedLink(){
@@ -508,6 +541,7 @@ the Leadership Style Quiz (prefixed "lsq-") without any collision.
     if(shared){
       answers = shared;
       document.getElementById('pqIntro').classList.add('pq-hidden');
+      document.querySelector('.pq-preview').classList.add('pq-hidden');
       showResults();
     }
   })();

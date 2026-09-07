@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Leadership Style Quiz | First-Time Managers</title>
-<meta name="description" content="An 18-question leadership style quiz for first-time managers. No right answers, just honest ones, and it ends with the specific things worth working on.">
+<title>Free Leadership &amp; Management Style Quiz | First-Time Managers</title>
+<meta name="description" content="A free 18-question leadership and management style quiz for first-time managers. No right answers, just honest ones, and it ends with the specific things worth working on.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="First-Time Managers">
-<meta property="og:title" content="What Kind of Manager Are You, Actually? | Leadership Style Quiz">
-<meta property="og:description" content="An 18-question leadership style quiz for first-time managers. No right answers, just honest ones, and it ends with the specific things worth working on.">
+<meta property="og:title" content="What Kind of Manager Are You, Actually? | Free Leadership &amp; Management Style Quiz">
+<meta property="og:description" content="A free 18-question leadership and management style quiz for first-time managers. No right answers, just honest ones, and it ends with the specific things worth working on.">
 <meta property="og:url" content="https://first-timemanagers.com/leadership-style-quiz.html">
 <meta property="og:image" content="https://first-timemanagers.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="What Kind of Manager Are You, Actually? | Leadership Style Quiz">
-<meta name="twitter:description" content="An 18-question leadership style quiz for first-time managers. No right answers, just honest ones, and it ends with the specific things worth working on.">
+<meta name="twitter:title" content="What Kind of Manager Are You, Actually? | Free Leadership &amp; Management Style Quiz">
+<meta name="twitter:description" content="A free 18-question leadership and management style quiz for first-time managers. No right answers, just honest ones, and it ends with the specific things worth working on.">
 <meta name="twitter:image" content="https://first-timemanagers.com/og-image.png">
 <link rel="icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -28,7 +28,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "What kind of manager are you, actually?",
-  "description": "An 18-question leadership style quiz for first-time managers. No right answers, just honest ones, and it ends with the specific things worth working on.",
+  "description": "A free 18-question leadership and management style quiz for first-time managers. No right answers, just honest ones, and it ends with the specific things worth working on.",
   "url": "https://first-timemanagers.com/leadership-style-quiz.html",
   "datePublished": "2026-09-02",
   "dateModified": "2026-09-02",
@@ -66,7 +66,7 @@
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Leadership Style Quiz",
+      "name": "Leadership & Management Style Quiz",
       "item": "https://first-timemanagers.com/leadership-style-quiz.html"
     }
   ]
@@ -94,7 +94,7 @@
   </button>
 </nav>
 
-<div class="crumb"><a href="index.html">Home</a> / Leadership Style Quiz</div>
+<div class="crumb"><a href="index.html">Home</a> / Leadership &amp; Management Style Quiz</div>
 
 <!-- ============================================================
 LEADERSHIP STYLE QUIZ — standalone drop-in widget
@@ -158,6 +158,11 @@ v2 changes (this pass):
     border-bottom:1px solid rgba(237,235,228,.1);
     padding-bottom:28px; margin:24px 0 28px;
   }
+  #lsq-widget .lsq-preview{ margin:8px 0 28px; border:1px solid rgba(237,235,228,.15); border-radius:2px; padding:18px 22px; }
+  #lsq-widget .lsq-preview summary{ cursor:pointer; color:var(--lsq-gold); font-size:14px; font-weight:600; }
+  #lsq-widget .lsq-preview-list{ margin:16px 0 0; padding-left:20px; }
+  #lsq-widget .lsq-preview-list li{ font-size:14px; color:var(--lsq-muted); line-height:1.7; margin-bottom:10px; }
+  #lsq-widget .lsq-preview-list em{ color:var(--lsq-text); font-style:normal; }
   #lsq-widget .lsq-progress-track{ height:2px; background:rgba(237,235,228,.1); margin:24px 0 8px; }
   #lsq-widget .lsq-progress-fill{ height:100%; background:var(--lsq-gold); width:0%; transition:width .3s ease; }
   #lsq-widget .lsq-qcount{ color:var(--lsq-muted); font-size:13px; margin-bottom:24px; }
@@ -253,14 +258,38 @@ v2 changes (this pass):
 
 <div id="lsq-widget">
 
-  <div class="lsq-eyebrow">Leadership Style Quiz</div>
-  <h2 class="lsq-h1" id="lsqHeroTitle">What kind of manager are you, actually?</h2>
-  <p class="lsq-sub" id="lsqHeroSub">18 quick scenarios, no right answers, just honest ones. About 3 minutes, and it ends with the specific things worth working on.</p>
+  <div class="lsq-eyebrow">Free Leadership &amp; Management Style Quiz</div>
+  <h1 class="lsq-h1" id="lsqHeroTitle">What kind of manager are you, actually?</h1>
+  <p class="lsq-sub" id="lsqHeroSub">18 quick scenarios that map to your management style, no right answers, just honest ones. About 3 minutes, free, no signup, and it ends with the specific things worth working on.</p>
 
   <div id="lsqIntro">
     <p class="lsq-intro">Not a personality test for fun. Each answer maps to something real about how you lead, and points you to what to work on next.</p>
     <button class="lsq-btn-gold" onclick="lsqStart()">Start the quiz →</button>
   </div>
+
+  <details class="lsq-preview">
+    <summary>See all 18 questions first →</summary>
+    <ol class="lsq-preview-list">
+      <li>A report misses a deadline for the first time. Your first move: <em>sit down and tell them exactly how to get back on track</em>, or <em>ask them what happened before deciding anything</em>?</li>
+      <li>Someone on your team wants to try a new approach you're unsure about. Do you <em>let them run it, even if you'd have done it differently</em>, or <em>steer them toward the approach you know works</em>?</li>
+      <li>Your team is deciding how to split up a big project. Do you <em>assign the pieces based on who's best suited</em>, or <em>open it up and let the team sort it out together</em>?</li>
+      <li>A direct report disagrees with a decision you made in a meeting. Do you <em>explain your reasoning and hold the line</em>, or <em>pause the meeting to actually work it out together</em>?</li>
+      <li>New quarter, new priorities. How do you plan it? <em>Detailed plan first, then you execute against it</em>, or <em>rough direction first, adjust as things come up</em>?</li>
+      <li>A process on your team is slow but nobody's complained. Do you <em>leave it, if it's not broken it's not urgent</em>, or <em>start documenting a better one anyway</em>?</li>
+      <li>Someone asks you a question mid-project that wasn't in the plan. Do you <em>feel mildly thrown, and want to get back on track</em>, or are you <em>used to this, plans always shift anyway</em>?</li>
+      <li>Your calendar for tomorrow just got rearranged by three meetings. Are you <em>annoyed, but you replan quickly and move on</em>, or do you <em>barely notice, the day was never fixed anyway</em>?</li>
+      <li>Team morale is low, but the numbers are actually fine this month. Do you <em>focus on how people are doing first</em>, or <em>focus on protecting the numbers first</em>?</li>
+      <li>A strong performer is burning out doing great work. Do you <em>pull back their workload even if output dips</em>, or <em>keep the output steady, help them manage the load some other way</em>?</li>
+      <li>Someone's personal life is clearly affecting their work this week. Do you <em>check in on them before anything else</em>, or <em>note it, but keep expectations where they are</em>?</li>
+      <li>You have to choose between hitting a deadline or a well-earned day off for your team. Does <em>the day off win, they've earned it</em>, or does <em>the deadline win, you find another way to make it up to them</em>?</li>
+      <li>You just had a genuinely great week as a manager. Does <em>your team probably already know, you don't say much</em>, or do <em>you tell people, you're not shy about the win</em>?</li>
+      <li>Someone on your team did something frustrating today. Do you <em>keep it contained, you'll address it calmly later</em>, or will <em>they probably know something's off before you say a word</em>?</li>
+      <li>In a room full of senior leaders, you have a strong opinion. Do you <em>wait for the right moment, then say it once, clearly</em>, or do you <em>jump in, you'd rather be heard early than perfectly timed</em>?</li>
+      <li>How do people usually describe your energy at work? <em>Steady, calm, hard to rattle</em>, or <em>animated, easy to read, you wear it on your face</em>?</li>
+      <li>A peer manager asks for your honest opinion on their plan, and it's not great. Do you <em>tell them straight, better now than later</em>, or do you <em>soften it and let them find some of it themselves</em>?</li>
+      <li>It's been a rough quarter. What do you tell your team? <em>The plan, clearly, and what changes starting now</em>, or <em>how everyone's doing, first, then what's next</em>?</li>
+    </ol>
+  </details>
 
   <div id="lsqQuiz" class="lsq-hidden">
     <div class="lsq-progress-track"><div class="lsq-progress-fill" id="lsqProgressFill"></div></div>
@@ -427,6 +456,7 @@ v2 changes (this pass):
 
   window.lsqStart = function(){
     document.getElementById('lsqIntro').classList.add('lsq-hidden');
+    document.querySelector('.lsq-preview').classList.add('lsq-hidden');
     document.getElementById('lsqQuiz').classList.remove('lsq-hidden');
     document.getElementById('lsqHeroTitle').textContent = "Question by question.";
     document.getElementById('lsqHeroSub').textContent = "No right answers, just honest ones.";
@@ -619,8 +649,9 @@ v2 changes (this pass):
     current = 0; answers = [];
     document.getElementById('lsqResults').classList.add('lsq-hidden');
     document.getElementById('lsqHeroTitle').textContent = "What kind of manager are you, actually?";
-    document.getElementById('lsqHeroSub').textContent = "18 quick scenarios, no right answers, just honest ones. About 3 minutes, and it ends with the specific things worth working on.";
+    document.getElementById('lsqHeroSub').textContent = "18 quick scenarios that map to your management style, no right answers, just honest ones. About 3 minutes, free, no signup, and it ends with the specific things worth working on.";
     document.getElementById('lsqIntro').classList.remove('lsq-hidden');
+    document.querySelector('.lsq-preview').classList.remove('lsq-hidden');
   };
 
   (function initFromSharedLink(){
@@ -629,6 +660,7 @@ v2 changes (this pass):
     if(shared){
       answers = shared;
       document.getElementById('lsqIntro').classList.add('lsq-hidden');
+      document.querySelector('.lsq-preview').classList.add('lsq-hidden');
       showResults();
     }
   })();
