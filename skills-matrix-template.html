@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Skills Matrix Template | Templates</title>
+<meta name="description" content="A working skills matrix that shows who to call when someone's out, and where you have no backup at all. Download it as an editable spreadsheet.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="First-Time Managers">
+<meta property="og:title" content="The Skills Matrix Template | Templates">
+<meta property="og:description" content="A working skills matrix that shows who to call when someone's out, and where you have no backup at all. Download it as an editable spreadsheet.">
+<meta property="og:url" content="https://first-timemanagers.com/skills-matrix-template.html">
+<meta property="og:image" content="https://first-timemanagers.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Skills Matrix Template | Templates">
+<meta name="twitter:description" content="A working skills matrix that shows who to call when someone's out, and where you have no backup at all. Download it as an editable spreadsheet.">
+<meta name="twitter:image" content="https://first-timemanagers.com/og-image.png">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://first-timemanagers.com/skills-matrix-template.html">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .raci-legend{ display:flex; flex-wrap:wrap; gap:10px; margin:20px 0 28px; }
+  .raci-chip{ display:flex; align-items:center; gap:10px; padding:8px 16px 8px 8px; border-radius:999px; border:1px solid rgba(237,235,228,.15); font-size:13px; color:var(--muted); }
+  .raci-chip b{ color:var(--text); }
+  .lvl-badge{
+    width:24px; height:24px; border-radius:6px; display:flex; align-items:center; justify-content:center;
+    font-weight:700; font-size:12px; flex-shrink:0; color:#1B1B1A;
+  }
+  .lvl-badge[data-lvl="0"]{ background:transparent; border:1px dashed rgba(237,235,228,.3); color:transparent; }
+  .lvl-badge[data-lvl="1"]{ background:rgba(227,166,62,.22); color:var(--text); }
+  .lvl-badge[data-lvl="2"]{ background:rgba(227,166,62,.45); color:var(--text); }
+  .lvl-badge[data-lvl="3"]{ background:rgba(227,166,62,.7); }
+  .lvl-badge[data-lvl="4"]{ background:var(--gold); }
+
+  .matrix-scroll{ overflow-x:auto; margin-bottom:20px; }
+  table.matrix-table{ border-collapse:collapse; width:100%; min-width:680px; font-size:13px; }
+  table.matrix-table th{
+    text-align:center; font-size:10.5px; text-transform:uppercase; letter-spacing:.04em; color:var(--gold);
+    font-weight:600; padding:10px 8px; border-bottom:1px solid rgba(237,235,228,.15); vertical-align:bottom;
+  }
+  table.matrix-table th:first-child{ text-align:left; }
+  table.matrix-table td{ padding:10px 8px; border-bottom:1px solid rgba(237,235,228,.08); text-align:center; vertical-align:middle; }
+  table.matrix-table td:first-child{ text-align:left; color:var(--text); font-weight:600; white-space:nowrap; }
+  table.matrix-table tfoot td{ padding-top:14px; font-size:11.5px; color:var(--muted); border-bottom:none; }
+  table.matrix-table tfoot td:first-child{ text-transform:uppercase; letter-spacing:.05em; font-size:10.5px; color:var(--muted); font-weight:600; }
+  .gap-flag{ color:var(--richmond); font-weight:700; }
+
+  .tips-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:20px; }
+  .tip-col{ border-radius:10px; padding:20px 22px; border:1px solid rgba(237,235,228,.15); }
+  .tip-col.do{ background:rgba(227,166,62,.06); }
+  .tip-col.dont{ background:rgba(194,75,75,.06); }
+  .tip-col-label{ font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; margin-bottom:12px; }
+  .tip-col.do .tip-col-label{ color:var(--gold); }
+  .tip-col.dont .tip-col-label{ color:var(--richmond); }
+  .tip-col ul{ margin:0; padding-left:18px; }
+  .tip-col li{ font-size:14px; color:var(--muted); line-height:1.6; margin-bottom:8px; }
+
+  @media (max-width:640px){ .tips-grid{ grid-template-columns:1fr; } }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Skills Matrix Template",
+  "description": "A working skills matrix that shows who to call when someone's out, and where you have no backup at all. Download it as an editable spreadsheet.",
+  "url": "https://first-timemanagers.com/skills-matrix-template.html",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "author": {
+    "@type": "Organization",
+    "name": "First-Time Managers"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "First-Time Managers",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://first-timemanagers.com/apple-touch-icon.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://first-timemanagers.com/skills-matrix-template.html"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://first-timemanagers.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Templates",
+      "item": "https://first-timemanagers.com/templates.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "The Skills Matrix Template",
+      "item": "https://first-timemanagers.com/skills-matrix-template.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav data-pagefind-ignore>
+  <a class="logo" href="index.html"><span class="mark"></span> first-time managers</a>
+  <div class="navlinks">
+    <a href="playbook.html">playbook</a>
+    <a href="situations.html">everything</a>
+    <a href="lasso-lessons.html">lasso lessons</a>
+    <a href="templates.html" class="active">templates</a>
+    <a href="career-advice.html">career advice</a>
+    <a href="becoming-a-manager.html">becoming a manager</a>
+    <a href="workplace-skills.html">workplace skills</a>
+    <a href="ai-hub.html">ai hub</a>
+    <a href="about.html">about</a>
+  </div>
+  <a class="ask-badge" href="ask-a-question.html">ask a<br>question</a>
+  <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="crumb"><a href="index.html">Home</a> / <a href="templates.html">Templates</a> / The Skills Matrix Template</div>
+
+<div class="content-hero cv5">
+  <div class="content-tag">Template · Spreadsheet</div>
+  <h1>The Skills Matrix Template</h1>
+</div>
+
+<main class="article">
+  <p class="intro">One table that shows you who to call when someone's out, and where you have no backup at all. A skills matrix lists your team down one side and the skills their work actually requires across the other, then rates every person against every skill on a simple scale.</p>
+  <p style="color:var(--muted); font-size:15px; line-height:1.7; margin-top:-24px; margin-bottom:44px;">Most teams only find out about a skills gap when the one person who could do something goes on leave, or leaves the company. A matrix turns that into something you can see coming, and plan for, months in advance instead of finding out the hard way.</p>
+
+  <div class="principle-label">What It's Good For</div>
+  <div class="move-detail">
+    <div class="move-step">
+      <div class="move-step-title">Training and development</div>
+      <div class="move-step-text">Turns vague "I should grow" conversations into a specific next skill to build, with a visible before and after.</div>
+    </div>
+    <div class="move-step">
+      <div class="move-step-title">Cross-training and backups</div>
+      <div class="move-step-text">Any skill with only one person above novice is a single point of failure. The matrix makes that risk impossible to miss.</div>
+    </div>
+    <div class="move-step">
+      <div class="move-step-title">Hiring gap analysis</div>
+      <div class="move-step-text">When you're staffing a new role, the matrix tells you whether you're hiring to fill a real gap or just hiring a familiar profile again.</div>
+    </div>
+    <div class="move-step">
+      <div class="move-step-title">Project staffing</div>
+      <div class="move-step-text">Assigning a new project gets faster and more accurate when you can see who actually has the right skill, not just who has the free time.</div>
+    </div>
+  </div>
+
+  <div class="principle-label" style="margin-top:44px;">How to Build One</div>
+  <div class="move-detail">
+    <ol>
+      <li>List the skills that actually matter. Pull from real work, not a generic competency list. If nobody's used a skill in six months, question whether it belongs on the matrix.</li>
+      <li>Define a simple scale with plain definitions. A 0 to 4 scale works well. Write one plain sentence for what each level looks like in practice, not just a label.</li>
+      <li>Self-rate first, then calibrate with the manager. People are often harder on themselves than a manager would be, or the reverse. The conversation matters more than the number.</li>
+      <li>Look for single points of failure. A column with only one person at level 3 or higher is a risk, not a strength, flag it before it becomes an emergency.</li>
+      <li>Turn it into development plans and a hiring brief. Every gap you find becomes either something to train internally or something to hire for next.</li>
+    </ol>
+  </div>
+
+  <div class="principle-label" style="margin-top:44px;">The Template</div>
+  <p style="color:var(--muted); font-size:15px; line-height:1.7; margin-bottom:8px;">A working example for a client implementation team. Replace the names, skills, and ratings to match your own team.</p>
+
+  <div class="raci-legend">
+    <div class="raci-chip"><span class="lvl-badge" data-lvl="0">0</span>No exposure</div>
+    <div class="raci-chip"><span class="lvl-badge" data-lvl="1">1</span><b>Novice</b>&nbsp;— needs support</div>
+    <div class="raci-chip"><span class="lvl-badge" data-lvl="2">2</span><b>Developing</b>&nbsp;— works solo on routine cases</div>
+    <div class="raci-chip"><span class="lvl-badge" data-lvl="3">3</span><b>Proficient</b>&nbsp;— handles complex cases</div>
+    <div class="raci-chip"><span class="lvl-badge" data-lvl="4">4</span><b>Expert</b>&nbsp;— trains others</div>
+  </div>
+
+  <div class="template-actions">
+    <a class="download-btn" href="downloads/skills-matrix-template.xlsx" download>Download as Excel →</a>
+  </div>
+  <p style="font-size:13px; color:var(--muted); margin-top:-6px; margin-bottom:8px;">The download computes the backup count per skill automatically as you edit ratings.</p>
+
+  <div class="matrix-scroll">
+    <table class="matrix-table">
+      <tr>
+        <th>Team member</th>
+        <th>Client<br>Implementation</th>
+        <th>Integration<br>Config</th>
+        <th>Data<br>Migration</th>
+        <th>Project<br>Management</th>
+        <th>Client<br>Communication</th>
+        <th>Reporting &amp;<br>Analytics</th>
+      </tr>
+      <tr>
+        <td>M. Alvarez</td>
+        <td><span class="lvl-badge" data-lvl="4">4</span></td>
+        <td><span class="lvl-badge" data-lvl="3">3</span></td>
+        <td><span class="lvl-badge" data-lvl="2">2</span></td>
+        <td><span class="lvl-badge" data-lvl="3">3</span></td>
+        <td><span class="lvl-badge" data-lvl="4">4</span></td>
+        <td><span class="lvl-badge" data-lvl="1">1</span></td>
+      </tr>
+      <tr>
+        <td>J. Chen</td>
+        <td><span class="lvl-badge" data-lvl="2">2</span></td>
+        <td><span class="lvl-badge" data-lvl="4">4</span></td>
+        <td><span class="lvl-badge" data-lvl="4">4</span></td>
+        <td><span class="lvl-badge" data-lvl="1">1</span></td>
+        <td><span class="lvl-badge" data-lvl="1">1</span></td>
+        <td><span class="lvl-badge" data-lvl="2">2</span></td>
+      </tr>
+      <tr>
+        <td>S. Boone</td>
+        <td><span class="lvl-badge" data-lvl="3">3</span></td>
+        <td><span class="lvl-badge" data-lvl="1">1</span></td>
+        <td><span class="lvl-badge" data-lvl="0">0</span></td>
+        <td><span class="lvl-badge" data-lvl="4">4</span></td>
+        <td><span class="lvl-badge" data-lvl="3">3</span></td>
+        <td><span class="lvl-badge" data-lvl="1">1</span></td>
+      </tr>
+      <tr>
+        <td>D. Farah</td>
+        <td><span class="lvl-badge" data-lvl="1">1</span></td>
+        <td><span class="lvl-badge" data-lvl="0">0</span></td>
+        <td><span class="lvl-badge" data-lvl="1">1</span></td>
+        <td><span class="lvl-badge" data-lvl="2">2</span></td>
+        <td><span class="lvl-badge" data-lvl="2">2</span></td>
+        <td><span class="lvl-badge" data-lvl="4">4</span></td>
+      </tr>
+      <tr>
+        <td>K. Whitfield</td>
+        <td><span class="lvl-badge" data-lvl="3">3</span></td>
+        <td><span class="lvl-badge" data-lvl="2">2</span></td>
+        <td><span class="lvl-badge" data-lvl="1">1</span></td>
+        <td><span class="lvl-badge" data-lvl="1">1</span></td>
+        <td><span class="lvl-badge" data-lvl="3">3</span></td>
+        <td><span class="lvl-badge" data-lvl="3">3</span></td>
+      </tr>
+      <tr>
+        <td>R. Patel</td>
+        <td><span class="lvl-badge" data-lvl="1">1</span></td>
+        <td><span class="lvl-badge" data-lvl="1">1</span></td>
+        <td><span class="lvl-badge" data-lvl="0">0</span></td>
+        <td><span class="lvl-badge" data-lvl="0">0</span></td>
+        <td><span class="lvl-badge" data-lvl="2">2</span></td>
+        <td><span class="lvl-badge" data-lvl="1">1</span></td>
+      </tr>
+      <tfoot>
+        <tr>
+          <td>Backups (level 3+)</td>
+          <td>3</td>
+          <td>2</td>
+          <td class="gap-flag">1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>2</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  <p style="font-size:13px; color:var(--muted); margin-top:-4px;">Data Migration has only one person at level 3 or higher, a single point of failure worth addressing.</p>
+
+  <div class="principle-label" style="margin-top:44px;">Quick Tips</div>
+  <div class="tips-grid">
+    <div class="tip-col do">
+      <div class="tip-col-label">Do</div>
+      <ul>
+        <li>Keep the scale to five levels or fewer, more than that and ratings stop being consistent between people.</li>
+        <li>Revisit it twice a year, or after a big project wraps.</li>
+        <li>Use it out loud in one on ones, not just filed away after a single pass.</li>
+      </ul>
+    </div>
+    <div class="tip-col dont">
+      <div class="tip-col-label">Don't</div>
+      <ul>
+        <li>Don't tie it directly to compensation, that makes every rating defensive instead of honest.</li>
+        <li>Don't list every possible skill, a matrix with forty columns gets filled out once and never again.</li>
+        <li>Don't let a gap sit for a year once you've found it, that's the whole point of finding it.</li>
+      </ul>
+    </div>
+  </div>
+
+  <p style="font-size:13px; color:var(--muted); margin-top:32px;">The download includes a second tab, "Why & How to Use," with the same guidance above plus the use cases, so you don't have to come back to this page while you're building it out.</p>
+
+  <div class="principle-label" style="margin-top:44px;">Operations Playbook Series</div>
+  <div class="series-row">
+    <a href="raci-chart-template.html">RACI Chart</a>
+    <a href="9-box-grid-template.html">9 Box Grid</a>
+    <a href="skip-level-meeting-guide-template.html">Skip Level Meeting Guide</a>
+    <span class="current">Skills Matrix</span>
+    <span>Team Charter (coming soon)</span>
+  </div>
+
+  <div class="resources">
+    <a class="resource-card" href="skip-level-meeting-guide-template.html">
+      <div class="kicker">Template · Spreadsheet</div>
+      <div class="title">The Skip Level Meeting Guide →</div>
+    </a>
+    <a class="resource-card" href="9-box-grid-template.html">
+      <div class="kicker">Template · Spreadsheet</div>
+      <div class="title">The 9 Box Grid Template →</div>
+    </a>
+    <a class="resource-card" href="raci-chart-template.html">
+      <div class="kicker">Template · Spreadsheet</div>
+      <div class="title">The RACI Chart Template →</div>
+    </a>
+  </div>
+</main>
+
+<footer data-pagefind-ignore>
+  <div>First-TimeManagers.com</div>
+  <div>© 2024–Present First Time Managers LLC</div>
+</footer>
+
+<script src="js/nav.js"></script>
+</body>
+</html>
