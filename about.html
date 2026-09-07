@@ -28,6 +28,14 @@
   .about-byline img{ width:72px; height:72px; border-radius:50%; object-fit:cover; border:1px solid rgba(237,235,228,.14); }
   .about-byline-name{ font-size:16px; font-weight:600; color:var(--text); }
   .about-byline-role{ font-size:13px; color:var(--muted); margin-top:2px; }
+  .about-byline-social{ font-size:13px; margin-top:4px; }
+  .about-byline-social a{ color:var(--gold); text-decoration:none; }
+  .about-byline-social a:hover{ text-decoration:underline; }
+  .about-recent{ margin-top:44px; }
+  .about-recent-title{ font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); margin-bottom:14px; }
+  .about-recent-list{ display:flex; flex-direction:column; gap:10px; }
+  .about-recent-list a{ color:var(--text); text-decoration:none; border-bottom:1px solid rgba(237,235,228,.14); padding-bottom:10px; display:block; }
+  .about-recent-list a:hover{ color:var(--gold); }
 </style>
 <script type="application/ld+json">
 {
@@ -37,7 +45,7 @@
   "description": "Mike's story: how becoming a first-time manager, nervous and overwhelmed, turned into a resource built from real questions and real mistakes.",
   "url": "https://first-timemanagers.com/about.html",
   "datePublished": "2024-01-01",
-  "dateModified": "2026-09-02",
+  "dateModified": "2026-09-07",
   "author": {
     "@type": "Person",
     "name": "Michael Henrie",
@@ -56,6 +64,23 @@
     "@type": "WebPage",
     "@id": "https://first-timemanagers.com/about.html"
   }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Michael Henrie",
+  "alternateName": "Mike",
+  "url": "https://first-timemanagers.com/about.html",
+  "image": "https://first-timemanagers.com/mike-headshot.jpg",
+  "jobTitle": "Founder",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "First-Time Managers",
+    "url": "https://first-timemanagers.com/"
+  },
+  "sameAs": ["https://www.linkedin.com/in/michael-henrie"]
 }
 </script>
 <script type="application/ld+json">
@@ -107,6 +132,7 @@
     <div>
       <div class="about-byline-name">Mike</div>
       <div class="about-byline-role">Founder, First-Time Managers</div>
+      <div class="about-byline-social"><a href="https://www.linkedin.com/in/michael-henrie" rel="me noopener" target="_blank">Connect on LinkedIn →</a></div>
     </div>
   </div>
 
@@ -119,6 +145,16 @@
   <div class="try-block">
     <div class="try-label">Let's continue the conversation</div>
     <p>If you have topics you'd like me to explore or questions you'd like to discuss, I'd love to hear from you. <a href="ask-a-question.html">Get in touch →</a></p>
+  </div>
+
+  <div class="about-recent">
+    <div class="about-recent-title">Recent from Mike</div>
+    <div class="about-recent-list">
+      <a href="real-time-feedback-template.html">Real-Time Feedback Template →</a>
+      <a href="conflict-resolution-script.html">Conflict Resolution Script →</a>
+      <a href="delegation-framework-template.html">Delegation Framework Template →</a>
+      <a href="onboarding-plan-template.html">Onboarding Plan (30-60-90) & Offboarding Template →</a>
+    </div>
   </div>
 </main>
 
