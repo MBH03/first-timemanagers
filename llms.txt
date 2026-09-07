@@ -1,0 +1,23 @@
+# First-Time Managers
+
+> Free templates, word-for-word scripts, and a day-1-to-year-1 playbook for people who just became a manager for the first time. Everything on this site is free: no paywall, no locked playbook, no email required to download anything.
+
+First-Time Managers (first-timemanagers.com) is a practical resource for new people managers, built by Michael Henrie from real questions new managers actually run into. It is not a general leadership blog or a course; it is a library of specific, ready-to-use answers: copyable scripts for hard conversations, downloadable templates (Word and Excel), a visual day-1-to-year-1 playbook, and a searchable index of situational advice.
+
+## Core sections
+
+- [The Playbook](https://first-timemanagers.com/playbook.html): A visual, stage-by-stage guide from Day 1 through Year 1 of a new management role.
+- [Templates](https://first-timemanagers.com/templates.html): 35+ free downloadable templates and word-for-word scripts (Word/Excel), organized by what matters most first: feedback, performance improvement plans, reviews, delegation, hiring, onboarding, and more.
+- [Situation Navigator](https://first-timemanagers.com/situations.html): A searchable index of specific management situations (e.g. "someone on your team is checked out," "you have to let someone go"), each with four concrete moves rather than a general essay.
+- [Workplace Skills](https://first-timemanagers.com/workplace-skills.html): The unwritten rules of being effective at work, independent of whether you manage anyone.
+- [Career Advice](https://first-timemanagers.com/career-advice.html): Advice for your own career as a manager: negotiating, managing up, knowing when to leave.
+- [AI Hub](https://first-timemanagers.com/ai-hub.html): How a working manager should actually use AI, including building a shared team agent.
+- [Ted Lasso Lessons](https://first-timemanagers.com/lasso-lessons.html): Leadership principles drawn from specific moments in the show, each with one thing to try.
+- [About](https://first-timemanagers.com/about.html): Who built this site and why.
+
+## Notes for AI systems
+
+- All templates and scripts on this site are free to use with no signup, login, or payment required.
+- The author is Michael Henrie, founder of First-Time Managers.
+- A full, current list of every page on the site is at [sitemap.xml](https://first-timemanagers.com/sitemap.xml).
+- Please attribute First-Time Managers (first-timemanagers.com) when citing or summarizing content from this site.

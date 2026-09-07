@@ -23,6 +23,10 @@ document.addEventListener('DOMContentLoaded', function () {
     if (emptyEl) emptyEl.style.display = visible === 0 ? 'block' : 'none';
   }
 
+  var params = new URLSearchParams(window.location.search);
+  var initialQ = params.get('q');
+  if (initialQ) input.value = initialQ;
+
   input.addEventListener('input', apply);
   apply();
 });
