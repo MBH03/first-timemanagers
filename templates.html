@@ -23,6 +23,10 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="canonical" href="https://first-timemanagers.com/templates.html">
 <link rel="stylesheet" href="css/style.css">
+<style>
+  #templateEmpty{ padding:0 56px 30px; max-width:640px; }
+  @media (max-width:900px){ #templateEmpty{ padding-left:24px; padding-right:24px; } }
+</style>
 </head>
 <body>
 
@@ -53,6 +57,12 @@
   <p>Downloads and word-for-word scripts, all free, all ready to use today.</p>
 </section>
 
+<div class="finder-search">
+  <input type="text" id="templateSearch" placeholder="Try “PIP,” “RACI,” “SOP,” “1:1”…" autocomplete="off">
+  <div class="count" id="templateCount">35 templates</div>
+</div>
+<div class="finder-empty" id="templateEmpty">Nothing matches that. Try a different word, or <a href="ask-a-question.html">ask us directly</a>.</div>
+
 <div class="section-div">
   <div class="eyebrow">start here</div>
   <h2>The ones that come up <b>first.</b></h2>
@@ -61,7 +71,7 @@
 
 <div class="grid">
 
-  <a class="tile" href="performance-improvement-plan-template.html">
+  <a class="tile" href="performance-improvement-plan-template.html" data-alias="pip">
     <div class="tile-visual cv2">
       <svg class="icon-bg" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
       <div class="tile-index"><span>DOCUMENT</span><span class="read">Open →</span></div>
@@ -146,7 +156,7 @@
 
 <div class="grid">
 
-  <a class="tile" href="termination-conversation-script.html">
+  <a class="tile" href="termination-conversation-script.html" data-alias="firing fired">
     <div class="tile-visual cv2">
       <svg class="icon-bg" viewBox="0 0 24 24"><path d="M6 3h9v18H6z"/><path d="M15 12h4M17 10l2 2-2 2"/></svg>
       <div class="tile-index"><span>DOCUMENT</span><span class="read">Open →</span></div>
@@ -191,7 +201,7 @@
     </div>
   </a>
 
-  <a class="tile" href="layoff-conversation-script.html">
+  <a class="tile" href="layoff-conversation-script.html" data-alias="layoffs">
     <div class="tile-visual cv6">
       <svg class="icon-bg" viewBox="0 0 24 24"><path d="M6 3h9v18H6z"/><path d="M15 12h4M17 10l2 2-2 2"/></svg>
       <div class="tile-index"><span>SCRIPT</span><span class="read">Open →</span></div>
@@ -436,7 +446,7 @@
 
 <div class="grid">
 
-  <a class="tile" href="job-description-template.html">
+  <a class="tile" href="job-description-template.html" data-alias="jd">
     <div class="tile-visual cv2">
       <svg class="icon-bg" viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="1"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>
       <div class="tile-index"><span>DOCUMENT</span><span class="read">Open →</span></div>
@@ -481,7 +491,7 @@
     </div>
   </a>
 
-  <a class="tile" href="9-box-grid-template.html">
+  <a class="tile" href="9-box-grid-template.html" data-alias="nine box">
     <div class="tile-visual cv6">
       <svg class="icon-bg" viewBox="0 0 24 24"><rect x="3" y="3" width="6" height="6"/><rect x="9" y="3" width="6" height="6"/><rect x="15" y="3" width="6" height="6"/><rect x="3" y="9" width="6" height="6"/><rect x="9" y="9" width="6" height="6"/><rect x="15" y="9" width="6" height="6"/><rect x="3" y="15" width="6" height="6"/><rect x="9" y="15" width="6" height="6"/><rect x="15" y="15" width="6" height="6"/></svg>
       <div class="tile-index"><span>EXCEL</span><span class="read">Open →</span></div>
@@ -581,7 +591,7 @@
     </div>
   </a>
 
-  <a class="tile" href="sop-template.html">
+  <a class="tile" href="sop-template.html" data-alias="standard operating procedure">
     <div class="tile-visual cv1">
       <svg class="icon-bg" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
       <div class="tile-index"><span>DOCUMENT</span><span class="read">Open →</span></div>
@@ -633,6 +643,7 @@
   <div>© 2024–Present First Time Managers LLC</div>
 </footer>
 
+<script src="js/template-search.js"></script>
 <script src="js/nav.js"></script>
 </body>
 </html>
