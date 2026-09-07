@@ -223,6 +223,12 @@ nav{ display:flex; align-items:center; justify-content:space-between; padding:32
 .resource-card .kicker{ font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--gold); font-weight:600; margin-bottom:10px; }
 .resource-card .title{ font-size:14.5px; font-weight:600; }
 
+.series-row{ display:flex; flex-wrap:wrap; gap:6px 16px; margin-top:8px; font-size:13px; }
+.series-row span, .series-row a{ color:var(--muted); }
+.series-row a{ text-decoration:none; border-bottom:1px dotted rgba(237,235,228,.25); }
+.series-row a:hover{ color:var(--gold); border-color:var(--gold); }
+.series-row .current{ color:var(--gold); font-weight:600; }
+
 @media (max-width:900px){
   .resources{ grid-template-columns:1fr; }
 }
