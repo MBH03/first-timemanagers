@@ -100,6 +100,10 @@ nav{ display:flex; align-items:center; justify-content:space-between; padding:32
 }
 .tile:hover .tile-visual{ transform:translateY(-3px); }
 
+.tile-visual.cta{ background:linear-gradient(155deg,#1B1B1A 0%,#241C0F 60%,#1B1B1A 100%); border:1px dashed rgba(227,166,62,.45); }
+.tile-visual.cta .tile-big{ color:var(--gold); font-weight:600; }
+.tile-visual.cta .icon-bg{ opacity:.1; }
+
 .cv1{ background:linear-gradient(155deg,#2C2A26 0%,#17312A 55%,#0E211C 100%); }
 .cv2{ background:linear-gradient(155deg,#3A1E1E 0%,#C24B4B 60%,#6E2222 100%); }
 .cv3{ background:linear-gradient(155deg,#3B2E12 0%,#E3A63E 65%,#8A5B18 100%); }
