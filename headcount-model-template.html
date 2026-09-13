@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The SaaS Headcount Model Template | Templates</title>
+<meta name="description" content="A two-layer headcount model: a companywide framework plus nine capacity models, Sales, CS, Support, Implementation, Ops, Engineering, Product/QA/Data, and G&A. Free, with live formulas.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="First-Time Managers">
+<meta property="og:title" content="The SaaS Headcount Model Template | Templates">
+<meta property="og:description" content="A two-layer headcount model: a companywide framework plus nine capacity models, Sales, CS, Support, Implementation, Ops, Engineering, Product/QA/Data, and G&A. Free, with live formulas.">
+<meta property="og:url" content="https://first-timemanagers.com/headcount-model-template.html">
+<meta property="og:image" content="https://first-timemanagers.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The SaaS Headcount Model Template | Templates">
+<meta name="twitter:description" content="A two-layer headcount model: a companywide framework plus nine capacity models, Sales, CS, Support, Implementation, Ops, Engineering, Product/QA/Data, and G&A. Free, with live formulas.">
+<meta name="twitter:image" content="https://first-timemanagers.com/og-image.png">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://first-timemanagers.com/headcount-model-template.html">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .hc-tabs{ display:grid; grid-template-columns:1fr 1fr; gap:0; margin:24px 0 8px; border:1px solid rgba(237,235,228,.15); border-radius:12px; overflow:hidden; }
+  .hc-tab{ padding:16px 20px; border-bottom:1px solid rgba(237,235,228,.1); border-right:1px solid rgba(237,235,228,.1); }
+  .hc-tab:nth-child(2n){ border-right:none; }
+  .hc-tab-name{ font-family:monospace; font-size:12px; color:var(--gold); margin-bottom:4px; }
+  .hc-tab-desc{ font-size:13.5px; color:var(--muted); line-height:1.55; }
+  @media (max-width:640px){
+    .hc-tabs{ grid-template-columns:1fr; }
+    .hc-tab{ border-right:none; }
+  }
+  .hc-legend{ display:flex; flex-wrap:wrap; gap:10px; margin:20px 0 8px; }
+  .hc-chip{ display:flex; align-items:center; gap:10px; padding:10px 16px 10px 10px; border-radius:999px; border:1px solid rgba(237,235,228,.15); font-size:13px; color:var(--muted); }
+  .hc-chip b{ color:var(--text); }
+  .hc-dot{ width:14px; height:14px; border-radius:3px; flex-shrink:0; }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The SaaS Headcount Model Template",
+  "description": "A two-layer headcount model: a companywide framework plus nine capacity models, Sales, CS, Support, Implementation, Ops, Engineering, Product/QA/Data, and G&A. Free, with live formulas.",
+  "url": "https://first-timemanagers.com/headcount-model-template.html",
+  "datePublished": "2026-09-13",
+  "dateModified": "2026-09-13",
+  "author": {
+    "@type": "Person",
+    "name": "Michael Henrie",
+    "url": "https://first-timemanagers.com/about.html",
+    "sameAs": ["https://www.linkedin.com/in/michael-henrie"]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "First-Time Managers",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://first-timemanagers.com/apple-touch-icon.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://first-timemanagers.com/headcount-model-template.html"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://first-timemanagers.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Templates",
+      "item": "https://first-timemanagers.com/templates.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "The SaaS Headcount Model Template",
+      "item": "https://first-timemanagers.com/headcount-model-template.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "The SaaS Headcount Model Template",
+  "description": "Two layers, one tab per capacity model, with example math baked in as live formulas: a companywide framework plus nine functional capacity models.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Companywide Model",
+      "text": "Revenue, ARR, customers, transactions, FTE, revenue per employee, and payroll as percent of revenue, all in one tab."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Sales",
+      "text": "Quota capacity model: new ARR target divided by quota per rep divided by attainment rate equals reps required."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Customer Success",
+      "text": "Book of business model: managed ARR divided by ARR per CSM equals CSMs required."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Implementation",
+      "text": "Project capacity model: implementations per year times hours each, divided by productive hours per FTE."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Support",
+      "text": "Volume model: annual tickets divided by tickets per agent equals agents required."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Operations",
+      "text": "Volume model with an automation and productivity lever: FTE scales with volume growth net of productivity gains."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Engineering",
+      "text": "Squad and roadmap model: squads times engineers per squad, plus a platform and extra capacity percentage."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Product, QA, and Data",
+      "text": "Portfolio and workload models: PMs and QA scale per squad, data FTE scales with volume."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "G&A",
+      "text": "Finance, HR, and Marketing sized by ratio and budget models instead of a single formula."
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav data-pagefind-ignore>
+  <a class="logo" href="index.html"><span class="mark"></span> first-time managers</a>
+  <div class="navlinks">
+    <a href="playbook.html">playbook</a>
+    <a href="situations.html">everything</a>
+    <a href="lasso-lessons.html">lasso lessons</a>
+    <a href="templates.html" class="active">templates</a>
+    <a href="career-advice.html">career advice</a>
+    <a href="becoming-a-manager.html">becoming a manager</a>
+    <a href="workplace-skills.html">workplace skills</a>
+    <a href="ai-hub.html">ai hub</a>
+    <a href="about.html">about</a>
+  </div>
+  <a class="ask-badge" href="ask-a-question.html">ask a<br>question</a>
+  <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="crumb"><a href="index.html">Home</a> / <a href="templates.html">Templates</a> / The SaaS Headcount Model Template</div>
+
+<div class="content-hero cv3">
+  <div class="content-tag">Template · Spreadsheet</div>
+  <h1>The SaaS Headcount Model Template</h1>
+</div>
+
+<main class="article">
+  <p class="intro">Two layers, one tab per capacity model, with real example math baked in as live formulas. Change a blue input cell and the FTE requirement for that function recalculates, then roll every function up into one companywide headcount plan.</p>
+  <p style="color:var(--muted); font-size:15px; line-height:1.7; margin-top:-24px; margin-bottom:44px;">Built for the question that comes up every planning cycle: how many people do we actually need, by function, to hit next year's number. Not a guess pulled from last year plus ten percent, a model you can defend line by line.</p>
+
+  <div class="template-actions">
+    <a class="download-btn" href="downloads/headcount-model-template.xlsx" download>Download as Excel →</a>
+  </div>
+  <p style="font-size:13px; color:var(--muted); margin-top:-6px; margin-bottom:8px;">Blue cells are your inputs. Everything else is a formula, change an input and every dependent number updates.</p>
+
+  <div class="principle-label" style="margin-top:44px;">What's Inside</div>
+  <div class="hc-tabs">
+    <div class="hc-tab">
+      <div class="hc-tab-name">_README</div>
+      <div class="hc-tab-desc">How to use the model, and how the tabs connect.</div>
+    </div>
+    <div class="hc-tab">
+      <div class="hc-tab-name">1_Companywide_Model</div>
+      <div class="hc-tab-desc">Revenue, ARR, customers, transactions, total FTE, revenue per employee, and payroll as percent of revenue.</div>
+    </div>
+    <div class="hc-tab">
+      <div class="hc-tab-name">2_Sales</div>
+      <div class="hc-tab-desc">Quota capacity: new ARR target ÷ quota per rep ÷ attainment rate.</div>
+    </div>
+    <div class="hc-tab">
+      <div class="hc-tab-name">3_Customer_Success</div>
+      <div class="hc-tab-desc">Book of business: managed ARR ÷ ARR per CSM.</div>
+    </div>
+    <div class="hc-tab">
+      <div class="hc-tab-name">4_Implementation</div>
+      <div class="hc-tab-desc">Project capacity: implementations per year × hours each ÷ productive hours per FTE.</div>
+    </div>
+    <div class="hc-tab">
+      <div class="hc-tab-name">5_Support</div>
+      <div class="hc-tab-desc">Volume model: annual tickets ÷ tickets per agent.</div>
+    </div>
+    <div class="hc-tab">
+      <div class="hc-tab-name">6_Operations</div>
+      <div class="hc-tab-desc">Volume model with an automation and productivity lever built in.</div>
+    </div>
+    <div class="hc-tab">
+      <div class="hc-tab-name">7_Engineering</div>
+      <div class="hc-tab-desc">Squad and roadmap model: squads × eng per squad, plus a platform percentage.</div>
+    </div>
+    <div class="hc-tab">
+      <div class="hc-tab-name">8_Product_QA_Data</div>
+      <div class="hc-tab-desc">Portfolio and workload models for Product, QA, and Data.</div>
+    </div>
+    <div class="hc-tab">
+      <div class="hc-tab-name">9_GnA</div>
+      <div class="hc-tab-desc">Finance, HR, and Marketing sized by ratio and budget models.</div>
+    </div>
+  </div>
+
+  <div class="principle-label" style="margin-top:44px;">How Each Model Works</div>
+  <p style="color:var(--muted); font-size:15px; line-height:1.7; margin-bottom:8px;">Every function uses whichever model actually fits how that team's capacity works, a quota model doesn't make sense for Support, and a ticket-volume model doesn't make sense for Sales. Here's the example math already built into the download.</p>
+  <div class="move-detail">
+    <div class="move-step">
+      <div class="move-step-title">Sales — quota capacity</div>
+      <div class="move-step-text">$20M new ARR target ÷ $500k quota per rep ÷ 80% attainment ≈ 50 reps.</div>
+    </div>
+    <div class="move-step">
+      <div class="move-step-title">Customer Success — book of business</div>
+      <div class="move-step-text">$100M managed ARR ÷ $2M ARR per CSM = 50 CSMs.</div>
+    </div>
+    <div class="move-step">
+      <div class="move-step-title">Implementation — project capacity</div>
+      <div class="move-step-text">600 implementations × 80 hours each ÷ 1,400 productive hours per FTE ≈ 34 FTE.</div>
+    </div>
+    <div class="move-step">
+      <div class="move-step-title">Support — ticket volume</div>
+      <div class="move-step-text">100,000 tickets ÷ 2,000 tickets per agent = 50 agents.</div>
+    </div>
+    <div class="move-step">
+      <div class="move-step-title">Operations — volume plus automation</div>
+      <div class="move-step-text">30% volume growth, 15% productivity gain, about 10% net workload growth, so 100 FTE becomes about 110 FTE, not 130.</div>
+    </div>
+    <div class="move-step">
+      <div class="move-step-title">Engineering — squad and roadmap</div>
+      <div class="move-step-text">8 squads × 6 engineers per squad × 1.2 for platform and extra capacity ≈ 58 engineers.</div>
+    </div>
+    <div class="move-step">
+      <div class="move-step-title">Product, QA, Data — portfolio and workload</div>
+      <div class="move-step-text">5 squads × (1 PM + 1 QA per squad) + 12 data FTE for volume-based work = 22 total FTE.</div>
+    </div>
+    <div class="move-step">
+      <div class="move-step-title">G&A — ratio and budget</div>
+      <div class="move-step-text">Finance sized against revenue (about 1 per $8-10M plus close complexity), HR against headcount ratio, Marketing against budget.</div>
+    </div>
+  </div>
+
+  <div class="principle-label" style="margin-top:44px;">The Companywide Layer</div>
+  <p style="color:var(--muted); font-size:15px; line-height:1.7; margin-bottom:16px;">The first tab rolls every function up into one plan: revenue, ARR, customers, and transactions on one side, total FTE, revenue per employee, and payroll as a percent of revenue on the other. Link its Total FTE row to the sum of the nine functional tabs and the whole model updates live off one set of company-level assumptions.</p>
+
+  <div class="hc-legend">
+    <div class="hc-chip"><span class="hc-dot" style="background:#1F4E78;"></span><b>Header row</b>&nbsp;— labels, don't edit</div>
+    <div class="hc-chip"><span class="hc-dot" style="background:#EBF3FF; border:1px solid rgba(237,235,228,.25);"></span><b>Blue cell</b>&nbsp;— your input</div>
+    <div class="hc-chip"><span class="hc-dot" style="background:var(--bg2); border:1px solid rgba(237,235,228,.25);"></span><b>Black cell</b>&nbsp;— calculated, don't edit</div>
+  </div>
+
+  <div class="try-block" style="margin-top:28px;">
+    <div class="try-label">Try this</div>
+    <p>Duplicate the 2027 columns to build out a base, upside, and automation-heavy scenario side by side, same formulas, different blue inputs, so leadership can see the headcount and payroll impact of each plan before you commit to one.</p>
+  </div>
+
+  <div class="resources">
+    <a class="resource-card" href="raci-chart-template.html">
+      <div class="kicker">Template · Spreadsheet</div>
+      <div class="title">The RACI Chart Template →</div>
+    </a>
+    <a class="resource-card" href="job-description-template.html">
+      <div class="kicker">Template</div>
+      <div class="title">Job Description Template →</div>
+    </a>
+    <a class="resource-card" href="new-manager-action-plan-template.html">
+      <div class="kicker">Template</div>
+      <div class="title">New Manager Action Plan Template →</div>
+    </a>
+  </div>
+</main>
+
+<footer data-pagefind-ignore>
+  <div>first-timemanagers.com</div>
+  <div>© 2024–Present First Time Managers LLC</div>
+</footer>
+
+<script src="js/nav.js"></script>
+</body>
+</html>

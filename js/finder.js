@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var q = input.value.trim().toLowerCase();
     var visible = 0;
     rows.forEach(function (row) {
-      var haystack = row.textContent.toLowerCase();
+      var haystack = (row.textContent + ' ' + (row.dataset.alias || '')).toLowerCase();
       var match = q === '' || haystack.indexOf(q) !== -1;
       row.style.display = match ? '' : 'none';
       if (match) visible++;
