@@ -4,28 +4,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var countEl = document.getElementById('templateCount');
   var emptyEl = document.getElementById('templateEmpty');
-  var sections = Array.prototype.slice.call(document.querySelectorAll('.section-div'));
-  var pairs = sections.map(function (section) {
-    return { section: section, grid: section.nextElementSibling };
-  }).filter(function (p) { return p.grid && p.grid.classList.contains('grid'); });
-
-  var totalTiles = document.querySelectorAll('.grid .tile').length;
+  var tiles = Array.prototype.slice.call(document.querySelectorAll('.grid .tile'));
+  var totalTiles = tiles.length;
 
   function apply() {
     var q = input.value.trim().toLowerCase();
     var visible = 0;
 
-    pairs.forEach(function (pair) {
-      var tiles = Array.prototype.slice.call(pair.grid.querySelectorAll('.tile'));
-      var anyVisible = false;
-      tiles.forEach(function (tile) {
-        var haystack = (tile.textContent + ' ' + (tile.dataset.alias || '')).toLowerCase();
-        var match = q === '' || haystack.indexOf(q) !== -1;
-        tile.style.display = match ? '' : 'none';
-        if (match) { anyVisible = true; visible++; }
-      });
-      pair.section.style.display = anyVisible ? '' : 'none';
-      pair.grid.style.display = anyVisible ? '' : 'none';
+    tiles.forEach(function (tile) {
+      var haystack = (tile.textContent + ' ' + (tile.dataset.alias || '')).toLowerCase();
+      var match = q === '' || haystack.indexOf(q) !== -1;
+      tile.style.display = match ? '' : 'none';
+      if (match) visible++;
     });
 
     if (countEl) {
