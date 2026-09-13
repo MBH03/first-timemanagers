@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your First Agent, One Example All the Way Through | AI Hub</title>
+<meta name="description" content="One real build, taught start to finish: an email triage agent. Workflow vs. agent, the one pattern it uses, the system prompt, the actual code, and where it runs.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="First-Time Managers">
+<meta property="og:title" content="Your First Agent, One Example All the Way Through | AI Hub">
+<meta property="og:description" content="One real build, taught start to finish: an email triage agent. Workflow vs. agent, the one pattern it uses, the system prompt, the actual code, and where it runs.">
+<meta property="og:url" content="https://first-timemanagers.com/your-first-agent-one-example.html">
+<meta property="og:image" content="https://first-timemanagers.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Your First Agent, One Example All the Way Through | AI Hub">
+<meta name="twitter:description" content="One real build, taught start to finish: an email triage agent. Workflow vs. agent, the one pattern it uses, the system prompt, the actual code, and where it runs.">
+<meta name="twitter:image" content="https://first-timemanagers.com/og-image.png">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://first-timemanagers.com/your-first-agent-one-example.html">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .code-block{ position:relative; background:#111110; border:1px solid rgba(237,235,228,.15); border-radius:8px; padding:20px 22px; margin:8px 0 24px; overflow-x:auto; }
+  .code-block pre{ margin:0; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:12.5px; line-height:1.65; color:#EDEBE4; white-space:pre; }
+  .code-block-label{ font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin-bottom:10px; }
+  .code-copy-btn{ position:absolute; top:14px; right:14px; font-size:11px; padding:6px 12px; }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Your First Agent, One Example All the Way Through",
+  "description": "One real build, taught start to finish: an email triage agent. Workflow vs. agent, the one pattern it uses, the system prompt, the actual code, and where it runs.",
+  "url": "https://first-timemanagers.com/your-first-agent-one-example.html",
+  "datePublished": "2026-09-13",
+  "dateModified": "2026-09-13",
+  "author": {
+    "@type": "Person",
+    "name": "Michael Henrie",
+    "url": "https://first-timemanagers.com/about.html",
+    "sameAs": ["https://www.linkedin.com/in/michael-henrie"]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "First-Time Managers",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://first-timemanagers.com/apple-touch-icon.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://first-timemanagers.com/your-first-agent-one-example.html"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://first-timemanagers.com/" },
+    { "@type": "ListItem", "position": 2, "name": "AI Hub", "item": "https://first-timemanagers.com/ai-hub.html" },
+    { "@type": "ListItem", "position": 3, "name": "Your First Agent, One Example All the Way Through", "item": "https://first-timemanagers.com/your-first-agent-one-example.html" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Your First Agent, One Example All the Way Through",
+  "description": "Building one real email triage agent, start to finish: deciding workflow vs. agent, the routing pattern, the system prompt, the code, and where it runs.",
+  "step": [
+    { "@type": "HowToStep", "name": "Decide: workflow or agent", "text": "If you can write down every step in order no matter what the input is, it's a workflow, not a full agent. Most first builds should be a workflow." },
+    { "@type": "HowToStep", "name": "Pick the pattern", "text": "This build uses exactly one pattern: routing. Classify the input, then send it down one of a few paths." },
+    { "@type": "HowToStep", "name": "Write the system prompt", "text": "A strict, specific instruction that tells the model exactly how to summarize and how to decide urgency, and the exact format to respond in." },
+    { "@type": "HowToStep", "name": "Write the code", "text": "One function: one email in, a labeled summary and urgency level out." },
+    { "@type": "HowToStep", "name": "Connect it to real email", "text": "Add one piece: a call that fetches real unread email and loops the triage function over each one." },
+    { "@type": "HowToStep", "name": "Send the result somewhere useful", "text": "A spreadsheet row, a Slack message, or a running list, a small edit at the end of the function." },
+    { "@type": "HowToStep", "name": "Run it on a schedule", "text": "Your own code plus cron, or a cloud scheduled function. Claude Code Routines don't apply here since this is triggered by an email, not a code event." }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav data-pagefind-ignore>
+  <a class="logo" href="index.html"><span class="mark"></span> first-time managers</a>
+  <div class="navlinks">
+    <a href="playbook.html">playbook</a>
+    <a href="situations.html">everything</a>
+    <a href="lasso-lessons.html">lasso lessons</a>
+    <a href="templates.html">templates</a>
+    <a href="career-advice.html">career advice</a>
+    <a href="becoming-a-manager.html">becoming a manager</a>
+    <a href="workplace-skills.html">workplace skills</a>
+    <a href="ai-hub.html" class="active">ai hub</a>
+    <a href="about.html">about</a>
+  </div>
+  <a class="ask-badge" href="ask-a-question.html">ask a<br>question</a>
+  <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="crumb"><a href="index.html">Home</a> / <a href="ai-hub.html">AI Hub</a> / Your First Agent, One Example All the Way Through</div>
+
+<div class="content-hero cv2">
+  <div class="content-tag">AI Hub · Agents</div>
+  <h1>Your First Agent, One Example All the Way Through</h1>
+</div>
+
+<main class="article">
+  <p class="lead">Everything you need, taught through one build: an email triage agent that reads incoming email, summarizes it, and sorts it by urgency.</p>
+
+  <div class="principle-label">The Goal</div>
+  <p>An email comes in. The agent reads it, writes a one line summary, and puts it into one of three buckets: must read next hour, must read next six hours, must read next 24 hours.</p>
+  <p>That's it. That's the whole task. Everything below is just how you actually build that.</p>
+
+  <div class="principle-label" style="margin-top:44px;">Step 1: Is This a Workflow or an Agent?</div>
+  <p>Ask yourself: could I write down, in order, every step this takes, no matter what email comes in? For this task, yes. It's always the same three moves:</p>
+  <div class="move-detail">
+    <ol>
+      <li>Read the email</li>
+      <li>Summarize it</li>
+      <li>Sort it into a bucket</li>
+    </ol>
+  </div>
+  <p>Because the steps never change, <strong>this is a workflow, not a full agent.</strong> That's good news. Workflows are simpler, cheaper, and easier to trust. Most first builds should be a workflow, and this one is a perfectly good place to start.</p>
+  <p style="color:var(--muted); font-size:14px; line-height:1.7; font-style:italic;">A true agent would be something like: the same task, but it also decides on its own whether to draft a reply, escalate to a person, or do nothing, and that decision changes the path each time. That's a later upgrade, not where you start.</p>
+
+  <div class="principle-label" style="margin-top:44px;">Step 2: The One Pattern This Uses (Routing)</div>
+  <p>Inside this workflow, there's exactly one moment of real decision making: sorting the email into a bucket. That's called routing. You classify the input, then send it down one of a few paths.</p>
+  <p>That's the only pattern this example needs. You don't need to learn the other four patterns (chaining, parallel work, delegating to helpers, draft then critique) to build this. They exist for more complex tasks later.</p>
+
+  <div class="principle-label" style="margin-top:44px;">Step 3: What the Agent Needs to Do Its Job</div>
+  <p>For this task, the agent needs exactly one thing: a clear instruction that tells it how to summarize and how to decide urgency. No lookups, no external actions, nothing fancy.</p>
+  <p>That instruction is called the system prompt. Here's the one this build actually uses:</p>
+
+  <div class="code-block">
+    <div class="code-block-label">System Prompt</div>
+    <pre id="system-prompt-code">You are an email triage assistant. For every email you are given,
+respond in exactly this format, nothing else:
+
+SUMMARY: [one sentence summary of what the email is asking or saying]
+URGENCY: [must read next hour, must read next six hours, or must read next 24 hours]
+REASON: [one short sentence on why you picked that urgency level]
+
+Guidance on urgency:
+- Next hour: something time sensitive, a deadline today, an angry or urgent tone,
+  anything involving money, legal, or a system being down
+- Next six hours: needs a real response but nothing is actively breaking
+- Next 24 hours: FYI, low stakes, can wait a day with no real cost</pre>
+    <button class="submit-btn copy-btn code-copy-btn" onclick="copyTemplateText(this,'system-prompt-code')">Copy →</button>
+  </div>
+
+  <p>Notice this is strict on purpose. A vague instruction gets a vague, inconsistent result. A specific format gets something you can actually use every time.</p>
+
+  <div class="principle-label" style="margin-top:44px;">Step 4: The Actual Code</div>
+  <p>This is the whole thing, one email in, one triaged result out.</p>
+
+  <div class="code-block">
+    <div class="code-block-label">triage.py</div>
+    <pre id="triage-code">import os
+from anthropic import Anthropic
+
+client = Anthropic()
+
+def triage_email(subject: str, body: str) -> dict:
+    system_prompt = """
+    You are an email triage assistant. For every email you are given,
+    respond in exactly this format, nothing else:
+
+    SUMMARY: [one sentence summary of what the email is asking or saying]
+    URGENCY: [must read next hour, must read next six hours, or must read next 24 hours]
+    REASON: [one short sentence on why you picked that urgency level]
+
+    Guidance on urgency:
+    - Next hour: something time sensitive, a deadline today, an angry or urgent tone,
+      anything involving money, legal, or a system being down
+    - Next six hours: needs a real response but nothing is actively breaking
+    - Next 24 hours: FYI, low stakes, can wait a day with no real cost
+    """
+
+    message = client.messages.create(
+        model="claude-sonnet-5",
+        max_tokens=200,
+        system=system_prompt,
+        messages=[{"role": "user", "content": f"Subject: {subject}\n\nBody: {body}"}]
+    )
+
+    reply_text = message.content[0].text
+    lines = reply_text.strip().split("\n")
+    result = {}
+    for line in lines:
+        if line.startswith("SUMMARY:"):
+            result["summary"] = line.replace("SUMMARY:", "").strip()
+        elif line.startswith("URGENCY:"):
+            result["urgency"] = line.replace("URGENCY:", "").strip()
+        elif line.startswith("REASON:"):
+            result["reason"] = line.replace("REASON:", "").strip()
+
+    return result</pre>
+    <button class="submit-btn copy-btn code-copy-btn" onclick="copyTemplateText(this,'triage-code')">Copy →</button>
+  </div>
+
+  <p>You call it like this, with one real email:</p>
+
+  <div class="code-block">
+    <div class="code-block-label">Example call</div>
+    <pre>result = triage_email(
+    subject="Refund not processed after 2 weeks",
+    body="I was told my refund would show up in 3 to 5 business days. "
+         "It has been 2 weeks and I still don't see it. I need this "
+         "resolved today or I am disputing the charge with my bank."
+)
+
+print(result)
+# {'summary': 'Customer says a refund is 2 weeks late and wants it resolved today.',
+#  'urgency': 'must read next hour',
+#  'reason': 'Involves money and an explicit same day deadline.'}</pre>
+  </div>
+
+  <p>That's a real, working build for one email. Everything after this point is just making it run automatically instead of you calling it by hand.</p>
+
+  <div class="principle-label" style="margin-top:44px;">Step 5: Making It Check Real Email Instead of One Sample</div>
+  <p>Right now it only handles the one email you hand it. To make it real, you'd add one more piece before the code above: a call that fetches your actual unread emails, using something like Gmail's API, and loops the triage function over each one.</p>
+  <p>This is the only genuinely new piece of code you'd need to add. Everything else in this guide already handles the harder part, which is what Claude does with each email once it has it.</p>
+
+  <div class="principle-label" style="margin-top:44px;">Step 6: Where Does the Result Go?</div>
+  <p>Right now the result just prints to the screen. Pick one:</p>
+  <div class="move-detail">
+    <ul>
+      <li>A row in a spreadsheet</li>
+      <li>A message posted to Slack</li>
+      <li>A simple running list somewhere you check</li>
+    </ul>
+  </div>
+  <p>Whichever you pick, this is a small edit at the end of the function, not a redesign of anything above.</p>
+
+  <div class="principle-label" style="margin-top:44px;">Step 7: Where Does This Actually Run?</div>
+  <p>Three real options, in order of how much setup they take:</p>
+  <div class="move-detail">
+    <div class="move-step">
+      <div class="move-step-title">1. Claude.ai Project</div>
+      <div class="move-step-text">Cannot run this automatically. It's a saved workspace, not an automation. Good for testing the wording of your instruction by hand before you write any code.</div>
+    </div>
+    <div class="move-step">
+      <div class="move-step-title">2. Your own code plus a scheduler (cron)</div>
+      <div class="move-step-text">The code above, sitting on a server you control, triggered by cron, a built-in scheduler that runs a file at times you set, like every hour. This is the standard path for this kind of task.</div>
+    </div>
+    <div class="move-step">
+      <div class="move-step-title">3. A cloud scheduled function</div>
+      <div class="move-step-text">The same code, but hosted by a cloud provider so no server of yours has to stay on at all.</div>
+    </div>
+  </div>
+
+  <div class="try-block">
+    <div class="try-label">What Doesn't Apply Here</div>
+    <p>Claude Code Routines, which trigger off things happening in a GitHub code repository (a pull request opened, a release published). Since this task is triggered by an email arriving, not a code event, Routines aren't the right tool for this one. That's a good tool for a different kind of job, like automating code review, not this.</p>
+  </div>
+
+  <div class="principle-label" style="margin-top:44px;">The Whole Path, One Line Each</div>
+  <ol class="scan-list" id="agent-path-recap">
+    <li>Decided it's a workflow, not a full agent, because the steps never change</li>
+    <li>Used one pattern, routing, to sort into three buckets</li>
+    <li>Wrote one strict instruction telling Claude exactly how to summarize and label</li>
+    <li>Wrote the code that sends one email in and gets a labeled result out</li>
+    <li>Will extend it to pull real unread email instead of one sample</li>
+    <li>Will send the result somewhere useful instead of just printing it</li>
+    <li>Will run it on a schedule using cron or a cloud function, not Routines</li>
+  </ol>
+
+  <p style="margin-top:24px;">That's the entire build. Every concept from the longer notes lives inside this one example, and nothing here required learning a pattern or a tool this task doesn't actually use.</p>
+
+  <div class="resources">
+    <a class="resource-card" href="building-an-ai-agent.html">
+      <div class="kicker">AI Hub</div>
+      <div class="title">AI Agents, and How to Build Your First One →</div>
+    </a>
+    <a class="resource-card" href="ai-for-repeat-work.html">
+      <div class="kicker">AI Hub</div>
+      <div class="title">Using Projects and Agents for Repeat Work →</div>
+    </a>
+    <a class="resource-card" href="give-ai-the-whole-problem.html">
+      <div class="kicker">AI Hub</div>
+      <div class="title">Stop Searching. Start Giving AI the Whole Problem. →</div>
+    </a>
+  </div>
+</main>
+<script src="js/copy.js"></script>
+
+<footer data-pagefind-ignore>
+  <div>first-timemanagers.com</div>
+  <div>© 2024–Present First Time Managers LLC</div>
+</footer>
+
+<script src="js/nav.js"></script>
+</body>
+</html>
