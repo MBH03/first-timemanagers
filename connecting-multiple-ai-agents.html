@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connecting Multiple AI Agents Together | AI Hub</title>
+<meta name="description" content="One agent hits a ceiling fast. Here's the handoff pattern for connecting two narrow agents, one that produces and one that checks or extends, using the Customer Question Triage assistant as the worked example.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="First-Time Managers">
+<meta property="og:title" content="Connecting Multiple AI Agents Together | AI Hub">
+<meta property="og:description" content="One agent hits a ceiling fast. Here's the handoff pattern for connecting two narrow agents, one that produces and one that checks or extends, using the Customer Question Triage assistant as the worked example.">
+<meta property="og:url" content="https://first-timemanagers.com/connecting-multiple-ai-agents.html">
+<meta property="og:image" content="https://first-timemanagers.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Connecting Multiple AI Agents Together | AI Hub">
+<meta name="twitter:description" content="One agent hits a ceiling fast. Here's the handoff pattern for connecting two narrow agents, one that produces and one that checks or extends, using the Customer Question Triage assistant as the worked example.">
+<meta name="twitter:image" content="https://first-timemanagers.com/og-image.png">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://first-timemanagers.com/connecting-multiple-ai-agents.html">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .code-block{ position:relative; background:#111110; border:1px solid rgba(237,235,228,.15); border-radius:8px; padding:20px 22px; margin:8px 0 24px; overflow-x:auto; }
+  .code-block pre{ margin:0; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:12.5px; line-height:1.65; color:#EDEBE4; white-space:pre-wrap; }
+  .code-block-label{ font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin-bottom:10px; }
+  .code-copy-btn{ position:absolute; top:14px; right:14px; font-size:11px; padding:6px 12px; }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Connecting Multiple AI Agents Together",
+  "description": "One agent hits a ceiling fast. Here's the handoff pattern for connecting two narrow agents, one that produces and one that checks or extends, using the Customer Question Triage assistant as the worked example.",
+  "url": "https://first-timemanagers.com/connecting-multiple-ai-agents.html",
+  "datePublished": "2026-09-18",
+  "dateModified": "2026-09-18",
+  "author": {
+    "@type": "Person",
+    "name": "Michael Henrie",
+    "url": "https://first-timemanagers.com/about.html",
+    "sameAs": ["https://www.linkedin.com/in/michael-henrie"]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "First-Time Managers",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://first-timemanagers.com/apple-touch-icon.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://first-timemanagers.com/connecting-multiple-ai-agents.html"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://first-timemanagers.com/" },
+    { "@type": "ListItem", "position": 2, "name": "AI Hub", "item": "https://first-timemanagers.com/ai-hub.html" },
+    { "@type": "ListItem", "position": 3, "name": "Connecting Multiple AI Agents Together", "item": "https://first-timemanagers.com/connecting-multiple-ai-agents.html" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav data-pagefind-ignore>
+  <a class="logo" href="index.html"><span class="mark"></span> first-time managers</a>
+  <div class="navlinks">
+    <a href="playbook.html">playbook</a>
+    <a href="situations.html">everything</a>
+    <a href="lasso-lessons.html">lasso lessons</a>
+    <a href="templates.html">templates</a>
+    <a href="career-advice.html">career advice</a>
+    <a href="becoming-a-manager.html">becoming a manager</a>
+    <a href="workplace-skills.html">workplace skills</a>
+    <a href="ai-hub.html" class="active">ai hub</a>
+    <a href="about.html">about</a>
+  </div>
+  <a class="ask-badge" href="ask-a-question.html">ask a<br>question</a>
+  <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="crumb"><a href="index.html">Home</a> / <a href="ai-hub.html">AI Hub</a> / Connecting Multiple AI Agents Together</div>
+
+<div class="content-hero cv2">
+  <div class="content-tag">AI Hub · Go Further</div>
+  <h1>One agent hits a ceiling fast. Here's what two look like.</h1>
+</div>
+
+<main class="article">
+  <p class="lead">This picks up after you've already built one working agent, the Customer Question Triage assistant from <a href="build-your-first-ai-assistant.html">Step 5</a>, or the email triage build in <a href="your-first-agent-one-example.html">the advanced example</a>. If it's working well, you'll notice it starts hitting the same wall: it does one narrow job well, and then hands you a pile of things it wasn't confident enough to finish.</p>
+
+  <div class="principle-label">The Moment You Need a Second Agent</div>
+  <p>A single-purpose agent is supposed to stay narrow, that's what makes it trustworthy. But narrow means it has a ceiling. For the triage assistant, that ceiling shows up as a growing stack of "not confident, escalating to a human" items, questions it could categorize but couldn't actually answer from the knowledge base it has.</p>
+  <p>The instinct is to make the one agent smarter, give it more instructions, more tools, more judgment calls. Don't. A single agent trying to do triage <em>and</em> deep research <em>and</em> drafting <em>and</em> tone-matching becomes harder to trust, not easier. The better move is a second, equally narrow agent that picks up exactly where the first one stops.</p>
+
+  <div class="principle-label" style="margin-top:44px;">The Pattern: A Handoff, Not a Hive Mind</div>
+  <p>You don't need an orchestration framework to connect two agents. You need one thing: a handoff contract, a fixed, structured format that the first agent always outputs, and that the second agent always expects. If Agent 1 always hands off the same shape of information, Agent 2 doesn't need to guess what it's looking at.</p>
+  <div class="move-detail">
+    <div class="move-step">
+      <div class="move-step-title">Producer</div>
+      <div class="move-step-text">Does the first pass. Narrow job, clear output. For triage, that's: categorize, answer if confident, otherwise package what it knows and doesn't.</div>
+    </div>
+    <div class="move-step">
+      <div class="move-step-title">The handoff contract</div>
+      <div class="move-step-text">A fixed format, the same labeled fields every time, so the second agent can parse it without interpretation. This is the part people skip, and it's the part that actually makes two agents reliable together.</div>
+    </div>
+    <div class="move-step">
+      <div class="move-step-title">Specialist</div>
+      <div class="move-step-text">Picks up only what the producer couldn't finish. Its job is narrower than "help with everything the first agent missed," it's one specific kind of follow-up work.</div>
+    </div>
+    <div class="move-step">
+      <div class="move-step-title">Where it lands</div>
+      <div class="move-step-text">Almost always: back to a human. Two agents chained together doesn't mean no one reviews the result, it means the result a human reviews is more finished.</div>
+    </div>
+  </div>
+
+  <div class="principle-label" style="margin-top:44px;">Worked Example: Triage Hands Off to Research</div>
+  <p>Take the Customer Question Triage assistant from Step 5. Right now, anything under 90% confidence just gets flagged for a human. Instead, hand it to a second agent whose only job is to go dig deeper before a human sees it.</p>
+
+  <div class="code-block">
+    <div class="code-block-label">The Handoff Contract</div>
+    <pre id="handoff-contract">HANDOFF: TRIAGE → RESEARCH
+
+original_question: [the customer's exact question]
+category: [Billing | How-to | Bug | Feature Request | Other]
+what_triage_found: [any partial answer or relevant doc triage located]
+what_triage_could_not_confirm: [the specific gap, not just "not sure"]
+urgency: [normal | time-sensitive]
+do_not_answer_without_verifying: [true if it involves price, date, policy, or status]</pre>
+    <button class="submit-btn copy-btn code-copy-btn" onclick="copyTemplateText(this,'handoff-contract')">Copy →</button>
+  </div>
+
+  <p>Triage's instructions get one line added: "If confidence is below 90%, output the handoff above instead of a final answer." Then the Research assistant's system prompt is built to expect exactly that shape:</p>
+
+  <div class="code-block">
+    <div class="code-block-label">Research Assistant — System Prompt</div>
+    <pre id="research-prompt">RESEARCH ASSISTANT — SYSTEM PROMPT
+
+ROLE
+You receive escalations from the Triage assistant in a fixed handoff
+format. Your only job is to close the specific gap it identified, not
+to redo triage's work or re-categorize the question.
+
+INPUT
+You will always receive: original_question, category, what_triage_found,
+what_triage_could_not_confirm, urgency, and a verification flag.
+
+YOUR JOB
+1. Search the full knowledge base and docs, not just the quick-reference
+   set triage uses, for the specific gap named in what_triage_could_not_confirm.
+2. Draft a complete answer to original_question using what you find.
+3. If do_not_answer_without_verifying is true, you must link the official
+   source page and cannot state the fact as settled without it.
+4. If you still can't close the gap, say exactly what's missing, don't
+   pad the answer to sound more complete than it is.
+
+OUTPUT, FOR A HUMAN TO REVIEW
+Draft answer: [your answer]
+Sources checked: [list]
+Confidence: [High/Med/Low]
+Still unresolved: [anything you couldn't confirm, or "none"]
+
+Never send this directly to the customer. This is a draft for a human
+to review and send.</pre>
+    <button class="submit-btn copy-btn code-copy-btn" onclick="copyTemplateText(this,'research-prompt')">Copy →</button>
+  </div>
+
+  <p>Notice what didn't change: neither prompt got longer or vaguer. Triage still only does triage. Research only does research, and only on the specific gap it was handed. The handoff contract is what lets them work together without either one needing to understand the other's whole job.</p>
+
+  <div class="try-block">
+    <div class="try-label">Start With Two, Not Five</div>
+    <p>It's tempting to design a whole pipeline, triage, research, drafting, tone-matching, approval, once you see the pattern. Don't. Every additional agent is another place for a small error to compound into a confidently wrong final answer. Get two agents working reliably, by hand, for a couple of weeks before you add a third.</p>
+  </div>
+
+  <div class="principle-label" style="margin-top:44px;">Where This Actually Runs</div>
+  <p>At first, the handoff can just be you: copy Triage's output, paste it into Research, review what comes back. That's a perfectly good way to test whether the contract actually works before automating anything.</p>
+  <p>Once you trust it, this becomes the same shift covered in <a href="building-an-ai-agent.html">AI Agents, and How to Build Your First One</a>: instead of you pasting the handoff by hand, a small piece of code or a scheduled trigger passes Agent 1's output straight into Agent 2. The routing pattern itself is the same one taught in <a href="your-first-agent-one-example.html">Your First Agent, One Example All the Way Through</a>, you're just chaining a second classification step after the first.</p>
+
+  <div class="resources">
+    <a class="resource-card" href="build-your-first-ai-assistant.html">
+      <div class="kicker">AI Hub · Step 5</div>
+      <div class="title">Build Your First AI Assistant →</div>
+    </a>
+    <a class="resource-card" href="building-an-ai-agent.html">
+      <div class="kicker">AI Hub · Step 7</div>
+      <div class="title">AI Agents, and How to Build Your First One →</div>
+    </a>
+    <a class="resource-card" href="your-first-agent-one-example.html">
+      <div class="kicker">AI Hub · Advanced</div>
+      <div class="title">Your First Agent, One Example All the Way Through →</div>
+    </a>
+  </div>
+</main>
+<script src="js/copy.js"></script>
+
+<footer data-pagefind-ignore>
+  <div>first-timemanagers.com</div>
+  <div>© 2024–Present First Time Managers LLC</div>
+</footer>
+
+<script src="js/nav.js"></script>
+</body>
+</html>

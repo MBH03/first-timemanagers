@@ -118,7 +118,7 @@
 <div class="crumb"><a href="index.html">Home</a> / <a href="ai-hub.html">AI Hub</a> / AI Agents, and How to Build Your First One</div>
 
 <div class="content-hero cv2">
-  <div class="content-tag">AI Hub</div>
+  <div class="content-tag">AI Hub · Step 7 of 8</div>
   <h1>AI agents, and how to build your first one.</h1>
 </div>
 
@@ -153,6 +153,32 @@
       <div class="move-step-text">Checks a report against a rule set, numbers that don't reconcile, missing sections, before it reaches you, the same way the reviewing-reports use case in the last article works, just running on its own schedule now.</div>
     </div>
   </div>
+
+  <div class="principle-label" style="margin-top:44px;">Every Agent Has Five Parts</div>
+  <p>Before you touch a product's specific buttons, it helps to know what you're actually building. Every agent, in any tool, on any platform, breaks down into the same five parts. Learn these once and you can build an agent anywhere, not just wherever these instructions happen to point today.</p>
+  <div class="move-detail">
+    <div class="move-step">
+      <div class="move-step-title">1. A job</div>
+      <div class="move-step-text">One narrow, named outcome. "Summarize the update doc into three bullets every Monday," not "help me manage my team."</div>
+    </div>
+    <div class="move-step">
+      <div class="move-step-title">2. Instructions</div>
+      <div class="move-step-text">The brief you'd give a new hire: what to check, how to decide, and the exact format you want back.</div>
+    </div>
+    <div class="move-step">
+      <div class="move-step-title">3. Knowledge</div>
+      <div class="move-step-text">What it's allowed to draw on, past examples, a docs folder, your team's goals. Without this it guesses.</div>
+    </div>
+    <div class="move-step">
+      <div class="move-step-title">4. Tools</div>
+      <div class="move-step-text">What it's actually allowed to touch, read a calendar, search a doc, draft an email. Keep this list short on purpose.</div>
+    </div>
+    <div class="move-step">
+      <div class="move-step-title">5. A trigger</div>
+      <div class="move-step-text">What starts it: a schedule, an event, or you asking. This is the part that turns a Project into an agent, it runs without you opening anything.</div>
+    </div>
+  </div>
+  <p>The walkthrough below builds all five using Claude's or ChatGPT's Tasks feature, because that's the fastest way to get a real one running today. But if the interface changes, or you're using a different tool entirely, you still know what you're looking for.</p>
 
   <div class="principle-label" style="margin-top:44px;">Step by Step: Build Your First Scheduled Agent</div>
   <p style="color:var(--muted); font-size:15px; line-height:1.7; margin-bottom:24px;">Start with something narrow enough to trust quickly, not your whole job. A five-minute task you already do every week is the right size for a first one.</p>
@@ -202,18 +228,35 @@
 
   <p style="color:var(--muted); font-size:14px; line-height:1.7; font-style:italic; margin-top:32px;">Fun fact: the failure mode with agents almost never looks like disaster, it looks like drift. A vague instruction doesn't break loudly, it just quietly produces slightly-wrong output every week until you happen to notice. Check the first few runs closely, that's when the vague spots in your instructions actually show up.</p>
 
+  <div class="principle-label" style="margin-top:44px;">Where to Go From Here</div>
+  <p>Once you've got one scheduled agent running reliably for a couple of weeks, your next move depends on what you're actually running into. There are two real directions, plus one thing you already have.</p>
+  <div class="move-detail">
+    <div class="move-step">
+      <div class="move-step-title">Need it to run on a schedule instead of by hand?</div>
+      <div class="move-step-text">That's this page, the "Step by Step" section above. You're already here.</div>
+    </div>
+    <div class="move-step">
+      <div class="move-step-title">Want it really good at one specific job?</div>
+      <div class="move-step-text">Narrow it further rather than broadening it, one job, one input shape, one output format. <a href="build-your-first-ai-assistant.html">Build Your First AI Assistant</a> and <a href="your-first-agent-one-example.html">Your First Agent, One Example All the Way Through</a> are both worked examples of a specialist doing exactly one thing well.</div>
+    </div>
+    <div class="move-step">
+      <div class="move-step-title">Hitting a ceiling one agent can't get past on its own?</div>
+      <div class="move-step-text">That's the moment to connect a second, narrower agent instead of making this one do more. See <a href="connecting-multiple-ai-agents.html">Connecting Multiple AI Agents Together</a> for the handoff pattern.</div>
+    </div>
+  </div>
+
   <div class="resources">
-    <a class="resource-card" href="ai-for-repeat-work.html">
-      <div class="kicker">AI Hub</div>
-      <div class="title">Using Projects and Agents for Repeat Work →</div>
+    <a class="resource-card" href="connecting-multiple-ai-agents.html">
+      <div class="kicker">AI Hub · Go Further</div>
+      <div class="title">Connecting Multiple AI Agents Together →</div>
+    </a>
+    <a class="resource-card" href="your-first-agent-one-example.html">
+      <div class="kicker">AI Hub · Advanced</div>
+      <div class="title">Your First Agent, One Example All the Way Through →</div>
     </a>
     <a class="resource-card" href="ai-time-saved.html">
-      <div class="kicker">AI Hub · The Payoff</div>
+      <div class="kicker">AI Hub · Step 8</div>
       <div class="title">AI Isn't the Problem. What You Do With the Time Back Is. →</div>
-    </a>
-    <a class="resource-card" href="how-to-think-about-ai.html">
-      <div class="kicker">AI Hub</div>
-      <div class="title">How to Think About AI →</div>
     </a>
   </div>
 </main>
