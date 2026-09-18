@@ -23,6 +23,17 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="canonical" href="https://first-timemanagers.com/ai-hub.html">
 <link rel="stylesheet" href="css/style.css">
+<style>
+  .jump-feature{ margin:36px 56px 50px; border-radius:2px; padding:44px 48px; position:relative; overflow:hidden; background:linear-gradient(155deg,#241C0F 0%,#1B1B1A 60%,#17211D 100%); border:1px solid rgba(227,166,62,.25); display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap; }
+  .jump-feature-tag{ font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:var(--gold); font-weight:600; margin-bottom:14px; }
+  .jump-feature h2{ font-size:28px; font-weight:300; line-height:1.25; color:#fff; margin:0 0 14px; max-width:520px; }
+  .jump-feature h2 b{ font-weight:600; }
+  .jump-feature p{ font-size:14.5px; color:var(--muted); line-height:1.7; max-width:480px; margin:0; }
+  .jump-feature .ask-btn{ flex-shrink:0; white-space:nowrap; }
+  @media (max-width:900px){
+    .jump-feature{ margin:24px 20px 40px; padding:32px 28px; flex-direction:column; align-items:flex-start; }
+  }
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -31,11 +42,21 @@
   "url": "https://first-timemanagers.com/ai-hub.html",
   "mainEntity": {
     "@type": "ItemList",
-    "numberOfItems": 7,
+    "numberOfItems": 8,
     "itemListElement": [
       {
         "@type": "ListItem",
         "position": 1,
+        "item": {
+          "@type": "WebPage",
+          "name": "The AI Jump-In Hub: A Start-Here Guide",
+          "url": "https://first-timemanagers.com/ai-jump-in-hub.html",
+          "description": "You don't need to be an expert to use AI well, you need to start. The 5-step method, a tool picker, two agents with copyable prompts, and a 15-minutes-a-day practice plan."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
         "item": {
           "@type": "WebPage",
           "name": "How to Think About AI",
@@ -45,7 +66,7 @@
       },
       {
         "@type": "ListItem",
-        "position": 2,
+        "position": 3,
         "item": {
           "@type": "WebPage",
           "name": "Stop Searching. Start Giving AI the Whole Problem.",
@@ -55,7 +76,7 @@
       },
       {
         "@type": "ListItem",
-        "position": 3,
+        "position": 4,
         "item": {
           "@type": "WebPage",
           "name": "Using AI as a Thinking Partner",
@@ -65,7 +86,7 @@
       },
       {
         "@type": "ListItem",
-        "position": 4,
+        "position": 5,
         "item": {
           "@type": "WebPage",
           "name": "Using Projects and Agents for Repeat Work",
@@ -75,7 +96,7 @@
       },
       {
         "@type": "ListItem",
-        "position": 5,
+        "position": 6,
         "item": {
           "@type": "WebPage",
           "name": "AI Isn't the Problem. What You Do With the Time Back Is.",
@@ -85,7 +106,7 @@
       },
       {
         "@type": "ListItem",
-        "position": 6,
+        "position": 7,
         "item": {
           "@type": "WebPage",
           "name": "AI Agents, and How to Build Your First One",
@@ -95,7 +116,7 @@
       },
       {
         "@type": "ListItem",
-        "position": 7,
+        "position": 8,
         "item": {
           "@type": "WebPage",
           "name": "Your First Agent, One Example All the Way Through",
@@ -136,12 +157,36 @@
   <p>It's a genuinely useful tool, but only once you know what to actually ask it for. Here's what that looks like for a working manager.</p>
 </section>
 
+<div class="jump-feature">
+  <div>
+    <div class="jump-feature-tag">Start Here</div>
+    <h2>New to this? <b>Start with the Jump-In Hub.</b></h2>
+    <p>One page that covers the whole thing: a 5-step method for prompting well, picking a tool in two minutes, two agents built start to finish with copyable prompts, a data-safety checklist, and a 15-minutes-a-day plan.</p>
+  </div>
+  <a class="ask-btn" href="ai-jump-in-hub.html">Start the Jump-In Hub →</a>
+</div>
+
 <div class="grid">
+
+  <a class="tile" href="ai-jump-in-hub.html">
+    <div class="tile-visual cv6">
+      <svg class="icon-bg" viewBox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 11-14h-7l1-6z"/></svg>
+      <div class="tile-index"><span>START HERE</span><span class="read">Read →</span></div>
+      <div>
+        <div class="tile-big">The Jump-In Hub</div>
+        <div class="tile-sub">The 5-step method, a tool picker, and two agents built start to finish</div>
+      </div>
+    </div>
+    <div class="tile-cap">
+      <div class="title">The AI Jump-In Hub: A Start-Here Guide</div>
+      <div class="desc">You don't need to be an expert, you need to start. The full method, a copyable Daily Check-In agent, and a 15-minutes-a-day practice plan.</div>
+    </div>
+  </a>
 
   <a class="tile" href="how-to-think-about-ai.html">
     <div class="tile-visual cv4">
       <svg class="icon-bg" viewBox="0 0 24 24"><path d="M12 2v6M12 16v6M4.9 4.9l4.2 4.2M14.9 14.9l4.2 4.2M2 12h6M16 12h6M4.9 19.1l4.2-4.2M14.9 9.1l4.2-4.2"/></svg>
-      <div class="tile-index"><span>START HERE</span><span class="read">Read →</span></div>
+      <div class="tile-index"><span>THE BASICS</span><span class="read">Read →</span></div>
       <div>
         <div class="tile-big">How to think about it</div>
         <div class="tile-sub">Four habits that keep it useful instead of a crutch</div>
