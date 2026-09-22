@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Career Path Builder | Tools</title>
+<meta name="description" content="Build your team's competency framework once, by level. Then generate a real development plan for each report: target competencies, development experiences, a 90-day plan, and manager notes. Saved in your browser, exportable as backup.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="First-Time Managers">
+<meta property="og:title" content="Career Path Builder | Tools">
+<meta property="og:description" content="Build your team's competency framework once, by level. Then generate a real development plan for each report: target competencies, development experiences, a 90-day plan, and manager notes.">
+<meta property="og:url" content="https://first-timemanagers.com/career-path-builder.html">
+<meta property="og:image" content="https://first-timemanagers.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Career Path Builder | Tools">
+<meta name="twitter:description" content="Build your team's competency framework once, by level. Then generate a real development plan for each report: target competencies, development experiences, a 90-day plan, and manager notes.">
+<meta name="twitter:image" content="https://first-timemanagers.com/og-image.png">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://first-timemanagers.com/career-path-builder.html">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Career Path Builder",
+  "description": "Build your team's competency framework once, by level. Then generate a real development plan for each report: target competencies, development experiences, a 90-day plan, and manager notes.",
+  "url": "https://first-timemanagers.com/career-path-builder.html",
+  "datePublished": "2026-09-22",
+  "dateModified": "2026-09-22",
+  "author": {
+    "@type": "Person",
+    "name": "Michael Henrie",
+    "url": "https://first-timemanagers.com/about.html",
+    "sameAs": ["https://www.linkedin.com/in/michael-henrie"]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "First-Time Managers",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://first-timemanagers.com/apple-touch-icon.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://first-timemanagers.com/career-path-builder.html"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://first-timemanagers.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://first-timemanagers.com/tools.html" },
+    { "@type": "ListItem", "position": 3, "name": "Career Path Builder", "item": "https://first-timemanagers.com/career-path-builder.html" }
+  ]
+}
+</script>
+<style>
+  /* ---- Career Path Builder: reskinned to the site's dark design system ---- */
+  #cpb *{ box-sizing:border-box; }
+  #cpb{
+    --panel:var(--bg2); --line:rgba(237,235,228,.15); --line2:rgba(237,235,228,.08);
+    --chip:rgba(227,166,62,.12); --soft:rgba(227,166,62,.06); --danger:var(--richmond);
+  }
+  #cpb{ font-family:inherit; color:var(--text); }
+  #cpb .container{ max-width:1200px; margin:0 auto; padding:0 56px 130px; }
+  #cpb h1{ display:none; } /* page-head already carries the title */
+  #cpb .subtitle{ display:none; } /* replaced by the site's own page-head copy */
+
+  #cpb .tabs{ display:flex; gap:8px; margin-bottom:32px; border-bottom:1px solid var(--line); flex-wrap:wrap; }
+  #cpb .tab{ padding:12px 18px; font-weight:700; font-size:13px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); cursor:pointer; border-bottom:2px solid transparent; margin-bottom:-1px; }
+  #cpb .tab.active{ color:var(--gold); border-bottom-color:var(--gold); }
+  #cpb .tabpanel{ display:none; }
+  #cpb .tabpanel.active{ display:block; }
+
+  #cpb .card{ background:var(--panel); border:1px solid var(--line); border-radius:2px; padding:26px; margin-bottom:22px; }
+  #cpb h2{ margin:0 0 18px; font-size:16px; font-weight:600; color:var(--text); }
+  #cpb .hint{ font-size:13px; color:var(--muted); margin-top:-10px; margin-bottom:18px; line-height:1.6; }
+  #cpb label{ display:block; font-size:11px; text-transform:uppercase; letter-spacing:.08em; font-weight:600; margin-bottom:8px; color:var(--muted); }
+  #cpb select, #cpb input, #cpb textarea{
+    width:100%; background:var(--bg2); border:1px solid rgba(237,235,228,.18); border-radius:2px;
+    padding:12px 14px; font-size:14.5px; color:var(--text); font-family:inherit;
+  }
+  #cpb select:focus, #cpb input:focus, #cpb textarea:focus{ outline:none; border-color:var(--gold); }
+  #cpb textarea{ min-height:80px; resize:vertical; }
+
+  #cpb .roster-row{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-bottom:16px; }
+  #cpb .roster-pill{ display:inline-flex; align-items:center; gap:8px; background:var(--chip); border:1px solid rgba(227,166,62,.25); border-radius:999px; padding:7px 8px 7px 14px; font-size:13px; font-weight:600; color:var(--gold); cursor:pointer; }
+  #cpb .roster-pill.active{ background:var(--gold); border-color:var(--gold); color:#1B1B1A; }
+  #cpb .roster-pill button{ background:transparent; border:0; color:inherit; opacity:.6; cursor:pointer; font-size:13px; padding:2px 6px; border-radius:50%; }
+  #cpb .roster-pill button:hover{ opacity:1; background:rgba(0,0,0,.15); }
+  #cpb .roster-add{ display:flex; gap:8px; }
+  #cpb .roster-add input{ max-width:240px; }
+  #cpb .roster-add button{ white-space:nowrap; }
+
+  #cpb .two-col{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  #cpb .transition-track{ display:flex; align-items:center; gap:0; margin-top:20px; flex-wrap:wrap; }
+  #cpb .tier{ flex:1; min-width:110px; text-align:center; padding:12px 6px; border-radius:2px; font-size:11.5px; font-weight:600; color:var(--muted); border:1px solid transparent; }
+  #cpb .tier.active{ background:rgba(227,166,62,.12); border-color:rgba(227,166,62,.3); color:var(--gold); }
+  #cpb .arrow{ color:var(--muted); font-size:16px; padding:0 4px; opacity:.5; }
+
+  #cpb button{ border:0; border-radius:30px; padding:11px 20px; font-size:12.5px; font-weight:700; letter-spacing:.02em; cursor:pointer; font-family:inherit; }
+  #cpb .edit{ background:transparent; color:var(--text); border:1px solid rgba(237,235,228,.25); }
+  #cpb .edit:hover{ border-color:var(--gold); color:var(--gold); }
+  #cpb .remove{ background:transparent; color:var(--danger); border:1px solid rgba(194,75,75,.3); padding:8px 14px; }
+  #cpb .remove:hover{ border-color:var(--danger); }
+  #cpb .primary{ background:var(--gold); color:#1B1B1A; padding:13px 24px; font-size:13px; }
+  #cpb .primary:hover{ background:#f0b552; }
+  #cpb .secondary{ background:transparent; color:var(--text); border:1px solid rgba(237,235,228,.25); }
+  #cpb .secondary:hover{ border-color:var(--gold); color:var(--gold); }
+  #cpb .ghost{ background:transparent; border:1px dashed rgba(237,235,228,.3); color:var(--muted); width:100%; padding:12px; border-radius:2px; }
+  #cpb .ghost:hover{ border-color:var(--gold); color:var(--gold); }
+
+  #cpb .exp-header-row{ display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:10px; }
+  #cpb .experience{ border:1px solid var(--line); border-radius:2px; padding:16px; margin-bottom:12px; background:rgba(255,255,255,.015); }
+  #cpb .experience-top{ display:flex; align-items:flex-start; gap:12px; }
+  #cpb .experience input[type=checkbox]{ width:auto; margin-top:4px; transform:scale(1.15); accent-color:var(--gold); }
+  #cpb .experience-title{ font-weight:600; font-size:14.5px; flex:1; color:var(--text); }
+  #cpb .experience-title[contenteditable=true]{ outline:none; border-bottom:1px dashed rgba(237,235,228,.25); }
+  #cpb .exp-actions{ display:flex; gap:6px; }
+  #cpb .description{ color:var(--muted); font-size:13px; margin:8px 0 10px 29px; line-height:1.6; }
+  #cpb .description[contenteditable=true]{ outline:none; }
+  #cpb .details{ display:none; margin-left:29px; padding-top:12px; border-top:1px solid var(--line2); }
+  #cpb .details.open{ display:block; }
+  #cpb .details p{ font-size:13px; line-height:1.6; margin:0 0 8px; color:var(--text); }
+  #cpb .details strong{ color:var(--gold); }
+  #cpb .details textarea{ font-size:13px; min-height:50px; margin-bottom:8px; }
+
+  #cpb .milestones{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  #cpb .milestone{ border:1px solid var(--line); border-radius:2px; padding:16px; }
+  #cpb .milestone h3{ margin-top:0; color:var(--gold); font-size:13px; text-transform:uppercase; letter-spacing:.06em; }
+
+  #cpb .preview{ background:linear-gradient(155deg,#241C0F 0%,#1B1B1A 60%,#17211D 100%); border:1px solid rgba(227,166,62,.25); border-radius:2px; padding:28px; }
+  #cpb .preview h2{ color:#fff; }
+  #cpb .preview-role{ font-size:20px; margin-bottom:18px; font-weight:600; color:#fff; }
+  #cpb .preview-section-title{ font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--gold); font-weight:700; margin:18px 0 8px; }
+  #cpb .preview-item{ padding:12px 0; border-bottom:1px solid rgba(255,255,255,.1); font-size:13.5px; color:var(--text); }
+  #cpb .preview-item:last-child{ border-bottom:0; }
+  #cpb .preview-note{ font-size:13px; color:var(--text); opacity:.9; white-space:pre-wrap; line-height:1.6; }
+  #cpb .actions{ display:flex; justify-content:flex-end; gap:10px; margin-top:18px; flex-wrap:wrap; }
+
+  #cpb .fw-level-select{ margin-bottom:18px; max-width:360px; }
+  #cpb .fw-comp{ border:1px solid var(--line); border-radius:2px; padding:16px; margin-bottom:14px; background:rgba(255,255,255,.015); }
+  #cpb .fw-comp label{ color:var(--gold); font-size:13px; margin-bottom:8px; text-transform:none; letter-spacing:0; }
+  #cpb .fw-comp textarea{ min-height:70px; }
+  #cpb .comp-name-row{ display:flex; gap:10px; align-items:center; margin-bottom:8px; }
+  #cpb .comp-name-row input{ font-weight:600; color:var(--gold); border:none; background:transparent; padding:4px 0; font-size:14px; }
+  #cpb .comp-name-row input:focus{ outline:none; border-bottom:1px solid var(--gold); }
+  #cpb .comp-remove{ background:transparent; color:var(--danger); padding:4px 10px; font-size:11px; border:none; }
+  #cpb .target-box{ background:var(--soft); border:1px solid rgba(227,166,62,.2); border-radius:2px; padding:18px; margin-bottom:18px; }
+  #cpb .target-box h3{ margin:0 0 4px; color:var(--gold); font-size:14px; }
+  #cpb .target-comp{ margin-bottom:10px; }
+  #cpb .target-comp .cname{ font-weight:600; font-size:12.5px; color:var(--gold); margin-bottom:3px; }
+  #cpb .target-comp .ctext{ font-size:13px; color:var(--text); line-height:1.6; }
+
+  @media(max-width:900px){ #cpb .container{ padding:0 20px 90px; } }
+  @media(max-width:750px){
+    #cpb .two-col, #cpb .milestones{ grid-template-columns:1fr; }
+    #cpb .exp-header-row{ display:block; }
+    #cpb .exp-header-row button{ margin-top:12px; }
+    #cpb .transition-track{ gap:8px; }
+    #cpb .arrow{ display:none; }
+    #cpb .tier{ min-width:100%; }
+  }
+</style>
+</head>
+<body>
+
+<nav data-pagefind-ignore>
+  <a class="logo" href="index.html"><span class="mark"></span> first-time managers</a>
+  <div class="navlinks">
+    <a href="playbook.html">playbook</a>
+    <a href="situations.html">everything</a>
+    <a href="lasso-lessons.html">lasso lessons</a>
+    <a href="templates.html">templates</a>
+    <a href="tools.html" class="active">tools</a>
+    <a href="career-advice.html">career advice</a>
+    <a href="becoming-a-manager.html">becoming a manager</a>
+    <a href="workplace-skills.html">workplace skills</a>
+    <a href="ai-hub.html">ai hub</a>
+    <a href="about.html">about</a>
+  </div>
+  <a class="ask-badge" href="ask-a-question.html">ask a<br>question</a>
+  <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="crumb"><a href="index.html">Home</a> / <a href="tools.html">Tools</a> / Career Path Builder</div>
+
+<div class="content-hero cv1 tall">
+  <div class="content-tag">Tools</div>
+  <h1>Career Path Builder</h1>
+</div>
+
+<main>
+  <div style="max-width:680px; margin:56px auto 0; padding:0 56px;">
+    <p style="font-size:19px; font-weight:300; color:#fff; line-height:1.6; margin-bottom:12px;">Build your team's competency framework once, by level. Then generate a real, specific development plan for each report: what "ready" looks like at the next level, the experiences that get them there, and a 90-day plan.</p>
+    <p style="font-size:14px; color:var(--muted); line-height:1.7; margin-bottom:0;">Everything here saves automatically to this browser as you type. Nothing is sent anywhere. Use <strong style="color:var(--text);">Export backup</strong> before you clear your browser data or switch devices, and <strong style="color:var(--text);">Import backup</strong> to bring it back.</p>
+  </div>
+
+  <div id="cpb">
+  <div class="container">
+
+  <div class="tabs" style="justify-content:space-between;align-items:center">
+  <div style="display:flex">
+  <div class="tab active" id="tabBtnFramework" onclick="switchTab('framework')">Team Framework</div>
+  <div class="tab" id="tabBtnPlans" onclick="switchTab('plans')">Employee Plans</div>
+  </div>
+  <div style="display:flex;gap:8px;align-items:center;padding-bottom:10px">
+  <button class="edit" onclick="exportData()">⬇ Export backup</button>
+  <button class="edit" onclick="document.getElementById('importFile').click()">⬆ Import backup</button>
+  <input type="file" id="importFile" accept="application/json" style="display:none" onchange="importData(event)">
+  </div>
+  </div>
+
+  <!-- ============ FRAMEWORK TAB ============ -->
+  <div class="tabpanel active" id="tabFramework">
+
+  <div class="card">
+  <h2>Core competencies, by level</h2>
+  <div class="hint">This is your team's rubric: what "good" actually looks like at each level, across the categories that matter for your function. Fill it in once — every employee plan will pull from it. Starter text is provided, edit it to match how your team actually works.</div>
+
+  <div class="fw-level-select">
+  <label>Editing level</label>
+  <select id="fwLevel" onchange="renderFrameworkLevel()"></select>
+  </div>
+
+  <div id="fwComps"></div>
+
+  <button class="ghost" onclick="addCompetency()">+ Add a competency category</button>
+  </div>
+
+  </div>
+
+  <!-- ============ PLANS TAB ============ -->
+  <div class="tabpanel" id="tabPlans">
+
+  <div class="card">
+  <h2>Your team</h2>
+  <div class="hint">Save a plan per direct report. Switch between them any time — nothing is lost.</div>
+  <div class="roster-row" id="rosterRow"></div>
+  <div class="roster-add">
+  <input type="text" id="newEmployeeName" placeholder="Add a name (e.g. Jordan M.)">
+  <button class="primary" onclick="addEmployee()">+ Add</button>
+  </div>
+  </div>
+
+  <div class="card">
+  <h2>1. Choose the transition</h2>
+  <div class="two-col">
+  <div>
+  <label>Current Level</label>
+  <select id="currentLevel" onchange="onLevelChange()"></select>
+  </div>
+  <div>
+  <label>Target Level</label>
+  <select id="futureLevel" onchange="onLevelChange()"></select>
+  </div>
+  </div>
+  <div class="transition-track" id="transitionTrack"></div>
+  </div>
+
+  <div class="card">
+  <h2>2. What "ready" looks like at the target level</h2>
+  <div class="hint">Pulled straight from your Team Framework tab for the target level. Edit the framework, not this — it'll update here automatically.</div>
+  <div id="targetCompetencies"></div>
+  </div>
+
+  <div class="card">
+  <div class="exp-header-row">
+  <div>
+  <h2>3. Development experiences</h2>
+  <div class="hint" id="tierHint">A generic starter set for this transition. Edit any of them, or add your own.</div>
+  </div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap">
+  <button class="edit" onclick="loadTemplateForTransition(true)">↺ Reset to template</button>
+  <button class="primary" onclick="addExperience()">+ Add Experience</button>
+  </div>
+  </div>
+  <div id="experiences"></div>
+  </div>
+
+  <div class="card">
+  <h2>4. 90 day plan</h2>
+  <div class="milestones">
+  <div class="milestone">
+  <h3>Days 1–30</h3>
+  <textarea id="m1" placeholder="What should they start doing?"></textarea>
+  </div>
+  <div class="milestone">
+  <h3>Days 31–60</h3>
+  <textarea id="m2" placeholder="What should they demonstrate?"></textarea>
+  </div>
+  <div class="milestone">
+  <h3>Days 61–90</h3>
+  <textarea id="m3" placeholder="What should they own?"></textarea>
+  </div>
+  </div>
+  </div>
+
+  <div class="card">
+  <h2>5. Manager notes</h2>
+  <label>What does this person already do well?</label>
+  <textarea id="strengths" placeholder="Start with their strengths..."></textarea>
+  <br><br>
+  <label>What is the biggest gap between today and the target level?</label>
+  <textarea id="gap" placeholder="Be specific. What capability needs to change?"></textarea>
+
+  <div class="actions">
+  <button class="secondary" onclick="saveCurrent()">Save</button>
+  <button class="primary" onclick="generatePlan()">Update Preview</button>
+  </div>
+  </div>
+
+  <div class="preview" id="preview">
+  <h2>Career Plan Preview</h2>
+  <div class="preview-role" id="previewRole"></div>
+
+  <div class="preview-section-title">Target Competencies</div>
+  <div id="previewCompetencies"></div>
+
+  <div class="preview-section-title">Development Experiences</div>
+  <div id="previewItems"></div>
+
+  <div class="preview-section-title">90 Day Plan</div>
+  <div id="previewMilestones"></div>
+
+  <div class="preview-section-title">Manager Notes</div>
+  <div id="previewNotes"></div>
+  </div>
+
+  </div>
+  <!-- end plans tab -->
+
+  </div>
+  </div>
+
+  <div class="resources" style="max-width:680px; margin:16px auto 0; padding:0 56px;">
+    <a class="resource-card" href="tools.html">
+      <div class="kicker">Tools</div>
+      <div class="title">Back to all Tools →</div>
+    </a>
+    <a class="resource-card" href="delegation-framework-template.html">
+      <div class="kicker">Templates</div>
+      <div class="title">Delegation Framework Template →</div>
+    </a>
+  </div>
+</main>
+
+<script>
+/* ---------- Level model ---------- */
+const LEVELS = ["Individual Contributor","Senior Individual Contributor","Team Lead","Manager","Director","Senior Director","VP"];
+
+/* ---------- Default competency framework (generic starter, fully editable) ---------- */
+const DEFAULT_COMPS = ["Results","Communication","Teamwork","Problem Solving","Expertise"];
+
+const DEFAULT_FRAMEWORK_TEXT = {
+  "Individual Contributor": {
+    "Results": "Delivers their own assigned work reliably, on time, and to a consistent quality bar.",
+    "Communication": "Communicates status and blockers clearly to their manager and immediate team.",
+    "Teamwork": "Works well with immediate teammates and asks for help when needed.",
+    "Problem Solving": "Solves well defined problems within their own scope of work.",
+    "Expertise": "Is building core skills and knowledge for their role; still relies on others for edge cases."
+  },
+  "Senior Individual Contributor": {
+    "Results": "Delivers larger or more ambiguous work with minimal oversight; results hold up without close checking.",
+    "Communication": "Explains tradeoffs and reasoning clearly, not just status. Others rely on their updates to make decisions.",
+    "Teamwork": "Actively helps other individual contributors; seen as someone who makes the team better.",
+    "Problem Solving": "Handles ambiguous problems with limited guidance and knows when to escalate.",
+    "Expertise": "Recognized go to resource for questions in their area; can handle most edge cases independently."
+  },
+  "Team Lead": {
+    "Results": "Accountable for a small team's output, not just their own; consistently hits team level targets.",
+    "Communication": "Communicates priorities clearly enough that the team knows what matters without asking. Presents to peers and occasionally up.",
+    "Teamwork": "Coordinates across a small group, delegates effectively, and gives feedback to teammates directly.",
+    "Problem Solving": "Independently resolves most day to day issues on the team; brings recommendations, not just problems, to their manager.",
+    "Expertise": "Deep enough in the team's work to train others and handle unusual edge cases."
+  },
+  "Manager": {
+    "Results": "Accountable for hitting targets across their whole team, consistently, over time; plans ahead for known upcoming needs.",
+    "Communication": "Comfortable presenting to senior leadership and external stakeholders; written communication is structured and drives action.",
+    "Teamwork": "Manages people formally: hiring input, feedback, coaching. Builds real cross functional relationships with other teams.",
+    "Problem Solving": "Handles escalations and ambiguous tradeoffs with limited need for their own manager's involvement.",
+    "Expertise": "Knows the team's work deeply enough to represent it accurately externally and coach others through edge cases."
+  },
+  "Director": {
+    "Results": "Accountable for outcomes across multiple teams or a broader function; results depend on other managers' performance, not just their own effort.",
+    "Communication": "Represents the function to senior leadership and cross functional peers with credibility; can influence decisions they don't own.",
+    "Teamwork": "Develops managers, not just individual contributors. Builds trust and alignment across functions that don't report to them.",
+    "Problem Solving": "Owns ambiguous, strategic tradeoffs with real business consequence and no clean answer.",
+    "Expertise": "Broad enough view of the business to connect their function's work to company level strategy."
+  },
+  "Senior Director": {
+    "Results": "Accountable for multi quarter outcomes across a broader org; adjusts strategy as conditions change without losing the through line.",
+    "Communication": "Shapes how leadership thinks about their area; communication carries weight beyond their direct chain.",
+    "Teamwork": "Builds and evolves org structure; develops other leaders as a core part of the role.",
+    "Problem Solving": "Navigates decisions with long time horizons and incomplete information; comfortable being wrong and adjusting.",
+    "Expertise": "Seen as a subject matter authority whose judgment is sought out beyond their immediate org."
+  },
+  "VP": {
+    "Results": "Accountable for outcomes at the organization level, delivered primarily through other leaders rather than direct effort.",
+    "Communication": "Represents the business externally and at the executive or board level; sets narrative and direction for a whole function.",
+    "Teamwork": "Builds leadership bench strength across the org; decisions here affect people well beyond their direct reports.",
+    "Problem Solving": "Owns decisions with organization wide consequence, including unpopular ones, and can defend them publicly.",
+    "Expertise": "Judgment is trusted at the highest level of the company on matters affecting their whole domain."
+  }
+};
+
+/* ---------- Development experience templates ---------- */
+const TEMPLATES = {
+  "Individual Contributor|Senior Individual Contributor": {
+    hint: "Usually about scope, not title: bigger, harder, more ambiguous work with less oversight.",
+    experiences: [
+      { title:"Own a larger or more complex task end to end", desc:"Give them a piece of work with real ambiguity, not just more of the same.", good:"They scope the work themselves, make judgment calls, and only escalate the decisions that actually need it.", coach:"What made this harder than your usual work? Where did you have to make a judgment call?" },
+      { title:"Reduce how much oversight they need", desc:"Deliberately step back on a project you'd normally check in on often.", good:"Quality and pace hold up without you checking in as frequently.", coach:"What did you catch yourself before I had to? Where did you still want more guidance?" },
+      { title:"Improve a process, not just execute it", desc:"Ask them to find and fix an inefficiency in how the work gets done, not just do the work.", good:"They can explain the problem, the fix, and the impact in business terms.", coach:"What was actually broken? How did you know your fix worked?" },
+    ]
+  },
+  "Senior Individual Contributor|Team Lead": {
+    hint: "The shift from doing the work well to being responsible for how a small group does it.",
+    experiences: [
+      { title:"Own a team level project or outcome", desc:"Give them accountability for a result that depends on more than just their own work.", good:"They coordinate others, set the plan, and are answerable for the outcome, not just their piece of it.", coach:"What did you have to depend on other people for? How did you keep things on track?" },
+      { title:"Train or onboard a teammate", desc:"Start developing others instead of only their own output.", good:"The teammate improves because of the coaching, not because the work got done for them.", coach:"What did you teach? What did you decide to let them struggle with a bit?" },
+      { title:"Run a recurring team meeting or ritual", desc:"Give them ownership of a standing team touchpoint.", good:"The meeting has a clear purpose and people leave knowing what's next.", coach:"Did it accomplish what it needed to? What would you change?" },
+      { title:"Give input on a team decision", desc:"Involve them in a decision that used to be manager only.", good:"Their input reflects awareness of the team's constraints and priorities, not just their own preference.", coach:"What tradeoffs did you weigh?" },
+    ]
+  },
+  "Team Lead|Manager": {
+    hint: "Largely the same muscles as Team Lead, at bigger scale and with formal people accountability.",
+    experiences: [
+      { title:"Take on formal people responsibility", desc:"Give them a direct report or a hiring/performance decision to be part of.", good:"They can give real feedback, have a hard conversation, and make a people decision without you doing it for them.", coach:"What was the hardest part of that conversation?" },
+      { title:"Own a bigger or harder problem than before", desc:"Same category of work as before, but higher stakes or more moving parts.", good:"They handle the added complexity without needing more of your time than before.", coach:"What made this bigger or harder?" },
+      { title:"Manage up on a difficult tradeoff", desc:"Have them bring you a problem with a recommendation, not just a question.", good:"They come with an actual recommendation and reasoning, not just options.", coach:"What's your recommendation and why?" },
+      { title:"Own a piece of planning or budget", desc:"Give them visibility and input into resourcing decisions for their area.", good:"They can explain tradeoffs in terms of team capacity and business priorities.", coach:"What did you have to say no to?" },
+    ]
+  },
+  "Manager|Director": {
+    hint: "This is where it gets genuinely different: influence beyond your own team and cross functional work.",
+    experiences: [
+      { title:"Lead a cross functional initiative", desc:"Give them ownership of something that requires aligning other teams who don't report to them.", good:"They get alignment through influence, not authority, and can navigate disagreement between teams.", coach:"Where did other teams push back? How did you get to alignment?" },
+      { title:"Represent the function to senior stakeholders", desc:"Have them present results or a plan directly to leadership.", good:"They can speak to strategy and tradeoffs, not just execution detail.", coach:"What questions did leadership push on?" },
+      { title:"Develop other managers, not just individual contributors", desc:"Give them a manager to coach, not just an IC.", good:"They can coach someone on how they manage people, not just on the work itself.", coach:"What did you notice about how they manage?" },
+      { title:"Own a strategic tradeoff with real ambiguity", desc:"Give them a decision with no clean answer and real business consequence.", good:"They can articulate the tradeoff clearly and defend the call they made.", coach:"What made this genuinely hard?" },
+    ]
+  },
+  "Director|Senior Director": {
+    hint: "Broader scope and more autonomy on strategy, with accountability further out in time.",
+    experiences: [
+      { title:"Own a multi quarter strategic bet", desc:"Give them a goal with no clear playbook and a longer time horizon.", good:"They can adjust the plan as new information comes in without losing sight of the goal.", coach:"What assumption changed along the way?" },
+      { title:"Build or restructure part of the org", desc:"Have them design how a function or team should be structured, not just staff it.", good:"The structure reflects a clear rationale tied to strategy, not just headcount.", coach:"What tradeoff did you make in this structure?" },
+      { title:"Influence a decision outside their direct authority", desc:"Have them shape a decision owned by a peer or another function.", good:"Other leaders seek their input because it's genuinely useful, not just political.", coach:"How did you build the case?" },
+    ]
+  },
+  "Senior Director|VP": {
+    hint: "Organization wide impact, and being accountable for outcomes you don't directly control.",
+    experiences: [
+      { title:"Own an organization wide outcome", desc:"Give them accountability for a result that spans multiple functions or departments.", good:"They can drive the outcome primarily through other leaders, not through doing the work themselves.", coach:"What did you have to let go of?" },
+      { title:"Represent the company externally or at the executive level", desc:"Board, investor, exec team, or major external stakeholder exposure.", good:"They can represent the business, not just their function.", coach:"What did you learn about how the business is really evaluated at that level?" },
+      { title:"Make a call with real organizational consequence", desc:"A decision that affects headcount, budget, or strategy beyond their own area.", good:"They can own the decision publicly, including the parts that were unpopular.", coach:"What was the hardest part to defend?" },
+    ]
+  }
+};
+const GENERIC_FALLBACK = {
+  hint: "No specific template for this jump — here's a general starting point. Customize freely.",
+  experiences: [
+    { title:"Own something bigger in scope", desc:"Give them a project or outcome noticeably larger than their current work.", good:"They can handle the added scope without a proportional increase in oversight.", coach:"What made this bigger?" },
+    { title:"Take on a harder, more ambiguous problem", desc:"Something without a clear playbook.", good:"They can structure an approach to a problem that doesn't have an obvious answer.", coach:"How did you approach something with no clear answer?" },
+    { title:"Influence people who don't report to them", desc:"Practice getting alignment without direct authority.", good:"They get buy in through reasoning and relationships, not just position.", coach:"Where did you hit resistance?" },
+  ]
+};
+function templateKey(from,to){ return from+"|"+to; }
+function getTemplate(from,to){ return TEMPLATES[templateKey(from,to)] || GENERIC_FALLBACK; }
+
+/* ---------- Global state ---------- */
+let framework = {};
+let compOrder = [];
+let employees = {};
+let activeId = null;
+
+function defaultFramework(){
+  const fw = {};
+  LEVELS.forEach(l=>{
+    fw[l] = {};
+    DEFAULT_COMPS.forEach(c=>{
+      fw[l][c] = (DEFAULT_FRAMEWORK_TEXT[l] && DEFAULT_FRAMEWORK_TEXT[l][c]) || "";
+    });
+  });
+  return fw;
+}
+
+function newEmployeeData(name){
+  return {
+    name: name,
+    currentLevel: LEVELS[0],
+    futureLevel: LEVELS[1],
+    experiences: [],
+    m1:"", m2:"", m3:"", strengths:"", gap:"",
+    templateLoaded: null
+  };
+}
+
+function loadState(){
+  try{
+    const raw = localStorage.getItem("cpb_state_v3");
+    if(raw){
+      const parsed = JSON.parse(raw);
+      employees = parsed.employees || {};
+      activeId = parsed.activeId || null;
+      framework = parsed.framework || null;
+      compOrder = parsed.compOrder || null;
+    }
+  }catch(e){}
+  if(!framework || Object.keys(framework).length === 0){ framework = defaultFramework(); }
+  if(!compOrder || compOrder.length === 0){ compOrder = DEFAULT_COMPS.slice(); }
+  if(Object.keys(employees).length === 0){
+    const id = "emp_" + Date.now();
+    employees[id] = newEmployeeData("");
+    activeId = id;
+  }
+  if(!activeId || !employees[activeId]) activeId = Object.keys(employees)[0];
+}
+
+function saveState(){
+  try{
+    localStorage.setItem("cpb_state_v3", JSON.stringify({employees, activeId, framework, compOrder}));
+  }catch(e){}
+}
+
+/* ---------- Tabs ---------- */
+function switchTab(name){
+  document.getElementById("tabFramework").classList.toggle("active", name==="framework");
+  document.getElementById("tabPlans").classList.toggle("active", name==="plans");
+  document.getElementById("tabBtnFramework").classList.toggle("active", name==="framework");
+  document.getElementById("tabBtnPlans").classList.toggle("active", name==="plans");
+  if(name==="plans") renderTargetCompetencies();
+}
+
+/* ---------- Framework tab ---------- */
+function populateFwLevelSelect(){
+  const sel = document.getElementById("fwLevel");
+  sel.innerHTML = LEVELS.map(l=>`<option>${l}</option>`).join("");
+}
+
+function renderFrameworkLevel(){
+  const level = document.getElementById("fwLevel").value;
+  const container = document.getElementById("fwComps");
+  container.innerHTML = "";
+  compOrder.forEach(compName=>{
+    const val = (framework[level] && framework[level][compName]) || "";
+    const div = document.createElement("div");
+    div.className = "fw-comp";
+    div.innerHTML = `
+      <div class="comp-name-row">
+        <input type="text" class="comp-name-input" value="${escapeHtml(compName)}" data-original="${escapeHtml(compName)}">
+        <button class="comp-remove" onclick="removeCompetency('${escapeAttr(compName)}')">Remove category</button>
+      </div>
+      <textarea class="comp-text" data-comp="${escapeAttr(compName)}">${escapeHtml(val)}</textarea>
+    `;
+    container.appendChild(div);
+  });
+}
+
+function collectFrameworkLevel(){
+  const level = document.getElementById("fwLevel").value;
+  if(!framework[level]) framework[level] = {};
+
+  const nameInputs = document.querySelectorAll("#fwComps .comp-name-input");
+  const renameMap = {};
+  nameInputs.forEach(inp=>{
+    const orig = inp.dataset.original;
+    const now = inp.value.trim() || orig;
+    if(orig !== now) renameMap[orig] = now;
+  });
+  if(Object.keys(renameMap).length){
+    LEVELS.forEach(l=>{
+      Object.keys(renameMap).forEach(orig=>{
+        if(framework[l] && Object.prototype.hasOwnProperty.call(framework[l], orig)){
+          framework[l][renameMap[orig]] = framework[l][orig];
+          delete framework[l][orig];
+        }
+      });
+    });
+    compOrder = compOrder.map(c => renameMap[c] || c);
+  }
+
+  const textAreas = document.querySelectorAll("#fwComps .comp-text");
+  textAreas.forEach(ta=>{
+    let compName = ta.dataset.comp;
+    if(renameMap[compName]) compName = renameMap[compName];
+    framework[level][compName] = ta.value;
+  });
+
+  saveState();
+}
+
+function addCompetency(){
+  const name = prompt("Name this competency category (e.g. 'Ownership', 'Client Relationships'):");
+  if(!name) return;
+  if(compOrder.includes(name)){ alert("That category already exists."); return; }
+  compOrder.push(name);
+  LEVELS.forEach(l=>{
+    if(!framework[l]) framework[l] = {};
+    framework[l][name] = "";
+  });
+  saveState();
+  renderFrameworkLevel();
+}
+
+function removeCompetency(name){
+  if(!confirm(`Remove "${name}" from all levels? This can't be undone.`)) return;
+  compOrder = compOrder.filter(c=>c!==name);
+  LEVELS.forEach(l=>{ if(framework[l]) delete framework[l][name]; });
+  saveState();
+  renderFrameworkLevel();
+}
+
+/* ---------- Employee roster ---------- */
+function renderRoster(){
+  const row = document.getElementById("rosterRow");
+  row.innerHTML = "";
+  Object.keys(employees).forEach(id=>{
+    const emp = employees[id];
+    const pill = document.createElement("div");
+    pill.className = "roster-pill" + (id===activeId ? " active" : "");
+    const label = emp.name && emp.name.trim() ? emp.name : "(unnamed)";
+    pill.innerHTML = `<span>${escapeHtml(label)}</span>`;
+    const del = document.createElement("button");
+    del.textContent = "✕";
+    del.title = "Remove";
+    del.onclick = (e)=>{ e.stopPropagation(); removeEmployee(id); };
+    pill.onclick = ()=> switchEmployee(id);
+    pill.appendChild(del);
+    row.appendChild(pill);
+  });
+}
+
+function addEmployee(){
+  const input = document.getElementById("newEmployeeName");
+  const name = input.value.trim();
+  if(!name) return;
+  const id = "emp_" + Date.now();
+  employees[id] = newEmployeeData(name);
+  activeId = id;
+  input.value = "";
+  saveState();
+  renderRoster();
+  loadEmployeeIntoForm();
+}
+
+function removeEmployee(id){
+  if(Object.keys(employees).length <= 1) return;
+  delete employees[id];
+  if(activeId === id) activeId = Object.keys(employees)[0];
+  saveState();
+  renderRoster();
+  loadEmployeeIntoForm();
+}
+
+function switchEmployee(id){
+  saveCurrent();
+  activeId = id;
+  saveState();
+  renderRoster();
+  loadEmployeeIntoForm();
+}
+
+/* ---------- Plan form ---------- */
+function populateLevelSelects(){
+  const cur = document.getElementById("currentLevel");
+  const fut = document.getElementById("futureLevel");
+  cur.innerHTML = LEVELS.map(l=>`<option>${l}</option>`).join("");
+  fut.innerHTML = LEVELS.map(l=>`<option>${l}</option>`).join("");
+}
+
+function collectFormIntoEmployee(emp){
+  emp.currentLevel = document.getElementById("currentLevel").value;
+  emp.futureLevel = document.getElementById("futureLevel").value;
+  emp.m1 = document.getElementById("m1").value;
+  emp.m2 = document.getElementById("m2").value;
+  emp.m3 = document.getElementById("m3").value;
+  emp.strengths = document.getElementById("strengths").value;
+  emp.gap = document.getElementById("gap").value;
+
+  const expNodes = document.querySelectorAll("#experiences .experience");
+  emp.experiences = Array.from(expNodes).map(node=>({
+    title: node.querySelector(".experience-title").textContent.trim(),
+    desc: node.querySelector(".description").textContent.trim(),
+    good: node.querySelector(".good-text").value,
+    coach: node.querySelector(".coach-text").value,
+    checked: node.querySelector("input[type=checkbox]").checked
+  }));
+}
+
+function saveCurrent(){
+  if(document.getElementById("tabFramework").classList.contains("active")){
+    collectFrameworkLevel();
+  }
+  if(!activeId || !employees[activeId]) return;
+  collectFormIntoEmployee(employees[activeId]);
+  saveState();
+}
+
+function loadEmployeeIntoForm(){
+  const emp = employees[activeId];
+  if(!emp) return;
+
+  document.getElementById("currentLevel").value = emp.currentLevel;
+  document.getElementById("futureLevel").value = emp.futureLevel;
+  document.getElementById("m1").value = emp.m1;
+  document.getElementById("m2").value = emp.m2;
+  document.getElementById("m3").value = emp.m3;
+  document.getElementById("strengths").value = emp.strengths;
+  document.getElementById("gap").value = emp.gap;
+
+  if(emp.experiences && emp.experiences.length){
+    renderExperiences(emp.experiences);
+  } else {
+    loadTemplateForTransition(true);
+  }
+
+  updateTransitionTrack();
+  renderTargetCompetencies();
+  generatePlan();
+}
+
+function onLevelChange(){
+  const cur = document.getElementById("currentLevel").value;
+  const fut = document.getElementById("futureLevel").value;
+  const curIdx = LEVELS.indexOf(cur);
+  const futIdx = LEVELS.indexOf(fut);
+  if(futIdx <= curIdx){
+    const nextIdx = Math.min(curIdx+1, LEVELS.length-1);
+    document.getElementById("futureLevel").value = LEVELS[nextIdx];
+  }
+  updateTransitionTrack();
+  loadTemplateForTransition(false);
+  renderTargetCompetencies();
+  generatePlan();
+}
+
+function updateTransitionTrack(){
+  const cur = document.getElementById("currentLevel").value;
+  const fut = document.getElementById("futureLevel").value;
+  const curIdx = LEVELS.indexOf(cur);
+  const futIdx = LEVELS.indexOf(fut);
+  const track = document.getElementById("transitionTrack");
+  track.innerHTML = "";
+  LEVELS.forEach((lvl,i)=>{
+    if(i < curIdx || i > futIdx) return;
+    if(i > curIdx){
+      const arrow = document.createElement("div");
+      arrow.className = "arrow"; arrow.textContent = "→";
+      track.appendChild(arrow);
+    }
+    const tier = document.createElement("div");
+    tier.className = "tier" + (i===curIdx||i===futIdx ? " active" : "");
+    tier.textContent = lvl;
+    track.appendChild(tier);
+  });
+}
+
+function renderTargetCompetencies(){
+  const fut = document.getElementById("futureLevel").value;
+  const container = document.getElementById("targetCompetencies");
+  container.innerHTML = "";
+  const box = document.createElement("div");
+  box.className = "target-box";
+  box.innerHTML = `<h3>${escapeHtml(fut)}</h3>`;
+  compOrder.forEach(compName=>{
+    const text = (framework[fut] && framework[fut][compName]) || "";
+    const row = document.createElement("div");
+    row.className = "target-comp";
+    row.innerHTML = `<div class="cname">${escapeHtml(compName)}</div><div class="ctext">${text ? escapeHtml(text) : '<span style="opacity:.6">Not defined yet — add this in the Team Framework tab</span>'}</div>`;
+    box.appendChild(row);
+  });
+  container.appendChild(box);
+}
+
+function loadTemplateForTransition(force){
+  const emp = employees[activeId];
+  const cur = document.getElementById("currentLevel").value;
+  const fut = document.getElementById("futureLevel").value;
+  const key = templateKey(cur, fut);
+  if(!force && emp && emp.templateLoaded === key) return;
+  const tmpl = getTemplate(cur, fut);
+  document.getElementById("tierHint").textContent = tmpl.hint;
+  const expData = tmpl.experiences.map(e=>({title:e.title,desc:e.desc,good:e.good,coach:e.coach,checked:true}));
+  renderExperiences(expData);
+  if(emp) emp.templateLoaded = key;
+}
+
+/* ---------- Experiences ---------- */
+function renderExperiences(list){
+  const container = document.getElementById("experiences");
+  container.innerHTML = "";
+  list.forEach(item=> container.appendChild(buildExperienceNode(item)));
+}
+
+function buildExperienceNode(item){
+  const wrap = document.createElement("div");
+  wrap.className = "experience";
+  wrap.innerHTML = `
+    <div class="experience-top">
+      <input type="checkbox" ${item.checked!==false ? "checked" : ""}>
+      <div class="experience-title" contenteditable="true">${escapeHtml(item.title||"")}</div>
+      <div class="exp-actions">
+        <button class="edit" onclick="toggleDetails(this)">Details</button>
+        <button class="remove" onclick="removeExperience(this)">Remove</button>
+      </div>
+    </div>
+    <div class="description" contenteditable="true">${escapeHtml(item.desc||"")}</div>
+    <div class="details">
+      <p><strong>What good looks like</strong></p>
+      <textarea class="good-text">${escapeHtml(item.good||"")}</textarea>
+      <p><strong>Coaching questions</strong></p>
+      <textarea class="coach-text">${escapeHtml(item.coach||"")}</textarea>
+    </div>
+  `;
+  return wrap;
+}
+
+function escapeHtml(str){ const d=document.createElement("div"); d.textContent=str||""; return d.innerHTML; }
+function escapeAttr(str){ return (str||"").replace(/'/g,"\\'"); }
+
+function toggleDetails(button){
+  const details = button.closest(".experience").querySelector(".details");
+  details.classList.toggle("open");
+  button.textContent = details.classList.contains("open") ? "Close" : "Details";
+}
+function removeExperience(button){ button.closest(".experience").remove(); }
+function addExperience(){
+  const title = prompt("What development experience would you like to add?");
+  if(!title) return;
+  const node = buildExperienceNode({title:title,desc:"Customize this development experience.",good:"",coach:"",checked:true});
+  document.getElementById("experiences").appendChild(node);
+}
+
+/* ---------- Preview ---------- */
+function generatePlan(){
+  const cur = document.getElementById("currentLevel").value;
+  const fut = document.getElementById("futureLevel").value;
+  document.getElementById("previewRole").textContent = cur + " → " + fut;
+
+  const previewComps = document.getElementById("previewCompetencies");
+  previewComps.innerHTML = "";
+  compOrder.forEach(compName=>{
+    const text = (framework[fut] && framework[fut][compName]) || "";
+    if(!text) return;
+    const div = document.createElement("div");
+    div.className = "preview-item";
+    div.innerHTML = `<strong>${escapeHtml(compName)}:</strong> ${escapeHtml(text)}`;
+    previewComps.appendChild(div);
+  });
+  if(!previewComps.innerHTML){
+    previewComps.innerHTML = '<div class="preview-item" style="opacity:.6">No competencies defined for this level yet</div>';
+  }
+
+  const selected = document.querySelectorAll("#experiences input[type=checkbox]:checked");
+  const previewItems = document.getElementById("previewItems");
+  previewItems.innerHTML = "";
+  selected.forEach(box=>{
+    const title = box.closest(".experience").querySelector(".experience-title").textContent;
+    const div = document.createElement("div");
+    div.className = "preview-item";
+    div.textContent = title;
+    previewItems.appendChild(div);
+  });
+  if(selected.length===0) previewItems.innerHTML = '<div class="preview-item" style="opacity:.6">No experiences selected</div>';
+
+  const m1 = document.getElementById("m1").value.trim();
+  const m2 = document.getElementById("m2").value.trim();
+  const m3 = document.getElementById("m3").value.trim();
+  const previewMilestones = document.getElementById("previewMilestones");
+  previewMilestones.innerHTML = "";
+  [["Days 1–30",m1],["Days 31–60",m2],["Days 61–90",m3]].forEach(([label,val])=>{
+    const div = document.createElement("div");
+    div.className = "preview-item";
+    div.innerHTML = `<strong>${label}:</strong> ${val ? escapeHtml(val) : '<span style="opacity:.6">Not filled in</span>'}`;
+    previewMilestones.appendChild(div);
+  });
+
+  const strengths = document.getElementById("strengths").value.trim();
+  const gap = document.getElementById("gap").value.trim();
+  const previewNotes = document.getElementById("previewNotes");
+  previewNotes.innerHTML = "";
+  if(strengths){
+    const d = document.createElement("div"); d.className="preview-note";
+    d.innerHTML = `<strong>Strengths:</strong> ${escapeHtml(strengths)}`;
+    previewNotes.appendChild(d);
+  }
+  if(gap){
+    const d = document.createElement("div"); d.className="preview-note"; d.style.marginTop="8px";
+    d.innerHTML = `<strong>Key gap:</strong> ${escapeHtml(gap)}`;
+    previewNotes.appendChild(d);
+  }
+  if(!strengths && !gap) previewNotes.innerHTML = '<div class="preview-note" style="opacity:.6">No notes yet</div>';
+
+  document.getElementById("preview").scrollIntoView({behavior:"smooth"});
+  saveCurrent();
+}
+
+/* ---------- Export / Import ---------- */
+function exportData(){
+  saveCurrent();
+  const payload = { employees, activeId, framework, compOrder, exportedAt: new Date().toISOString(), version: 3 };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], {type:"application/json"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  const dateStr = new Date().toISOString().slice(0,10);
+  a.href = url;
+  a.download = `career-path-builder-backup-${dateStr}.json`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+function importData(event){
+  const file = event.target.files && event.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e){
+    try{
+      const parsed = JSON.parse(e.target.result);
+      if(!parsed.employees || !parsed.framework){
+        alert("This doesn't look like a Career Path Builder backup file.");
+        return;
+      }
+      const mode = confirm(
+        "Click OK to MERGE this backup with your current data (adds/updates people and keeps your framework edits where they don't conflict).\n\nClick Cancel to REPLACE everything currently loaded with this backup instead."
+      ) ? "merge" : "replace";
+
+      if(mode === "replace"){
+        employees = parsed.employees;
+        activeId = parsed.activeId && parsed.employees[parsed.activeId] ? parsed.activeId : Object.keys(parsed.employees)[0];
+        framework = parsed.framework;
+        compOrder = parsed.compOrder || DEFAULT_COMPS.slice();
+      } else {
+        Object.keys(parsed.employees || {}).forEach(id=>{
+          employees[id] = parsed.employees[id];
+        });
+        (parsed.compOrder || []).forEach(c=>{
+          if(!compOrder.includes(c)) compOrder.push(c);
+        });
+        LEVELS.forEach(l=>{
+          if(parsed.framework && parsed.framework[l]){
+            if(!framework[l]) framework[l] = {};
+            Object.keys(parsed.framework[l]).forEach(comp=>{
+              const incoming = parsed.framework[l][comp];
+              if(incoming && incoming.trim()) framework[l][comp] = incoming;
+            });
+          }
+        });
+        if(!activeId || !employees[activeId]) activeId = Object.keys(employees)[0];
+      }
+
+      saveState();
+      renderFrameworkLevel();
+      renderRoster();
+      loadEmployeeIntoForm();
+      alert("Backup imported successfully.");
+    }catch(err){
+      alert("Couldn't read that file. Make sure it's an unedited export from this tool.");
+    }
+  };
+  reader.readAsText(file);
+  event.target.value = "";
+}
+
+/* ---------- Boot ---------- */
+populateLevelSelects();
+populateFwLevelSelect();
+loadState();
+renderFrameworkLevel();
+renderRoster();
+loadEmployeeIntoForm();
+
+document.addEventListener("input", (e)=>{
+  clearTimeout(window._cpbSaveT);
+  window._cpbSaveT = setTimeout(()=>{
+    if(document.getElementById("tabFramework").classList.contains("active")){
+      collectFrameworkLevel();
+    } else {
+      saveCurrent();
+    }
+  }, 500);
+});
+</script>
+
+<footer data-pagefind-ignore>
+  <div>first-timemanagers.com</div>
+  <div>© 2024–Present First Time Managers LLC</div>
+</footer>
+
+<script src="js/nav.js"></script>
+</body>
+</html>
