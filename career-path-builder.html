@@ -909,15 +909,31 @@ function generatePlan(){
 }
 
 /* ---------- Export / Import ---------- */
-function exportData(){
+async function exportData(){
   saveCurrent();
   const payload = { employees, activeId, framework, compOrder, exportedAt: new Date().toISOString(), version: 3 };
+  const dateStr = new Date().toISOString().slice(0,10);
+  const filename = `career-path-builder-backup-${dateStr}.json`;
   const blob = new Blob([JSON.stringify(payload, null, 2)], {type:"application/json"});
+
+  // Mobile Safari (and some other mobile browsers) don't reliably honor the
+  // <a download> attribute on a blob: URL, it just navigates to the raw JSON
+  // instead of saving a file. Prefer the share sheet there, it lets you pick
+  // "Save to Files." Desktop browsers fall through to the normal download.
+  try{
+    const file = new File([blob], filename, {type:"application/json"});
+    if(navigator.canShare && navigator.canShare({files:[file]})){
+      await navigator.share({files:[file], title:filename});
+      return;
+    }
+  }catch(err){
+    if(err && err.name === "AbortError") return; // user closed the share sheet
+  }
+
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
-  const dateStr = new Date().toISOString().slice(0,10);
   a.href = url;
-  a.download = `career-path-builder-backup-${dateStr}.json`;
+  a.download = filename;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
