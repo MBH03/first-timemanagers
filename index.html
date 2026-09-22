@@ -43,14 +43,14 @@
   .pillars-head{ max-width:560px; margin-bottom:80px; }
   .pillars-head h2{ font-size:34px; font-weight:300; line-height:1.25; margin:0; }
   .pillars-head h2 b{ font-weight:600; }
-  .pillars .grid{ padding:0; grid-template-columns:repeat(4,1fr); gap:24px; }
-  .pillars .tile:nth-child(2), .pillars .tile:nth-child(4){ margin-top:40px; }
-  .pillars .tile-visual{ height:360px; }
-  .pillars .tile-cap .desc{ max-width:280px; }
+  .pillars .grid{ padding:0; grid-template-columns:repeat(5,1fr); gap:20px; }
+  .pillars .tile-visual{ height:340px; }
+  .pillars .tile-big{ font-size:19px; font-weight:500; line-height:1.35; }
+  .pillars .tile-cap .title{ line-height:1.4; }
+  .pillars .tile-cap .desc{ max-width:260px; }
 
-  @media (max-width:1100px){
-    .pillars .grid{ grid-template-columns:repeat(2,1fr); }
-    .pillars .tile:nth-child(3){ margin-top:0; }
+  @media (max-width:1300px){
+    .pillars .grid{ grid-template-columns:repeat(3,1fr); gap:24px; }
   }
   @media (max-width:900px){
     .hero .eyebrow{ max-width:220px; }
@@ -59,7 +59,6 @@
     .pillars{ padding:60px 24px; }
     .pillars-head{ margin-bottom:40px; }
     .pillars .grid{ grid-template-columns:1fr; }
-    .pillars .tile:nth-child(2), .pillars .tile:nth-child(3), .pillars .tile:nth-child(4){ margin-top:0; }
   }
 
   .email-capture{ margin:0; padding:80px 56px; text-align:center; background:var(--bg2); border-top:1px solid rgba(237,235,228,.08); }
@@ -123,17 +122,17 @@
   <div class="navlinks">
     <a href="playbook.html">playbook</a>
     <div class="nav-drop">
-      <button class="nav-drop-trigger" aria-expanded="false">career <span class="caret">▾</span></button>
+      <button class="nav-drop-trigger" aria-expanded="false">skills <span class="caret">▾</span></button>
       <div class="nav-drop-menu">
-        <a href="career-advice.html">career advice</a>
         <a href="workplace-skills.html">workplace skills</a>
+        <a href="lasso-lessons.html">lasso lessons</a>
       </div>
     </div>
     <div class="nav-drop">
-      <button class="nav-drop-trigger" aria-expanded="false">management <span class="caret">▾</span></button>
+      <button class="nav-drop-trigger" aria-expanded="false">career <span class="caret">▾</span></button>
       <div class="nav-drop-menu">
+        <a href="career-advice.html">career advice</a>
         <a href="becoming-a-manager.html">becoming a manager</a>
-        <a href="lasso-lessons.html">lasso lessons</a>
       </div>
     </div>
     <a href="templates.html">templates</a>
@@ -162,65 +161,79 @@
 
 <section class="pillars">
   <div class="pillars-head">
-    <div class="eyebrow rich">four ways in</div>
+    <div class="eyebrow rich">five ways in</div>
     <h2>Not a blog. A <b>toolkit</b> for the job you just got handed.</h2>
   </div>
 
   <div class="grid">
-    <a class="tile" href="playbook.html">
-      <div class="tile-visual cv1">
-        <svg class="icon-bg" viewBox="0 0 24 24"><path d="M4 4v16M4 4h13l-2 4 2 4H4"/></svg>
-        <div class="tile-index"><span>01 / THE PLAYBOOK</span><span class="read">Start →</span></div>
+    <a class="tile" href="tools.html">
+      <div class="tile-visual cv4">
+        <svg class="icon-bg" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <div class="tile-index"><span>01 / TOOLS</span><span class="read">Calculate →</span></div>
         <div>
-          <div class="tile-big">Day 1 → Year 1</div>
-          <div class="tile-sub">A visual timeline, not an essay stack</div>
+          <div class="tile-big">Get the exact number</div>
+          <div class="tile-sub">Calculators, no guessing</div>
         </div>
       </div>
       <div class="tile-cap">
-        <div class="title">The Playbook <span class="dot">•</span> Day 1 → Year 1</div>
-        <div class="desc">A visual timeline of exactly what to focus on at each stage, not a stack of essays.</div>
-      </div>
-    </a>
-    <a class="tile" href="lasso-lessons.html">
-      <div class="tile-visual cv2">
-        <svg class="icon-bg" viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.5-8.5C1 9 2.5 5 6.5 5c2 0 3.5 1.3 4 2.5C11 6.3 12.5 5 14.5 5c4 0 5.5 4 4 7.5C16 16.65 12 21 12 21z"/></svg>
-        <div class="tile-index"><span>02 / LASSO LESSONS</span><span class="read">Browse →</span></div>
-        <div>
-          <div class="tile-big">Richmond-style</div>
-          <div class="tile-sub">One moment, one principle, one action</div>
-        </div>
-      </div>
-      <div class="tile-cap">
-        <div class="title">Ted Lasso Lessons <span class="dot">•</span> Richmond-style</div>
-        <div class="desc">Short, shareable leadership lessons pulled from the show. One moment, one principle, one action.</div>
+        <div class="title">Tools <span class="dot">•</span> Get the exact number</div>
+        <div class="desc">Turnover cost, offer comparisons, and career paths, calculated, not estimated.</div>
       </div>
     </a>
     <a class="tile" href="templates.html">
       <div class="tile-visual cv3">
         <svg class="icon-bg" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="16" rx="1"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
-        <div class="tile-index"><span>03 / TEMPLATES</span><span class="read">Grab →</span></div>
+        <div class="tile-index"><span>02 / TEMPLATES</span><span class="read">Grab →</span></div>
         <div>
-          <div class="tile-big">Copy & go</div>
-          <div class="tile-sub">Free, no toolkit paywall</div>
+          <div class="tile-big">What to say, word for word</div>
+          <div class="tile-sub">Scripts and documents, free</div>
         </div>
       </div>
       <div class="tile-cap">
-        <div class="title">Templates <span class="dot">•</span> Copy & go</div>
-        <div class="desc">Real scripts for 1:1s, reviews, and hard conversations. Free, no toolkit paywall.</div>
+        <div class="title">Templates <span class="dot">•</span> What to say, word for word</div>
+        <div class="desc">The exact language for the conversation you're dreading, plus the paperwork to back it up.</div>
+      </div>
+    </a>
+    <a class="tile" href="workplace-skills.html">
+      <div class="tile-visual cv2">
+        <svg class="icon-bg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5l3 2"/></svg>
+        <div class="tile-index"><span>03 / SKILLS</span><span class="read">Browse →</span></div>
+        <div>
+          <div class="tile-big">The stuff nobody sat you down and explained</div>
+          <div class="tile-sub">How to handle a mistake, say "I don't know," and more</div>
+        </div>
+      </div>
+      <div class="tile-cap">
+        <div class="title">Skills <span class="dot">•</span> The stuff nobody sat you down and explained</div>
+        <div class="desc">The unwritten rules of being good at work, whether or not you have a title yet.</div>
+      </div>
+    </a>
+    <a class="tile" href="playbook.html">
+      <div class="tile-visual cv1">
+        <svg class="icon-bg" viewBox="0 0 24 24"><path d="M4 4v16M4 4h13l-2 4 2 4H4"/></svg>
+        <div class="tile-index"><span>04 / PLAYBOOK</span><span class="read">Start →</span></div>
+        <div>
+          <div class="tile-big">The four stages of your first year</div>
+          <div class="tile-sub">Week 1 to Year 1, one flagship track</div>
+        </div>
+      </div>
+      <div class="tile-cap">
+        <div class="title">Playbook <span class="dot">•</span> The four stages of your first year</div>
+        <div class="desc">What actually needs your attention right now, not a stack of essays to get through.</div>
       </div>
     </a>
     <a class="tile" href="career-advice.html">
       <div class="tile-visual cv6">
         <svg class="icon-bg" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20v-3"/></svg>
-        <div class="tile-index"><span>04 / CAREER ADVICE</span><span class="read">Read →</span></div>
+        <div class="tile-index"><span>05 / CAREER</span><span class="read">Read →</span></div>
         <div>
-          <div class="tile-big">For you, too</div>
-          <div class="tile-sub">Not just your team's career, yours</div>
+          <div class="tile-big">Being good at the job isn't the same as having a good career</div>
+          <div class="tile-sub">Negotiating, managing up, knowing when to leave</div>
         </div>
       </div>
       <div class="tile-cap">
-        <div class="title">Career Advice <span class="dot">•</span> Play the long game</div>
-        <div class="desc">Negotiating, knowing when to leave, managing up, the moves for your own career.</div>
+        <div class="title">Career <span class="dot">•</span> Being good at the job isn't the same as having a good career</div>
+        <div class="desc">The moves for your own career, not just your team's.</div>
       </div>
     </a>
   </div>
