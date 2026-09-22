@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Employee Turnover Cost Calculator | Tools</title>
+<meta name="description" content="A real turnover number isn't just backfill salary. Add up the vacancy gap, recruiting spend, ramp-up productivity loss, and the hidden hours your team pours into covering and training, checked against the industry benchmark.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="First-Time Managers">
+<meta property="og:title" content="Employee Turnover Cost Calculator | Tools">
+<meta property="og:description" content="A real turnover number isn't just backfill salary. Add up the vacancy gap, recruiting spend, ramp-up productivity loss, and the hidden hours your team pours into covering and training.">
+<meta property="og:url" content="https://first-timemanagers.com/turnover-cost-calculator.html">
+<meta property="og:image" content="https://first-timemanagers.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Employee Turnover Cost Calculator | Tools">
+<meta name="twitter:description" content="A real turnover number isn't just backfill salary. Add up the vacancy gap, recruiting spend, ramp-up productivity loss, and the hidden hours your team pours into covering and training.">
+<meta name="twitter:image" content="https://first-timemanagers.com/og-image.png">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://first-timemanagers.com/turnover-cost-calculator.html">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Employee Turnover Cost Calculator",
+  "description": "A real turnover number isn't just backfill salary. Add up the vacancy gap, recruiting spend, ramp-up productivity loss, and the hidden hours your team pours into covering and training, checked against the industry benchmark.",
+  "url": "https://first-timemanagers.com/turnover-cost-calculator.html",
+  "datePublished": "2026-09-22",
+  "dateModified": "2026-09-22",
+  "author": {
+    "@type": "Person",
+    "name": "Michael Henrie",
+    "url": "https://first-timemanagers.com/about.html",
+    "sameAs": ["https://www.linkedin.com/in/michael-henrie"]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "First-Time Managers",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://first-timemanagers.com/apple-touch-icon.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://first-timemanagers.com/turnover-cost-calculator.html"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://first-timemanagers.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://first-timemanagers.com/tools.html" },
+    { "@type": "ListItem", "position": 3, "name": "Employee Turnover Cost Calculator", "item": "https://first-timemanagers.com/turnover-cost-calculator.html" }
+  ]
+}
+</script>
+<style>
+  /* ---- Turnover Cost Calculator: reskinned to the site's dark design system ---- */
+  #tcc *{ box-sizing:border-box; }
+  #tcc{ font-family:inherit; color:var(--text); max-width:680px; margin:0 auto; padding:0 56px; }
+  #tcc .card{ background:var(--bg2); border:1px solid rgba(237,235,228,.15); border-radius:2px; padding:24px; margin-bottom:18px; }
+  #tcc .section-title{ font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--gold); margin:0 0 18px; }
+  #tcc .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  #tcc .field{ margin-bottom:16px; }
+  #tcc .field:last-child{ margin-bottom:0; }
+  #tcc label{ display:block; font-size:11px; text-transform:uppercase; letter-spacing:.06em; font-weight:600; margin-bottom:8px; color:var(--muted); }
+  #tcc .hint{ font-size:12.5px; color:var(--muted); margin-top:6px; line-height:1.5; }
+  #tcc input[type="number"], #tcc input[type="text"]{
+    width:100%; padding:12px 14px; border-radius:2px; border:1px solid rgba(237,235,228,.18);
+    background:var(--bg); color:var(--text); font-size:14.5px; font-family:inherit;
+  }
+  #tcc input[type="number"]:focus, #tcc input[type="text"]:focus{ outline:none; border-color:var(--gold); }
+  #tcc input[type="range"]{ width:100%; accent-color:var(--gold); }
+  #tcc .slider-row{ display:flex; align-items:center; gap:12px; }
+  #tcc .slider-val{ min-width:52px; text-align:right; font-weight:700; font-size:13.5px; color:var(--gold); }
+  #tcc button.go{
+    width:100%; padding:16px; border-radius:30px; border:none; background:var(--gold);
+    color:#1B1B1A; font-size:13px; font-weight:700; letter-spacing:.02em; cursor:pointer; margin-top:6px;
+  }
+  #tcc button.go:hover{ background:#f0b552; }
+  #tcc #result{ display:none; }
+  #tcc .total-num{ font-size:40px; font-weight:700; letter-spacing:-.01em; color:var(--gold); }
+  #tcc .total-sub{ color:var(--muted); font-size:14px; margin-top:4px; margin-bottom:22px; line-height:1.6; }
+  #tcc .bar-wrap{ display:flex; height:34px; border-radius:2px; overflow:hidden; margin-bottom:20px; border:1px solid rgba(237,235,228,.15); }
+  #tcc .bar-seg{ display:flex; align-items:center; justify-content:center; color:#1B1B1A; font-size:11px; font-weight:700; overflow:hidden; white-space:nowrap; }
+  #tcc .breakdown-row{ display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid rgba(237,235,228,.08); font-size:13.5px; }
+  #tcc .breakdown-row:last-child{ border-bottom:none; }
+  #tcc .bd-label{ display:flex; align-items:center; gap:9px; color:var(--text); }
+  #tcc .dot{ width:10px; height:10px; border-radius:2px; flex-shrink:0; }
+  #tcc .bd-val{ font-weight:700; color:var(--text); }
+  #tcc .bd-pct{ color:var(--muted); font-size:12px; margin-left:6px; }
+  #tcc .callout{
+    margin-top:20px; padding:20px; border-radius:2px;
+    background:linear-gradient(155deg,#241C0F 0%,#1B1B1A 60%,#17211D 100%);
+    border:1px solid rgba(227,166,62,.25); font-size:14px; line-height:1.65; color:var(--text);
+  }
+  #tcc .callout strong{ color:var(--gold); }
+  #tcc .benchmark{ margin-top:16px; padding:18px 20px; border-radius:2px; border:1px solid rgba(237,235,228,.15); font-size:13.5px; line-height:1.6; }
+  #tcc .benchmark .bm-title{ font-weight:700; font-size:11px; text-transform:uppercase; letter-spacing:.06em; margin-bottom:8px; }
+  #tcc .benchmark.in-range{ background:rgba(227,166,62,.08); border-color:rgba(227,166,62,.25); }
+  #tcc .benchmark.in-range .bm-title{ color:var(--gold); }
+  #tcc .benchmark.out-range{ background:rgba(194,75,75,.08); border-color:rgba(194,75,75,.3); }
+  #tcc .benchmark.out-range .bm-title{ color:var(--richmond); }
+  #tcc .indirect-note{ margin-top:16px; padding:18px 20px; border-radius:2px; border:1px dashed rgba(237,235,228,.25); font-size:13px; line-height:1.6; color:var(--muted); }
+  #tcc .indirect-note strong{ color:var(--text); }
+  #tcc .source-line{ margin-top:18px; font-size:11.5px; color:var(--muted); line-height:1.6; }
+  #tcc .source-line a{ color:var(--muted); text-decoration:underline; }
+  #tcc .share-actions{ display:flex; gap:12px; margin-top:22px; flex-wrap:wrap; }
+  #tcc .share-btn{
+    flex:1; min-width:150px; padding:13px 18px; border-radius:30px; border:1px solid rgba(237,235,228,.25);
+    background:transparent; color:var(--text); font-size:12.5px; font-weight:700; cursor:pointer;
+    display:flex; align-items:center; justify-content:center; gap:8px;
+  }
+  #tcc .share-btn:hover{ border-color:var(--gold); color:var(--gold); }
+  #tcc .share-btn.primary{ background:var(--gold); border-color:var(--gold); color:#1B1B1A; }
+  #tcc .share-btn.primary:hover{ background:#f0b552; }
+  #tcc .share-preview{ margin-top:20px; display:none; text-align:center; }
+  #tcc .share-preview img{ max-width:100%; border-radius:2px; border:1px solid rgba(237,235,228,.15); }
+  #tcc .copied-msg{ font-size:12.5px; color:var(--gold); margin-top:10px; text-align:center; display:none; }
+  @media(max-width:900px){ #tcc{ padding:0 20px; } }
+  @media(max-width:480px){ #tcc .grid2{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<nav data-pagefind-ignore>
+  <a class="logo" href="index.html"><span class="mark"></span> first-time managers</a>
+  <div class="navlinks">
+    <a href="playbook.html">playbook</a>
+    <a href="situations.html">everything</a>
+    <a href="lasso-lessons.html">lasso lessons</a>
+    <a href="templates.html">templates</a>
+    <a href="tools.html" class="active">tools</a>
+    <a href="career-advice.html">career advice</a>
+    <a href="becoming-a-manager.html">becoming a manager</a>
+    <a href="workplace-skills.html">workplace skills</a>
+    <a href="ai-hub.html">ai hub</a>
+    <a href="about.html">about</a>
+  </div>
+  <a class="ask-badge" href="ask-a-question.html">ask a<br>question</a>
+  <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="crumb"><a href="index.html">Home</a> / <a href="tools.html">Tools</a> / Employee Turnover Cost Calculator</div>
+
+<div class="content-hero cv2 tall">
+  <div class="content-tag">Tools</div>
+  <h1>Employee Turnover Cost Calculator</h1>
+</div>
+
+<main>
+  <div style="max-width:680px; margin:56px auto 0; padding:0 56px;">
+    <p style="font-size:19px; font-weight:300; color:#fff; line-height:1.6; margin-bottom:0;">A real turnover number isn't just backfill salary. It's the vacancy gap, the recruiting spend, the ramp-up productivity loss, and the hidden hours your team and managers pour into covering and training. This adds it all up, and checks it against industry research.</p>
+  </div>
+
+  <div id="tcc" style="margin-top:36px;">
+
+  <div class="card">
+    <div class="section-title">The role</div>
+    <div class="grid2">
+      <div class="field">
+        <label for="oldSalary">Departing employee salary</label>
+        <input type="number" id="oldSalary" value="75000" min="0" step="1000">
+      </div>
+      <div class="field">
+        <label for="newSalary">New hire salary</label>
+        <input type="number" id="newSalary" value="78000" min="0" step="1000">
+        <div class="hint">Often higher due to market pay creep</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section-title">Vacancy and recruiting</div>
+    <div class="field">
+      <label>Time to fill the role</label>
+      <div class="slider-row">
+        <input type="range" id="fillWeeks" min="1" max="26" value="8" oninput="syncVal('fillWeeks')">
+        <span class="slider-val" id="fillWeeksVal">8 wks</span>
+      </div>
+      <div class="hint">Weeks the seat sits empty, from last day to first day</div>
+    </div>
+    <div class="grid2">
+      <div class="field">
+        <label for="recruitPct">Recruiting cost</label>
+        <div class="slider-row">
+          <input type="range" id="recruitPct" min="0" max="30" value="18" oninput="syncVal('recruitPct')">
+          <span class="slider-val" id="recruitPctVal">18%</span>
+        </div>
+        <div class="hint">Agency fee or loaded internal recruiter cost as percent of new salary</div>
+      </div>
+      <div class="field">
+        <label for="coverPct">Team coverage load</label>
+        <div class="slider-row">
+          <input type="range" id="coverPct" min="0" max="100" value="40" oninput="syncVal('coverPct')">
+          <span class="slider-val" id="coverPctVal">40%</span>
+        </div>
+        <div class="hint">How much of the open role gets absorbed by teammates during the vacancy</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section-title">Ramp up to full productivity</div>
+    <div class="field">
+      <label>Months to reach full productivity</label>
+      <div class="slider-row">
+        <input type="range" id="rampMonths" min="1" max="12" value="4" oninput="syncVal('rampMonths')">
+        <span class="slider-val" id="rampMonthsVal">4 mo</span>
+      </div>
+      <div class="hint">Time until the new hire performs at the level of the person who left</div>
+    </div>
+    <div class="field">
+      <label>Starting productivity in month one</label>
+      <div class="slider-row">
+        <input type="range" id="startProd" min="10" max="80" value="40" oninput="syncVal('startProd')">
+        <span class="slider-val" id="startProdVal">40%</span>
+      </div>
+      <div class="hint">Ramp is modeled as a straight line from this number up to full productivity</div>
+    </div>
+    <div class="grid2">
+      <div class="field">
+        <label for="trainHours">Manager or trainer hours per week</label>
+        <input type="number" id="trainHours" value="5" min="0" step="0.5">
+      </div>
+      <div class="field">
+        <label for="trainerRate">Trainer hourly rate</label>
+        <input type="number" id="trainerRate" value="60" min="0" step="5">
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section-title">Direct costs</div>
+    <div class="field">
+      <label for="directCost">Onboarding, tools, and training materials</label>
+      <input type="number" id="directCost" value="2000" min="0" step="100">
+      <div class="hint">Equipment, courses, certifications, admin setup</div>
+    </div>
+  </div>
+
+  <button class="go" onclick="calculate()">Calculate total cost</button>
+
+  <div class="card" id="result">
+    <div class="total-num" id="totalNum"></div>
+    <div class="total-sub" id="totalSub"></div>
+
+    <div class="bar-wrap" id="barWrap"></div>
+
+    <div id="breakdown"></div>
+
+    <div class="callout" id="callout"></div>
+
+    <div class="benchmark" id="benchmark"></div>
+
+    <div class="indirect-note">
+      <strong>What this number does not include:</strong> this calculator totals direct costs only. Research on turnover also points to indirect costs that are real but hard to price, damaged employer brand, lost institutional knowledge, and strain on the team members who stay. Those often compound the number above.
+    </div>
+
+    <div class="source-line">
+      Benchmark reference: analyst Josh Bersin estimates total replacement cost at 1.5 to 2 times an employee's annual salary. Source: <a href="https://www.qualtrics.com/articles/employee-experience/cost-of-employee-turnover/" target="_blank" rel="noopener">Qualtrics</a>.
+    </div>
+
+    <div class="share-actions">
+      <button class="share-btn primary" onclick="generateShareCard()">Generate share image</button>
+      <button class="share-btn" onclick="copyResultText()">Copy as text</button>
+    </div>
+    <div class="copied-msg" id="copiedMsg">Copied to clipboard</div>
+
+    <div class="share-preview" id="sharePreview">
+      <canvas id="shareCanvas" width="1080" height="1350" style="display:none;"></canvas>
+      <img id="shareImg" alt="Turnover cost result card">
+      <div class="share-actions">
+        <a class="share-btn primary" id="downloadLink" download="turnover-cost-result.png" style="text-decoration:none;">Download image</a>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+  <div class="resources" style="max-width:680px; margin:16px auto 0; padding:0 56px;">
+    <a class="resource-card" href="tools.html">
+      <div class="kicker">Tools</div>
+      <div class="title">Back to all Tools →</div>
+    </a>
+    <a class="resource-card" href="hiring-your-first-team-member.html">
+      <div class="kicker">Situation Navigator</div>
+      <div class="title">Hiring Your First Team Member →</div>
+    </a>
+  </div>
+</main>
+
+<script>
+function syncVal(id) {
+  const el = document.getElementById(id);
+  const label = document.getElementById(id + 'Val');
+  if (id === 'fillWeeks') label.textContent = el.value + ' wks';
+  else if (id === 'rampMonths') label.textContent = el.value + ' mo';
+  else label.textContent = el.value + '%';
+}
+
+function fmt(n) {
+  return '$' + Math.round(n).toLocaleString();
+}
+
+let lastResult = null;
+
+function calculate() {
+  const oldSalary = parseFloat(document.getElementById('oldSalary').value) || 0;
+  const newSalary = parseFloat(document.getElementById('newSalary').value) || 0;
+  const fillWeeks = parseFloat(document.getElementById('fillWeeks').value) || 0;
+  const recruitPct = parseFloat(document.getElementById('recruitPct').value) / 100;
+  const coverPct = parseFloat(document.getElementById('coverPct').value) / 100;
+  const rampMonths = parseFloat(document.getElementById('rampMonths').value) || 0;
+  const startProd = parseFloat(document.getElementById('startProd').value) / 100;
+  const trainHours = parseFloat(document.getElementById('trainHours').value) || 0;
+  const trainerRate = parseFloat(document.getElementById('trainerRate').value) || 0;
+  const directCost = parseFloat(document.getElementById('directCost').value) || 0;
+
+  const weeklyOldPay = oldSalary / 52;
+  const vacancyCost = weeklyOldPay * fillWeeks * coverPct;
+
+  const recruitingCost = newSalary * recruitPct;
+
+  const weeklyNewPay = newSalary / 52;
+  const rampWeeks = rampMonths * 4.33;
+  let productivityLossPct = 0;
+  const steps = Math.max(Math.round(rampWeeks), 1);
+  for (let i = 0; i < steps; i++) {
+    const progress = i / steps;
+    const prodAtStep = startProd + (1 - startProd) * progress;
+    productivityLossPct += (1 - prodAtStep);
+  }
+  const avgLossPct = productivityLossPct / steps;
+  const rampProductivityCost = weeklyNewPay * rampWeeks * avgLossPct;
+
+  const trainerCost = trainHours * trainerRate * rampWeeks;
+
+  const total = vacancyCost + recruitingCost + rampProductivityCost + trainerCost + directCost;
+  const pctOfSalary = oldSalary > 0 ? (total / oldSalary) * 100 : 0;
+
+  document.getElementById('totalNum').textContent = fmt(total);
+  document.getElementById('totalSub').textContent = oldSalary > 0
+    ? 'total cost, or ' + pctOfSalary.toFixed(0) + ' percent of the departing employee salary'
+    : 'total cost';
+
+  const segments = [
+    { label: 'Vacancy coverage', val: vacancyCost, color: '#E3A63E' },
+    { label: 'Recruiting', val: recruitingCost, color: '#C24B4B' },
+    { label: 'Ramp up productivity loss', val: rampProductivityCost, color: '#4A7FB5' },
+    { label: 'Manager or trainer time', val: trainerCost, color: '#3F9E7A' },
+    { label: 'Onboarding and materials', val: directCost, color: '#8C7AE0' }
+  ];
+
+  const barWrap = document.getElementById('barWrap');
+  barWrap.innerHTML = '';
+  segments.forEach(s => {
+    const pct = total > 0 ? (s.val / total) * 100 : 0;
+    if (pct <= 0) return;
+    const seg = document.createElement('div');
+    seg.className = 'bar-seg';
+    seg.style.width = pct + '%';
+    seg.style.background = s.color;
+    seg.textContent = pct > 8 ? pct.toFixed(0) + '%' : '';
+    barWrap.appendChild(seg);
+  });
+
+  const breakdown = document.getElementById('breakdown');
+  breakdown.innerHTML = '';
+  segments.forEach(s => {
+    const pct = total > 0 ? (s.val / total) * 100 : 0;
+    const row = document.createElement('div');
+    row.className = 'breakdown-row';
+    row.innerHTML = '<span class="bd-label"><span class="dot" style="background:' + s.color + '"></span>' + s.label + '</span>' +
+      '<span><span class="bd-val">' + fmt(s.val) + '</span><span class="bd-pct">' + pct.toFixed(0) + '%</span></span>';
+    breakdown.appendChild(row);
+  });
+
+  const callout = document.getElementById('callout');
+  const biggest = segments.reduce((a, b) => (b.val > a.val ? b : a));
+  let note = '<strong>Biggest driver:</strong> ' + biggest.label.toLowerCase() + ' is your largest cost component. ';
+  if (biggest.label.includes('Ramp')) {
+    note += 'Shortening ramp time, through better onboarding docs or a structured first ninety day plan, moves this number more than almost anything else you could change.';
+  } else if (biggest.label.includes('Vacancy')) {
+    note += 'This one is about speed to hire. A faster process or a warmer pipeline of candidates cuts this directly.';
+  } else if (biggest.label.includes('Recruiting')) {
+    note += 'Building an internal referral pipeline or reducing reliance on agencies would meaningfully lower this.';
+  } else if (biggest.label.includes('trainer')) {
+    note += 'This reflects real hours pulled from a manager or senior teammate. Worth asking if a structured training program could reduce hours needed per hire.';
+  } else {
+    note += 'This is largely fixed cost, less room to optimize here compared to the other categories.';
+  }
+  callout.innerHTML = note;
+
+  const benchmark = document.getElementById('benchmark');
+  const lowBench = oldSalary * 1.5;
+  const highBench = oldSalary * 2.0;
+  if (total < lowBench) {
+    const gap = lowBench - total;
+    benchmark.className = 'benchmark out-range';
+    benchmark.innerHTML = '<div class="bm-title">Below the typical research range</div>' +
+      'Industry estimates put full replacement cost at 1.5 to 2 times annual salary, or ' + fmt(lowBench) + ' to ' + fmt(highBench) + ' for this role. Your total is ' + fmt(gap) + ' below that range, which usually means some cost is being missed here, often indirect costs like team morale, knowledge loss, or a longer real ramp time than estimated.';
+  } else if (total > highBench) {
+    const over = total - highBench;
+    benchmark.className = 'benchmark out-range';
+    benchmark.innerHTML = '<div class="bm-title">Above the typical research range</div>' +
+      'Industry estimates put full replacement cost at 1.5 to 2 times annual salary, or ' + fmt(lowBench) + ' to ' + fmt(highBench) + ' for this role. Your total runs ' + fmt(over) + ' higher, which can be legitimate for hard to fill or highly specialized roles, but worth double checking your inputs if that is not the case here.';
+  } else {
+    benchmark.className = 'benchmark in-range';
+    benchmark.innerHTML = '<div class="bm-title">In line with industry research</div>' +
+      'Your total falls within the widely cited 1.5 to 2 times annual salary range for full replacement cost. That is a good sign this estimate is realistic, not inflated or understated.';
+  }
+
+  lastResult = {
+    total: total,
+    pctOfSalary: pctOfSalary,
+    oldSalary: oldSalary,
+    biggestLabel: biggest.label,
+    biggestPct: total > 0 ? (biggest.val / total) * 100 : 0,
+    segments: segments,
+    salaryMultiple: oldSalary > 0 ? total / oldSalary : 0
+  };
+
+  document.getElementById('result').style.display = 'block';
+  document.getElementById('sharePreview').style.display = 'none';
+  document.getElementById('copiedMsg').style.display = 'none';
+  document.getElementById('result').scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+
+function copyResultText() {
+  if (!lastResult) return;
+  const r = lastResult;
+  const lowBench = r.oldSalary * 1.5;
+  const highBench = r.oldSalary * 2.0;
+  let benchLine = '';
+  if (r.total >= lowBench && r.total <= highBench) {
+    benchLine = 'This lines up with the widely cited industry range of 1.5 to 2x annual salary.\n';
+  } else if (r.total < lowBench) {
+    benchLine = 'That is actually below the typical industry range of 1.5 to 2x annual salary, real cost may be higher.\n';
+  } else {
+    benchLine = 'That runs above the typical industry range of 1.5 to 2x annual salary.\n';
+  }
+  const text = 'This turnover just cost roughly ' + fmt(r.total) + '.\n' +
+    'That is ' + r.pctOfSalary.toFixed(0) + ' percent of the departing employee salary, or about ' + r.salaryMultiple.toFixed(1) + 'x their pay.\n' +
+    benchLine +
+    'Biggest driver: ' + r.biggestLabel.toLowerCase() + ' (' + r.biggestPct.toFixed(0) + '% of the total).\n' +
+    'Calculated with the Employee Turnover Cost Calculator, first-timemanagers.com/turnover-cost-calculator.html';
+  navigator.clipboard.writeText(text).then(() => {
+    const msg = document.getElementById('copiedMsg');
+    msg.textContent = 'Copied to clipboard';
+    msg.style.display = 'block';
+    setTimeout(() => { msg.style.display = 'none'; }, 2500);
+  }).catch(() => {
+    const msg = document.getElementById('copiedMsg');
+    msg.textContent = 'Could not copy automatically, select and copy manually';
+    msg.style.display = 'block';
+  });
+}
+
+function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+  const words = text.split(' ');
+  let line = '';
+  let curY = y;
+  for (let i = 0; i < words.length; i++) {
+    const testLine = line + words[i] + ' ';
+    if (ctx.measureText(testLine).width > maxWidth && line !== '') {
+      ctx.fillText(line, x, curY);
+      line = words[i] + ' ';
+      curY += lineHeight;
+    } else {
+      line = testLine;
+    }
+  }
+  ctx.fillText(line, x, curY);
+  return curY;
+}
+
+function generateShareCard() {
+  if (!lastResult) return;
+  const r = lastResult;
+  const canvas = document.getElementById('shareCanvas');
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width, H = canvas.height;
+
+  const grad = ctx.createLinearGradient(0, 0, 0, H);
+  grad.addColorStop(0, '#241C0F');
+  grad.addColorStop(0.55, '#1B1B1A');
+  grad.addColorStop(1, '#17211D');
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, W, H);
+
+  ctx.fillStyle = 'rgba(237,235,228,0.6)';
+  ctx.font = '600 30px -apple-system, sans-serif';
+  ctx.fillText('EMPLOYEE TURNOVER COST', 70, 130);
+
+  ctx.fillStyle = '#EDEBE4';
+  ctx.font = '700 34px -apple-system, sans-serif';
+  wrapText(ctx, 'What one departure actually cost', 70, 200, W - 140, 44);
+
+  ctx.fillStyle = '#E3A63E';
+  ctx.font = '800 130px -apple-system, sans-serif';
+  ctx.fillText(fmt(r.total), 66, 430);
+
+  ctx.fillStyle = 'rgba(237,235,228,0.85)';
+  ctx.font = '500 34px -apple-system, sans-serif';
+  const pctLine = r.oldSalary > 0
+    ? r.pctOfSalary.toFixed(0) + '% of the departing employee salary, about ' + r.salaryMultiple.toFixed(1) + 'x their pay'
+    : 'Total estimated direct replacement cost';
+  wrapText(ctx, pctLine, 70, 500, W - 140, 44);
+
+  let barY = 610;
+  const barX = 70;
+  const barW = W - 140;
+  const barH = 60;
+  let cx = barX;
+  r.segments.forEach((s) => {
+    const pct = r.total > 0 ? s.val / r.total : 0;
+    const segW = barW * pct;
+    ctx.fillStyle = s.color;
+    ctx.fillRect(cx, barY, segW, barH);
+    cx += segW;
+  });
+
+  let legendY = barY + barH + 60;
+  ctx.font = '500 28px -apple-system, sans-serif';
+  r.segments.forEach((s) => {
+    const pct = r.total > 0 ? (s.val / r.total) * 100 : 0;
+    ctx.fillStyle = s.color;
+    ctx.fillRect(70, legendY - 24, 24, 24);
+    ctx.fillStyle = 'rgba(237,235,228,0.85)';
+    ctx.fillText(s.label + '  ' + pct.toFixed(0) + '%', 108, legendY - 3);
+    legendY += 46;
+  });
+
+  ctx.fillStyle = 'rgba(237,235,228,0.5)';
+  ctx.font = '500 26px -apple-system, sans-serif';
+  ctx.fillText('Biggest driver: ' + r.biggestLabel, 70, legendY + 30);
+
+  const lowBench = r.oldSalary * 1.5;
+  const highBench = r.oldSalary * 2.0;
+  let benchText;
+  if (r.total >= lowBench && r.total <= highBench) benchText = 'In line with the 1.5 to 2x salary industry benchmark';
+  else if (r.total < lowBench) benchText = 'Below the 1.5 to 2x salary industry benchmark';
+  else benchText = 'Above the 1.5 to 2x salary industry benchmark';
+  ctx.fillText(benchText, 70, legendY + 68);
+
+  ctx.strokeStyle = 'rgba(237,235,228,0.15)';
+  ctx.beginPath();
+  ctx.moveTo(70, H - 130);
+  ctx.lineTo(W - 70, H - 130);
+  ctx.stroke();
+
+  ctx.fillStyle = 'rgba(237,235,228,0.55)';
+  ctx.font = '500 26px -apple-system, sans-serif';
+  ctx.fillText('first-timemanagers.com', 70, H - 75);
+
+  const dataUrl = canvas.toDataURL('image/png');
+  document.getElementById('shareImg').src = dataUrl;
+  document.getElementById('downloadLink').href = dataUrl;
+  document.getElementById('sharePreview').style.display = 'block';
+}
+
+calculate();
+</script>
+
+<footer data-pagefind-ignore>
+  <div>first-timemanagers.com</div>
+  <div>© 2024–Present First Time Managers LLC</div>
+</footer>
+
+<script src="js/nav.js"></script>
+</body>
+</html>
