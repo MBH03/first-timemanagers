@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Client Incident RCA Builder | Tools</title>
+<meta name="description" content="Answer 12 guided questions about a client incident and get a polished, client-ready Root Cause Analysis: executive summary, timeline, root cause, and owned corrective actions. Export to PDF or Word.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="First-Time Managers">
+<meta property="og:title" content="Client Incident RCA Builder | Tools">
+<meta property="og:description" content="Answer 12 guided questions about a client incident and get a polished, client-ready Root Cause Analysis: executive summary, timeline, root cause, and owned corrective actions. Export to PDF or Word.">
+<meta property="og:url" content="https://first-timemanagers.com/client-incident-rca-builder.html">
+<meta property="og:image" content="https://first-timemanagers.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Client Incident RCA Builder | Tools">
+<meta name="twitter:description" content="Answer 12 guided questions about a client incident and get a polished, client-ready Root Cause Analysis: executive summary, timeline, root cause, and owned corrective actions. Export to PDF or Word.">
+<meta name="twitter:image" content="https://first-timemanagers.com/og-image.png">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://first-timemanagers.com/client-incident-rca-builder.html">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Client Incident RCA Builder",
+  "description": "Answer 12 guided questions about a client incident and get a polished, client-ready Root Cause Analysis: executive summary, timeline, root cause, and owned corrective actions. Export to PDF or Word.",
+  "url": "https://first-timemanagers.com/client-incident-rca-builder.html",
+  "datePublished": "2026-09-23",
+  "dateModified": "2026-09-23",
+  "author": {
+    "@type": "Person",
+    "name": "Michael Henrie",
+    "url": "https://first-timemanagers.com/about.html",
+    "sameAs": ["https://www.linkedin.com/in/michael-henrie"]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "First-Time Managers",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://first-timemanagers.com/apple-touch-icon.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://first-timemanagers.com/client-incident-rca-builder.html"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://first-timemanagers.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://first-timemanagers.com/tools.html" },
+    { "@type": "ListItem", "position": 3, "name": "Client Incident RCA Builder", "item": "https://first-timemanagers.com/client-incident-rca-builder.html" }
+  ]
+}
+</script>
+<style>
+  /* ---- Client Incident RCA Builder: reskinned to the site's dark design system ---- */
+  #rca{ --line:#34332F; --bg3:#232321; --paper:#FFFFFF; --ink:#1E2329; }
+  #rca *{ box-sizing:border-box; }
+  #rca button, #rca input, #rca textarea, #rca select{ font:inherit; color:inherit; }
+  #rca :focus-visible{ outline:2px solid var(--gold); outline-offset:2px; }
+
+  /* Layout */
+  #rca .app{ display:grid; grid-template-columns:minmax(0,560px) minmax(0,1fr); gap:0; min-height:60vh; }
+  #rca .ask{ padding:40px 40px 60px; border-right:1px solid var(--line); }
+  #rca .preview{ position:sticky; top:0; height:100vh; overflow:auto; background:var(--bg2); padding:32px 36px 80px; }
+  #rca .preview-label{ font-size:13px; color:var(--muted); margin:0 0 14px; display:flex; justify-content:space-between; align-items:center; }
+  #rca .live-dot{ display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--gold); margin-right:8px; vertical-align:1px; }
+  body.reviewing #rca .app{ grid-template-columns:1fr; }
+  body.reviewing #rca .preview{ display:none; }
+  body.reviewing #rca .ask{ border-right:none; max-width:980px; margin:0 auto; width:100%; }
+
+  /* Intro */
+  #rca .intro h2{ font-size:44px; line-height:1.05; letter-spacing:-.03em; margin:8px 0 18px; font-weight:800; }
+  #rca .intro p.lede{ color:var(--muted); font-size:18px; max-width:30em; margin:0 0 28px; }
+  #rca .orb{ width:120px; height:120px; border-radius:50%; background:radial-gradient(circle at 30% 30%,var(--gold),var(--gold-deep) 55%,var(--richmond) 100%); margin-bottom:28px; position:relative; }
+  #rca .orb:after{ content:""; position:absolute; inset:-14px; border-radius:50%; border:1px solid rgba(227,166,62,.35); }
+  #rca .intro ol{ padding:0; margin:32px 0 0; list-style:none; border-top:1px solid var(--line); }
+  #rca .intro li{ display:flex; gap:14px; padding:12px 0; border-bottom:1px solid var(--line); color:var(--muted); font-size:15px; }
+  #rca .intro li b{ color:var(--text); font-weight:600; min-width:24px; }
+  #rca .btn-row{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+
+  /* Buttons */
+  #rca .btn{ border:none; border-radius:999px; padding:12px 22px; font-weight:600; font-size:15px; cursor:pointer; transition:background .15s,color .15s; }
+  #rca .btn-gold{ background:var(--gold); color:#1B1B1A; }
+  #rca .btn-gold:hover{ background:#EDB553; }
+  #rca .btn-ghost{ background:transparent; color:var(--text); border:1px solid var(--line); }
+  #rca .btn-ghost:hover{ border-color:var(--muted); }
+  #rca .btn-text{ background:none; border:none; color:var(--muted); cursor:pointer; padding:6px 4px; font-size:14px; text-decoration:underline; text-underline-offset:3px; }
+  #rca .btn-text:hover{ color:var(--text); }
+
+  /* Progress */
+  #rca .progress{ margin-bottom:34px; }
+  #rca .progress-meta{ display:flex; justify-content:space-between; font-size:13px; color:var(--muted); margin-bottom:10px; }
+  #rca .progress-meta b{ color:var(--gold); font-weight:600; }
+  #rca .bar{ display:grid; grid-auto-flow:column; gap:4px; }
+  #rca .bar button{ height:6px; border:none; border-radius:3px; background:var(--line); padding:0; cursor:pointer; }
+  #rca .bar button.done{ background:var(--gold-deep); }
+  #rca .bar button.cur{ background:var(--gold); }
+
+  /* Question */
+  #rca .q{ font-size:30px; line-height:1.15; letter-spacing:-.02em; font-weight:700; margin:0 0 12px; }
+  #rca .help{ color:var(--muted); margin:0 0 26px; font-size:15.5px; max-width:34em; }
+  #rca .tip{ border-left:3px solid var(--gold); background:var(--bg3); padding:12px 16px; border-radius:0 12px 12px 0; font-size:14px; color:#C9C6BD; margin:0 0 26px; }
+  #rca .tip b{ color:var(--text); }
+  #rca .field{ margin-bottom:20px; }
+  #rca .field>label, #rca .flabel{ display:block; font-size:14px; font-weight:600; margin-bottom:8px; }
+  #rca .hint{ font-size:13px; color:var(--muted); margin:-4px 0 8px; }
+  #rca input[type=text], #rca input[type=date], #rca input[type=datetime-local], #rca textarea, #rca select{
+    width:100%; background:var(--bg2); border:1px solid var(--line); border-radius:12px; padding:12px 14px; font-size:15.5px; color:var(--text); color-scheme:dark;
+  }
+  #rca textarea{ resize:vertical; min-height:90px; line-height:1.5; }
+  #rca input::placeholder, #rca textarea::placeholder{ color:#5F5D57; }
+  #rca input:focus, #rca textarea:focus, #rca select:focus{ border-color:var(--gold); outline:none; }
+  #rca .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  #rca .chips{ display:flex; flex-wrap:wrap; gap:8px; }
+  #rca .chip{ border:1px solid var(--line); background:var(--bg2); border-radius:999px; padding:9px 16px; font-size:14.5px; cursor:pointer; }
+  #rca .chip:hover{ border-color:var(--muted); }
+  #rca .chip[aria-pressed=true]{ background:var(--gold); color:#1B1B1A; border-color:var(--gold); font-weight:600; }
+
+  /* Repeaters */
+  #rca .rep{ display:flex; flex-direction:column; gap:10px; }
+  #rca .rep-row{ display:grid; grid-template-columns:1fr auto; gap:8px; align-items:start; }
+  #rca .rep-row.tl{ grid-template-columns:210px 1fr auto; }
+  #rca .x{ width:40px; height:44px; border-radius:12px; border:1px solid var(--line); background:none; color:var(--muted); cursor:pointer; font-size:18px; }
+  #rca .x:hover{ color:var(--richmond); border-color:var(--richmond); }
+  #rca .add{ align-self:flex-start; background:none; border:1px dashed var(--line); color:var(--gold); border-radius:999px; padding:9px 16px; cursor:pointer; font-size:14px; font-weight:600; margin-top:4px; }
+  #rca .add:hover{ border-color:var(--gold); }
+  #rca .act{ border:1px solid var(--line); border-radius:16px; padding:16px; background:var(--bg3); }
+  #rca .act-head{ display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; font-size:13px; color:var(--muted); font-weight:600; }
+  #rca .act .grid3{ display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:10px; margin-top:10px; }
+  #rca .act .x{ height:32px; width:32px; font-size:15px; }
+
+  #rca .nav{ display:flex; justify-content:space-between; align-items:center; margin-top:34px; padding-top:22px; border-top:1px solid var(--line); }
+
+  /* Review */
+  #rca .checks{ list-style:none; padding:0; margin:0 0 26px; border:1px solid var(--line); border-radius:16px; overflow:hidden; }
+  #rca .checks li{ display:flex; gap:12px; align-items:flex-start; padding:13px 16px; border-bottom:1px solid var(--line); font-size:14.5px; }
+  #rca .checks li:last-child{ border-bottom:none; }
+  #rca .checks .ic{ flex:0 0 22px; height:22px; border-radius:50%; display:grid; place-items:center; font-size:12px; font-weight:800; margin-top:1px; }
+  #rca .checks .warn .ic{ background:rgba(194,75,75,.18); color:#E07A7A; }
+  #rca .checks .ok .ic{ background:rgba(227,166,62,.18); color:var(--gold); }
+  #rca .checks .msg{ flex:1; }
+  #rca .checks button{ flex:0 0 auto; }
+  #rca .export{ display:flex; gap:10px; flex-wrap:wrap; margin:0 0 30px; }
+  #rca .paper-wrap{ background:var(--bg2); border-radius:20px; padding:28px; border:1px solid var(--line); }
+
+  /* Mobile preview */
+  #rca .fab{ display:none; position:fixed; right:16px; bottom:calc(16px + env(safe-area-inset-bottom,0px)); z-index:20; box-shadow:0 8px 24px rgba(0,0,0,.45); }
+  #rca .sheet{ display:none; position:fixed; inset:0; z-index:30; background:var(--bg2); overflow:auto; padding:calc(16px + env(safe-area-inset-top,0px)) 14px calc(40px + env(safe-area-inset-bottom,0px)); }
+  #rca .sheet.open{ display:block; }
+  #rca .sheet-head{ display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; }
+
+  #rca .toast{ position:fixed; left:50%; bottom:28px; transform:translateX(-50%) translateY(20px); background:var(--text); color:var(--bg); padding:11px 20px; border-radius:999px; font-size:14px; font-weight:600; opacity:0; pointer-events:none; transition:opacity .2s,transform .2s; z-index:40; }
+  #rca .toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+
+  @media (max-width:960px){
+    #rca .app{ grid-template-columns:1fr; }
+    #rca .preview{ display:none; }
+    #rca .ask{ border-right:none; padding:28px 20px 110px; }
+    #rca .fab{ display:block; }
+    body.reviewing #rca .fab{ display:none; }
+    #rca .intro h2{ font-size:34px; }
+    #rca .q{ font-size:25px; }
+    #rca .grid2, #rca .act .grid3{ grid-template-columns:1fr; }
+    #rca .rep-row.tl{ grid-template-columns:1fr auto; }
+    #rca .rep-row.tl input[type=datetime-local]{ grid-column:1 / -1; }
+    #rca .paper-wrap{ padding:10px; border-radius:14px; }
+  }
+  @media (prefers-reduced-motion:reduce){ *{ transition:none!important; scroll-behavior:auto!important; } }
+
+  /* ===== Document (shared with Word export) ===== */
+  #rca .doc{ background:var(--paper); color:var(--ink); font-family:Inter,Calibri,Arial,sans-serif; font-size:13.5px; line-height:1.6; padding:48px 52px; border-radius:6px; max-width:820px; margin:0 auto; }
+  #rca .doc p{ margin:0 0 10px; }
+  #rca .doc .d-top{ display:flex; justify-content:space-between; align-items:baseline; border-bottom:3px solid #22405E; padding-bottom:10px; margin-bottom:26px; gap:16px; }
+  #rca .doc .d-org{ font-weight:700; font-size:14px; color:#22405E; }
+  #rca .doc .d-conf{ font-size:11.5px; color:#6B7580; }
+  #rca .doc h1{ font-family:"Source Serif 4",Georgia,serif; font-weight:600; font-size:28px; line-height:1.2; margin:0 0 4px; color:#14202C; }
+  #rca .doc .d-sub{ font-size:16px; color:#3D4852; margin:0 0 22px; }
+  #rca .doc table{ width:100%; border-collapse:collapse; margin:6px 0 14px; font-size:12.5px; }
+  #rca .doc th, #rca .doc td{ text-align:left; vertical-align:top; padding:8px 10px; border:1px solid #DCE1E6; }
+  #rca .doc th{ background:#F2F5F8; font-weight:600; color:#2C3845; }
+  #rca .doc .d-meta td{ border:none; border-bottom:1px solid #E6EAEE; padding:7px 10px 7px 0; }
+  #rca .doc .d-meta .k{ color:#6B7580; width:18%; font-size:12px; }
+  #rca .doc .d-meta .v{ font-weight:600; width:32%; }
+  #rca .doc .d-sec{ margin-top:26px; padding:4px 0 0; }
+  #rca .doc h2{ font-family:"Source Serif 4",Georgia,serif; font-weight:600; font-size:18px; color:#14202C; margin:0 0 10px; padding-top:14px; border-top:1px solid #DCE1E6; }
+  #rca .doc h2 .n{ color:#22405E; margin-right:10px; }
+  #rca .doc h3{ font-size:13px; font-weight:700; margin:14px 0 6px; color:#2C3845; }
+  #rca .doc ul, #rca .doc ol{ margin:0 0 10px; padding-left:20px; }
+  #rca .doc li{ margin-bottom:4px; }
+  #rca .doc .pending{ color:#A0A8B0; font-style:italic; }
+  #rca .doc .facts td.k{ width:26%; color:#4A5561; background:#F8FAFB; font-weight:600; }
+  #rca .doc .tag{ display:inline-block; padding:1px 8px; border-radius:10px; font-size:11px; font-weight:600; background:#EEF2F6; color:#22405E; }
+  #rca .doc .tag.done{ background:#E6F4EA; color:#1E6B36; }
+  #rca .doc .tag.prog{ background:#FFF4DE; color:#8A5A00; }
+  #rca .doc .d-foot{ margin-top:34px; padding-top:12px; border-top:1px solid #DCE1E6; font-size:11px; color:#6B7580; }
+  #rca .preview .doc{ padding:34px 36px; font-size:12.5px; }
+  #rca .preview .doc .d-sec{ transition:box-shadow .25s,background .25s; border-radius:4px; }
+  #rca .preview .doc .d-sec.active, #rca .preview .doc .d-headblock.active{ box-shadow:-14px 0 0 -10px var(--gold); background:#FFFBF2; }
+  #rca .sheet .doc{ padding:22px 18px; }
+  @media (max-width:600px){
+    #rca .doc{ padding:22px 16px; }
+    #rca .doc .d-meta .k, #rca .doc .d-meta .v{ display:block; width:auto; }
+    #rca .doc .d-meta tr{ display:block; }
+    #rca .doc .d-meta td{ display:block; border:none; padding:2px 0; }
+    #rca .doc .d-meta .v{ padding-bottom:8px; }
+  }
+
+  /* Print */
+  #rca #print{ display:none; }
+  @media print{
+    @page{ margin:16mm; }
+    body{ background:#fff; }
+    nav, .crumb, .content-hero, #rca .app, #rca .fab, #rca .sheet, #rca .toast, .resources, .inline-capture-wrap, footer{ display:none!important; }
+    #rca #print{ display:block; }
+    #rca #print .doc{ padding:0; max-width:none; border-radius:0; font-size:11.5pt; }
+    #rca .doc .d-sec{ break-inside:auto; }
+    #rca .doc h2{ break-after:avoid; }
+    #rca .doc tr{ break-inside:avoid; }
+  }
+</style>
+</head>
+<body>
+
+<nav data-pagefind-ignore>
+  <a class="logo" href="index.html"><span class="mark"></span> first-time managers</a>
+  <div class="navlinks">
+    <a href="playbook.html">playbook</a>
+    <div class="nav-drop">
+      <button class="nav-drop-trigger" aria-expanded="false">skills <span class="caret">▾</span></button>
+      <div class="nav-drop-menu">
+        <a href="workplace-skills.html">workplace skills</a>
+        <a href="lasso-lessons.html">lasso lessons</a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <button class="nav-drop-trigger" aria-expanded="false">career <span class="caret">▾</span></button>
+      <div class="nav-drop-menu">
+        <a href="career-advice.html">career advice</a>
+        <a href="becoming-a-manager.html">becoming a manager</a>
+      </div>
+    </div>
+    <a href="templates.html">templates</a>
+    <a href="tools.html" class="active">tools</a>
+    <a href="ai-hub.html">ai hub</a>
+    <a href="about.html">about</a>
+  </div>
+  <a class="ask-badge" href="ask-a-question.html">ask a<br>question</a>
+  <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="crumb"><a href="index.html">Home</a> / <a href="tools.html">Tools</a> / Client Incident RCA Builder</div>
+
+<div class="content-hero cv4 tall">
+  <div class="content-tag">Tools</div>
+  <h1>Client Incident RCA Builder</h1>
+</div>
+
+<main>
+  <div style="max-width:680px; margin:56px auto 0; padding:0 56px;">
+    <p style="font-size:19px; font-weight:300; color:#fff; line-height:1.6; margin-bottom:12px;">Answer 12 guided questions and get a client-ready Root Cause Analysis: an executive summary, timeline, root cause, and corrective actions with owners and dates.</p>
+    <p style="font-size:14px; color:var(--muted); line-height:1.7; margin-bottom:0;">Your answers stay in this browser. Nothing is uploaded. When it's ready, export it as a <strong style="color:var(--text);">PDF</strong> or a <strong style="color:var(--text);">Word file</strong> and send it.</p>
+  </div>
+
+  <div id="rca">
+
+  <div style="display:flex; justify-content:flex-end; max-width:1200px; margin:0 auto; padding:0 56px;">
+    <button class="btn-text" id="resetBtn" type="button">Start over</button>
+  </div>
+
+  <div class="app">
+    <div class="ask" id="ask" aria-live="polite"></div>
+    <aside class="preview" aria-label="Live document preview">
+      <p class="preview-label"><span><span class="live-dot"></span>Your report, building as you answer</span></p>
+      <div id="previewDoc"></div>
+    </aside>
+  </div>
+
+  <button class="btn btn-gold fab" id="fab" type="button">Preview report</button>
+  <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Report preview">
+    <div class="sheet-head"><b>Report preview</b><button class="btn btn-ghost" id="closeSheet" type="button">Close</button></div>
+    <div id="sheetDoc"></div>
+  </div>
+
+  <div id="print"></div>
+  <div class="toast" id="toast" role="status"></div>
+
+  </div>
+
+  <div class="resources" style="max-width:680px; margin:16px auto 0; padding:0 56px;">
+    <a class="resource-card" href="tools.html">
+      <div class="kicker">Tools</div>
+      <div class="title">Back to all Tools →</div>
+    </a>
+    <a class="resource-card" href="client-escalation-script.html">
+      <div class="kicker">Templates</div>
+      <div class="title">Client Escalation Script →</div>
+    </a>
+  </div>
+</main>
+
+<div class="inline-capture-wrap">
+  <div class="inline-capture">
+    <div class="inline-capture-text">
+      <div class="inline-capture-label">Not a newsletter</div>
+      <p class="inline-capture-copy">Sometimes I find something too good not to pass along. Drop your email, I'll send it when it happens.</p>
+    </div>
+    <div class="inline-capture-action">
+      <div class="inline-capture-confirm" id="inlineCaptureConfirm">Thanks, you're in.</div>
+      <form class="inline-capture-form js-capture-form" data-confirm="inlineCaptureConfirm" action="https://formsubmit.co/firsttimemanager1@gmail.com" method="POST">
+        <input type="email" name="email" placeholder="your@email.com" required>
+        <input type="hidden" name="_subject" value="New email signup — First-Time Managers">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <button type="submit">Count me in</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<footer data-pagefind-ignore>
+  <div>first-timemanagers.com</div>
+  <a href="situations.html">everything</a>
+  <div>© 2024–Present First Time Managers LLC</div>
+</footer>
+
+<script>
+(function(){
+const KEY = 'ftm_rca_builder_v1';
+const today = () => { const d = new Date(); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); };
+const act = () => ({action:'',owner:'',due:'',status:'Planned'});
+const blank = () => ({org:'',client:'',title:'',incidentId:'',severity:'',status:'',preparedBy:'',reportDate:today(),
+  summary:'',start:'',end:'',tz:'',affected:'',impactDetail:'',dataImpact:'',
+  timeline:[{time:'',text:''},{time:'',text:''},{time:'',text:''}],
+  detectedBy:'',detectedAt:'',detection:'',whys:['',''],rootCause:'',factors:['',''],
+  resolution:'',resolvedAt:'',corrective:[act()],preventive:[act()],nextUpdate:'',contact:'',commitment:''});
+
+const SAMPLE = {org:'Brightline Health',client:'Northwind Medical Group',title:'Delayed processing of the September 14 eligibility file',incidentId:'INC 20417',severity:'Severity 2: Major',status:'Resolved',preparedBy:'Jordan Lee, Director of Implementation',reportDate:today(),
+  summary:'On September 14, 2026, the eligibility file Northwind sent overnight was not processed on schedule. For just over six hours, 1,240 newly enrolled members could not register or book care. The cause was an expired file transfer credential that our monitoring did not flag.\nAccess was fully restored at 1:48 PM MT. No data was lost or exposed, and we have committed to four changes so this cannot happen again.',
+  start:'2026-09-14T07:30',end:'2026-09-14T13:48',tz:'MT',
+  affected:'1,240 Northwind members added in the September 14 eligibility file. Existing members were not affected.',
+  impactDetail:'New members saw an "account not found" message when trying to register. 37 members contacted our support team, and Northwind HR received 12 escalations from employees.',
+  dataImpact:'No',
+  timeline:[
+    {time:'2026-09-14T07:30',text:'Scheduled import of the Northwind eligibility file fails. The file transfer credential had expired the day before.'},
+    {time:'2026-09-14T10:12',text:'Northwind HR reports that new hires cannot register.'},
+    {time:'2026-09-14T10:25',text:'Support escalates to Implementation. Incident declared at Severity 2.'},
+    {time:'2026-09-14T11:02',text:'Team identifies the expired credential as the point of failure.'},
+    {time:'2026-09-14T11:40',text:'Northwind account lead notified with the cause and an expected fix time.'},
+    {time:'2026-09-14T12:15',text:'Credential renewed and file import rerun manually.'},
+    {time:'2026-09-14T13:48',text:'All 1,240 members confirmed active. Incident resolved.'}],
+  detectedBy:'Client reported it',detectedAt:'2026-09-14T10:12',
+  detection:'Northwind HR called our support line after several new hires reported registration errors. Our monitoring confirmed that the import job started, but not that it succeeded, so the failure went unnoticed internally.',
+  whys:['Why could new members not register? Their records were never loaded.','Why were the records not loaded? The nightly import could not connect to the file server.','Why could it not connect? The transfer credential expired on September 13.','Why was the expiration missed? Credential renewals are tracked manually in a spreadsheet.','Why did no alert fire? Monitoring checks that a job starts, not that it completes.'],
+  rootCause:'Credential expirations for client file transfers are tracked manually, and our import monitoring confirms only that a job starts, not that it completes successfully. Together, these two gaps allowed a silent failure.',
+  factors:['No automated warning before a transfer credential expires','Import monitoring checks job start, not job success','No record count check comparing each file to the prior day'],
+  resolution:'The implementation team renewed the transfer credential, reran the September 14 import manually, and validated all 1,240 new records against the source file. Support then contacted each of the 37 members who reached out to confirm they could log in.',
+  resolvedAt:'2026-09-14T13:48',
+  corrective:[
+    {action:'Renew and audit every client file transfer credential',owner:'Priya Shah, Integration Lead',due:'2026-09-18',status:'Complete'},
+    {action:'Add success and failure alerts to every scheduled import job',owner:'Marcus Webb, Platform Engineering',due:'2026-09-30',status:'In progress'}],
+  preventive:[
+    {action:'Automate credential expiration alerts at 30, 14, and 3 days',owner:'Marcus Webb, Platform Engineering',due:'2026-10-15',status:'Planned'},
+    {action:'Flag any eligibility file that is 10 percent smaller than the prior day',owner:'Priya Shah, Integration Lead',due:'2026-10-31',status:'Planned'}],
+  nextUpdate:'We will send Northwind a written status update on each open action every Friday until all actions are complete.',
+  contact:'Jordan Lee, Director of Implementation, jordan.lee@brightlinehealth.com',
+  commitment:'Northwind counts on its new hires having a smooth first week, and we fell short of that on September 14. We are sorry for the disruption and are committed to completing every action above on schedule.'};
+
+const STEPS = [
+ {sec:'head', name:'Basics', q:'Who is this report for?', help:'Start with the names that go on the cover.', fields:[
+   {k:'org',label:'Your company',type:'text',ph:'Brightline Health'},
+   {k:'client',label:'Client name',type:'text',ph:'Northwind Medical Group'},
+   {k:'title',label:'Incident title',type:'text',ph:'Delayed processing of the eligibility file',hint:'Describe what the client experienced, not your internal system name.'},
+   {k:'incidentId',label:'Incident or ticket ID (optional)',type:'text',ph:'INC 20417'}]},
+ {sec:'head', name:'Status', q:'How serious was it, and where does it stand?', help:'Be honest about severity. Clients notice when a report downplays what they lived through.', fields:[
+   {k:'severity',label:'Severity',type:'chips',options:['Severity 1: Critical','Severity 2: Major','Severity 3: Moderate','Severity 4: Minor']},
+   {k:'status',label:'Current status',type:'chips',options:['Resolved','Mitigated, monitoring','Still investigating']},
+   {k:'preparedBy',label:'Prepared by',type:'text',ph:'Jordan Lee, Director of Implementation'},
+   {k:'reportDate',label:'Report date',type:'date'}]},
+ {sec:'summary', name:'Executive summary', q:'In a few sentences, what happened?', help:'Write this for the client executive who reads nothing else.', tip:'<b>Cover four things:</b> what broke, how long it lasted, who it affected, and that it is fixed. No jargon, no blame, no hedging.', fields:[
+   {k:'summary',type:'textarea',rows:7,ph:'On September 14, the eligibility file you sent overnight was not processed on schedule. For about six hours, new members could not register...'}]},
+ {sec:'impact', name:'Impact', q:'Who and what was affected?', help:'Numbers beat adjectives. "1,240 members for 6 hours" lands harder than "a significant number of users".', fields:[
+   {row:[{k:'start',label:'Impact started',type:'datetime-local'},{k:'end',label:'Impact ended',type:'datetime-local'}]},
+   {k:'tz',label:'Time zone',type:'text',ph:'MT'},
+   {k:'affected',label:'Who was affected',type:'textarea',rows:3,ph:'1,240 members added in the September 14 file. Existing members were not affected.'},
+   {k:'impactDetail',label:'What they experienced',type:'textarea',rows:3,ph:'New members saw an error when trying to register. 37 contacted support.'},
+   {k:'dataImpact',label:'Was any client data exposed, lost, or corrupted?',type:'chips',options:['No','Yes','Under review']}]},
+ {sec:'timeline', name:'Timeline', q:'Walk through what happened, in order.', help:'One line per moment. Entries sort by time automatically.', tip:'<b>Include:</b> when it started, when you found out, when the client was told, each key decision, and when it was resolved.', fields:[
+   {k:'timeline',type:'timeline'}]},
+ {sec:'detection', name:'Detection', q:'How and when did you find out?', help:'If the client found it before you did, say so. Owning that builds more trust than hiding it.', fields:[
+   {k:'detectedBy',label:'Who or what caught it',type:'chips',options:['Automated monitoring','Client reported it','Internal team noticed','Routine audit']},
+   {k:'detectedAt',label:'Detected at',type:'datetime-local'},
+   {k:'detection',label:'Describe how it was detected',type:'textarea',rows:4,ph:'The client called our support line after several new hires reported errors. Our monitoring did not flag the failure because...'}]},
+ {sec:'rootcause', name:'Root cause', q:'Why did it happen?', help:'Name the underlying cause, not the symptom.', tip:'<b>Keep asking why</b> until the answer is a process or system gap, not a person. "Human error" is never a root cause. The real question is what let the error through.', fields:[
+   {k:'whys',label:'Ask why (optional, shows as a Five Whys analysis)',type:'list',ph:'Why did this happen?',add:'Add another why'},
+   {k:'rootCause',label:'Root cause statement',type:'textarea',rows:4,ph:'Credential expirations are tracked manually, and monitoring confirms only that a job starts, not that it succeeds.'}]},
+ {sec:'factors', name:'Contributing factors', q:'What allowed it to happen or made it worse?', help:'These are the conditions around the root cause: missing alerts, unclear ownership, a slow handoff, a gap in testing.', fields:[
+   {k:'factors',type:'list',ph:'No alert when a daily file is smaller than expected',add:'Add a factor'}]},
+ {sec:'resolution', name:'Resolution', q:'What did you do to fix it?', help:'Describe the fix and how you confirmed it worked.', fields:[
+   {k:'resolution',type:'textarea',rows:5,ph:'We renewed the credential, reran the import, and validated every record against the source file.'},
+   {k:'resolvedAt',label:'Fully resolved at',type:'datetime-local'}]},
+ {sec:'corrective', name:'Corrective actions', q:'What are you changing to fix this specific failure?', help:'Corrective actions repair what broke this time.', tip:'<b>Every action needs a named owner and a date.</b> "The team will look into it" is the line clients remember, for the wrong reasons.', fields:[
+   {k:'corrective',type:'actions',prefix:'C'}]},
+ {sec:'preventive', name:'Preventive actions', q:'How will you make sure this cannot happen again?', help:'Preventive actions close the whole category of problem, not just this instance. Think automation, alerts, and process changes.', fields:[
+   {k:'preventive',type:'actions',prefix:'P'}]},
+ {sec:'next', name:'Next steps', q:'Last one. How will you keep the client informed?', help:'Owners and dates are compiled automatically from your actions.', fields:[
+   {k:'nextUpdate',label:'How and when you will update the client',type:'textarea',rows:3,ph:'We will send a written status update on each open action every Friday until all are complete.'},
+   {k:'contact',label:'Point of contact',type:'text',ph:'Jordan Lee, Director of Implementation, jordan@company.com'},
+   {k:'commitment',label:'Closing statement (optional)',type:'textarea',rows:3,ph:'We know how much you rely on us, and we fell short. We are sorry for the disruption and committed to every action above.'}]}
+];
+const TOTAL = STEPS.length;
+
+let S, view;
+try { const raw = localStorage.getItem(KEY); const saved = raw ? JSON.parse(raw) : null; S = saved && saved.data ? Object.assign(blank(), saved.data) : blank(); view = saved && typeof saved.view !== 'undefined' ? saved.view : 'intro'; } catch(e){ S = blank(); view = 'intro'; }
+const hasProgress = () => JSON.stringify(S) !== JSON.stringify(Object.assign(blank(),{reportDate:S.reportDate}));
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify({data:S, view})); }catch(e){} }
+
+/* ---------- helpers ---------- */
+const $ = s => document.querySelector(s);
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const PENDING = '<p class="pending">To be provided.</p>';
+const paras = t => { t = (t||'').trim(); return t ? t.split(/\n+/).map(p => '<p>'+esc(p.trim())+'</p>').join('') : PENDING; };
+const fmtDT = v => { if(!v) return ''; const d = new Date(v); if(isNaN(d)) return ''; return d.toLocaleString('en-US',{month:'short',day:'numeric',year:'numeric',hour:'numeric',minute:'2-digit'}); };
+const fmtD = v => { if(!v) return ''; const d = new Date(v+'T00:00'); if(isNaN(d)) return ''; return d.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'}); };
+const fmtShortD = v => { if(!v) return ''; const d = new Date(v+'T00:00'); if(isNaN(d)) return ''; return d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}); };
+const tz = () => S.tz.trim() ? ' '+esc(S.tz.trim()) : '';
+function dur(a,b){ if(!a||!b) return ''; const m = Math.round((new Date(b)-new Date(a))/60000); if(!(m>0)) return ''; const h=Math.floor(m/60), r=m%60; const parts=[]; if(h) parts.push(h+(h===1?' hour':' hours')); if(r) parts.push(r+(r===1?' minute':' minutes')); return parts.join(' '); }
+const listOf = a => (a||[]).map(x=>x.trim()).filter(Boolean);
+const actsOf = a => (a||[]).filter(x => x.action.trim()||x.owner.trim()||x.due);
+function tag(s){ const c = s==='Complete'?'tag done':s==='In progress'?'tag prog':'tag'; return '<span class="'+c+'">'+esc(s||'Planned')+'</span>'; }
+
+/* ---------- document ---------- */
+function actTable(list, prefix){
+  const a = actsOf(list); if(!a.length) return PENDING;
+  return '<table><thead><tr><th style="width:7%">ID</th><th>Action</th><th style="width:24%">Owner</th><th style="width:15%">Due</th><th style="width:13%">Status</th></tr></thead><tbody>'+
+   a.map((x,i)=>'<tr><td>'+prefix+(i+1)+'</td><td>'+esc(x.action)+'</td><td>'+esc(x.owner)+'</td><td>'+fmtShortD(x.due)+'</td><td>'+tag(x.status)+'</td></tr>').join('')+'</tbody></table>';
+}
+function sec(id,n,title,body){ return '<div class="d-sec" data-sec="'+id+'"><h2><span class="n">'+n+'</span>'+title+'</h2>'+body+'</div>'; }
+
+function docHTML(){
+  const client = S.client.trim() || 'Client';
+  const meta = [['Client',esc(S.client)||'<span class="pending">Pending</span>'],['Severity',esc(S.severity)||'<span class="pending">Pending</span>'],
+    ['Incident date', S.start ? fmtD(S.start.slice(0,10)) : '<span class="pending">Pending</span>'],['Status',esc(S.status)||'<span class="pending">Pending</span>'],
+    ['Prepared by',esc(S.preparedBy)||'<span class="pending">Pending</span>'],['Report date',fmtD(S.reportDate)]];
+  if(S.incidentId.trim()) meta.splice(1,0,['Incident ID',esc(S.incidentId)]);
+  let metaRows=''; for(let i=0;i<meta.length;i+=2){ const b=meta[i+1]||['','']; metaRows+='<tr><td class="k">'+meta[i][0]+'</td><td class="v">'+meta[i][1]+'</td><td class="k">'+b[0]+'</td><td class="v">'+b[1]+'</td></tr>'; }
+
+  let h = '<div class="d-headblock" data-sec="head"><div class="d-top"><span class="d-org">'+(esc(S.org)||'Your company')+'</span><span class="d-conf">Confidential. Prepared for '+esc(client)+'.</span></div>'+
+    '<h1>Incident Root Cause Analysis</h1><p class="d-sub">'+(esc(S.title)||'<span class="pending">Incident title</span>')+'</p>'+
+    '<table class="d-meta"><tbody>'+metaRows+'</tbody></table></div>';
+
+  h += sec('summary',1,'Executive summary',paras(S.summary));
+
+  const window_ = S.start ? fmtDT(S.start)+(S.end?' to '+fmtDT(S.end):'')+tz() : '';
+  let facts = '';
+  if(window_) facts += '<tr><td class="k">Impact window</td><td>'+window_+'</td></tr>';
+  const d = dur(S.start,S.end); if(d) facts += '<tr><td class="k">Duration</td><td>'+d+'</td></tr>';
+  if(S.affected.trim()) facts += '<tr><td class="k">Affected</td><td>'+esc(S.affected)+'</td></tr>';
+  if(S.dataImpact) facts += '<tr><td class="k">Data exposure or loss</td><td>'+(S.dataImpact==='No'?'None. No client data was exposed, lost, or corrupted.':S.dataImpact==='Yes'?'Yes. Details are described below.':'Under review. We will confirm in writing.')+'</td></tr>';
+  let imp = facts ? '<table class="facts"><tbody>'+facts+'</tbody></table>' : '';
+  imp += S.impactDetail.trim() ? '<h3>What was experienced</h3>'+paras(S.impactDetail) : (facts?'':PENDING);
+  h += sec('impact',2,'Impact',imp);
+
+  const tl = (S.timeline||[]).filter(x=>x.text.trim()||x.time).slice().sort((a,b)=>(a.time||'9999').localeCompare(b.time||'9999'));
+  h += sec('timeline',3,'Timeline', tl.length ? '<table><thead><tr><th style="width:28%">Time'+tz()+'</th><th>Event</th></tr></thead><tbody>'+tl.map(x=>'<tr><td>'+fmtDT(x.time)+'</td><td>'+esc(x.text)+'</td></tr>').join('')+'</tbody></table>' : PENDING);
+
+  let det=''; let df='';
+  if(S.detectedBy) df += '<tr><td class="k">Detected by</td><td>'+esc(S.detectedBy)+'</td></tr>';
+  if(S.detectedAt) df += '<tr><td class="k">Detected at</td><td>'+fmtDT(S.detectedAt)+tz()+'</td></tr>';
+  const ttd = dur(S.start,S.detectedAt); if(ttd) df += '<tr><td class="k">Time to detect</td><td>'+ttd+'</td></tr>';
+  if(df) det += '<table class="facts"><tbody>'+df+'</tbody></table>';
+  det += S.detection.trim() ? paras(S.detection) : (df?'':PENDING);
+  h += sec('detection',4,'Detection',det);
+
+  const whys = listOf(S.whys);
+  h += sec('rootcause',5,'Root cause', paras(S.rootCause) + (whys.length ? '<h3>Five Whys analysis</h3><ol>'+whys.map(w=>'<li>'+esc(w)+'</li>').join('')+'</ol>' : ''));
+
+  const f = listOf(S.factors);
+  h += sec('factors',6,'Contributing factors', f.length ? '<ul>'+f.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>' : PENDING);
+
+  let res = paras(S.resolution);
+  if(S.resolvedAt){ const td = dur(S.start,S.resolvedAt); res += '<table class="facts"><tbody><tr><td class="k">Resolved at</td><td>'+fmtDT(S.resolvedAt)+tz()+'</td></tr>'+(td?'<tr><td class="k">Time to resolve</td><td>'+td+'</td></tr>':'')+'</tbody></table>'; }
+  h += sec('resolution',7,'Resolution',res);
+
+  h += sec('corrective',8,'Corrective actions','<p>Changes that address the specific failure in this incident.</p>'+actTable(S.corrective,'C'));
+  h += sec('preventive',9,'Preventive actions','<p>Changes that prevent this category of incident from recurring.</p>'+actTable(S.preventive,'P'));
+
+  const all = actsOf(S.corrective).map((x,i)=>Object.assign({id:'C'+(i+1)},x)).concat(actsOf(S.preventive).map((x,i)=>Object.assign({id:'P'+(i+1)},x)))
+    .sort((a,b)=>(a.due||'9999').localeCompare(b.due||'9999'));
+  const owners = {}; all.forEach(x=>{ const o=x.owner.trim()||'Unassigned'; (owners[o]=owners[o]||[]).push(x); });
+  h += sec('owners',10,'Owners and dates', all.length ? '<table><thead><tr><th style="width:26%">Owner</th><th style="width:8%">ID</th><th>Commitment</th><th style="width:15%">Due</th><th style="width:13%">Status</th></tr></thead><tbody>'+
+    all.map(x=>'<tr><td>'+(esc(x.owner)||'<span class="pending">Unassigned</span>')+'</td><td>'+x.id+'</td><td>'+esc(x.action)+'</td><td>'+(fmtShortD(x.due)||'<span class="pending">No date</span>')+'</td><td>'+tag(x.status)+'</td></tr>').join('')+'</tbody></table>' : PENDING);
+
+  let nx = '';
+  if(S.nextUpdate.trim()) nx += paras(S.nextUpdate);
+  if(S.commitment.trim()) nx += paras(S.commitment);
+  if(S.contact.trim()) nx += '<p><b>Point of contact:</b> '+esc(S.contact)+'</p>';
+  h += sec('next',11,'Next steps and contact', nx || PENDING);
+
+  h += '<div class="d-foot">'+(esc(S.org)||'Your company')+'. Incident Root Cause Analysis prepared for '+esc(client)+(S.reportDate?', '+fmtD(S.reportDate):'')+'. Confidential.</div>';
+  return h;
+}
+
+/* ---------- preview ---------- */
+let lastSec = null;
+function renderPreview(scroll){
+  const html = '<div class="doc">'+docHTML()+'</div>';
+  $('#previewDoc').innerHTML = html;
+  if($('#sheet').classList.contains('open')) $('#sheetDoc').innerHTML = html;
+  if(typeof view === 'number'){
+    const id = STEPS[view].sec;
+    document.querySelectorAll('#previewDoc [data-sec="'+id+'"]').forEach(el=>el.classList.add('active'));
+    if(scroll && id !== lastSec){ const el = $('#previewDoc [data-sec="'+id+'"]'); if(el){ const pane = document.querySelector('#rca .preview'); pane.scrollTo({top: Math.max(0, el.offsetTop - 60), behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto':'smooth'}); } }
+    lastSec = id;
+  }
+}
+function changed(){ save(); renderPreview(false); }
+
+/* ---------- fields ---------- */
+function el(tag, attrs, html){ const e = document.createElement(tag); if(attrs) for(const k in attrs){ if(k==='class') e.className=attrs[k]; else e.setAttribute(k,attrs[k]); } if(html!=null) e.innerHTML = html; return e; }
+let uid = 0;
+function input(type, val, ph, onv){
+  const i = type==='textarea' ? el('textarea') : el('input',{type});
+  i.value = val||''; if(ph) i.placeholder = ph; i.id = 'f'+(uid++);
+  i.addEventListener('input', ()=>{ onv(i.value); changed(); });
+  if(type==='text') i.addEventListener('keydown', e=>{ if(e.key==='Enter'){ e.preventDefault(); next(); } });
+  if(type==='textarea') i.addEventListener('keydown', e=>{ if(e.key==='Enter' && (e.metaKey||e.ctrlKey)){ e.preventDefault(); next(); } });
+  return i;
+}
+function fieldEl(f){
+  if(f.row){ const g = el('div',{class:'grid2'}); f.row.forEach(x=>g.appendChild(fieldEl(x))); return g; }
+  const w = el('div',{class:'field'});
+  let lab;
+  if(f.label && !['list','timeline','actions','chips'].includes(f.type)){ lab = el('label',null,esc(f.label)); w.appendChild(lab); }
+  else if(f.label){ w.appendChild(el('span',{class:'flabel'},esc(f.label))); }
+  if(f.hint) w.appendChild(el('p',{class:'hint'},esc(f.hint)));
+  const t = f.type;
+  if(['text','date','datetime-local','textarea'].includes(t)){
+    const i = input(t, S[f.k], f.ph, v=>S[f.k]=v); if(f.rows) i.rows = f.rows; if(lab) lab.htmlFor = i.id; w.appendChild(i);
+  } else if(t==='chips'){
+    const c = el('div',{class:'chips',role:'group','aria-label':f.label});
+    f.options.forEach(o=>{ const b = el('button',{type:'button',class:'chip','aria-pressed':String(S[f.k]===o)},esc(o));
+      b.onclick = ()=>{ S[f.k] = S[f.k]===o ? '' : o; c.querySelectorAll('.chip').forEach(x=>x.setAttribute('aria-pressed', String(x.textContent===S[f.k]))); changed(); };
+      c.appendChild(b); });
+    w.appendChild(c);
+  } else if(t==='list'){
+    const box = el('div',{class:'rep'});
+    const draw = () => { box.innerHTML='';
+      S[f.k].forEach((v,idx)=>{ const r = el('div',{class:'rep-row'});
+        const i = input('text', v, f.k==='whys' ? (idx===0?'Why did the problem happen?':'And why did that happen?') : f.ph, nv=>S[f.k][idx]=nv); i.setAttribute('aria-label',(f.label||'Item')+' '+(idx+1));
+        const x = el('button',{type:'button',class:'x','aria-label':'Remove'},'&times;'); x.onclick=()=>{ S[f.k].splice(idx,1); if(!S[f.k].length) S[f.k].push(''); draw(); changed(); };
+        r.append(i,x); box.appendChild(r); });
+      const a = el('button',{type:'button',class:'add'},'+ '+esc(f.add)); a.onclick=()=>{ S[f.k].push(''); draw(); box.querySelectorAll('input')[S[f.k].length-1].focus(); changed(); };
+      box.appendChild(a); };
+    draw(); w.appendChild(box);
+  } else if(t==='timeline'){
+    const box = el('div',{class:'rep'});
+    const draw = () => { box.innerHTML='';
+      S.timeline.forEach((v,idx)=>{ const r = el('div',{class:'rep-row tl'});
+        const ti = input('datetime-local', v.time, '', nv=>S.timeline[idx].time=nv); ti.setAttribute('aria-label','Time of event '+(idx+1));
+        const tx = input('text', v.text, idx===0?'What happened first':'What happened next', nv=>S.timeline[idx].text=nv); tx.setAttribute('aria-label','Event '+(idx+1));
+        const x = el('button',{type:'button',class:'x','aria-label':'Remove event'},'&times;'); x.onclick=()=>{ S.timeline.splice(idx,1); if(!S.timeline.length) S.timeline.push({time:'',text:''}); draw(); changed(); };
+        r.append(ti,tx,x); box.appendChild(r); });
+      const a = el('button',{type:'button',class:'add'},'+ Add an event'); a.onclick=()=>{ const last = S.timeline[S.timeline.length-1]; S.timeline.push({time: last && last.time ? last.time : '', text:''}); draw(); box.querySelectorAll('input[type=text]')[S.timeline.length-1].focus(); changed(); };
+      box.appendChild(a); };
+    draw(); w.appendChild(box);
+  } else if(t==='actions'){
+    const box = el('div',{class:'rep'});
+    const draw = () => { box.innerHTML='';
+      S[f.k].forEach((v,idx)=>{ const c = el('div',{class:'act'});
+        const head = el('div',{class:'act-head'},'<span>Action '+f.prefix+(idx+1)+'</span>');
+        const x = el('button',{type:'button',class:'x','aria-label':'Remove action'},'&times;'); x.onclick=()=>{ S[f.k].splice(idx,1); if(!S[f.k].length) S[f.k].push(act()); draw(); changed(); };
+        head.appendChild(x); c.appendChild(head);
+        const a = input('textarea', v.action, f.prefix==='C'?'Add success and failure alerts to every scheduled import job':'Automate credential expiration alerts at 30, 14, and 3 days', nv=>S[f.k][idx].action=nv); a.rows=2; a.setAttribute('aria-label','Action description'); c.appendChild(a);
+        const g = el('div',{class:'grid3'});
+        const o = input('text', v.owner, 'Owner name and title', nv=>S[f.k][idx].owner=nv); o.setAttribute('aria-label','Owner');
+        const d = input('date', v.due, '', nv=>S[f.k][idx].due=nv); d.setAttribute('aria-label','Due date');
+        const s = el('select',{'aria-label':'Status'}); ['Planned','In progress','Complete'].forEach(opt=>{ const op=el('option',null,opt); op.value=opt; if(v.status===opt) op.selected=true; s.appendChild(op); });
+        s.onchange=()=>{ S[f.k][idx].status=s.value; changed(); };
+        g.append(o,d,s); c.appendChild(g); box.appendChild(c); });
+      const ad = el('button',{type:'button',class:'add'},'+ Add an action'); ad.onclick=()=>{ S[f.k].push(act()); draw(); const tas = box.querySelectorAll('textarea'); tas[tas.length-1].focus(); changed(); };
+      box.appendChild(ad); };
+    draw(); w.appendChild(box);
+  }
+  return w;
+}
+
+/* ---------- views ---------- */
+function go(v){ view = v; save(); render(); window.scrollTo({top:0}); }
+function next(){ if(typeof view==='number') go(view < TOTAL-1 ? view+1 : 'review'); }
+
+function renderIntro(){
+  const resume = hasProgress();
+  $('#ask').innerHTML = '<div class="intro"><div class="orb" aria-hidden="true"></div>'+
+   '<h2>Write the incident report your client needs to see.</h2>'+
+   '<p class="lede">Answer 12 short questions. Get a polished Root Cause Analysis you can send today, as a PDF or Word file.</p>'+
+   '<div class="btn-row">'+(resume?'<button class="btn btn-gold" id="resume">Pick up where you left off</button><button class="btn btn-ghost" id="start">Start fresh</button>':'<button class="btn btn-gold" id="start">Start the report</button>')+
+   '<button class="btn-text" id="sample">See a finished example</button></div>'+
+   '<ol><li><b>1</b>What happened and who it affected</li><li><b>2</b>When it happened and how you found out</li><li><b>3</b>Why it happened</li><li><b>4</b>How you fixed it and what changes now</li><li><b>5</b>Who owns each change, and by when</li></ol>'+
+   '<p class="help" style="margin-top:22px;font-size:13.5px">Your answers stay in this browser. Nothing is uploaded.</p></div>';
+  const st = $('#start'); st.onclick = ()=>{ if(resume && !confirm('Clear your saved answers and start a new report?')) return; S = blank(); go(0); };
+  if(resume) $('#resume').onclick = ()=>go(0);
+  $('#sample').onclick = ()=>{ if(hasProgress() && !confirm('Replace your saved answers with the example report?')) return; S = JSON.parse(JSON.stringify(SAMPLE)); S.reportDate = today(); go('review'); };
+}
+
+function renderStep(i){
+  const s = STEPS[i];
+  const bar = STEPS.map((x,j)=>'<button type="button" data-j="'+j+'" class="'+(j<i?'done':j===i?'cur':'')+'" aria-label="Go to '+esc(x.name)+'"'+(j===i?' aria-current="step"':'')+'></button>').join('');
+  $('#ask').innerHTML = '<div class="progress"><div class="progress-meta"><span><b>'+esc(s.name)+'</b></span><span>Question '+(i+1)+' of '+TOTAL+'</span></div><div class="bar">'+bar+'</div></div>'+
+   '<h2 class="q" tabindex="-1">'+esc(s.q)+'</h2>'+(s.help?'<p class="help">'+esc(s.help)+'</p>':'')+(s.tip?'<div class="tip">'+s.tip+'</div>':'')+'<div id="fields"></div>'+
+   '<div class="nav"><button class="btn btn-ghost" id="back" type="button">Back</button><button class="btn btn-gold" id="next" type="button">'+(i===TOTAL-1?'Review report':'Continue')+'</button></div>';
+  const box = $('#fields'); s.fields.forEach(f=>box.appendChild(fieldEl(f)));
+  document.querySelectorAll('.bar button').forEach(b=>b.onclick=()=>go(+b.dataset.j));
+  $('#back').onclick = ()=>go(i===0?'intro':i-1);
+  $('#next').onclick = next;
+  const first = box.querySelector('input,textarea'); $('.q').focus({preventScroll:true});
+  if(first && matchMedia('(min-width:961px)').matches) first.focus({preventScroll:true});
+}
+
+function checks(){
+  const out = [];
+  const stepOf = sec => STEPS.findIndex(s=>s.sec===sec);
+  if(!S.client.trim()||!S.title.trim()||!S.org.trim()) out.push(['warn','Add your company, the client name, and an incident title for the cover.',0]);
+  if(!S.severity||!S.status) out.push(['warn','Set the severity and current status.',1]);
+  if(!S.summary.trim()) out.push(['warn','Add an executive summary. For many client executives, it is the only section they read.',stepOf('summary')]);
+  if(!S.start||!S.end) out.push(['warn','Add when the impact started and ended so the report can show the duration.',stepOf('impact')]);
+  if(!S.dataImpact) out.push(['warn','State whether any client data was exposed, lost, or corrupted. Clients will ask.',stepOf('impact')]);
+  const tl = (S.timeline||[]).filter(x=>x.text.trim());
+  if(tl.length<3) out.push(['warn','Your timeline has '+tl.length+' '+(tl.length===1?'entry':'entries')+'. Most client reports need at least start, detection, client notice, and resolution.',stepOf('timeline')]);
+  if(tl.some(x=>!x.time)) out.push(['warn','Some timeline entries are missing a time.',stepOf('timeline')]);
+  if(!S.rootCause.trim()) out.push(['warn','Add a root cause statement.',stepOf('rootcause')]);
+  else if(/human error|careless|his fault|her fault|their fault|someone forgot|user error|mistake by/i.test(S.rootCause)) out.push(['warn','Your root cause points at a person. Clients trust reports that name the process or system gap that let the error through.',stepOf('rootcause')]);
+  const acts = actsOf(S.corrective).concat(actsOf(S.preventive));
+  if(!actsOf(S.corrective).length) out.push(['warn','Add at least one corrective action.',stepOf('corrective')]);
+  if(!actsOf(S.preventive).length) out.push(['warn','Add at least one preventive action. This is what tells the client it will not happen again.',stepOf('preventive')]);
+  const noOwner = acts.filter(a=>!a.owner.trim()).length, noDate = acts.filter(a=>!a.due).length;
+  if(noOwner) out.push(['warn',noOwner+(noOwner===1?' action has':' actions have')+' no owner. Name a real person for each.',stepOf(actsOf(S.corrective).some(a=>!a.owner.trim())?'corrective':'preventive')]);
+  if(noDate) out.push(['warn',noDate+(noDate===1?' action has':' actions have')+' no due date.',stepOf(actsOf(S.corrective).some(a=>!a.due)?'corrective':'preventive')]);
+  if(!S.contact.trim()) out.push(['warn','Add a point of contact so the client knows who to call.',stepOf('next')]);
+  if(!out.length) out.push(['ok','Ready to send. Every section is complete and every action has an owner and a date.',null]);
+  return out;
+}
+
+function renderReview(){
+  const c = checks(); const ready = c[0][0]==='ok';
+  $('#ask').innerHTML = '<div class="progress"><div class="progress-meta"><span><b>Review and export</b></span><span>'+(ready?'Ready to send':c.length+(c.length===1?' item':' items')+' to tighten up')+'</span></div></div>'+
+   '<h2 class="q" tabindex="-1">'+(ready?'Your report is ready.':'Almost there. Give it one last pass.')+'</h2>'+
+   '<p class="help">'+(ready?'Export it below and send it to your client.':'You can export now, but these gaps are the ones clients tend to notice.')+'</p>'+
+   '<ul class="checks">'+c.map(([k,m,s])=>'<li class="'+k+'"><span class="ic" aria-hidden="true">'+(k==='ok'?'&#10003;':'!')+'</span><span class="msg">'+esc(m)+'</span>'+(s!=null&&s>=0?'<button class="btn-text" data-go="'+s+'">Fix</button>':'')+'</li>').join('')+'</ul>'+
+   '<div class="export"><button class="btn btn-gold" id="pdf">Save as PDF</button><button class="btn btn-ghost" id="word">Download Word file</button><button class="btn btn-ghost" id="copy">Copy as text</button><button class="btn-text" id="edit">Edit answers</button></div>'+
+   '<div class="paper-wrap"><div class="doc">'+docHTML()+'</div></div>';
+  document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>go(+b.dataset.go));
+  $('#edit').onclick = ()=>go(0);
+  $('#pdf').onclick = exportPDF; $('#word').onclick = exportWord; $('#copy').onclick = copyText;
+  $('.q').focus({preventScroll:true});
+}
+
+function render(){
+  document.body.classList.toggle('reviewing', view==='review');
+  if(view==='intro') renderIntro();
+  else if(view==='review') renderReview();
+  else { if(typeof view!=='number'||view<0||view>=TOTAL) view=0; renderStep(view); }
+  renderPreview(true);
+}
+
+/* ---------- export ---------- */
+const slug = s => (s||'').trim().replace(/[^A-Za-z0-9]+/g,'_').replace(/^_|_$/g,'') ;
+function fileBase(){ return ['RCA', slug(S.client)||'Client', (S.start||S.reportDate||today()).slice(0,10).replace(/-/g,'')].join('_'); }
+function toast(m){ const t=$('#toast'); t.textContent=m; t.classList.add('show'); clearTimeout(toast._t); toast._t=setTimeout(()=>t.classList.remove('show'),2600); }
+function exportPDF(){
+  $('#print').innerHTML = '<div class="doc">'+docHTML()+'</div>';
+  const old = document.title; document.title = fileBase();
+  toast('Choose "Save as PDF" as the destination');
+  setTimeout(()=>{ window.print(); document.title = old; }, 250);
+}
+function docCSS(){
+  let css=''; for(const sh of document.styleSheets){ try{ for(const r of sh.cssRules){ if(r.selectorText && /^#rca \.doc\b/.test(r.selectorText) && !/preview|sheet/.test(r.selectorText)) css += r.cssText.replace(/#rca /g,'')+'\n'; } }catch(e){} }
+  return css.replace(/var\(--paper\)/g,'#FFFFFF').replace(/var\(--ink\)/g,'#1E2329').replace(/var\(--gold\)/g,'#E3A63E') + 'body{margin:0;font-family:Calibri,Arial,sans-serif}.doc{padding:0;max-width:none}';
+}
+function exportWord(){
+  const html = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>"+esc(fileBase())+"</title><style>@page{margin:0.9in}"+docCSS()+"</style></head><body><div class='doc'>"+docHTML()+"</div></body></html>";
+  const blob = new Blob(['﻿', html], {type:'application/msword'});
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = fileBase()+'.doc';
+  document.body.appendChild(a); a.click(); setTimeout(()=>{ URL.revokeObjectURL(a.href); a.remove(); }, 500);
+  toast('Word file downloaded');
+}
+function plainText(){
+  const tmp = document.createElement('div'); tmp.innerHTML = docHTML();
+  const lines = [];
+  const walk = n => {
+    if(n.nodeType===3){ return; }
+    const t = n.tagName;
+    if(t==='H1'||t==='H2'||t==='H3'){ lines.push('', n.textContent.trim().toUpperCase().replace(/^(\d+)/,'$1. ')); if(t!=='H3') lines.push(''); return; }
+    if(t==='P'){ lines.push(n.textContent.trim()); return; }
+    if(t==='LI'){ lines.push('  '+(n.parentNode.tagName==='OL'?([...n.parentNode.children].indexOf(n)+1)+'. ':'* ')+n.textContent.trim()); return; }
+    if(t==='TR'){ lines.push([...n.children].map(c=>c.textContent.trim()).filter(Boolean).join('  |  ')); return; }
+    [...n.childNodes].forEach(walk);
+  };
+  walk(tmp);
+  return lines.join('\n').replace(/\n{3,}/g,'\n\n').trim();
+}
+function copyText(){
+  const txt = plainText();
+  const done = ()=>toast('Report copied to your clipboard');
+  if(navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(txt).then(done, fallback); else fallback();
+  function fallback(){ const ta=document.createElement('textarea'); ta.value=txt; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); try{ document.execCommand('copy'); done(); }catch(e){ toast('Copy failed. Use Save as PDF instead.'); } ta.remove(); }
+}
+
+/* ---------- chrome ---------- */
+$('#resetBtn').onclick = ()=>{ if(!hasProgress() || confirm('Clear all your answers and start over?')){ S = blank(); try{localStorage.removeItem(KEY);}catch(e){} go('intro'); toast('Cleared'); } };
+$('#fab').onclick = ()=>{ $('#sheet').classList.add('open'); $('#sheetDoc').innerHTML = '<div class="doc">'+docHTML()+'</div>'; document.body.style.overflow='hidden'; $('#closeSheet').focus(); };
+$('#closeSheet').onclick = ()=>{ $('#sheet').classList.remove('open'); document.body.style.overflow=''; $('#fab').focus(); };
+document.addEventListener('keydown', e=>{ if(e.key==='Escape' && $('#sheet').classList.contains('open')) $('#closeSheet').click(); });
+
+render();
+})();
+</script>
+
+<script src="js/capture.js"></script>
+<script src="js/nav.js"></script>
+</body>
+</html>
