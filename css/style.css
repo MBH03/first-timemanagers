@@ -566,3 +566,35 @@ footer a.active{ color:var(--gold); }
 @media print{
   .ted-orb, .ted-bubble, .ted-panel{ display:none !important; }
 }
+
+/* Inline capture — compact, non-blocking subscribe prompt for high-value pages */
+.inline-capture-wrap{ padding:0 56px 64px; }
+.inline-capture{
+  max-width:960px; margin:0 auto; padding:28px 32px;
+  border:1px solid rgba(237,235,228,.15); border-radius:2px; background:var(--bg2);
+  display:flex; align-items:center; gap:28px; flex-wrap:wrap;
+}
+.inline-capture-text{ flex:1; min-width:220px; }
+.inline-capture-label{ font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--gold); font-weight:600; margin-bottom:6px; }
+.inline-capture-copy{ font-size:13.5px; line-height:1.6; color:var(--muted); margin:0; }
+.inline-capture-action{ display:flex; align-items:center; }
+.inline-capture-form{ display:flex; gap:8px; flex-wrap:wrap; }
+.inline-capture-form input[type=email]{
+  background:var(--bg); border:1px solid rgba(237,235,228,.18); border-radius:2px;
+  padding:11px 14px; color:var(--text); font-family:inherit; font-size:13.5px; min-width:190px;
+}
+.inline-capture-form input[type=email]:focus{ outline:none; border-color:var(--gold); }
+.inline-capture-form button{
+  background:transparent; color:var(--muted); border:1px solid rgba(237,235,228,.25); border-radius:2px;
+  padding:11px 20px; font-size:12.5px; letter-spacing:.02em; font-weight:600; cursor:pointer; font-family:inherit; white-space:nowrap;
+}
+.inline-capture-form button:hover{ border-color:var(--gold); color:var(--gold); }
+.inline-capture-form button:disabled{ opacity:.6; cursor:default; }
+.inline-capture-confirm{ display:none; color:var(--gold); font-size:13.5px; font-weight:600; }
+.inline-capture-confirm.show{ display:block; }
+@media (max-width:900px){ .inline-capture-wrap{ padding:0 24px 48px; } }
+@media (max-width:640px){
+  .inline-capture{ flex-direction:column; align-items:stretch; padding:22px 20px; gap:18px; }
+  .inline-capture-form{ flex-direction:column; }
+  .inline-capture-form input[type=email]{ min-width:0; }
+}
