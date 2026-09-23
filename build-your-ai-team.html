@@ -4,18 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Build Your AI Team | Tools</title>
-<meta name="description" content="Answer five questions about one real piece of your work and see whether it actually needs a Chat, a Project, a Skill, an Agent, or none of the above.">
+<meta name="description" content="Answer five questions about one real piece of your work, each with a quick test, and see exactly whether it needs a Chat, a Project, a Skill, an Agent, or none of the above.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="First-Time Managers">
 <meta property="og:title" content="Build Your AI Team | Tools">
-<meta property="og:description" content="Answer five questions about one real piece of your work and see whether it actually needs a Chat, a Project, a Skill, an Agent, or none of the above.">
+<meta property="og:description" content="Answer five questions about one real piece of your work, each with a quick test, and see exactly whether it needs a Chat, a Project, a Skill, an Agent, or none of the above.">
 <meta property="og:url" content="https://first-timemanagers.com/build-your-ai-team.html">
 <meta property="og:image" content="https://first-timemanagers.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Build Your AI Team | Tools">
-<meta name="twitter:description" content="Answer five questions about one real piece of your work and see whether it actually needs a Chat, a Project, a Skill, an Agent, or none of the above.">
+<meta name="twitter:description" content="Answer five questions about one real piece of your work, each with a quick test, and see exactly whether it needs a Chat, a Project, a Skill, an Agent, or none of the above.">
 <meta name="twitter:image" content="https://first-timemanagers.com/og-image.png">
 <link rel="icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -28,7 +28,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Build Your AI Team",
-  "description": "Answer five questions about one real piece of your work and see whether it actually needs a Chat, a Project, a Skill, an Agent, or none of the above.",
+  "description": "Answer five questions about one real piece of your work, each with a quick test, and see exactly whether it needs a Chat, a Project, a Skill, an Agent, or none of the above.",
   "url": "https://first-timemanagers.com/build-your-ai-team.html",
   "datePublished": "2026-09-23",
   "dateModified": "2026-09-23",
@@ -114,6 +114,15 @@
   #byt input:focus, #byt textarea:focus{ border-color:var(--gold); outline:none; }
   #byt .nav{ display:flex; justify-content:space-between; align-items:center; margin-top:28px; padding-top:22px; border-top:1px solid var(--line); }
   #byt .skip{ text-align:right; margin-top:10px; }
+  #byt .btn:disabled{ opacity:.45; cursor:default; }
+
+  /* Gate (test question + conditional follow-up) */
+  #byt .chips{ display:flex; flex-wrap:wrap; gap:8px; margin-top:4px; }
+  #byt .chip{ border:1px solid var(--line); background:var(--bg2); border-radius:999px; padding:11px 18px; font-size:14.5px; cursor:pointer; }
+  #byt .chip:hover{ border-color:var(--muted); }
+  #byt .chip[aria-pressed=true]{ background:var(--gold); color:#1B1B1A; border-color:var(--gold); font-weight:600; }
+  #byt .gate-label{ display:block; font-size:13px; font-weight:600; color:var(--muted); margin-bottom:8px; }
+  #byt .gate-hint{ font-size:13px; color:var(--muted); margin:-2px 0 10px; line-height:1.5; }
 
   /* Result */
   #byt .result-kicker{ font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:var(--richmond); font-weight:600; margin-bottom:10px; }
@@ -126,6 +135,8 @@
   #byt .team-value ul{ margin:0; padding-left:20px; }
   #byt .team-value li{ margin-bottom:6px; }
   #byt .team-value.muted{ color:var(--muted); font-style:italic; }
+  #byt .team-reason{ font-size:12.5px; color:var(--muted); margin-top:8px; font-style:italic; }
+  #byt .muted{ color:var(--muted); font-style:italic; }
   #byt .verdict{ margin-top:24px; padding:18px 22px; border-radius:2px; background:var(--bg3); border-left:3px solid var(--gold); font-size:14.5px; line-height:1.6; color:#C9C6BD; }
   #byt .verdict b{ color:var(--text); }
   #byt .export-row{ display:flex; gap:10px; flex-wrap:wrap; margin-top:24px; }
@@ -178,7 +189,7 @@
 
 <main>
   <div style="max-width:640px; margin:56px auto 0; padding:0 56px;">
-    <p style="font-size:19px; font-weight:300; color:#fff; line-height:1.6; margin-bottom:12px;">Five questions about one real piece of your work. See whether it needs a Chat, a Project, a Skill, an Agent, or none of the above.</p>
+    <p style="font-size:19px; font-weight:300; color:#fff; line-height:1.6; margin-bottom:12px;">Five questions about one real piece of your work. Each one includes a quick test, so instead of guessing, you'll know whether it actually needs a Chat, a Project, a Skill, or an Agent.</p>
     <p style="font-size:14px; color:var(--muted); line-height:1.7; margin-bottom:0;">Pairs with <a href="ai-as-a-team.html" style="color:var(--text); text-decoration:underline; text-underline-offset:3px;">Stop Thinking of AI as a Chatbot</a>. Your answers stay in this browser. Nothing is uploaded.</p>
   </div>
 
@@ -234,22 +245,40 @@
 
 <script>
 (function(){
-const KEY = 'ftm_ai_team_builder_v1';
-const blank = () => ({workItem:'', context:'', repeat:'', own:'', human:''});
+const KEY = 'ftm_ai_team_builder_v2';
+const blank = () => ({workItem:'', needsProject:'', context:'', needsSkill:'', repeat:'', needsAgent:'', own:'', human:''});
 
 const SAMPLE = {
   workItem:'Customer ABC Implementation',
+  needsProject:'yes',
   context:'Who the customer is, their requirements doc, the agreed timeline, the files they have sent us, decisions we have already made together, known risks, and the notes from every implementation call.',
+  needsSkill:'yes',
   repeat:'Running every customer file through our data ingestion and QA checks\nBuilding the same weekly status update for whoever is implementing a new customer\nAnswering the same handful of customer questions about timeline and scope',
+  needsAgent:'yes',
   own:'Watching for new customer files, running the QA checks automatically, flagging anything that fails, and updating the project so the team can see status without asking.',
   human:'Deciding what happens with a flagged exception, approving the final go-live date, and any conversation where the customer relationship actually matters.'
 };
 
 const STEPS = [
   {k:'workItem', q:'What are you working on?', help:'Name the project or responsibility in a few words.', ph:'Customer ABC Implementation', short:true},
-  {k:'context', q:'What context would AI need?', help:'What documents, customers, requirements, decisions, data, or history would AI need to actually understand this work?', tip:"If you can answer this in one sentence, you probably don't need a Project for it, Chat can hold that much.", ph:'The customer, their requirements, the timeline, the files, the decisions made so far...', rows:6},
-  {k:'repeat', q:'What do you repeatedly explain or do?', help:"What process happens over and over? What rules, checklists, expertise, or institutional knowledge does it require? One per line if there's more than one.", ph:'Running every file through our QA checks\nBuilding the same weekly status update', rows:6},
-  {k:'own', q:'What could AI own?', help:'What could happen automatically, without someone having to initiate every step?', tip:"Not \"help me do it,\" but \"do it and tell me when it's done, or when it needs me.\"", ph:'Watching for new files, running the checks, flagging exceptions, updating the project...', rows:6},
+  {type:'gate', testKey:'needsProject', textKey:'context',
+    q:'If you closed this conversation and came back next week, would you have to re-explain the background?',
+    help:"This is the test for whether the work needs a Project, not just a chat.",
+    yesLabel:'Yes, it would need to remember', noLabel:"No, it's one-and-done",
+    textLabel:'What context would AI need?', textHelp:'Documents, customers, requirements, decisions, data, or history.',
+    textPh:'The customer, their requirements, the timeline, the files, the decisions made so far...', rows:6},
+  {type:'gate', testKey:'needsSkill', textKey:'repeat',
+    q:'If a teammate hit this same kind of situation on a different customer or project, would the same rules apply?',
+    help:"This is the test for whether there's a reusable Skill here, not just this one case.",
+    yesLabel:'Yes, same rules apply', noLabel:"No, this one's different",
+    textLabel:'What is the repeatable process?', textHelp:"The rules, checklist, or expertise it requires. One per line if there's more than one.",
+    textPh:'Running every file through our QA checks\nBuilding the same weekly status update', rows:6},
+  {type:'gate', testKey:'needsAgent', textKey:'own',
+    q:'If nobody opened this for a week, would the work still get done, and would it only interrupt you when it actually needs you?',
+    help:"This is the test for whether AI could actually own this, not just help with it.",
+    yesLabel:'Yes, it could run unattended', noLabel:'No, someone has to start it',
+    textLabel:'What could AI own end to end?', textHelp:'What would happen automatically, without someone initiating every step.',
+    textPh:'Watching for new files, running the checks, flagging exceptions, updating the project...', rows:6},
   {k:'human', q:'What still requires you?', help:'What decisions require judgment, approval, relationships, or accountability? This is the part AI does not take from you.', ph:'Approving exceptions, the go-live decision, the customer relationship...', rows:6}
 ];
 const TOTAL = STEPS.length;
@@ -270,10 +299,10 @@ function renderIntro(){
   const resume = hasProgress();
   $('#ask').innerHTML = '<div class="intro"><div class="orb" aria-hidden="true"></div>'+
     '<h2>What does this piece of your job actually need?</h2>'+
-    '<p class="lede">Pick one thing you do at work, repeatedly, and answer five short questions about it. You will get back a plain breakdown: does this need a Chat, a Project, a Skill, an Agent, or is what you are already doing just fine.</p>'+
+    '<p class="lede">Pick one thing you do at work, repeatedly, and answer five short questions about it. Three of them are quick tests, not guesses, so what comes back is an actual breakdown: does this need a Chat, a Project, a Skill, an Agent, or is what you are already doing just fine.</p>'+
     '<div class="btn-row">'+(resume?'<button class="btn btn-gold" id="resume">Pick up where you left off</button><button class="btn btn-ghost" id="start">Start fresh</button>':'<button class="btn btn-gold" id="start">Start</button>')+
     '<button class="btn-text" id="sample">See a finished example</button></div>'+
-    '<ol><li><b>1</b>What you are working on</li><li><b>2</b>What context AI would need</li><li><b>3</b>What you repeatedly explain or do</li><li><b>4</b>What AI could own</li><li><b>5</b>What still requires you</li></ol>'+
+    '<ol><li><b>1</b>What you are working on</li><li><b>2</b>The test for a Project, then the context</li><li><b>3</b>The test for a Skill, then the process</li><li><b>4</b>The test for an Agent, then what it would own</li><li><b>5</b>What still requires you</li></ol>'+
     '<p class="help" style="margin-top:20px; font-size:13.5px;">Your answers stay in this browser. Nothing is uploaded.</p></div>';
   const st = $('#start'); st.onclick = ()=>{ if(resume && !confirm('Clear your saved answers and start over?')) return; S = blank(); go(0); };
   if(resume) $('#resume').onclick = ()=>go(0);
@@ -282,63 +311,106 @@ function renderIntro(){
 
 function renderStep(i){
   const s = STEPS[i];
+  const isGate = s.type==='gate';
   const bar = STEPS.map((x,j)=>'<span class="'+(j<i?'done':j===i?'cur':'')+'"></span>').join('');
+  const nextDisabled = isGate && !S[s.testKey];
   $('#ask').innerHTML = '<div class="progress"><div class="progress-meta"><span>Question <b>'+(i+1)+'</b> of '+TOTAL+'</span></div><div class="bar">'+bar+'</div></div>'+
     '<h2 class="q" tabindex="-1">'+esc(s.q)+'</h2>'+(s.help?'<p class="help">'+esc(s.help)+'</p>':'')+(s.tip?'<div class="tip">'+esc(s.tip)+'</div>':'')+
     '<div id="fieldWrap"></div>'+
-    '<div class="nav"><button class="btn btn-ghost" id="back" type="button">Back</button><button class="btn btn-gold" id="next" type="button">'+(i===TOTAL-1?'See your team':'Continue')+'</button></div>';
+    '<div class="nav"><button class="btn btn-ghost" id="back" type="button">Back</button><button class="btn btn-gold" id="next" type="button"'+(nextDisabled?' disabled':'')+'>'+(i===TOTAL-1?'See your team':'Continue')+'</button></div>';
 
   const wrap = $('#fieldWrap');
-  const field = s.short ? document.createElement('input') : document.createElement('textarea');
-  if(s.short) field.type = 'text';
-  field.id = 'stepField';
-  field.placeholder = s.ph || '';
-  if(s.rows) field.rows = s.rows;
-  field.value = S[s.k] || '';
-  field.addEventListener('input', ()=>{ S[s.k] = field.value; save(); });
-  field.addEventListener('keydown', e=>{
-    if(s.short && e.key==='Enter'){ e.preventDefault(); next(); }
-    if(!s.short && e.key==='Enter' && (e.metaKey||e.ctrlKey)){ e.preventDefault(); next(); }
-  });
-  wrap.appendChild(field);
+
+  if(isGate){
+    const chips = document.createElement('div'); chips.className = 'chips';
+    const yesBtn = document.createElement('button'); yesBtn.type='button'; yesBtn.className='chip'; yesBtn.textContent = s.yesLabel; yesBtn.setAttribute('aria-pressed', String(S[s.testKey]==='yes'));
+    const noBtn = document.createElement('button'); noBtn.type='button'; noBtn.className='chip'; noBtn.textContent = s.noLabel; noBtn.setAttribute('aria-pressed', String(S[s.testKey]==='no'));
+    chips.append(yesBtn, noBtn);
+    wrap.appendChild(chips);
+
+    const sub = document.createElement('div'); sub.style.marginTop = '22px';
+    wrap.appendChild(sub);
+
+    function drawSub(){
+      sub.innerHTML = '';
+      if(S[s.testKey] !== 'yes') return;
+      const label = document.createElement('label'); label.className = 'gate-label'; label.textContent = s.textLabel; label.htmlFor = 'stepField';
+      const hint = document.createElement('p'); hint.className = 'gate-hint'; hint.textContent = s.textHelp || '';
+      const ta = document.createElement('textarea'); ta.id = 'stepField'; ta.placeholder = s.textPh || ''; ta.rows = s.rows || 6; ta.value = S[s.textKey] || '';
+      ta.addEventListener('input', ()=>{ S[s.textKey] = ta.value; save(); });
+      sub.append(label, hint, ta);
+    }
+    drawSub();
+
+    function selectTest(val){
+      S[s.testKey] = val;
+      yesBtn.setAttribute('aria-pressed', String(val==='yes'));
+      noBtn.setAttribute('aria-pressed', String(val==='no'));
+      drawSub();
+      save();
+      $('#next').removeAttribute('disabled');
+      if(val==='yes'){ const f = $('#stepField'); if(f) f.focus({preventScroll:true}); }
+    }
+    yesBtn.onclick = ()=>selectTest('yes');
+    noBtn.onclick = ()=>selectTest('no');
+  } else {
+    const field = s.short ? document.createElement('input') : document.createElement('textarea');
+    if(s.short) field.type = 'text';
+    field.id = 'stepField';
+    field.placeholder = s.ph || '';
+    if(s.rows) field.rows = s.rows;
+    field.value = S[s.k] || '';
+    field.addEventListener('input', ()=>{ S[s.k] = field.value; save(); });
+    field.addEventListener('keydown', e=>{
+      if(s.short && e.key==='Enter'){ e.preventDefault(); next(); }
+      if(!s.short && e.key==='Enter' && (e.metaKey||e.ctrlKey)){ e.preventDefault(); next(); }
+    });
+    wrap.appendChild(field);
+    field.focus({preventScroll:true});
+  }
 
   $('#back').onclick = ()=>go(i===0?'intro':i-1);
-  $('#next').onclick = next;
-  field.focus({preventScroll:true});
+  $('#next').onclick = ()=>{ if(isGate && !S[s.testKey]) return; next(); };
   $('.q').setAttribute('tabindex','-1');
 }
 
 function verdictText(){
-  const missing = [];
-  if(!S.context.trim()) missing.push('a Project');
-  if(!lines(S.repeat).length) missing.push('a Skill');
-  if(!S.own.trim()) missing.push('an Agent');
+  const p = S.needsProject==='yes', sk = S.needsSkill==='yes', a = S.needsAgent==='yes';
 
-  const joinList = arr => arr.length===1 ? arr[0] : arr.length===2 ? arr.join(' or ') : arr.slice(0,-1).join(', ')+', or '+arr[arr.length-1];
-
-  if(missing.length===3) return "This one looks like a <b>Chat</b> job. Ask directly when you need it, there's no ongoing context, repeatable process, or standing responsibility to set up.";
-  if(missing.length===0) return "This piece of work could use all three: a <b>Project</b> to hold the context, a <b>Skill</b> for the repeatable process, and an <b>Agent</b> to actually own getting it done.";
-  return "You probably don't need "+joinList(missing)+" for this one. That's fine, you do not need all four every time.";
+  if(!p && !sk && !a) return "This one's a <b>Chat</b> job. Nothing here needs to persist, repeat across cases, or run unattended, just ask when you need it.";
+  if(p && !sk && !a) return "This needs a <b>Project</b>, not a Skill or an Agent yet. The context is worth holding onto, but there's no reusable process here yet, and nothing is ready to run on its own.";
+  if(!p && sk && !a) return "This is a <b>Skill</b> without a Project. The process itself is reusable across cases, so bring it to whatever chat or project needs it, it doesn't need a standing home of its own.";
+  if(!p && !sk && a) return "That's an unusual combination, an Agent with no Project to work inside and no distinct Skill to run. Worth double-checking the unattended test, most Agents need at least one of the other two.";
+  if(p && sk && !a) return "This needs a <b>Project</b> for context and a <b>Skill</b> for the repeatable process, but nothing here is ready to run on its own yet. Someone still has to kick it off and apply the skill each time, and that's a completely normal place to stop.";
+  if(p && !sk && a) return "This needs a <b>Project</b> to hold context and could run as an <b>Agent</b>, but there's no distinct reusable process, more like something watching and acting inside this one project specifically.";
+  if(!p && sk && a) return "This is a <b>Skill</b> an <b>Agent</b> could run, without needing its own Project. Think of it as a general capability, not tied to one specific piece of ongoing work.";
+  return "This piece of work could use all three: a <b>Project</b> to hold the context, a <b>Skill</b> for the repeatable process, and an <b>Agent</b> to actually own getting it done, end to end.";
 }
 
 function renderResult(){
-  const rows = [
-    {label:'Working on', value: S.workItem.trim() || 'Untitled', always:true, plain:true},
-    {label:'Project (context)', value: S.context.trim(), key:'context'},
-    {label:'Skills (repeatable process)', value: lines(S.repeat), key:'repeat', list:true},
-    {label:'Agent (what AI could own)', value: S.own.trim(), key:'own'},
-    {label:'You (what still needs a human)', value: S.human.trim(), key:'human'}
-  ];
+  const p = S.needsProject==='yes', sk = S.needsSkill==='yes', a = S.needsAgent==='yes';
 
-  const rowHTML = rows.map(r=>{
-    if(r.plain) return '<div class="team-row"><div class="team-label">'+esc(r.label)+'</div><div class="team-value">'+esc(r.value)+'</div></div>';
-    if(r.list){
-      if(!r.value.length) return '<div class="team-row"><div class="team-label">'+esc(r.label)+'</div><div class="team-value muted">Not part of this one.</div></div>';
-      return '<div class="team-row"><div class="team-label">'+esc(r.label)+'</div><div class="team-value"><ul>'+r.value.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul></div></div>';
-    }
-    if(!r.value) return '<div class="team-row"><div class="team-label">'+esc(r.label)+'</div><div class="team-value muted">Not part of this one.</div></div>';
-    return '<div class="team-row"><div class="team-label">'+esc(r.label)+'</div><div class="team-value">'+esc(r.value)+'</div></div>';
-  }).join('');
+  const projectReason = p
+    ? "You said you'd have to re-explain this next week, that's what makes it a Project."
+    : "You said this wouldn't need to persist, Chat can hold that much.";
+  const skillReason = sk
+    ? "You said the same rules would apply to a different case, that's what makes it a reusable Skill."
+    : "You said this one's specific to this situation, not a reusable Skill yet.";
+  const agentReason = a
+    ? "You said this could run unattended and only flag you when needed, that's Agent territory."
+    : "You said someone still has to start this each time, that's a fine place to stop.";
+
+  const skillLines = lines(S.repeat);
+  const projectValue = p ? (S.context.trim() ? esc(S.context.trim()) : '<span class="muted">You said yes, but didn\'t fill in the context yet.</span>') : '<span class="muted">Not part of this one.</span>';
+  const skillValue = sk ? (skillLines.length ? '<ul>'+skillLines.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>' : '<span class="muted">You said yes, but didn\'t describe the process yet.</span>') : '<span class="muted">Not part of this one.</span>';
+  const agentValue = a ? (S.own.trim() ? esc(S.own.trim()) : '<span class="muted">You said yes, but didn\'t describe what it would own yet.</span>') : '<span class="muted">Not part of this one.</span>';
+
+  const rowHTML =
+    '<div class="team-row"><div class="team-label">Working on</div><div class="team-value">'+esc(S.workItem.trim()||'Untitled')+'</div></div>'+
+    '<div class="team-row"><div class="team-label">Project (context)</div><div class="team-value">'+projectValue+'</div><div class="team-reason">'+esc(projectReason)+'</div></div>'+
+    '<div class="team-row"><div class="team-label">Skills (repeatable process)</div><div class="team-value">'+skillValue+'</div><div class="team-reason">'+esc(skillReason)+'</div></div>'+
+    '<div class="team-row"><div class="team-label">Agent (what AI could own)</div><div class="team-value">'+agentValue+'</div><div class="team-reason">'+esc(agentReason)+'</div></div>'+
+    '<div class="team-row"><div class="team-label">You (what still needs a human)</div><div class="team-value">'+(S.human.trim() ? esc(S.human.trim()) : '<span class="muted">Not filled in.</span>')+'</div></div>';
 
   $('#ask').innerHTML = '<div class="result-kicker">Your AI Team</div>'+
     '<h2 class="result-title" tabindex="-1">Here is what this piece of work actually needs.</h2>'+
@@ -352,16 +424,17 @@ function renderResult(){
 }
 
 function plainSummary(){
+  const p = S.needsProject==='yes', sk = S.needsSkill==='yes', a = S.needsAgent==='yes';
   const out = ['YOUR AI TEAM', '', 'Working on: '+(S.workItem.trim()||'Untitled'), ''];
-  out.push('Project (context): '+(S.context.trim()||'Not part of this one.'));
+  out.push('Project (context): '+(p ? (S.context.trim()||'(yes, not filled in yet)') : 'Not part of this one.'));
   out.push('');
-  const sk = lines(S.repeat);
-  out.push('Skills (repeatable process): '+(sk.length ? '' : 'Not part of this one.'));
-  sk.forEach(s=>out.push('  - '+s));
+  const skLines = lines(S.repeat);
+  out.push('Skills (repeatable process): '+(sk ? '' : 'Not part of this one.'));
+  if(sk) skLines.forEach(s=>out.push('  - '+s));
   out.push('');
-  out.push('Agent (what AI could own): '+(S.own.trim()||'Not part of this one.'));
+  out.push('Agent (what AI could own): '+(a ? (S.own.trim()||'(yes, not filled in yet)') : 'Not part of this one.'));
   out.push('');
-  out.push('You (what still needs a human): '+(S.human.trim()||'Not part of this one.'));
+  out.push('You (what still needs a human): '+(S.human.trim()||'Not filled in.'));
   return out.join('\n');
 }
 function toast(m){
