@@ -53,7 +53,10 @@
   .pillars-head h2{ font-size:34px; font-weight:300; line-height:1.25; margin:0; }
   .pillars-head h2 b{ font-weight:600; }
   .pillars .grid{ padding:0; grid-template-columns:repeat(5,1fr); gap:20px; }
-  .pillars .tile-visual{ height:340px; }
+  .pillars .tile-visual{ height:340px; transition:transform .2s ease, box-shadow .25s ease; }
+  .pillars .tile:hover .tile-visual{ box-shadow:0 20px 44px rgba(0,0,0,.35); }
+  .pillars .icon-bg{ transition:opacity .25s ease, transform .3s ease; }
+  .pillars .tile:hover .icon-bg{ opacity:.26; transform:scale(1.08) rotate(-4deg); }
   .pillars .tile-big{ font-size:19px; font-weight:500; line-height:1.35; }
   .pillars .tile-cap .title{ line-height:1.4; }
   .pillars .tile-cap .desc{ max-width:260px; }
@@ -166,10 +169,12 @@
 
   <p style="position:relative; z-index:2; font-weight:300; font-size:24px; color:var(--text); margin:40px 0 18px;">What brings you here?</p>
   <div class="chips" style="position:relative; z-index:2; max-width:640px;">
-    <a class="chip" href="week-one.html">I just became a manager</a>
-    <a class="chip" href="building-a-track-record-for-promotion.html">I want to get promoted</a>
+    <a class="chip" href="week-one.html">It's my first week</a>
+    <a class="chip" href="first-90-days.html">What do I do in my first 90 days</a>
+    <a class="chip" href="templates.html">I need a template</a>
     <a class="chip" href="underperforming-report.html">I'm dealing with a difficult employee</a>
     <a class="chip" href="giving-tough-feedback.html">I need help with a difficult conversation</a>
+    <a class="chip" href="building-a-track-record-for-promotion.html">I want to get promoted</a>
     <a class="chip" href="situations.html">I don't know what to do next</a>
   </div>
 
