@@ -93,7 +93,7 @@ nav{ display:flex; align-items:center; justify-content:space-between; padding:32
 
 /* ---------- PAGE HEAD (index/listing pages) ---------- */
 .page-head{ padding:70px 56px 60px; position:relative; overflow:hidden; }
-.page-head .arc{ position:absolute; top:-200px; right:-300px; width:800px; height:800px; border:1px solid rgba(237,235,228,.1); border-radius:50%; }
+.page-head .arc{ position:absolute; top:-200px; right:-300px; width:800px; height:800px; border:1px solid rgba(237,235,228,.1); border-radius:50%; pointer-events:none; }
 .eyebrow{ font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:22px; position:relative; }
 .eyebrow.rich{ color:var(--richmond); }
 .page-head h1{ font-weight:300; font-size:56px; line-height:1.08; max-width:760px; margin:0; position:relative; }
