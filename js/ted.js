@@ -88,6 +88,23 @@
     return div.innerHTML;
   }
 
+  var STOPWORDS = {
+    a:1, an:1, the:1, is:1, are:1, was:1, were:1, be:1, been:1, being:1,
+    to:1, of:1, and:1, or:1, but:1, in:1, on:1, at:1, for:1, with:1,
+    my:1, your:1, i:1, you:1, it:1, its:1, this:1, that:1, do:1, does:1, did:1,
+    how:1, what:1, when:1, where:1, who:1, why:1, should:1, can:1, could:1,
+    would:1, will:1, shall:1, me:1, we:1, us:1, our:1, their:1, his:1, her:1,
+    from:1, as:1, if:1, so:1, just:1, about:1, into:1, up:1, out:1, not:1
+  };
+
+  function stripStopwords(query){
+    var words = query.split(/\s+/).filter(function(w){
+      return w && !STOPWORDS[w.toLowerCase()];
+    });
+    if(!words.length) return query;
+    return words.join(' ');
+  }
+
   function runSearch(query, resultsEl){
     if(!query){
       resultsEl.innerHTML = '';
@@ -95,7 +112,7 @@
     }
     resultsEl.innerHTML = '<div class="ted-empty">Searching…</div>';
     loadPagefind().then(function(pagefind){
-      return pagefind.search(query);
+      return pagefind.search(stripStopwords(query));
     }).then(function(search){
       if(!search.results.length){
         resultsEl.innerHTML = '<div class="ted-no-results">Nothing landed on that one. Try a different word or two.</div>';
