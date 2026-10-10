@@ -147,11 +147,30 @@
 <div class="crumb"><a href="index.html">Home</a> / <a href="templates.html">Templates</a> / Time Allocation Template — Customer Onboarding</div>
 
 <div class="content-hero cv2">
+  <button type="button" class="copy-link-btn" onclick="(function(b){navigator.clipboard.writeText(location.href).then(function(){var t=b.textContent;b.textContent='Copied!';setTimeout(function(){b.textContent=t;},2000);});})(this)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+    Copy link
+  </button>
   <div class="content-tag">Template · Document</div>
   <h1>Time Allocation Template — Customer Onboarding</h1>
 </div>
 
 <main class="article">
+  <div class="seo-intro">
+    <div class="seo-intro-row"><div class="label">What this is</div><div class="val">A phase-by-phase time and cost breakdown for onboarding one customer, with hourly rate, duration, and customer volume as editable assumptions that roll up into cost per customer and FTE need.</div></div>
+    <div class="seo-intro-row"><div class="label">When to use it</div><div class="val">Use it when you're pricing an onboarding fee, building a headcount case, or trying to turn "we're slammed" into a specific number leadership can act on.</div></div>
+    <div class="seo-intro-row"><div class="label">Common mistake</div><div class="val">Pricing the onboarding fee off a gut-feel hours estimate instead of the actual phase totals, which quietly prices the work below your real delivery cost.</div></div>
+  </div>
+
+  <div class="how-to-use">
+    <div class="label">How to use this</div>
+    <ol>
+      <li>Download the Excel file.</li>
+      <li>Set your hourly rate, onboarding duration, and customers per month at the top.</li>
+      <li>Fill in hours per step and let cost per customer and FTE need fall out as formulas.</li>
+    </ol>
+  </div>
+
   <p class="intro">A time allocation template breaks a repeatable process, like onboarding one customer, into every step, who owns it, how long it takes, and how often it happens. Hours and cost per customer fall out as formulas instead of guesses.</p>
 
   <div class="template-actions">
@@ -187,6 +206,21 @@
       <div class="move-step-title">How to fill it in</div>
       <div class="move-step-text">1. Set your assumptions (hourly rate, onboarding duration, customers per month) at the top.<br>2. List every step in the process in the order it happens, grouped into phases.<br>3. Enter hours per occurrence and number of occurrences for each step, most happen once, recurring ones get real occurrence counts.<br>4. Tag owner, tool, automation potential, and dependency for each step so the sheet doubles as a process map, not just a time log.<br>5. Check the grand total and capacity planning section, that's your real cost and staffing picture per customer.</div>
     </div>
+  </div>
+
+  <div class="resources" style="grid-template-columns:repeat(3,1fr);">
+    <a class="resource-card" href="asking-for-budget-or-headcount.html">
+      <div class="kicker">Workplace Skills</div>
+      <div class="title">How to Ask for Budget or Headcount →</div>
+    </a>
+    <a class="resource-card" href="sales-to-ops-handoff-template.html">
+      <div class="kicker">Template · Document</div>
+      <div class="title">Sales to Ops Handoff Template →</div>
+    </a>
+    <a class="resource-card" href="ask-a-question.html">
+      <div class="kicker">Ask a Question</div>
+      <div class="title">Got a different situation? Ask →</div>
+    </a>
   </div>
 </main>
 <script src="js/copy.js"></script>

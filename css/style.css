@@ -322,6 +322,31 @@ main.article p.lead{ font-size:19px; font-weight:300; color:#fff; line-height:1.
 .try-label{ font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:var(--gold); font-weight:600; margin-bottom:14px; }
 .try-block p{ margin-bottom:0; font-size:15px; color:var(--text); }
 
+/* ---------- COPY LINK BUTTON (content-hero, top right) ---------- */
+.copy-link-btn{
+  position:absolute; top:20px; right:20px; z-index:3;
+  background:rgba(0,0,0,.25); color:rgba(255,255,255,.75); border:1px solid rgba(255,255,255,.25);
+  border-radius:2px; padding:8px 14px; font-size:12px; font-weight:600; letter-spacing:.02em;
+  cursor:pointer; font-family:inherit; display:flex; align-items:center; gap:6px;
+}
+.copy-link-btn:hover{ border-color:var(--gold); color:var(--gold); }
+.copy-link-btn svg{ width:13px; height:13px; }
+@media (max-width:900px){ .copy-link-btn{ top:14px; right:14px; padding:7px 11px; font-size:11px; } }
+
+/* ---------- SEO INTRO BLOCK (top of template pages) ---------- */
+.seo-intro{
+  border:1px solid rgba(237,235,228,.14); border-radius:2px; padding:26px 28px; margin-bottom:36px;
+}
+.seo-intro-row{ margin-bottom:14px; }
+.seo-intro-row:last-child{ margin-bottom:0; }
+.seo-intro-row .label{ font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--gold); font-weight:600; margin-bottom:4px; }
+.seo-intro-row .val{ font-size:15px; color:var(--text); line-height:1.6; }
+.how-to-use{ margin:-8px 0 36px; }
+.how-to-use .label{ font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--richmond); font-weight:600; margin-bottom:10px; }
+.how-to-use ol{ margin:0; padding-left:20px; }
+.how-to-use li{ font-size:14px; color:var(--muted); line-height:1.7; margin-bottom:4px; }
+.last-updated{ font-size:12px; color:var(--muted); opacity:.7; margin:-20px 0 32px; }
+
 .pull-quote{ margin:40px 0; padding:4px 0 4px 26px; border-left:2px solid var(--gold); }
 .pull-quote p{ font-size:23px; font-weight:300; font-style:italic; color:#fff; line-height:1.45; margin:0; }
 
