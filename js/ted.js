@@ -91,13 +91,38 @@
   var STOPWORDS = {
     a:1, an:1, the:1, is:1, are:1, was:1, were:1, be:1, been:1, being:1,
     to:1, of:1, and:1, but:1, my:1, your:1, i:1, this:1, that:1, do:1, does:1, did:1,
-    should:1, could:1, would:1, will:1, shall:1
+    should:1, could:1, would:1, will:1, shall:1,
+    how:1, what:1, when:1, where:1, why:1, who:1, which:1
   };
 
-  function stripStopwords(query){
-    var words = query.split(/\s+/).filter(function(w){
-      return w && !STOPWORDS[w.toLowerCase()];
+  // Casual/synonym phrasing people actually type -> the word the site's own
+  // content uses, so the literal (non-semantic) search engine can find it.
+  // Add to this as real search misses turn up — it's a short list on purpose.
+  var SYNONYM_PHRASES = [
+    [/\bfire(d|ing)?\b/gi, 'terminate'],
+    [/\b(getting along|get along)\b/gi, 'gel'],
+    [/\b(stealing|steals|steal) credit\b/gi, 'taking credit'],
+    [/\blazy\b/gi, 'underperforming'],
+    [/\b(yells?|yelling|yelled) at me\b/gi, 'difficult boss'],
+    [/\bseverance\b/gi, 'layoff'],
+    [/\blet (someone|them) go\b/gi, 'letting someone go']
+  ];
+
+  function applySynonyms(query){
+    var out = query;
+    SYNONYM_PHRASES.forEach(function(pair){
+      out = out.replace(pair[0], pair[1]);
     });
+    return out;
+  }
+
+  function stripStopwords(query){
+    var words = applySynonyms(query)
+      .split(/\s+/)
+      .map(function(w){ return w.replace(/^[^\w]+|[^\w]+$/g, ''); })
+      .filter(function(w){
+        return w && !STOPWORDS[w.toLowerCase()];
+      });
     if(!words.length) return query;
     return words.join(' ');
   }
