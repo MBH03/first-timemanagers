@@ -13,18 +13,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>First-Time Managers | Free Playbook, Templates &amp; Scripts</title>
-<meta name="description" content="First-Time Managers is a free site for new managers: 35+ templates, word-for-word scripts, and a day-1-to-year-1 playbook. Nothing locked behind a paywall, nothing gated behind an email. Just grab it and go.">
+<meta name="description" content="The scripts, templates, and tools for the parts of work nobody taught you. 37+ templates, word-for-word scripts, and a day-1-to-year-1 playbook. Free, no paywall, no email required.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="First-Time Managers">
-<meta property="og:title" content="First-Time Managers | Free Playbook, Templates & Scripts">
-<meta property="og:description" content="First-Time Managers is a free site for new managers: 35+ templates, word-for-word scripts, and a day-1-to-year-1 playbook. Nothing locked behind a paywall, nothing gated behind an email. Just grab it and go.">
+<meta property="og:title" content="First-Time Managers | Free Playbook, Templates &amp; Scripts">
+<meta property="og:description" content="The scripts, templates, and tools for the parts of work nobody taught you. 37+ templates, word-for-word scripts, and a day-1-to-year-1 playbook. Free, no paywall, no email required.">
 <meta property="og:url" content="https://first-timemanagers.com/">
 <meta property="og:image" content="https://first-timemanagers.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="First-Time Managers | Free Playbook, Templates & Scripts">
-<meta name="twitter:description" content="First-Time Managers is a free site for new managers: 35+ templates, word-for-word scripts, and a day-1-to-year-1 playbook. Nothing locked behind a paywall, nothing gated behind an email. Just grab it and go.">
+<meta name="twitter:title" content="First-Time Managers | Free Playbook, Templates &amp; Scripts">
+<meta name="twitter:description" content="The scripts, templates, and tools for the parts of work nobody taught you. 37+ templates, word-for-word scripts, and a day-1-to-year-1 playbook. Free, no paywall, no email required.">
 <meta name="twitter:image" content="https://first-timemanagers.com/og-image.png">
 <meta name="p:domain_verify" content="1658ba8af2e3e0ca65963b242ea89992"/>
 <link rel="icon" href="/favicon.ico">
@@ -34,65 +34,83 @@
 <link rel="canonical" href="https://first-timemanagers.com/">
 <link rel="stylesheet" href="css/style.css">
 <style>
-  .hero{ position:relative; padding:60px 56px 40px; overflow:hidden; min-height:520px; }
-  .hero .eyebrow{ position:relative; z-index:2; max-width:340px; color:var(--text); }
-  .hero h1{ font-weight:300; font-size:76px; line-height:1.02; letter-spacing:-0.01em; max-width:900px; margin:0; color:var(--text); position:relative; z-index:2; }
+  .hero{ position:relative; padding:60px 56px 40px; overflow:hidden; min-height:420px; }
+  .hero h1{ font-weight:300; font-size:60px; line-height:1.08; letter-spacing:-0.01em; max-width:920px; margin:0; color:var(--text); position:relative; z-index:2; }
   .hero h1 b{ font-weight:600; color:#fff; }
-  .hero p.sub{ font-size:16px; line-height:1.7; color:var(--muted); max-width:420px; margin-top:28px; font-weight:400; }
+  .hero p.sub{ font-size:17px; line-height:1.7; color:var(--muted); max-width:480px; margin-top:22px; font-weight:400; position:relative; z-index:2; }
   .orb{
-    position:absolute; right:70px; top:70px; width:340px; height:340px; border-radius:50%;
+    position:absolute; right:70px; top:70px; width:260px; height:260px; border-radius:50%;
     background:radial-gradient(circle at 32% 28%, #F6D28A 0%, var(--gold) 42%, var(--gold-deep) 78%, #7A4E14 100%);
     box-shadow:0 40px 90px rgba(227,166,62,.25); z-index:1;
   }
   .orb::after{ content:''; position:absolute; inset:0; border-radius:50%; background:radial-gradient(circle at 70% 75%, rgba(0,0,0,.28), transparent 55%); }
 
-  .pillars{ padding:120px 56px 60px; }
-  .pillars-head{ max-width:560px; margin-bottom:80px; }
-  .pillars-head h2{ font-size:34px; font-weight:300; line-height:1.25; margin:0; }
-  .pillars-head h2 b{ font-weight:600; }
-  .pillars .grid{ padding:0; grid-template-columns:repeat(5,1fr); gap:20px; }
-  .pillars .tile-visual{ height:340px; transition:transform .2s ease, box-shadow .25s ease; }
-  .pillars .tile:hover .tile-visual{ box-shadow:0 20px 44px rgba(0,0,0,.35); }
-  .pillars .icon-bg{ transition:opacity .25s ease, transform .3s ease; }
-  .pillars .tile:hover .icon-bg{ opacity:.26; transform:scale(1.08) rotate(-4deg); }
-  .pillars .tile-big{ font-size:19px; font-weight:500; line-height:1.35; }
-  .pillars .tile-cap .title{ line-height:1.4; }
-  .pillars .tile-cap .desc{ max-width:260px; }
+  .doors{ padding:60px 56px 60px; }
+  .doors-head{ max-width:560px; margin-bottom:40px; }
+  .doors-head h2{ font-size:30px; font-weight:300; line-height:1.25; margin:0; }
+  .doors-head h2 b{ font-weight:600; }
+  .doors .grid{ padding:0; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .doors .tile-visual{ height:300px; transition:transform .2s ease, box-shadow .25s ease; }
+  .doors .tile:hover .tile-visual{ box-shadow:0 20px 44px rgba(0,0,0,.35); }
+  .doors .icon-bg{ transition:opacity .25s ease, transform .3s ease; }
+  .doors .tile:hover .icon-bg{ opacity:.26; transform:scale(1.08) rotate(-4deg); }
+  .doors .tile-big{ font-size:20px; font-weight:500; line-height:1.35; }
 
-  @media (max-width:1300px){
-    .pillars .grid{ grid-template-columns:repeat(3,1fr); gap:24px; }
+  .playbook-strip{
+    display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+    margin-top:20px; padding:18px 24px; border:1px solid rgba(237,235,228,.14); border-radius:4px;
+    background:var(--bg2);
   }
+  .playbook-strip span{ font-size:14px; color:var(--muted); }
+  .playbook-strip a{ color:var(--gold); font-weight:600; font-size:14px; white-space:nowrap; }
+
+  @media (max-width:1300px){ .doors .grid{ grid-template-columns:1fr; } }
   @media (max-width:900px){
-    .hero .eyebrow{ max-width:220px; }
-    .hero h1{ font-size:42px; }
-    .orb{ width:180px; height:180px; right:24px; top:24px; }
-    .pillars{ padding:60px 24px; }
-    .pillars-head{ margin-bottom:40px; }
-    .pillars .grid{ grid-template-columns:1fr; }
+    .hero h1{ font-size:34px; }
+    .orb{ width:150px; height:150px; right:20px; top:20px; }
+    .doors{ padding:40px 24px; }
+    .doors-head{ margin-bottom:28px; }
   }
 
-  .email-capture{ margin:0; padding:80px 56px; text-align:center; background:var(--bg2); border-top:1px solid rgba(237,235,228,.08); }
+  .section-head{ max-width:640px; margin:0 56px 32px; }
+  .section-head h2{ font-size:26px; font-weight:300; margin:0 0 8px; }
+  .section-head p{ color:var(--muted); font-size:14px; margin:0; }
+  .home-section{ padding:50px 0 10px; border-top:1px solid rgba(237,235,228,.08); }
+  .home-section .grid{ padding:0 56px; }
+  .library-link{ text-align:center; padding:10px 56px 60px; }
+  .library-link a{ color:var(--gold); font-weight:600; font-size:15px; }
+  @media (max-width:900px){
+    .section-head{ margin:0 24px 24px; }
+    .home-section .grid{ padding:0 24px; }
+    .library-link{ padding:10px 24px 50px; }
+  }
+
+  .qa-teaser{ padding:50px 56px 10px; border-top:1px solid rgba(237,235,228,.08); }
+  .qa-teaser .grid{ padding:0; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:28px; }
+  @media (max-width:900px){ .qa-teaser{ padding:40px 24px 10px; } .qa-teaser .grid{ grid-template-columns:1fr; } }
+
+  .email-capture{ margin:0; padding:60px 56px; text-align:center; background:var(--bg2); border-top:1px solid rgba(237,235,228,.08); }
   .email-capture-inner{ max-width:480px; margin:0 auto; }
   .email-capture .eyebrow{ justify-content:center; }
-  .email-capture h3{ font-weight:300; font-size:26px; line-height:1.35; margin:0 0 14px; }
-  .email-capture p.desc{ color:var(--muted); font-size:14px; line-height:1.7; margin:0 0 28px; }
+  .email-capture h3{ font-weight:300; font-size:22px; line-height:1.35; margin:0 0 12px; }
+  .email-capture p.desc{ color:var(--muted); font-size:13px; line-height:1.7; margin:0 0 22px; }
   .capture-form{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
   .capture-form input[type=email]{
     background:var(--bg); border:1px solid rgba(237,235,228,.18); border-radius:2px;
-    padding:14px 16px; color:var(--text); font-family:inherit; font-size:14px; min-width:230px; flex:1;
+    padding:12px 14px; color:var(--text); font-family:inherit; font-size:13px; min-width:220px; flex:1;
   }
   .capture-form input[type=email]:focus{ outline:none; border-color:var(--gold); }
   .capture-form button{
     background:transparent; color:var(--muted); border:1px solid rgba(237,235,228,.25); border-radius:2px;
-    padding:14px 26px; font-size:13px; letter-spacing:.02em; font-weight:600; cursor:pointer; font-family:inherit; white-space:nowrap;
+    padding:12px 22px; font-size:12px; letter-spacing:.02em; font-weight:600; cursor:pointer; font-family:inherit; white-space:nowrap;
   }
   .capture-form button:hover{ border-color:var(--gold); color:var(--gold); }
   .capture-form button:disabled{ opacity:.6; cursor:default; }
-  .email-capture .fine-print{ color:var(--muted); font-size:11px; margin-top:16px; opacity:.7; }
-  .email-capture .capture-confirm{ display:none; color:var(--gold); font-size:14px; }
+  .email-capture .fine-print{ color:var(--muted); font-size:11px; margin-top:14px; opacity:.7; }
+  .email-capture .capture-confirm{ display:none; color:var(--gold); font-size:13px; }
   .email-capture .capture-confirm.show{ display:block; }
   .email-capture .capture-confirm.show ~ form{ display:none; }
-  @media (max-width:900px){ .email-capture{ padding:56px 24px; } }
+  @media (max-width:900px){ .email-capture{ padding:40px 24px; } }
 </style>
 <script type="application/ld+json">
 {
@@ -159,125 +177,193 @@
 
 <section class="hero">
   <div class="orb"></div>
-  <div class="eyebrow">from your first promotion to running the room</div>
-  <h1>Nobody reads<br>the manual.<br><b>So we didn't<br>write one.</b></h1>
-
-  <p style="position:relative; z-index:2; max-width:440px; margin-top:26px; font-size:15.5px; line-height:1.85; color:var(--muted);">
-    Started building this for first-time managers. Then your questions opened it up to everyone else.
-  </p>
-
-  <p class="sub">Free scripts, templates, tools, and practical advice for the moments at work nobody teaches you how to handle.</p>
-
-  <p style="position:relative; z-index:2; font-weight:300; font-size:24px; color:var(--text); margin:40px 0 18px;">What brings you here?</p>
-  <div class="chips" style="position:relative; z-index:2; max-width:640px;">
-    <a class="chip" href="week-one.html">It's my first week</a>
-    <a class="chip" href="first-90-days.html">What do I do in my first 90 days</a>
-    <a class="chip" href="templates.html">I need a template</a>
-    <a class="chip" href="underperforming-report.html">I'm dealing with a difficult employee</a>
-    <a class="chip" href="giving-tough-feedback.html">I need help with a difficult conversation</a>
-    <a class="chip" href="building-a-track-record-for-promotion.html">I want to get promoted</a>
-    <a class="chip" href="situations.html">I don't know what to do next</a>
-  </div>
-
-  <p style="position:relative; z-index:2; margin:36px 0 0; font-size:14px; color:var(--muted);">
-    Or explore the toolkit —
-    <a href="playbook.html" style="color:var(--gold); font-weight:600;">Playbook</a> ·
-    <a href="templates.html" style="color:var(--gold); font-weight:600;">Templates</a> ·
-    <a href="tools.html" style="color:var(--gold); font-weight:600;">Tools</a> ·
-    <a href="workplace-skills.html" style="color:var(--gold); font-weight:600;">Skills</a> ·
-    <a href="career-advice.html" style="color:var(--gold); font-weight:600;">Career</a> ·
-    <a href="ai-hub.html" style="color:var(--gold); font-weight:600;">AI</a>
-  </p>
+  <h1>The scripts, templates, and tools for <b>the parts of work nobody taught you.</b></h1>
+  <p class="sub">Started for first-time managers. Kept going because everyone else needed it too.</p>
 </section>
 
 <div style="text-align:center; padding:16px 24px; font-size:13px; color:var(--muted); border-top:1px solid rgba(237,235,228,.08); border-bottom:1px solid rgba(237,235,228,.08);">
   Everything on this site is free — no paywall, no email required, no account. <a href="about.html" style="color:var(--gold); font-weight:600;">Why? →</a>
 </div>
 
-<section class="pillars">
-  <div class="pillars-head">
-    <div class="eyebrow rich">five ways in</div>
-    <h2>Not a blog. A <b>toolkit</b> for the job you just got handed.</h2>
+<section class="doors">
+  <div class="doors-head">
+    <h2>What's going on <b>right now?</b></h2>
   </div>
 
   <div class="grid">
-    <a class="tile" href="playbook.html">
-      <div class="tile-visual cv1">
-        <svg class="icon-bg" viewBox="0 0 24 24"><path d="M4 4v16M4 4h13l-2 4 2 4H4"/></svg>
-        <div class="tile-index"><span>01 / PLAYBOOK</span><span class="read">Start →</span></div>
-        <div>
-          <div class="tile-big">The four stages of your first year</div>
-          <div class="tile-sub">Week 1 to Year 1, one flagship track</div>
-        </div>
-      </div>
-      <div class="tile-cap">
-        <div class="title">Playbook <span class="dot">•</span> The four stages of your first year</div>
-        <div class="desc">Start here. A guided path for what to do next.</div>
-      </div>
-    </a>
-    <a class="tile" href="workplace-skills.html">
+    <a class="tile" href="say-something-hard.html">
       <div class="tile-visual cv2">
-        <svg class="icon-bg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5l3 2"/></svg>
-        <div class="tile-index"><span>02 / SKILLS</span><span class="read">Browse →</span></div>
+        <svg class="icon-bg" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <div class="tile-index"><span>DOOR 01</span><span class="read">Open →</span></div>
         <div>
-          <div class="tile-big">The stuff nobody sat you down and explained</div>
-          <div class="tile-sub">How to handle a mistake, say "I don't know," and more</div>
+          <div class="tile-big">I need to say something hard</div>
+          <div class="tile-sub">Feedback, PIPs, terminations, layoffs, escalations</div>
         </div>
       </div>
       <div class="tile-cap">
-        <div class="title">Skills <span class="dot">•</span> The stuff nobody sat you down and explained</div>
-        <div class="desc">Learn the stuff nobody taught you.</div>
+        <div class="title">Say Something Hard</div>
+        <div class="desc">You don't need theory. You need the first sentence.</div>
       </div>
     </a>
-    <a class="tile" href="templates.html">
-      <div class="tile-visual cv3">
-        <svg class="icon-bg" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="16" rx="1"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
-        <div class="tile-index"><span>03 / TEMPLATES</span><span class="read">Grab →</span></div>
-        <div>
-          <div class="tile-big">What to say, word for word</div>
-          <div class="tile-sub">Scripts and documents, free</div>
-        </div>
-      </div>
-      <div class="tile-cap">
-        <div class="title">Templates <span class="dot">•</span> What to say, word for word</div>
-        <div class="desc">Get the words, documents, and scripts.</div>
-      </div>
-    </a>
-    <a class="tile" href="tools.html">
+    <a class="tile" href="run-my-team.html">
       <div class="tile-visual cv4">
-        <svg class="icon-bg" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-        <div class="tile-index"><span>04 / TOOLS</span><span class="read">Calculate →</span></div>
+        <svg class="icon-bg" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20v-1a6 6 0 0 1 12 0v1"/></svg>
+        <div class="tile-index"><span>DOOR 02</span><span class="read">Open →</span></div>
         <div>
-          <div class="tile-big">Get the exact number</div>
-          <div class="tile-sub">Calculators, no guessing</div>
+          <div class="tile-big">I need to run my team better</div>
+          <div class="tile-sub">Hiring, onboarding, 1:1s, delegation, meetings</div>
         </div>
       </div>
       <div class="tile-cap">
-        <div class="title">Tools <span class="dot">•</span> Get the exact number</div>
-        <div class="desc">Calculate, compare, and figure things out.</div>
+        <div class="title">Run My Team</div>
+        <div class="desc">Systems for hiring, onboarding, meetings, and delegation.</div>
       </div>
     </a>
-    <a class="tile" href="career-advice.html">
-      <div class="tile-visual cv6">
-        <svg class="icon-bg" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20v-3"/></svg>
-        <div class="tile-index"><span>05 / CAREER</span><span class="read">Read →</span></div>
+    <a class="tile" href="my-career.html">
+      <div class="tile-visual cv5">
+        <svg class="icon-bg" viewBox="0 0 24 24"><path d="M12 2 L14 8 L20 8 L15 12 L17 18 L12 14 L7 18 L9 12 L4 8 L10 8 Z"/></svg>
+        <div class="tile-index"><span>DOOR 03</span><span class="read">Open →</span></div>
         <div>
-          <div class="tile-big">Being good at the job isn't the same as having a good career</div>
-          <div class="tile-sub">Negotiating, managing up, knowing when to leave</div>
+          <div class="tile-big">I need to figure out my own career</div>
+          <div class="tile-sub">Promotion, visibility, decisions, managing up</div>
         </div>
       </div>
       <div class="tile-cap">
-        <div class="title">Career <span class="dot">•</span> Being good at the job isn't the same as having a good career</div>
-        <div class="desc">Figure out the bigger career moves.</div>
+        <div class="title">My Career</div>
+        <div class="desc">Being good at the job isn't the same as having a good career.</div>
+      </div>
+    </a>
+  </div>
+
+  <div class="playbook-strip">
+    <span>New to managing?</span>
+    <a href="playbook.html">Start with the 4-stage Playbook →</a>
+  </div>
+</section>
+
+<section class="home-section">
+  <div class="section-head">
+    <h2>Most used this week</h2>
+    <p>The templates people actually reach for.</p>
+  </div>
+  <div class="grid">
+    <a class="tile" href="one-on-one-script.html">
+      <div class="tile-visual cv1">
+        <svg class="icon-bg" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20v-1a6 6 0 0 1 12 0v1"/></svg>
+        <div class="tile-index"><span>SCRIPT</span><span class="read">Open →</span></div>
+        <div>
+          <div class="tile-big">1:1s</div>
+          <div class="tile-sub">Structure for a weekly check in that isn't a status update</div>
+        </div>
+      </div>
+      <div class="tile-cap">
+        <div class="title">One on One Script</div>
+        <div class="desc">A repeatable structure so your 1:1s stop being a status meeting in disguise.</div>
+      </div>
+    </a>
+    <a class="tile" href="difficult-feedback-script.html">
+      <div class="tile-visual cv4">
+        <svg class="icon-bg" viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.5-8.5C1 9 2.5 5 6.5 5c2 0 3.5 1.3 4 2.5C11 6.3 12.5 5 14.5 5c4 0 5.5 4 4 7.5C16 16.65 12 21 12 21z"/></svg>
+        <div class="tile-index"><span>SCRIPT</span><span class="read">Open →</span></div>
+        <div>
+          <div class="tile-big">Feedback</div>
+          <div class="tile-sub">Direct without being harsh</div>
+        </div>
+      </div>
+      <div class="tile-cap">
+        <div class="title">Difficult Feedback Script</div>
+        <div class="desc">A way to say the hard thing clearly, the first time, without softening it into nothing.</div>
+      </div>
+    </a>
+    <a class="tile" href="performance-conversation-script.html">
+      <div class="tile-visual cv2">
+        <svg class="icon-bg" viewBox="0 0 24 24"><path d="M4 4v16M4 4h13l-2 4 2 4H4"/></svg>
+        <div class="tile-index"><span>SCRIPT</span><span class="read">Open →</span></div>
+        <div>
+          <div class="tile-big">Performance</div>
+          <div class="tile-sub">Naming an issue without making it a confrontation</div>
+        </div>
+      </div>
+      <div class="tile-cap">
+        <div class="title">Performance Conversation Script</div>
+        <div class="desc">What to say when someone on your team isn't hitting the mark.</div>
+      </div>
+    </a>
+    <a class="tile" href="interviewing-a-candidate-template.html">
+      <div class="tile-visual cv4">
+        <svg class="icon-bg" viewBox="0 0 24 24"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a6 6 0 0 1 12 0v2"/><path d="M17 11l2 2 4-4"/></svg>
+        <div class="tile-index"><span>DOCUMENT</span><span class="read">Open →</span></div>
+        <div>
+          <div class="tile-big">Interviewing a Candidate</div>
+          <div class="tile-sub">Structure beats gut feeling</div>
+        </div>
+      </div>
+      <div class="tile-cap">
+        <div class="title">Interviewing a Candidate, First-Time Manager Template</div>
+        <div class="desc">A legally sound interview structure, script, and what you can never ask.</div>
+      </div>
+    </a>
+    <a class="tile" href="delegation-framework-template.html">
+      <div class="tile-visual cv3">
+        <svg class="icon-bg" viewBox="0 0 24 24"><path d="M17 3l4 4-4 4M21 7H9M7 21l-4-4 4-4M3 17h12"/></svg>
+        <div class="tile-index"><span>DOCUMENT</span><span class="read">Open →</span></div>
+        <div>
+          <div class="tile-big">Delegation Framework</div>
+          <div class="tile-sub">Hand it off without losing the outcome</div>
+        </div>
+      </div>
+      <div class="tile-cap">
+        <div class="title">Delegation Framework Template</div>
+        <div class="desc">Task, fit, outcome, authority level, resources, check-in cadence, and success criteria.</div>
+      </div>
+    </a>
+    <a class="tile" href="executive-status-update-template.html">
+      <div class="tile-visual cv3">
+        <svg class="icon-bg" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20v-3"/></svg>
+        <div class="tile-index"><span>SCRIPT</span><span class="read">Open →</span></div>
+        <div>
+          <div class="tile-big">Headline first</div>
+          <div class="tile-sub">Not the timeline you lived through</div>
+        </div>
+      </div>
+      <div class="tile-cap">
+        <div class="title">Executive Status Update Email Template</div>
+        <div class="desc">A recurring update to the exec team, built to be scanned in thirty seconds.</div>
       </div>
     </a>
   </div>
 </section>
 
+<section class="qa-teaser">
+  <div class="section-head" style="margin:0 0 32px;">
+    <h2>Still stuck on something <b>specific?</b></h2>
+    <p>Real questions, real answers. Ask yours and it might be next.</p>
+  </div>
+  <div class="grid">
+    <a class="resource-card" href="qa-former-peer-now-direct-report.html">
+      <div class="kicker">A Real Question</div>
+      <div class="title">My former peer is now my direct report. What do I do? →</div>
+    </a>
+    <a class="resource-card" href="qa-1-on-1s-are-status-updates.html">
+      <div class="kicker">A Real Question</div>
+      <div class="title">My 1:1s turned into status updates. How do I fix that? →</div>
+    </a>
+    <a class="resource-card" href="qa-how-to-ask-for-promotion.html">
+      <div class="kicker">A Real Question</div>
+      <div class="title">How do I ask for a promotion without sounding entitled? →</div>
+    </a>
+  </div>
+  <p style="text-align:center;"><a class="ask-btn" href="ask-a-question.html">Ask a Question →</a></p>
+</section>
+
+<div class="library-link">
+  <a href="templates.html">Browse the full library of 37 templates →</a>
+</div>
+
 <div class="nav-strip">
   <div class="nav-strip-inner">
     <div class="eyebrow">the navigator</div>
-    <h3>What's going on <b>right now?</b></h3>
+    <h3>Or pick the exact <b>situation</b></h3>
     <p class="desc">Situation or feeling, whatever fits, pick the one closest and we'll route you straight to the move, not a search results page.</p>
     <div class="chips">
       <a class="chip" href="just-got-promoted.html">Just got promoted</a>
@@ -303,17 +389,11 @@
   </div>
 </div>
 
-<section class="ask">
-  <h2>Still stuck on something <b>specific?</b></h2>
-  <p>Ask a real question. It might become the next entry in the Navigator, and everyone after you gets the answer too.</p>
-  <a class="ask-btn" href="ask-a-question.html">Ask a Question →</a>
-</section>
-
 <section class="email-capture">
   <div class="email-capture-inner">
-    <div class="eyebrow">not a newsletter</div>
-    <h3>Sometimes I find something too good not to pass along.</h3>
-    <p class="desc">Drop your email, I'll send it when it happens. Nothing on a schedule, no "5 tips" filler to hit a deadline. Just the good stuff, when I find it.</p>
+    <div class="eyebrow">rare finds</div>
+    <h3>I only email when I find something worth forwarding.</h3>
+    <p class="desc">No schedule, no "5 tips" filler to hit a deadline. Just the good stuff, when I find it.</p>
 
     <div class="capture-confirm" id="captureConfirm">Thanks, you're in. Talk soon.</div>
 
