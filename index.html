@@ -49,23 +49,15 @@
   .doors-head{ max-width:560px; margin-bottom:40px; }
   .doors-head h2{ font-size:30px; font-weight:300; line-height:1.25; margin:0; }
   .doors-head h2 b{ font-weight:600; }
-  .doors .grid{ padding:0; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .doors .grid{ padding:0; grid-template-columns:repeat(2,1fr); gap:20px; }
   .doors .tile-visual{ height:300px; transition:transform .2s ease, box-shadow .25s ease; }
   .doors .tile:hover .tile-visual{ box-shadow:0 20px 44px rgba(0,0,0,.35); }
   .doors .icon-bg{ transition:opacity .25s ease, transform .3s ease; }
   .doors .tile:hover .icon-bg{ opacity:.26; transform:scale(1.08) rotate(-4deg); }
   .doors .tile-big{ font-size:20px; font-weight:500; line-height:1.35; }
 
-  .playbook-strip{
-    display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
-    margin-top:20px; padding:18px 24px; border:1px solid rgba(237,235,228,.14); border-radius:4px;
-    background:var(--bg2);
-  }
-  .playbook-strip span{ font-size:14px; color:var(--muted); }
-  .playbook-strip a{ color:var(--gold); font-weight:600; font-size:14px; white-space:nowrap; }
-
-  @media (max-width:1300px){ .doors .grid{ grid-template-columns:1fr; } }
   @media (max-width:900px){
+    .doors .grid{ grid-template-columns:1fr; }
     .hero h1{ font-size:34px; }
     .orb{ width:150px; height:150px; right:20px; top:20px; }
     .doors{ padding:40px 24px; }
@@ -233,11 +225,20 @@
         <div class="desc">Being good at the job isn't the same as having a good career.</div>
       </div>
     </a>
-  </div>
-
-  <div class="playbook-strip">
-    <span>New to managing?</span>
-    <a href="playbook.html">Start with the 4-stage Playbook →</a>
+    <a class="tile" href="playbook.html">
+      <div class="tile-visual cv1">
+        <svg class="icon-bg" viewBox="0 0 24 24"><path d="M12 6C10 4 6 4 3 5v14c3-1 7-1 9 1 2-2 6-2 9-1V5c-3-1-7-1-9 1z"/><path d="M12 6v14"/></svg>
+        <div class="tile-index"><span>DOOR 04</span><span class="read">Start →</span></div>
+        <div>
+          <div class="tile-big">I just got promoted and don't know where to start</div>
+          <div class="tile-sub">Week 1 to Year 1, one guided track</div>
+        </div>
+      </div>
+      <div class="tile-cap">
+        <div class="title">New Here? Start With the Playbook</div>
+        <div class="desc">Four stages, nothing to browse, just what matters right now for wherever you are.</div>
+      </div>
+    </a>
   </div>
 </section>
 
