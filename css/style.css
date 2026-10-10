@@ -433,6 +433,24 @@ main.article p.lead{ font-size:19px; font-weight:300; color:#fff; line-height:1.
 .topic-row .go{ flex-shrink:0; color:var(--gold); font-size:13px; font-weight:600; white-space:nowrap; }
 .finder-empty{ display:none; color:var(--muted); font-size:14px; padding:20px 0; }
 
+/* ---------- TEMPLATE FILTER BAR (templates.html) ---------- */
+.filter-bar{ display:flex; flex-wrap:wrap; gap:10px; padding:0 56px 44px; }
+.filter-chip{
+  background:transparent; color:var(--muted); border:1px solid rgba(237,235,228,.2); border-radius:30px;
+  padding:9px 18px; font-size:13px; font-weight:600; cursor:pointer; font-family:inherit;
+}
+.filter-chip:hover{ border-color:var(--gold); color:var(--gold); }
+.filter-chip.active{ background:var(--gold); border-color:var(--gold); color:#1B1B1A; }
+.template-section-head{
+  font-size:12px; text-transform:uppercase; letter-spacing:.1em; color:var(--gold); font-weight:600;
+  padding:0 56px; margin:0 0 20px;
+}
+.template-section-head.second{ margin-top:50px; }
+@media (max-width:900px){
+  .filter-bar{ padding:0 24px 32px; }
+  .template-section-head{ padding:0 24px; }
+}
+
 @media (max-width:900px){
   .finder-search, .finder{ padding-left:24px; padding-right:24px; }
   .topic-row .desc{ display:none; }
