@@ -76,10 +76,12 @@
     .orb{ width:110px; height:110px; right:14px; top:14px; }
     .doors{ padding:32px 20px; }
     .doors-head{ margin-bottom:18px; }
-    .doors .tile-visual{ height:150px; padding:16px 18px; }
-    .doors .tile-cap{ display:none; }
-    .doors .tile-big{ font-size:16px; }
-    .doors .tile-sub{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .doors .tile-visual{ min-height:0; height:150px; padding:16px 18px; min-width:0; }
+    .doors .tile-big{ font-size:16px; min-width:0; }
+    .doors .tile-sub{
+      min-width:0; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:1;
+      overflow:hidden; text-overflow:ellipsis; white-space:normal;
+    }
   }
 
   .section-head{ max-width:640px; margin:0 56px 32px; }
@@ -239,56 +241,40 @@
         <svg class="icon-bg" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         <div class="tile-index"><span>DOOR 01</span><span class="read" data-pagefind-ignore>Open →</span></div>
         <div>
-          <div class="tile-big">I need to say something hard</div>
-          <div class="tile-sub">Feedback, PIPs, terminations, layoffs, escalations</div>
-        </div>
+          <div class="tile-big">Say Something Hard</div>
+        <div class="tile-sub">You don't need theory. You need the first sentence.</div>
       </div>
-      <div class="tile-cap">
-        <div class="title">Say Something Hard</div>
-        <div class="desc">You don't need theory. You need the first sentence.</div>
-      </div>
+    </div>
     </a>
     <a class="tile" href="run-my-team.html">
       <div class="tile-visual cv4">
         <svg class="icon-bg" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20v-1a6 6 0 0 1 12 0v1"/></svg>
         <div class="tile-index"><span>DOOR 02</span><span class="read" data-pagefind-ignore>Open →</span></div>
         <div>
-          <div class="tile-big">I need to run my team better</div>
-          <div class="tile-sub">Hiring, onboarding, 1:1s, delegation, meetings</div>
-        </div>
+          <div class="tile-big">Run My Team</div>
+        <div class="tile-sub">Systems for hiring, onboarding, meetings, and delegation.</div>
       </div>
-      <div class="tile-cap">
-        <div class="title">Run My Team</div>
-        <div class="desc">Systems for hiring, onboarding, meetings, and delegation.</div>
-      </div>
+    </div>
     </a>
     <a class="tile" href="my-career.html">
       <div class="tile-visual cv5">
         <svg class="icon-bg" viewBox="0 0 24 24"><path d="M12 2 L14 8 L20 8 L15 12 L17 18 L12 14 L7 18 L9 12 L4 8 L10 8 Z"/></svg>
         <div class="tile-index"><span>DOOR 03</span><span class="read" data-pagefind-ignore>Open →</span></div>
         <div>
-          <div class="tile-big">I need to figure out my own career</div>
-          <div class="tile-sub">Promotion, visibility, decisions, managing up</div>
-        </div>
+          <div class="tile-big">My Career</div>
+        <div class="tile-sub">Being good at the job isn't the same as having a good career.</div>
       </div>
-      <div class="tile-cap">
-        <div class="title">My Career</div>
-        <div class="desc">Being good at the job isn't the same as having a good career.</div>
-      </div>
+    </div>
     </a>
     <a class="tile" href="playbook.html">
       <div class="tile-visual cv1">
         <svg class="icon-bg" viewBox="0 0 24 24"><path d="M12 6C10 4 6 4 3 5v14c3-1 7-1 9 1 2-2 6-2 9-1V5c-3-1-7-1-9 1z"/><path d="M12 6v14"/></svg>
         <div class="tile-index"><span>DOOR 04</span><span class="read" data-pagefind-ignore>Start →</span></div>
         <div>
-          <div class="tile-big">I just got promoted and don't know where to start</div>
-          <div class="tile-sub">Week 1 to Year 1, one guided track</div>
-        </div>
+          <div class="tile-big">New Here? Start With the Playbook</div>
+        <div class="tile-sub">Four stages, nothing to browse, just what matters right now for wherever you are.</div>
       </div>
-      <div class="tile-cap">
-        <div class="title">New Here? Start With the Playbook</div>
-        <div class="desc">Four stages, nothing to browse, just what matters right now for wherever you are.</div>
-      </div>
+    </div>
     </a>
   </div>
 </section>
@@ -304,84 +290,60 @@
         <svg class="icon-bg" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20v-1a6 6 0 0 1 12 0v1"/></svg>
         <div class="tile-index"><span>SCRIPT</span><span class="read" data-pagefind-ignore>Get template →</span></div>
         <div>
-          <div class="tile-big">1:1s</div>
-          <div class="tile-sub">Structure for a weekly check in that isn't a status update</div>
-        </div>
+          <div class="tile-big">One on One Script</div>
+        <div class="tile-sub">A repeatable structure so your 1:1s stop being a status meeting in disguise.</div>
       </div>
-      <div class="tile-cap">
-        <div class="title">One on One Script</div>
-        <div class="desc">A repeatable structure so your 1:1s stop being a status meeting in disguise.</div>
-      </div>
+    </div>
     </a>
     <a class="tile" href="difficult-feedback-script.html">
       <div class="tile-visual cv4">
         <svg class="icon-bg" viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.5-8.5C1 9 2.5 5 6.5 5c2 0 3.5 1.3 4 2.5C11 6.3 12.5 5 14.5 5c4 0 5.5 4 4 7.5C16 16.65 12 21 12 21z"/></svg>
         <div class="tile-index"><span>SCRIPT</span><span class="read" data-pagefind-ignore>Get template →</span></div>
         <div>
-          <div class="tile-big">Feedback</div>
-          <div class="tile-sub">Direct without being harsh</div>
-        </div>
+          <div class="tile-big">Difficult Feedback Script</div>
+        <div class="tile-sub">A way to say the hard thing clearly, the first time, without softening it into nothing.</div>
       </div>
-      <div class="tile-cap">
-        <div class="title">Difficult Feedback Script</div>
-        <div class="desc">A way to say the hard thing clearly, the first time, without softening it into nothing.</div>
-      </div>
+    </div>
     </a>
     <a class="tile" href="performance-conversation-script.html">
       <div class="tile-visual cv2">
         <svg class="icon-bg" viewBox="0 0 24 24"><path d="M4 4v16M4 4h13l-2 4 2 4H4"/></svg>
         <div class="tile-index"><span>SCRIPT</span><span class="read" data-pagefind-ignore>Get template →</span></div>
         <div>
-          <div class="tile-big">Performance</div>
-          <div class="tile-sub">Naming an issue without making it a confrontation</div>
-        </div>
+          <div class="tile-big">Performance Conversation Script</div>
+        <div class="tile-sub">What to say when someone on your team isn't hitting the mark.</div>
       </div>
-      <div class="tile-cap">
-        <div class="title">Performance Conversation Script</div>
-        <div class="desc">What to say when someone on your team isn't hitting the mark.</div>
-      </div>
+    </div>
     </a>
     <a class="tile" href="interviewing-a-candidate-template.html">
       <div class="tile-visual cv4">
         <svg class="icon-bg" viewBox="0 0 24 24"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a6 6 0 0 1 12 0v2"/><path d="M17 11l2 2 4-4"/></svg>
         <div class="tile-index"><span>DOCUMENT</span><span class="read" data-pagefind-ignore>Get template →</span></div>
         <div>
-          <div class="tile-big">Interviewing a Candidate</div>
-          <div class="tile-sub">Structure beats gut feeling</div>
-        </div>
+          <div class="tile-big">Interviewing a Candidate, First-Time Manager Template</div>
+        <div class="tile-sub">A legally sound interview structure, script, and what you can never ask.</div>
       </div>
-      <div class="tile-cap">
-        <div class="title">Interviewing a Candidate, First-Time Manager Template</div>
-        <div class="desc">A legally sound interview structure, script, and what you can never ask.</div>
-      </div>
+    </div>
     </a>
     <a class="tile" href="delegation-framework-template.html">
       <div class="tile-visual cv3">
         <svg class="icon-bg" viewBox="0 0 24 24"><path d="M17 3l4 4-4 4M21 7H9M7 21l-4-4 4-4M3 17h12"/></svg>
         <div class="tile-index"><span>DOCUMENT</span><span class="read" data-pagefind-ignore>Get template →</span></div>
         <div>
-          <div class="tile-big">Delegation Framework</div>
-          <div class="tile-sub">Hand it off without losing the outcome</div>
-        </div>
+          <div class="tile-big">Delegation Framework Template</div>
+        <div class="tile-sub">Task, fit, outcome, authority level, resources, check-in cadence, and success criteria.</div>
       </div>
-      <div class="tile-cap">
-        <div class="title">Delegation Framework Template</div>
-        <div class="desc">Task, fit, outcome, authority level, resources, check-in cadence, and success criteria.</div>
-      </div>
+    </div>
     </a>
     <a class="tile" href="executive-status-update-template.html">
       <div class="tile-visual cv3">
         <svg class="icon-bg" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20v-3"/></svg>
         <div class="tile-index"><span>SCRIPT</span><span class="read" data-pagefind-ignore>Get template →</span></div>
         <div>
-          <div class="tile-big">Headline first</div>
-          <div class="tile-sub">Not the timeline you lived through</div>
-        </div>
+          <div class="tile-big">Executive Status Update Email Template</div>
+        <div class="tile-sub">A recurring update to the exec team, built to be scanned in thirty seconds.</div>
       </div>
-      <div class="tile-cap">
-        <div class="title">Executive Status Update Email Template</div>
-        <div class="desc">A recurring update to the exec team, built to be scanned in thirty seconds.</div>
-      </div>
+    </div>
     </a>
   </div>
 </section>

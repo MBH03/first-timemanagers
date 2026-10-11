@@ -121,7 +121,7 @@ nav{ display:flex; align-items:center; justify-content:space-between; padding:32
 .tile{ display:flex; flex-direction:column; cursor:pointer; }
 
 .tile-visual{
-  height:300px; border-radius:2px; position:relative; overflow:hidden;
+  min-height:230px; border-radius:2px; position:relative; overflow:hidden;
   padding:26px; display:flex; flex-direction:column; justify-content:space-between;
   transition:transform .25s ease;
 }
@@ -148,13 +148,9 @@ nav{ display:flex; align-items:center; justify-content:space-between; padding:32
 .tile-index .read{ opacity:.85; transition:opacity .2s ease; font-weight:600; color:#fff; }
 .tile:hover .tile-index .read{ opacity:1; }
 
-.tile-big{ position:relative; z-index:2; font-size:26px; font-weight:200; color:rgba(255,255,255,.92); }
-.tile-sub{ position:relative; z-index:2; font-size:12px; color:rgba(255,255,255,.6); margin-top:6px; }
-
-.tile-cap{ padding-top:20px; }
-.tile-cap .title{ font-size:15px; font-weight:600; }
-.tile-cap .title .dot{ color:var(--gold); margin:0 8px; }
-.tile-cap .desc{ font-size:13px; color:var(--muted); line-height:1.6; margin-top:6px; }
+.tile-big{ position:relative; z-index:2; font-size:19px; font-weight:600; line-height:1.35; color:rgba(255,255,255,.95); }
+.tile-big .dot{ color:var(--gold); margin:0 8px; }
+.tile-sub{ position:relative; z-index:2; font-size:13px; line-height:1.6; color:rgba(255,255,255,.65); margin-top:8px; }
 
 @media (max-width:900px){
   .grid, .grid.cols-4{ grid-template-columns:1fr; padding:0 24px 80px; }
