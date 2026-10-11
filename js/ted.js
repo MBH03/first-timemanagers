@@ -1,14 +1,5 @@
 (function(){
-  var PHRASES = [
-    "Need help?",
-    "Not sure what to do?",
-    "Feeling stuck?",
-    "Need a second opinion?",
-    "Not sure where to start?",
-    "Have a tough conversation coming up?",
-    "Need help figuring it out?",
-    "Lost?"
-  ];
+  var BUBBLE_LABEL = "Ask Ted";
 
   var pagefindPromise = null;
   function loadPagefind(){
@@ -56,21 +47,40 @@
   }
 
   function setupBubble(bubble){
-    var i = 0;
-    function render(){ bubble.textContent = PHRASES[i]; }
-    render();
-    function show(){ bubble.classList.add('show'); }
-    function hide(){ bubble.classList.remove('show'); }
-    show();
-    setInterval(function(){
-      hide();
-      setTimeout(function(){
-        i = (i + 1) % PHRASES.length;
-        render();
-        show();
-      }, 400);
-    }, 4500);
-    return { show: show, hide: hide };
+    bubble.textContent = BUBBLE_LABEL;
+    var isArticlePage = !!document.querySelector('main.article');
+    var revealed = false;
+    var panelOpen = false;
+
+    function show(){
+      if(isArticlePage || panelOpen) return;
+      bubble.classList.add('show');
+    }
+    function hide(){
+      bubble.classList.remove('show');
+    }
+    function reveal(){
+      if(revealed || isArticlePage) return;
+      revealed = true;
+      show();
+    }
+
+    if(!isArticlePage){
+      setTimeout(reveal, 15000);
+      var onScroll = function(){
+        var max = document.body.scrollHeight - window.innerHeight;
+        if(max > 0 && (window.scrollY / max) >= 0.5){
+          reveal();
+          window.removeEventListener('scroll', onScroll);
+        }
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+    }
+
+    return {
+      show: function(){ panelOpen = false; if(revealed) show(); },
+      hide: function(){ panelOpen = true; hide(); }
+    };
   }
 
   function debounce(fn, ms){

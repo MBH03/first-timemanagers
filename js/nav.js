@@ -39,6 +39,15 @@ document.addEventListener('DOMContentLoaded', function () {
   document.addEventListener('click', function (e) {
     if (!e.target.closest('.nav-drop')) closeAllDrops();
   });
+
+  var chipToggle = document.querySelector('.chip-toggle');
+  var chips = document.querySelector('.chips');
+  if (chipToggle && chips) {
+    chipToggle.addEventListener('click', function () {
+      var expanded = chips.classList.toggle('expanded');
+      chipToggle.textContent = expanded ? 'Show fewer situations ↑' : 'Show all situations ↓';
+    });
+  }
 });
 
 (function () {
