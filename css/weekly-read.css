@@ -30,7 +30,7 @@ body.wr-page .try-block{
 body.wr-page .try-block p{ color:var(--text); }
 
 /* ---- type ---- */
-.wr-serif{ font-family:'Fraunces','Playfair Display',Georgia,serif; }
+.wr-serif{ font-family:'Playfair Display',Georgia,serif; }
 .wr-mono{ font-family:'IBM Plex Mono',ui-monospace,Menlo,monospace; letter-spacing:.09em; text-transform:uppercase; }
 
 /* ---- shared container ---- */
@@ -50,7 +50,7 @@ body.wr-page .try-block p{ color:var(--text); }
 .wr-avatar{
   width:32px; height:32px; border-radius:50%; background:#E8C6B9; color:#8A4C34;
   display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700;
-  font-family:'Fraunces','Playfair Display',Georgia,serif; flex-shrink:0;
+  font-family:'Playfair Display',Georgia,serif; flex-shrink:0;
 }
 
 /* ---- section divider ---- */
@@ -100,8 +100,28 @@ body.wr-page .try-block p{ color:var(--text); }
 .wr-article-body p{ margin:0 0 22px; }
 .wr-article-body p.wr-lead{ font-size:18px; color:var(--text); }
 .wr-article-body .wr-subhead{
-  font-family:'Fraunces','Playfair Display',Georgia,serif; font-size:19px; font-weight:600;
+  font-family:'Playfair Display',Georgia,serif; font-size:19px; font-weight:600;
   color:var(--text); margin:38px 0 16px;
+}
+
+/* ---- question & answer box ---- */
+.wr-qa{
+  background:#fff; border:1px solid rgba(44,42,39,.08); border-radius:18px;
+  padding:34px 28px; margin:0 0 36px; box-shadow:0 1px 3px rgba(44,42,39,.05);
+}
+.wr-qa-label{ font-size:11px; color:var(--gold-deep); margin:0 0 14px; }
+.wr-qa-question{
+  font-family:'Playfair Display',Georgia,serif; font-weight:700; font-style:italic; font-size:21px;
+  line-height:1.45; color:var(--text); margin:0 0 22px;
+}
+.wr-qa-question::before{ content:'\201C'; }
+.wr-qa-question::after{ content:'\201D'; }
+.wr-qa-divider{ height:3px; width:52px; background:var(--gold); margin:0 0 22px; border-radius:2px; }
+.wr-qa-noticing{ font-size:15px; line-height:1.75; color:var(--muted); margin:0 0 26px; }
+.wr-qa-answer-lead{ font-weight:700; font-size:16.5px; line-height:1.6; color:var(--gold-deep); margin:0; }
+@media (min-width:720px){
+  .wr-qa{ padding:42px 44px; }
+  .wr-qa-question{ font-size:25px; }
 }
 .wr-article-body .move-detail{ margin-bottom:22px; }
 .wr-article-body .try-block{ margin:20px 0 28px; }
