@@ -125,6 +125,14 @@ body.wr-page .try-block p{ color:var(--text); }
   .wr-qa{ padding:42px 44px; }
   .wr-qa-question{ font-size:25px; }
 }
+
+/* ---- simple question lead-in (no card): label + bold upright question ---- */
+.wr-q-label{ font-size:11px; color:var(--gold-deep); margin:0 0 14px; }
+.wr-q-plain{
+  font-family:'Playfair Display',Georgia,serif; font-weight:700; font-style:normal; font-size:23px;
+  line-height:1.4; color:var(--text); margin:0 0 30px;
+}
+@media (min-width:720px){ .wr-q-plain{ font-size:27px; } }
 .wr-article-body .move-detail{ margin-bottom:22px; }
 .wr-article-body .try-block{ margin:20px 0 28px; }
 .wr-article-body a{ color:var(--gold-deep); text-decoration:underline; text-decoration-color:rgba(166,97,62,.35); }
