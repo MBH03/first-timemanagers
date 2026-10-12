@@ -33,6 +33,10 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="canonical" href="https://first-timemanagers.com/">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/weekly-read.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
   .hero{ position:relative; padding:60px 56px 40px; overflow:hidden; min-height:420px; }
   .hero h1{ font-weight:300; font-size:60px; line-height:1.08; letter-spacing:-0.01em; max-width:920px; margin:0; color:var(--text); position:relative; z-index:2; }
@@ -63,10 +67,9 @@
     .new-banner{ display:none; }
     .nav-strip{ order:3; }
     .doors{ order:4; }
+    .wr-teaser{ order:4; }
     .email-capture{ order:5; }
-    .home-section{ order:6; }
     .library-link{ order:7; }
-    .qa-teaser{ order:8; }
     footer{ order:9; }
 
     .doors .grid{ grid-template-columns:1fr; }
@@ -80,20 +83,12 @@
   .section-head{ max-width:640px; margin:0 56px 32px; }
   .section-head h2{ font-size:26px; font-weight:300; margin:0 0 8px; }
   .section-head p{ color:var(--muted); font-size:14px; margin:0; }
-  .home-section{ padding:50px 0 10px; border-top:1px solid rgba(237,235,228,.08); }
-  .home-section .grid{ padding:0 56px; }
   .library-link{ text-align:center; padding:10px 56px 60px; }
   .library-link a{ color:var(--gold); font-weight:600; font-size:15px; }
   @media (max-width:900px){
     .section-head{ margin:0 24px 24px; }
-    .home-section .grid{ padding:0 24px; }
-    .home-section .grid > a:nth-child(n+4){ display:none; }
     .library-link{ padding:10px 24px 50px; }
   }
-
-  .qa-teaser{ padding:50px 56px 10px; border-top:1px solid rgba(237,235,228,.08); }
-  .qa-teaser .grid{ padding:0; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:28px; }
-  @media (max-width:900px){ .qa-teaser{ padding:40px 24px 10px; } .qa-teaser .grid{ grid-template-columns:1fr; } }
 
   .email-capture{ margin:0; padding:60px 56px; text-align:center; background:var(--bg2); border-top:1px solid rgba(237,235,228,.08); }
   .email-capture-inner{ max-width:480px; margin:0 auto; }
@@ -195,6 +190,7 @@
     <a href="tools.html">tools</a>
     <a href="ai-hub.html">ai hub</a>
     <a href="about.html">about</a>
+    <a href="the-weekly-read.html">the weekly read</a>
   </div>
   <a class="ask-badge" href="ask-a-question.html">ask a<br>question</a>
   <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false">
@@ -266,97 +262,6 @@
   </div>
 </section>
 
-<section class="home-section">
-  <div class="section-head">
-    <h2>Most used this week</h2>
-    <p>The templates people actually reach for.</p>
-  </div>
-  <div class="grid">
-    <a class="tile" href="one-on-one-script.html">
-      <div class="tile-visual cv1">
-        <svg class="icon-bg" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20v-1a6 6 0 0 1 12 0v1"/></svg>
-        <div class="tile-index"><span>SCRIPT</span><span class="read" data-pagefind-ignore>Get template →</span></div>
-        <div>
-          <div class="tile-big">One on One Script</div>
-        <div class="tile-sub">A repeatable structure so your 1:1s stop being a status meeting in disguise.</div>
-      </div>
-    </div>
-    </a>
-    <a class="tile" href="difficult-feedback-script.html">
-      <div class="tile-visual cv4">
-        <svg class="icon-bg" viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.5-8.5C1 9 2.5 5 6.5 5c2 0 3.5 1.3 4 2.5C11 6.3 12.5 5 14.5 5c4 0 5.5 4 4 7.5C16 16.65 12 21 12 21z"/></svg>
-        <div class="tile-index"><span>SCRIPT</span><span class="read" data-pagefind-ignore>Get template →</span></div>
-        <div>
-          <div class="tile-big">Difficult Feedback Script</div>
-        <div class="tile-sub">A way to say the hard thing clearly, the first time, without softening it into nothing.</div>
-      </div>
-    </div>
-    </a>
-    <a class="tile" href="performance-conversation-script.html">
-      <div class="tile-visual cv2">
-        <svg class="icon-bg" viewBox="0 0 24 24"><path d="M4 4v16M4 4h13l-2 4 2 4H4"/></svg>
-        <div class="tile-index"><span>SCRIPT</span><span class="read" data-pagefind-ignore>Get template →</span></div>
-        <div>
-          <div class="tile-big">Performance Conversation Script</div>
-        <div class="tile-sub">What to say when someone on your team isn't hitting the mark.</div>
-      </div>
-    </div>
-    </a>
-    <a class="tile" href="interviewing-a-candidate-template.html">
-      <div class="tile-visual cv4">
-        <svg class="icon-bg" viewBox="0 0 24 24"><circle cx="9" cy="7" r="4"/><path d="M2 21v-2a6 6 0 0 1 12 0v2"/><path d="M17 11l2 2 4-4"/></svg>
-        <div class="tile-index"><span>DOCUMENT</span><span class="read" data-pagefind-ignore>Get template →</span></div>
-        <div>
-          <div class="tile-big">Interviewing a Candidate, First-Time Manager Template</div>
-        <div class="tile-sub">A legally sound interview structure, script, and what you can never ask.</div>
-      </div>
-    </div>
-    </a>
-    <a class="tile" href="delegation-framework-template.html">
-      <div class="tile-visual cv3">
-        <svg class="icon-bg" viewBox="0 0 24 24"><path d="M17 3l4 4-4 4M21 7H9M7 21l-4-4 4-4M3 17h12"/></svg>
-        <div class="tile-index"><span>DOCUMENT</span><span class="read" data-pagefind-ignore>Get template →</span></div>
-        <div>
-          <div class="tile-big">Delegation Framework Template</div>
-        <div class="tile-sub">Task, fit, outcome, authority level, resources, check-in cadence, and success criteria.</div>
-      </div>
-    </div>
-    </a>
-    <a class="tile" href="executive-status-update-template.html">
-      <div class="tile-visual cv3">
-        <svg class="icon-bg" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20v-3"/></svg>
-        <div class="tile-index"><span>SCRIPT</span><span class="read" data-pagefind-ignore>Get template →</span></div>
-        <div>
-          <div class="tile-big">Executive Status Update Email Template</div>
-        <div class="tile-sub">A recurring update to the exec team, built to be scanned in thirty seconds.</div>
-      </div>
-    </div>
-    </a>
-  </div>
-</section>
-
-<section class="qa-teaser">
-  <div class="section-head" style="margin:0 0 32px;">
-    <h2>Still stuck on something <b>specific?</b></h2>
-    <p>Real questions, real answers. Ask yours and it might be next.</p>
-  </div>
-  <div class="grid">
-    <a class="resource-card" href="qa-former-peer-now-direct-report.html">
-      <div class="kicker" data-pagefind-ignore>A Real Question</div>
-      <div class="title">My former peer is now my direct report. What do I do? →</div>
-    </a>
-    <a class="resource-card" href="qa-1-on-1s-are-status-updates.html">
-      <div class="kicker" data-pagefind-ignore>A Real Question</div>
-      <div class="title">My 1:1s turned into status updates. How do I fix that? →</div>
-    </a>
-    <a class="resource-card" href="qa-how-to-ask-for-promotion.html">
-      <div class="kicker" data-pagefind-ignore>A Real Question</div>
-      <div class="title">How do I ask for a promotion without sounding entitled? →</div>
-    </a>
-  </div>
-  <p style="text-align:center;"><a class="ask-btn" href="ask-a-question.html">Ask a Question →</a></p>
-</section>
-
 <div class="library-link">
   <a href="templates.html">Browse the full library of 37 templates →</a>
 </div>
@@ -390,6 +295,15 @@
     <button type="button" class="chip-toggle">Show all situations ↓</button>
     <p class="bottom-links" style="margin:28px 0 0;"><a href="situations.html" style="color:var(--gold); font-size:14px; font-weight:600;">Browse every topic on the site →</a> &nbsp; <a href="workplace-skills.html" style="color:var(--gold); font-size:14px; font-weight:600;">Workplace skills nobody teaches you →</a> &nbsp; <a href="becoming-a-manager.html" style="color:var(--gold); font-size:14px; font-weight:600;">Not a manager yet? Start here →</a> &nbsp; <a href="tools.html" style="color:var(--gold); font-size:14px; font-weight:600;">Interactive tools, not just templates →</a></p>
   </div>
+</div>
+
+<div class="wr-teaser">
+  <div>
+    <div class="wr-teaser-head wr-mono">The Weekly Read</div>
+    <h3 class="wr-serif">Questions I'm getting, <em>trends</em> I'm noticing.</h3>
+    <p>A little less advice, a little more perspective. New thoughts each week.</p>
+  </div>
+  <a class="wr-teaser-link" href="the-weekly-read.html">Read The Weekly Read →</a>
 </div>
 
 <section class="email-capture">
