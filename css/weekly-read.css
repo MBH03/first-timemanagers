@@ -118,7 +118,9 @@ body.wr-page .try-block p{ color:var(--text); }
 .wr-qa-question::after{ content:'\201D'; }
 .wr-qa-divider{ height:3px; width:52px; background:var(--gold); margin:0 0 22px; border-radius:2px; }
 .wr-qa-noticing{ font-size:15px; line-height:1.75; color:var(--muted); margin:0 0 26px; }
-.wr-qa-answer-lead{ font-weight:700; font-size:16.5px; line-height:1.6; color:var(--gold-deep); margin:0; }
+.wr-qa-answer-lead{ font-weight:700; font-size:16.5px; line-height:1.6; color:var(--gold-deep); margin:0 0 18px; }
+.wr-qa-more{ font-size:15.5px; line-height:1.75; color:var(--text); margin:0 0 18px; }
+.wr-qa-more:last-child{ margin-bottom:0; }
 @media (min-width:720px){
   .wr-qa{ padding:42px 44px; }
   .wr-qa-question{ font-size:25px; }
