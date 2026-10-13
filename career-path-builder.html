@@ -13,18 +13,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Career Path Builder | Tools</title>
-<meta name="description" content="Generate a real development plan for each report: target competencies, development experiences, a 90-day plan, and manager notes. Saved in your browser, exportable as backup.">
+<meta name="description" content="Turn your career goal into a practical plan you can work on every month. A five step guided tool: your direction, your development gaps, a monthly roadmap, how to build visibility, and a printable career plan.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="First-Time Managers">
 <meta property="og:title" content="Career Path Builder | Tools">
-<meta property="og:description" content="Generate a real development plan for each report: target competencies, development experiences, a 90-day plan, and manager notes.">
+<meta property="og:description" content="Turn your career goal into a practical plan you can work on every month. A five step guided tool: your direction, your development gaps, a monthly roadmap, how to build visibility, and a printable career plan.">
 <meta property="og:url" content="https://first-timemanagers.com/career-path-builder.html">
 <meta property="og:image" content="https://first-timemanagers.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Career Path Builder | Tools">
-<meta name="twitter:description" content="Generate a real development plan for each report: target competencies, development experiences, a 90-day plan, and manager notes.">
+<meta name="twitter:description" content="Turn your career goal into a practical plan you can work on every month. A five step guided tool: your direction, your development gaps, a monthly roadmap, how to build visibility, and a printable career plan.">
 <meta name="twitter:image" content="https://first-timemanagers.com/og-image.png">
 <link rel="icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -37,7 +37,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Career Path Builder",
-  "description": "Generate a real development plan for each report: target competencies, development experiences, a 90-day plan, and manager notes.",
+  "description": "Turn your career goal into a practical plan you can work on every month. A five step guided tool: your direction, your development gaps, a monthly roadmap, how to build visibility, and a printable career plan.",
   "url": "https://first-timemanagers.com/career-path-builder.html",
   "datePublished": "2026-09-22",
   "dateModified": "2026-10-13",
@@ -81,87 +81,167 @@
   }
   #cpb{ font-family:inherit; color:var(--text); }
   #cpb .container{ max-width:1200px; margin:0 auto; padding:0 56px 130px; }
-  #cpb h1{ display:none; } /* page-head already carries the title */
-  #cpb .subtitle{ display:none; } /* replaced by the site's own page-head copy */
+  #cpb h1{ display:none; }
+  #cpb .subtitle{ display:none; }
+
+  /* Stepper */
+  #cpb .stepper{ display:flex; gap:4px; margin-bottom:28px; flex-wrap:wrap; }
+  #cpb .step-btn{
+    flex:1; min-width:120px; background:transparent; border:1px solid var(--line); border-radius:2px;
+    padding:12px 10px; text-align:left; cursor:pointer; font-family:inherit;
+  }
+  #cpb .step-btn .step-num{ font-size:11px; font-weight:700; color:var(--muted); display:block; margin-bottom:3px; }
+  #cpb .step-btn .step-name{ font-size:12.5px; font-weight:600; color:var(--muted); line-height:1.3; }
+  #cpb .step-btn.active{ border-color:var(--gold); background:rgba(227,166,62,.08); }
+  #cpb .step-btn.active .step-num, #cpb .step-btn.active .step-name{ color:var(--gold); }
+  #cpb .step-btn.done .step-num{ color:var(--text); }
+  #cpb .step-btn.done .step-num::after{ content:" ✓"; }
+
+  #cpb .steppanel{ display:none; }
+  #cpb .steppanel.active{ display:block; }
+
+  /* Summary strip, visible from step 2 onward */
+  #cpb .summary-strip{
+    display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap;
+    background:var(--soft); border:1px solid rgba(227,166,62,.2); border-radius:2px;
+    padding:14px 18px; margin-bottom:22px; font-size:13.5px;
+  }
+  #cpb .summary-strip .goal{ color:var(--text); }
+  #cpb .summary-strip .goal b{ color:var(--gold); }
+  #cpb .summary-strip a{ color:var(--muted); font-size:12.5px; white-space:nowrap; }
+  #cpb .summary-strip a:hover{ color:var(--gold); }
 
   #cpb .card{ background:var(--panel); border:1px solid var(--line); border-radius:2px; padding:26px; margin-bottom:22px; }
-  #cpb h2{ margin:0 0 18px; font-size:16px; font-weight:600; color:var(--text); }
-  #cpb .hint{ font-size:13px; color:var(--muted); margin-top:-10px; margin-bottom:18px; line-height:1.6; }
+  #cpb h2{ margin:0 0 6px; font-size:16px; font-weight:600; color:var(--text); }
+  #cpb h3{ margin:0 0 4px; font-size:14px; font-weight:600; color:var(--text); }
+  #cpb .hint{ font-size:13px; color:var(--muted); margin-top:6px; margin-bottom:18px; line-height:1.6; }
   #cpb label{ display:block; font-size:11px; text-transform:uppercase; letter-spacing:.08em; font-weight:600; margin-bottom:8px; color:var(--muted); }
-  #cpb select, #cpb input, #cpb textarea{
+  #cpb select, #cpb input[type=text], #cpb input[type=date], #cpb textarea{
     width:100%; background:var(--bg2); border:1px solid rgba(237,235,228,.18); border-radius:2px;
     padding:12px 14px; font-size:14.5px; color:var(--text); font-family:inherit;
   }
   #cpb select:focus, #cpb input:focus, #cpb textarea:focus{ outline:none; border-color:var(--gold); }
-  #cpb textarea{ min-height:80px; resize:vertical; }
-
-  #cpb .roster-row{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-bottom:16px; }
-  #cpb .roster-pill{ display:inline-flex; align-items:center; gap:8px; background:var(--chip); border:1px solid rgba(227,166,62,.25); border-radius:999px; padding:7px 8px 7px 14px; font-size:13px; font-weight:600; color:var(--gold); cursor:pointer; }
-  #cpb .roster-pill.active{ background:var(--gold); border-color:var(--gold); color:#1B1B1A; }
-  #cpb .roster-pill button{ background:transparent; border:0; color:inherit; opacity:.6; cursor:pointer; font-size:13px; padding:2px 6px; border-radius:50%; }
-  #cpb .roster-pill button:hover{ opacity:1; background:rgba(0,0,0,.15); }
-  #cpb .roster-add{ display:flex; gap:8px; }
-  #cpb .roster-add input{ max-width:240px; }
-  #cpb .roster-add button{ white-space:nowrap; }
-
+  #cpb textarea{ min-height:70px; resize:vertical; }
+  #cpb .field{ margin-bottom:18px; }
   #cpb .two-col{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
-  #cpb .transition-track{ display:flex; align-items:center; gap:0; margin-top:20px; flex-wrap:wrap; }
-  #cpb .tier{ flex:1; min-width:110px; text-align:center; padding:12px 6px; border-radius:2px; font-size:11.5px; font-weight:600; color:var(--muted); border:1px solid transparent; }
-  #cpb .tier.active{ background:rgba(227,166,62,.12); border-color:rgba(227,166,62,.3); color:var(--gold); }
-  #cpb .arrow{ color:var(--muted); font-size:16px; padding:0 4px; opacity:.5; }
 
   #cpb button{ border:0; border-radius:30px; padding:11px 20px; font-size:12.5px; font-weight:700; letter-spacing:.02em; cursor:pointer; font-family:inherit; }
   #cpb .edit{ background:transparent; color:var(--text); border:1px solid rgba(237,235,228,.25); }
   #cpb .edit:hover{ border-color:var(--gold); color:var(--gold); }
-  #cpb .remove{ background:transparent; color:var(--danger); border:1px solid rgba(194,75,75,.3); padding:8px 14px; }
+  #cpb .remove{ background:transparent; color:var(--danger); border:1px solid rgba(194,75,75,.3); padding:8px 14px; font-size:11.5px; }
   #cpb .remove:hover{ border-color:var(--danger); }
   #cpb .primary{ background:var(--gold); color:#1B1B1A; padding:13px 24px; font-size:13px; }
   #cpb .primary:hover{ background:#f0b552; }
   #cpb .secondary{ background:transparent; color:var(--text); border:1px solid rgba(237,235,228,.25); }
   #cpb .secondary:hover{ border-color:var(--gold); color:var(--gold); }
+  #cpb .step-actions{ display:flex; justify-content:space-between; gap:10px; margin-top:24px; flex-wrap:wrap; }
 
-  #cpb .exp-header-row{ display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:10px; }
-  #cpb .experience{ border:1px solid var(--line); border-radius:2px; padding:16px; margin-bottom:12px; background:rgba(255,255,255,.015); }
-  #cpb .experience-top{ display:flex; align-items:flex-start; gap:12px; }
-  #cpb .experience input[type=checkbox]{ width:auto; margin-top:4px; transform:scale(1.15); accent-color:var(--gold); }
-  #cpb .experience-title{ font-weight:600; font-size:14.5px; flex:1; color:var(--text); }
-  #cpb .experience-title[contenteditable=true]{ outline:none; border-bottom:1px dashed rgba(237,235,228,.25); }
-  #cpb .exp-actions{ display:flex; gap:6px; }
-  #cpb .description{ color:var(--muted); font-size:13px; margin:8px 0 10px 29px; line-height:1.6; }
-  #cpb .description[contenteditable=true]{ outline:none; }
-  #cpb .details{ display:none; margin-left:29px; padding-top:12px; border-top:1px solid var(--line2); }
-  #cpb .details.open{ display:block; }
-  #cpb .details p{ font-size:13px; line-height:1.6; margin:0 0 8px; color:var(--text); }
-  #cpb .details strong{ color:var(--gold); }
-  #cpb .details textarea{ font-size:13px; min-height:50px; margin-bottom:8px; }
+  /* Pill selects (chips) */
+  #cpb .pill-row{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:6px; }
+  #cpb .pill{
+    display:inline-flex; align-items:center; gap:6px; background:transparent; border:1px solid rgba(237,235,228,.25);
+    border-radius:999px; padding:9px 16px; font-size:13px; font-weight:600; color:var(--muted); cursor:pointer;
+  }
+  #cpb .pill:hover{ border-color:var(--gold); color:var(--text); }
+  #cpb .pill.active{ background:var(--gold); border-color:var(--gold); color:#1B1B1A; }
+  #cpb .pill.small{ padding:6px 12px; font-size:12px; }
 
-  #cpb .milestones{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
-  #cpb .milestone{ border:1px solid var(--line); border-radius:2px; padding:16px; }
-  #cpb .milestone h3{ margin-top:0; color:var(--gold); font-size:13px; text-transform:uppercase; letter-spacing:.06em; }
+  /* Gap category items */
+  #cpb .gap-cat{ margin-bottom:28px; }
+  #cpb .gap-cat:last-child{ margin-bottom:0; }
+  #cpb .gap-cat-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:4px; flex-wrap:wrap; gap:8px; }
+  #cpb .gap-item{ border:1px solid var(--line); border-radius:2px; padding:14px 16px; margin-bottom:10px; background:rgba(255,255,255,.015); }
+  #cpb .gap-item-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap; }
+  #cpb .gap-item-name{ font-size:14px; font-weight:600; color:var(--text); flex:1; min-width:180px; }
+  #cpb .gap-item-name[contenteditable=true]{ outline:none; border-bottom:1px dashed rgba(237,235,228,.25); }
+  #cpb .gap-item-actions{ display:flex; gap:6px; align-items:center; flex-wrap:wrap; }
+  #cpb .level-pills{ display:flex; gap:6px; flex-wrap:wrap; margin-top:10px; }
+  #cpb .priority-tag{
+    display:inline-flex; align-items:center; gap:5px; background:var(--chip); color:var(--gold);
+    border:1px solid rgba(227,166,62,.3); border-radius:999px; padding:4px 10px 4px 10px; font-size:11px; font-weight:700;
+  }
+  #cpb .remove-x{ background:transparent; border:0; color:var(--muted); font-size:13px; padding:2px 6px; cursor:pointer; }
+  #cpb .remove-x:hover{ color:var(--danger); }
 
-  #cpb .preview{ background:linear-gradient(155deg,#241C0F 0%,#1B1B1A 60%,#17211D 100%); border:1px solid rgba(227,166,62,.25); border-radius:2px; padding:28px; }
-  #cpb .preview h2{ color:#fff; }
-  #cpb .preview-role{ font-size:20px; margin-bottom:18px; font-weight:600; color:#fff; }
-  #cpb .preview-section-title{ font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--gold); font-weight:700; margin:18px 0 8px; }
-  #cpb .preview-item{ padding:12px 0; border-bottom:1px solid rgba(255,255,255,.1); font-size:13.5px; color:var(--text); }
-  #cpb .preview-item:last-child{ border-bottom:0; }
-  #cpb .preview-note{ font-size:13px; color:var(--text); opacity:.9; white-space:pre-wrap; line-height:1.6; }
-  #cpb .actions{ display:flex; justify-content:flex-end; gap:10px; margin-top:18px; flex-wrap:wrap; }
+  #cpb .research-box{ background:var(--soft); border:1px solid rgba(227,166,62,.2); border-radius:2px; padding:18px 20px; margin-bottom:24px; }
+  #cpb .research-box label{ color:var(--gold); margin-bottom:10px; }
+  #cpb .research-row{ display:flex; align-items:flex-start; gap:10px; padding:7px 0; font-size:13.5px; color:var(--text); }
+  #cpb .research-row input[type=checkbox]{ margin-top:3px; accent-color:var(--gold); flex-shrink:0; }
 
-  #cpb .target-box{ background:var(--soft); border:1px solid rgba(227,166,62,.2); border-radius:2px; padding:18px; margin-bottom:18px; }
-  #cpb .target-box h3{ margin:0 0 4px; color:var(--gold); font-size:14px; }
-  #cpb .target-comp{ margin-bottom:10px; }
-  #cpb .target-comp .cname{ font-weight:600; font-size:12.5px; color:var(--gold); margin-bottom:3px; }
-  #cpb .target-comp .ctext{ font-size:13px; color:var(--text); line-height:1.6; }
+  #cpb .priorities-summary{ border:1px solid rgba(227,166,62,.25); background:var(--soft); border-radius:2px; padding:18px 20px; margin-top:4px; }
+  #cpb .priorities-summary .ps-empty{ color:var(--muted); font-size:13.5px; }
+  #cpb .priorities-summary ul{ margin:0; padding-left:0; list-style:none; }
+  #cpb .priorities-summary li{ font-size:14px; color:var(--text); margin-bottom:8px; display:flex; gap:8px; align-items:baseline; }
+  #cpb .priorities-summary li .cat{ font-size:10.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--gold); font-weight:700; white-space:nowrap; }
+
+  /* Roadmap months */
+  #cpb .horizon-row{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-bottom:22px; }
+  #cpb .horizon-row select{ max-width:200px; }
+  #cpb .month-card{ border:1px solid var(--line); border-radius:2px; padding:18px 20px; margin-bottom:14px; background:rgba(255,255,255,.015); }
+  #cpb .month-card-top{ display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom:14px; flex-wrap:wrap; }
+  #cpb .month-label{ font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--gold); font-weight:700; }
+  #cpb .month-order-actions{ display:flex; gap:4px; }
+  #cpb .month-order-actions button{ background:transparent; border:1px solid rgba(237,235,228,.2); color:var(--muted); padding:5px 10px; font-size:11px; border-radius:4px; }
+  #cpb .month-order-actions button:hover{ color:var(--gold); border-color:var(--gold); }
+  #cpb .month-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  #cpb .month-grid .field{ margin-bottom:0; }
+  #cpb .month-focus-field{ margin-bottom:14px; }
+  #cpb .status-select{ max-width:220px; }
+
+  /* Practice cards */
+  #cpb .practice-card{ border:1px solid var(--line); border-radius:2px; padding:20px 22px; margin-bottom:16px; background:rgba(255,255,255,.015); }
+  #cpb .practice-card .priority-title{ font-size:15px; font-weight:600; color:var(--gold); margin-bottom:4px; }
+  #cpb .practice-card .priority-cat{ font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin-bottom:16px; }
+  #cpb .tip-callout{ background:var(--soft); border:1px solid rgba(227,166,62,.2); border-radius:2px; padding:18px 20px; font-size:14px; line-height:1.7; color:var(--text); margin-bottom:24px; }
+  #cpb .tip-callout b{ color:var(--gold); }
+
+  /* Accomplishments */
+  #cpb .accomplishment-card{ border:1px solid var(--line); border-radius:2px; padding:18px 20px; margin-bottom:14px; background:rgba(255,255,255,.015); position:relative; }
+  #cpb .accomplishment-card .remove{ position:absolute; top:14px; right:14px; }
+  #cpb .accomplishment-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  #cpb .accomplishment-grid .field{ margin-bottom:0; }
+
+  /* Final plan (step 5) */
+  #cpb .plan-callout{
+    background:linear-gradient(155deg,#241C0F 0%,#1B1B1A 60%,#17211D 100%); border:1px solid rgba(227,166,62,.25);
+    border-radius:2px; padding:24px 26px; margin-bottom:26px; color:#fff; font-size:15px; line-height:1.7;
+  }
+  #cpb .plan-callout b{ color:var(--gold); }
+  #cpb .plan-section-title{ font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--gold); font-weight:700; margin:28px 0 10px; }
+  #cpb .plan-section-title:first-child{ margin-top:0; }
+  #cpb .plan-row{ padding:10px 0; border-bottom:1px solid var(--line2); font-size:13.5px; color:var(--text); line-height:1.6; }
+  #cpb .plan-row:last-child{ border-bottom:0; }
+  #cpb .plan-row .plan-row-label{ color:var(--gold); font-weight:600; }
+  #cpb .mgr-question-row{ display:flex; align-items:flex-start; gap:10px; padding:7px 0; font-size:13.5px; color:var(--text); }
+  #cpb .mgr-question-row input[type=checkbox]{ margin-top:3px; accent-color:var(--gold); flex-shrink:0; }
+  #cpb .cadence-box{ background:var(--soft); border:1px solid rgba(227,166,62,.2); border-radius:2px; padding:18px 20px; margin-top:8px; }
+  #cpb .cadence-box ul{ margin:8px 0 0; padding-left:20px; }
+  #cpb .cadence-box li{ font-size:13.5px; color:var(--text); line-height:1.7; margin-bottom:4px; }
+  #cpb .export-row{ display:flex; gap:10px; flex-wrap:wrap; margin:28px 0 8px; }
 
   @media(max-width:900px){ #cpb .container{ padding:0 20px 90px; } }
   @media(max-width:750px){
-    #cpb .two-col, #cpb .milestones{ grid-template-columns:1fr; }
-    #cpb .exp-header-row{ display:block; }
-    #cpb .exp-header-row button{ margin-top:12px; }
-    #cpb .transition-track{ gap:8px; }
-    #cpb .arrow{ display:none; }
-    #cpb .tier{ min-width:100%; }
+    #cpb .two-col, #cpb .month-grid, #cpb .accomplishment-grid{ grid-template-columns:1fr; }
+    #cpb .stepper{ gap:6px; }
+    #cpb .step-btn{ min-width:46%; }
+  }
+
+  @media print{
+    nav, footer, .crumb, .content-hero, .inline-capture-wrap,
+    main > div:not(#cpb),
+    #cpb .stepper, #cpb .summary-strip, #cpb .step-actions, #cpb .export-row,
+    #cpb .steppanel:not(#stepPlan){ display:none !important; }
+    #cpb #stepPlan{ display:block !important; }
+    body, #cpb{ background:#fff !important; color:#111 !important; }
+    #cpb .container{ max-width:100%; padding:0; }
+    #cpb *{ color:#111 !important; }
+    #cpb .plan-callout, #cpb .card, #cpb .month-card, #cpb .practice-card,
+    #cpb .accomplishment-card, #cpb .cadence-box, #cpb .tip-callout{
+      background:#fff !important; border:1px solid #999 !important;
+    }
+    #cpb .plan-row{ border-bottom:1px solid #ccc !important; }
+    #cpb select, #cpb input, #cpb textarea{ background:#fff !important; border:1px solid #bbb !important; }
+    #cpb .remove, #cpb .edit, #cpb .remove-x, #cpb .month-order-actions{ display:none !important; }
   }
 </style>
 </head>
@@ -200,111 +280,220 @@
 
 <main>
   <div style="max-width:680px; margin:56px auto 0; padding:0 56px;">
-    <p style="font-size:19px; font-weight:300; color:#fff; line-height:1.6; margin-bottom:12px;">Generate a real, specific development plan for each report: what "ready" looks like at the next level, the experiences that get them there, and a 90-day plan.</p>
-    <p style="font-size:14px; color:var(--muted); line-height:1.7; margin-bottom:0;">Everything here saves automatically to this browser as you type. Nothing is sent anywhere. Use <strong style="color:var(--text);">Export backup</strong> before you clear your browser data or switch devices, and <strong style="color:var(--text);">Import backup</strong> to bring it back.</p>
+    <p style="font-size:19px; font-weight:300; color:#fff; line-height:1.6; margin-bottom:12px;">Turn your career goal into a practical plan you can work on every month. Five short steps: your direction, your development gaps, a monthly roadmap, how to build visibility, and a plan you can print and bring to your manager.</p>
+    <p style="font-size:14px; color:var(--muted); line-height:1.7; margin-bottom:0;">This is your plan, not a performance review. Everything saves automatically to this browser as you type, and nothing is sent anywhere. Use <strong style="color:var(--text);">Export backup</strong> before you clear your browser data or switch devices, and <strong style="color:var(--text);">Import backup</strong> to bring it back.</p>
   </div>
 
   <div id="cpb">
   <div class="container">
 
-  <div style="display:flex;justify-content:flex-end;gap:8px;align-items:center;margin-bottom:28px;flex-wrap:wrap">
-  <button class="edit" onclick="exportData()">⬇ Export backup</button>
-  <button class="edit" onclick="document.getElementById('importFile').click()">⬆ Import backup</button>
-  <input type="file" id="importFile" accept="application/json" style="display:none" onchange="importData(event)">
+  <div class="stepper" id="stepper"></div>
+
+  <div class="summary-strip" id="summaryStrip" style="display:none;"></div>
+
+  <!-- ============ STEP 1: MY DIRECTION ============ -->
+  <div class="steppanel" id="stepDirection">
+
+    <div class="card">
+      <h2>1. My Direction</h2>
+      <div class="hint">What you're working toward, and why. You don't need a perfect answer, just a starting point.</div>
+
+      <div class="two-col">
+        <div class="field">
+          <label>Current role</label>
+          <input type="text" id="dCurrentRole" placeholder="What is your job title today?">
+        </div>
+        <div class="field">
+          <label>Role you're working toward</label>
+          <input type="text" id="dTargetRole" placeholder="What job would you like to have next?">
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Why do you want this role? (choose any that apply)</label>
+        <div class="pill-row" id="reasonPills"></div>
+        <input type="text" id="dReasonOther" placeholder="Anything else? (optional)" style="margin-top:6px;">
+      </div>
+
+      <div class="field">
+        <label>Target timeframe</label>
+        <div class="pill-row" id="timeframePills"></div>
+      </div>
+
+      <div class="field">
+        <label>How well do you understand what the target role requires?</label>
+        <div class="pill-row" id="confidencePills" style="flex-direction:column; align-items:stretch;"></div>
+      </div>
+
+      <div id="exploreBlock" style="display:none;">
+        <div class="hint" style="margin-top:-6px;">Not fully sure yet? That's fine. Answer these to narrow it down before you build out a plan.</div>
+        <div class="field">
+          <label>What parts of your current work do you enjoy most?</label>
+          <textarea id="dExploreEnjoy" placeholder="Be specific. What kind of work energizes you?"></textarea>
+        </div>
+        <div class="field">
+          <label>What responsibilities would you like to take on?</label>
+          <textarea id="dExploreMore" placeholder="What would you do more of, given the choice?"></textarea>
+        </div>
+        <div class="field">
+          <label>What would you like to do less of?</label>
+          <textarea id="dExploreLess" placeholder="What's draining you or isn't a good fit?"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="goalSummaryCard" style="display:none;">
+      <h2>My Career Goal</h2>
+      <div id="goalSummaryBody"></div>
+    </div>
+
+    <div class="step-actions">
+      <span></span>
+      <button class="primary" onclick="goToStep(1)">Continue to My Development Gaps →</button>
+    </div>
   </div>
 
-  <div class="card">
-  <h2>Your team</h2>
-  <div class="hint">Save a plan per direct report. Switch between them any time — nothing is lost.</div>
-  <div class="roster-row" id="rosterRow"></div>
-  <div class="roster-add">
-  <input type="text" id="newEmployeeName" placeholder="Add a name (e.g. Jordan M.)">
-  <button class="primary" onclick="addEmployee()">+ Add</button>
-  </div>
+  <!-- ============ STEP 2: MY DEVELOPMENT GAPS ============ -->
+  <div class="steppanel" id="stepGaps">
+
+    <div class="card" id="researchCard" style="display:none;">
+      <div class="research-box">
+        <label>Not sure yet what the target role really requires? Start here.</label>
+        <div id="researchList"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>2. My Development Gaps</h2>
+      <div class="hint">For each item, mark where you stand today. Then mark up to three as your top priorities to focus on first. A short list works better than a long one.</div>
+
+      <div id="gapCategories"></div>
+    </div>
+
+    <div class="card">
+      <h3>Top development priorities</h3>
+      <div class="hint" style="margin-top:0;">Choose up to three. These feed directly into your roadmap.</div>
+      <div class="priorities-summary" id="prioritiesSummary"></div>
+    </div>
+
+    <div class="step-actions">
+      <button class="secondary" onclick="goToStep(0)">← Back</button>
+      <button class="primary" onclick="goToStep(2)">Continue to My Roadmap →</button>
+    </div>
   </div>
 
-  <div class="card">
-  <h2>1. Choose the transition</h2>
-  <div class="two-col">
-  <div>
-  <label>Current Level</label>
-  <select id="currentLevel" onchange="onLevelChange()"></select>
-  </div>
-  <div>
-  <label>Target Level</label>
-  <select id="futureLevel" onchange="onLevelChange()"></select>
-  </div>
-  </div>
-  <div class="transition-track" id="transitionTrack"></div>
+  <!-- ============ STEP 3: MY CAREER ROADMAP ============ -->
+  <div class="steppanel" id="stepRoadmap">
+
+    <div class="card">
+      <h2>3. My Career Roadmap</h2>
+      <div class="hint">One primary focus per month. This is not a promise of a promotion by a certain date, it's what you can control: learning, practice, responsibility, relationships, and results.</div>
+
+      <div class="horizon-row">
+        <div>
+          <label style="margin-bottom:6px;">Planning horizon</label>
+          <select id="horizonSelect" onchange="onHorizonChange()">
+            <option value="3">3 months</option>
+            <option value="6">6 months</option>
+            <option value="12">12 months</option>
+          </select>
+        </div>
+        <button class="edit" onclick="regenerateRoadmap()">↺ Regenerate from priorities</button>
+        <button class="edit" onclick="addMonth()">+ Add a month</button>
+      </div>
+
+      <div id="monthsList"></div>
+    </div>
+
+    <div class="step-actions">
+      <button class="secondary" onclick="goToStep(1)">← Back</button>
+      <button class="primary" onclick="goToStep(3)">Continue to Practice & Visibility →</button>
+    </div>
   </div>
 
-  <div class="card">
-  <h2>2. What "ready" looks like at the target level</h2>
-  <div class="hint">A generic starting rubric for the target level. Want to define your own, by level, for your team? Download the <a href="team-leveling-framework-template.html" style="color:var(--gold);">Team Leveling Framework Template</a> and build it there.</div>
-  <div id="targetCompetencies"></div>
+  <!-- ============ STEP 4: PRACTICE AND BUILD VISIBILITY ============ -->
+  <div class="steppanel" id="stepPractice">
+
+    <div class="card">
+      <h2>4. Practice and Build Visibility</h2>
+      <div class="hint">For each priority: a realistic way to practice it in your current job, who could help you learn it, and how you'll make the result visible without turning it into self promotion.</div>
+
+      <div id="practiceList"></div>
+
+      <div class="tip-callout">
+        <b>Protect your current performance.</b> Keep doing your current job well, that is what builds trust and gives you room to take on more. Start with small pieces of the next role, learn from the experience, and expand your responsibilities as you demonstrate that you can handle them.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="month-card-top">
+        <h2 style="margin:0;">Accomplishments log</h2>
+        <button class="primary" onclick="addAccomplishment()">+ Add accomplishment</button>
+      </div>
+      <div class="hint" style="margin-top:0;">Add entries any time, not only when you finish a monthly goal. These carry into your final plan.</div>
+      <div id="accomplishmentsList"></div>
+    </div>
+
+    <div class="step-actions">
+      <button class="secondary" onclick="goToStep(2)">← Back</button>
+      <button class="primary" onclick="goToStep(4)">Continue to My Plan →</button>
+    </div>
   </div>
 
-  <div class="card">
-  <div class="exp-header-row">
-  <div>
-  <h2>3. Development experiences</h2>
-  <div class="hint" id="tierHint">A generic starter set for this transition. Edit any of them, or add your own.</div>
-  </div>
-  <div style="display:flex;gap:10px;flex-wrap:wrap">
-  <button class="edit" onclick="loadTemplateForTransition(true)">↺ Reset to template</button>
-  <button class="primary" onclick="addExperience()">+ Add Experience</button>
-  </div>
-  </div>
-  <div id="experiences"></div>
-  </div>
+  <!-- ============ STEP 5: MY PLAN AND PROGRESS ============ -->
+  <div class="steppanel" id="stepPlan">
 
-  <div class="card">
-  <h2>4. 90 day plan</h2>
-  <div class="milestones">
-  <div class="milestone">
-  <h3>Days 1–30</h3>
-  <textarea id="m1" placeholder="What should they start doing?"></textarea>
-  </div>
-  <div class="milestone">
-  <h3>Days 31–60</h3>
-  <textarea id="m2" placeholder="What should they demonstrate?"></textarea>
-  </div>
-  <div class="milestone">
-  <h3>Days 61–90</h3>
-  <textarea id="m3" placeholder="What should they own?"></textarea>
-  </div>
-  </div>
-  </div>
+    <div class="plan-callout" id="planCallout"></div>
 
-  <div class="card">
-  <h2>5. Manager notes</h2>
-  <label>What does this person already do well?</label>
-  <textarea id="strengths" placeholder="Start with their strengths..."></textarea>
-  <br><br>
-  <label>What is the biggest gap between today and the target level?</label>
-  <textarea id="gap" placeholder="Be specific. What capability needs to change?"></textarea>
+    <div class="card">
+      <div class="plan-section-title">Career Direction</div>
+      <div id="planDirection"></div>
 
-  <div class="actions">
-  <button class="secondary" onclick="saveCurrent()">Save</button>
-  <button class="primary" onclick="generatePlan()">Update Preview</button>
-  </div>
-  </div>
+      <div class="plan-section-title">Development Priorities</div>
+      <div id="planPriorities"></div>
 
-  <div class="preview" id="preview">
-  <h2>Career Plan Preview</h2>
-  <div class="preview-role" id="previewRole"></div>
+      <div class="plan-section-title">Monthly Roadmap</div>
+      <div id="planRoadmap"></div>
 
-  <div class="preview-section-title">Target Competencies</div>
-  <div id="previewCompetencies"></div>
+      <div class="plan-section-title">Manager Conversation Guide</div>
+      <div id="mgrQuestions"></div>
+      <div class="field" style="margin-top:14px;">
+        <label>My notes going in</label>
+        <textarea id="mgrNotes" placeholder="What do you want to make sure you say?"></textarea>
+      </div>
+      <div class="field">
+        <label>Feedback I received</label>
+        <textarea id="mgrFeedback" placeholder="What did they say? What did you agree to?"></textarea>
+      </div>
 
-  <div class="preview-section-title">Development Experiences</div>
-  <div id="previewItems"></div>
+      <div class="plan-section-title">Accomplishment Log</div>
+      <div id="planAccomplishments"></div>
 
-  <div class="preview-section-title">90 Day Plan</div>
-  <div id="previewMilestones"></div>
+      <div class="plan-section-title">Review Cadence</div>
+      <div class="cadence-box">
+        A short personal review every one to two weeks, and a manager conversation roughly every 30 to 60 days. At each review, ask yourself:
+        <ul>
+          <li>What did I accomplish?</li>
+          <li>What did I learn?</li>
+          <li>Where did I apply the skill?</li>
+          <li>What evidence do I have of progress?</li>
+          <li>What is getting in the way?</li>
+          <li>What should I focus on next?</li>
+        </ul>
+      </div>
 
-  <div class="preview-section-title">Manager Notes</div>
-  <div id="previewNotes"></div>
+      <div class="export-row">
+        <button class="primary" onclick="printPlan()">🖨 Print my plan</button>
+        <button class="edit" onclick="exportData()">⬇ Export backup</button>
+        <button class="edit" onclick="document.getElementById('importFile').click()">⬆ Import backup</button>
+        <input type="file" id="importFile" accept="application/json" style="display:none" onchange="importData(event)">
+      </div>
+    </div>
+
+    <div class="step-actions">
+      <button class="secondary" onclick="goToStep(3)">← Back</button>
+      <span></span>
+    </div>
   </div>
 
   </div>
@@ -315,9 +504,13 @@
       <div class="kicker" data-pagefind-ignore>Tools</div>
       <div class="title">Back to all Tools →</div>
     </a>
-    <a class="resource-card" href="delegation-framework-template.html">
-      <div class="kicker" data-pagefind-ignore>Templates</div>
-      <div class="title">Delegation Framework Template →</div>
+    <a class="resource-card" href="the-readiness-conversation.html">
+      <div class="kicker" data-pagefind-ignore>Becoming a Manager</div>
+      <div class="title">Prepare for the Conversation About Readiness →</div>
+    </a>
+    <a class="resource-card" href="how-to-get-promoted-in-12-months.html">
+      <div class="kicker" data-pagefind-ignore>Becoming a Manager</div>
+      <div class="title">How to Get Promoted to Manager in the Next 12 Months →</div>
     </a>
     <a class="resource-card" href="team-leveling-framework-template.html">
       <div class="kicker" data-pagefind-ignore>Templates</div>
@@ -327,474 +520,732 @@
 </main>
 
 <script>
-/* ---------- Level model ---------- */
-const LEVELS = ["Individual Contributor","Senior Individual Contributor","Team Lead","Manager","Director","Senior Director","VP"];
+/* ---------- Static reference data ---------- */
+const STEP_NAMES = ["My Direction","My Development Gaps","My Career Roadmap","Practice & Visibility","My Plan & Progress"];
 
-/* ---------- Default competency framework (generic starter, fully editable) ---------- */
-const DEFAULT_COMPS = ["Results","Communication","Teamwork","Problem Solving","Expertise"];
+const REASONS = [
+  "I want more responsibility.",
+  "I want to lead people.",
+  "I want to develop new skills.",
+  "I want to earn more.",
+  "I want to move into a different function.",
+  "I want more influence over decisions.",
+  "I want to do work that interests me more."
+];
 
-const DEFAULT_FRAMEWORK_TEXT = {
-  "Individual Contributor": {
-    "Results": "Delivers their own assigned work reliably, on time, and to a consistent quality bar.",
-    "Communication": "Communicates status and blockers clearly to their manager and immediate team.",
-    "Teamwork": "Works well with immediate teammates and asks for help when needed.",
-    "Problem Solving": "Solves well defined problems within their own scope of work.",
-    "Expertise": "Is building core skills and knowledge for their role; still relies on others for edge cases."
-  },
-  "Senior Individual Contributor": {
-    "Results": "Delivers larger or more ambiguous work with minimal oversight; results hold up without close checking.",
-    "Communication": "Explains tradeoffs and reasoning clearly, not just status. Others rely on their updates to make decisions.",
-    "Teamwork": "Actively helps other individual contributors; seen as someone who makes the team better.",
-    "Problem Solving": "Handles ambiguous problems with limited guidance and knows when to escalate.",
-    "Expertise": "Recognized go to resource for questions in their area; can handle most edge cases independently."
-  },
-  "Team Lead": {
-    "Results": "Accountable for a small team's output, not just their own; consistently hits team level targets.",
-    "Communication": "Communicates priorities clearly enough that the team knows what matters without asking. Presents to peers and occasionally up.",
-    "Teamwork": "Coordinates across a small group, delegates effectively, and gives feedback to teammates directly.",
-    "Problem Solving": "Independently resolves most day to day issues on the team; brings recommendations, not just problems, to their manager.",
-    "Expertise": "Deep enough in the team's work to train others and handle unusual edge cases."
-  },
-  "Manager": {
-    "Results": "Accountable for hitting targets across their whole team, consistently, over time; plans ahead for known upcoming needs.",
-    "Communication": "Comfortable presenting to senior leadership and external stakeholders; written communication is structured and drives action.",
-    "Teamwork": "Manages people formally: hiring input, feedback, coaching. Builds real cross functional relationships with other teams.",
-    "Problem Solving": "Handles escalations and ambiguous tradeoffs with limited need for their own manager's involvement.",
-    "Expertise": "Knows the team's work deeply enough to represent it accurately externally and coach others through edge cases."
-  },
-  "Director": {
-    "Results": "Accountable for outcomes across multiple teams or a broader function; results depend on other managers' performance, not just their own effort.",
-    "Communication": "Represents the function to senior leadership and cross functional peers with credibility; can influence decisions they don't own.",
-    "Teamwork": "Develops managers, not just individual contributors. Builds trust and alignment across functions that don't report to them.",
-    "Problem Solving": "Owns ambiguous, strategic tradeoffs with real business consequence and no clean answer.",
-    "Expertise": "Broad enough view of the business to connect their function's work to company level strategy."
-  },
-  "Senior Director": {
-    "Results": "Accountable for multi quarter outcomes across a broader org; adjusts strategy as conditions change without losing the through line.",
-    "Communication": "Shapes how leadership thinks about their area; communication carries weight beyond their direct chain.",
-    "Teamwork": "Builds and evolves org structure; develops other leaders as a core part of the role.",
-    "Problem Solving": "Navigates decisions with long time horizons and incomplete information; comfortable being wrong and adjusting.",
-    "Expertise": "Seen as a subject matter authority whose judgment is sought out beyond their immediate org."
-  },
-  "VP": {
-    "Results": "Accountable for outcomes at the organization level, delivered primarily through other leaders rather than direct effort.",
-    "Communication": "Represents the business externally and at the executive or board level; sets narrative and direction for a whole function.",
-    "Teamwork": "Builds leadership bench strength across the org; decisions here affect people well beyond their direct reports.",
-    "Problem Solving": "Owns decisions with organization wide consequence, including unpopular ones, and can defend them publicly.",
-    "Expertise": "Judgment is trusted at the highest level of the company on matters affecting their whole domain."
-  }
-};
+const TIMEFRAMES = [
+  { v:"3", label:"3 months" },
+  { v:"6", label:"6 months" },
+  { v:"12", label:"12 months" },
+  { v:"unsure", label:"I'm not sure yet" }
+];
 
-/* ---------- Development experience templates ---------- */
-const TEMPLATES = {
-  "Individual Contributor|Senior Individual Contributor": {
-    hint: "Usually about scope, not title: bigger, harder, more ambiguous work with less oversight.",
-    experiences: [
-      { title:"Own a larger or more complex task end to end", desc:"Give them a piece of work with real ambiguity, not just more of the same.", good:"They scope the work themselves, make judgment calls, and only escalate the decisions that actually need it.", coach:"What made this harder than your usual work? Where did you have to make a judgment call?" },
-      { title:"Reduce how much oversight they need", desc:"Deliberately step back on a project you'd normally check in on often.", good:"Quality and pace hold up without you checking in as frequently.", coach:"What did you catch yourself before I had to? Where did you still want more guidance?" },
-      { title:"Improve a process, not just execute it", desc:"Ask them to find and fix an inefficiency in how the work gets done, not just do the work.", good:"They can explain the problem, the fix, and the impact in business terms.", coach:"What was actually broken? How did you know your fix worked?" },
-    ]
-  },
-  "Senior Individual Contributor|Team Lead": {
-    hint: "The shift from doing the work well to being responsible for how a small group does it.",
-    experiences: [
-      { title:"Own a team level project or outcome", desc:"Give them accountability for a result that depends on more than just their own work.", good:"They coordinate others, set the plan, and are answerable for the outcome, not just their piece of it.", coach:"What did you have to depend on other people for? How did you keep things on track?" },
-      { title:"Train or onboard a teammate", desc:"Start developing others instead of only their own output.", good:"The teammate improves because of the coaching, not because the work got done for them.", coach:"What did you teach? What did you decide to let them struggle with a bit?" },
-      { title:"Run a recurring team meeting or ritual", desc:"Give them ownership of a standing team touchpoint.", good:"The meeting has a clear purpose and people leave knowing what's next.", coach:"Did it accomplish what it needed to? What would you change?" },
-      { title:"Give input on a team decision", desc:"Involve them in a decision that used to be manager only.", good:"Their input reflects awareness of the team's constraints and priorities, not just their own preference.", coach:"What tradeoffs did you weigh?" },
-    ]
-  },
-  "Team Lead|Manager": {
-    hint: "Largely the same muscles as Team Lead, at bigger scale and with formal people accountability.",
-    experiences: [
-      { title:"Take on formal people responsibility", desc:"Give them a direct report or a hiring/performance decision to be part of.", good:"They can give real feedback, have a hard conversation, and make a people decision without you doing it for them.", coach:"What was the hardest part of that conversation?" },
-      { title:"Own a bigger or harder problem than before", desc:"Same category of work as before, but higher stakes or more moving parts.", good:"They handle the added complexity without needing more of your time than before.", coach:"What made this bigger or harder?" },
-      { title:"Manage up on a difficult tradeoff", desc:"Have them bring you a problem with a recommendation, not just a question.", good:"They come with an actual recommendation and reasoning, not just options.", coach:"What's your recommendation and why?" },
-      { title:"Own a piece of planning or budget", desc:"Give them visibility and input into resourcing decisions for their area.", good:"They can explain tradeoffs in terms of team capacity and business priorities.", coach:"What did you have to say no to?" },
-    ]
-  },
-  "Manager|Director": {
-    hint: "This is where it gets genuinely different: influence beyond your own team and cross functional work.",
-    experiences: [
-      { title:"Lead a cross functional initiative", desc:"Give them ownership of something that requires aligning other teams who don't report to them.", good:"They get alignment through influence, not authority, and can navigate disagreement between teams.", coach:"Where did other teams push back? How did you get to alignment?" },
-      { title:"Represent the function to senior stakeholders", desc:"Have them present results or a plan directly to leadership.", good:"They can speak to strategy and tradeoffs, not just execution detail.", coach:"What questions did leadership push on?" },
-      { title:"Develop other managers, not just individual contributors", desc:"Give them a manager to coach, not just an IC.", good:"They can coach someone on how they manage people, not just on the work itself.", coach:"What did you notice about how they manage?" },
-      { title:"Own a strategic tradeoff with real ambiguity", desc:"Give them a decision with no clean answer and real business consequence.", good:"They can articulate the tradeoff clearly and defend the call they made.", coach:"What made this genuinely hard?" },
-    ]
-  },
-  "Director|Senior Director": {
-    hint: "Broader scope and more autonomy on strategy, with accountability further out in time.",
-    experiences: [
-      { title:"Own a multi quarter strategic bet", desc:"Give them a goal with no clear playbook and a longer time horizon.", good:"They can adjust the plan as new information comes in without losing sight of the goal.", coach:"What assumption changed along the way?" },
-      { title:"Build or restructure part of the org", desc:"Have them design how a function or team should be structured, not just staff it.", good:"The structure reflects a clear rationale tied to strategy, not just headcount.", coach:"What tradeoff did you make in this structure?" },
-      { title:"Influence a decision outside their direct authority", desc:"Have them shape a decision owned by a peer or another function.", good:"Other leaders seek their input because it's genuinely useful, not just political.", coach:"How did you build the case?" },
-    ]
-  },
-  "Senior Director|VP": {
-    hint: "Organization wide impact, and being accountable for outcomes you don't directly control.",
-    experiences: [
-      { title:"Own an organization wide outcome", desc:"Give them accountability for a result that spans multiple functions or departments.", good:"They can drive the outcome primarily through other leaders, not through doing the work themselves.", coach:"What did you have to let go of?" },
-      { title:"Represent the company externally or at the executive level", desc:"Board, investor, exec team, or major external stakeholder exposure.", good:"They can represent the business, not just their function.", coach:"What did you learn about how the business is really evaluated at that level?" },
-      { title:"Make a call with real organizational consequence", desc:"A decision that affects headcount, budget, or strategy beyond their own area.", good:"They can own the decision publicly, including the parts that were unpopular.", coach:"What was the hardest part to defend?" },
-    ]
-  }
-};
-const GENERIC_FALLBACK = {
-  hint: "No specific template for this jump — here's a general starting point. Customize freely.",
-  experiences: [
-    { title:"Own something bigger in scope", desc:"Give them a project or outcome noticeably larger than their current work.", good:"They can handle the added scope without a proportional increase in oversight.", coach:"What made this bigger?" },
-    { title:"Take on a harder, more ambiguous problem", desc:"Something without a clear playbook.", good:"They can structure an approach to a problem that doesn't have an obvious answer.", coach:"How did you approach something with no clear answer?" },
-    { title:"Influence people who don't report to them", desc:"Practice getting alignment without direct authority.", good:"They get buy in through reasoning and relationships, not just position.", coach:"Where did you hit resistance?" },
-  ]
-};
-function templateKey(from,to){ return from+"|"+to; }
-function getTemplate(from,to){ return TEMPLATES[templateKey(from,to)] || GENERIC_FALLBACK; }
+const CONFIDENCE_OPTIONS = [
+  { v:"understand", label:"I understand the role and what it takes to get there." },
+  { v:"general", label:"I have a general idea, but I need to learn more." },
+  { v:"unsure", label:"I'm not sure what I need to do to become qualified." }
+];
 
-/* ---------- Global state ---------- */
-/* Target Competencies is a fixed, read-only reference rubric — not user-editable here.
-   Teams that want to define their own, by level, use the Team Leveling Framework Template instead. */
-const compOrder = DEFAULT_COMPS.slice();
-const framework = (function(){
-  const fw = {};
-  LEVELS.forEach(l=>{
-    fw[l] = {};
-    DEFAULT_COMPS.forEach(c=>{
-      fw[l][c] = (DEFAULT_FRAMEWORK_TEXT[l] && DEFAULT_FRAMEWORK_TEXT[l][c]) || "";
-    });
-  });
-  return fw;
-})();
-let employees = {};
-let activeId = null;
+const RESEARCH_PROMPTS = [
+  "Review job descriptions for the target role.",
+  "Talk with someone currently doing the job.",
+  "Ask what skills matter most in the first six months.",
+  "Learn what separates an average performer from a strong performer.",
+  "Ask what experience would make someone a credible candidate."
+];
 
-function newEmployeeData(name){
+const LEVELS = [
+  { v:"ready", label:"Ready" },
+  { v:"developing", label:"Developing" },
+  { v:"need", label:"Need exposure" },
+  { v:"unsure", label:"Not sure" }
+];
+
+const GAP_CATEGORIES = [
+  { key:"skills", label:"Skills", hint:"What skills does the target role require that you need to develop?",
+    seed:["Project scoping","Timeline development","Stakeholder communication","Risk identification","Running meetings","Coordinating work across teams"] },
+  { key:"experience", label:"Experience", hint:"What work haven't you had the opportunity to do yet?",
+    seed:["Lead a small project from beginning to end","Present recommendations to leadership","Coordinate work across multiple departments","Own a process improvement initiative","Train or mentor another employee","Manage a difficult customer or stakeholder situation"] },
+  { key:"relationships", label:"Relationships & Exposure", hint:"Who could help you understand the role, develop skills, or find opportunities to practice?",
+    seed:["Someone already doing the target job","A person in another department with relevant expertise","A project manager who can explain how projects are scoped","A senior colleague who can review a presentation or project plan","A manager who can help identify appropriate stretch assignments"] },
+  { key:"evidence", label:"Evidence of Readiness", hint:"What would demonstrate that you can perform the target role?",
+    seed:["A project delivered on time","A process improved with measurable results","A successful presentation to stakeholders","A cross-functional initiative led from start to finish","A documented improvement in a relevant business metric"] }
+];
+
+const MGR_QUESTIONS = [
+  "What skills or experience would I need to demonstrate to be ready for this role?",
+  "Where do you see the biggest gap between my current responsibilities and the role I want?",
+  "What project or responsibility could help me build that experience?",
+  "How will we know whether I'm making progress?",
+  "Can we revisit this plan in 30 to 60 days?"
+];
+
+const STATUS_OPTIONS = [
+  { v:"not_started", label:"Not started" },
+  { v:"in_progress", label:"In progress" },
+  { v:"completed", label:"Completed" },
+  { v:"blocked", label:"Blocked" },
+  { v:"not_relevant", label:"No longer relevant" }
+];
+
+/* ---------- Plan state ---------- */
+let plan = null;
+let currentStep = 0;
+let idSeq = 1;
+function nextId(){ return "i" + (idSeq++) + "_" + Date.now().toString(36); }
+
+function seedGapItems(cat){
+  return cat.seed.map(name => ({ id: nextId(), name: name, level: "" }));
+}
+
+function defaultPlan(){
+  const categories = {};
+  GAP_CATEGORIES.forEach(cat => { categories[cat.key] = seedGapItems(cat); });
   return {
-    name: name,
-    currentLevel: LEVELS[0],
-    futureLevel: LEVELS[1],
-    experiences: [],
-    m1:"", m2:"", m3:"", strengths:"", gap:"",
-    templateLoaded: null
+    version: 1,
+    direction: {
+      currentRole:"", targetRole:"", reasons:[], reasonOther:"",
+      timeframe:"", confidence:"",
+      explore:{ enjoy:"", more:"", less:"" }
+    },
+    gaps: { categories: categories, research:{}, priorities:[] },
+    roadmap: { horizonMonths:3, horizonTouched:false, months:[] },
+    practice: { items:[] },
+    accomplishments: [],
+    managerGuide: { questions:{}, notes:"", feedback:"" },
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString()
   };
 }
 
 function loadState(){
   try{
-    const raw = localStorage.getItem("cpb_state_v3");
+    const raw = localStorage.getItem("cpb_plan_v1");
     if(raw){
       const parsed = JSON.parse(raw);
-      employees = parsed.employees || {};
-      activeId = parsed.activeId || null;
+      plan = Object.assign(defaultPlan(), parsed);
+      plan.direction = Object.assign(defaultPlan().direction, parsed.direction || {});
+      plan.gaps = Object.assign(defaultPlan().gaps, parsed.gaps || {});
+      if(!plan.gaps.categories) plan.gaps.categories = defaultPlan().gaps.categories;
+      plan.roadmap = Object.assign({horizonMonths:3, horizonTouched:false, months:[]}, parsed.roadmap || {});
+      plan.practice = Object.assign({items:[]}, parsed.practice || {});
+      plan.managerGuide = Object.assign({questions:{}, notes:"", feedback:""}, parsed.managerGuide || {});
+      if(!Array.isArray(plan.accomplishments)) plan.accomplishments = [];
+      currentStep = typeof parsed._step === "number" ? parsed._step : 0;
+    } else {
+      plan = defaultPlan();
     }
-  }catch(e){}
-  if(Object.keys(employees).length === 0){
-    const id = "emp_" + Date.now();
-    employees[id] = newEmployeeData("");
-    activeId = id;
+  }catch(e){
+    plan = defaultPlan();
   }
-  if(!activeId || !employees[activeId]) activeId = Object.keys(employees)[0];
 }
 
 function saveState(){
   try{
-    localStorage.setItem("cpb_state_v3", JSON.stringify({employees, activeId}));
+    plan.updatedAt = new Date().toISOString();
+    const payload = Object.assign({}, plan, { _step: currentStep });
+    localStorage.setItem("cpb_plan_v1", JSON.stringify(payload));
   }catch(e){}
 }
 
-/* ---------- Employee roster ---------- */
-function renderRoster(){
-  const row = document.getElementById("rosterRow");
-  row.innerHTML = "";
-  Object.keys(employees).forEach(id=>{
-    const emp = employees[id];
-    const pill = document.createElement("div");
-    pill.className = "roster-pill" + (id===activeId ? " active" : "");
-    const label = emp.name && emp.name.trim() ? emp.name : "(unnamed)";
-    pill.innerHTML = `<span>${escapeHtml(label)}</span>`;
-    const del = document.createElement("button");
-    del.textContent = "✕";
-    del.title = "Remove";
-    del.onclick = (e)=>{ e.stopPropagation(); removeEmployee(id); };
-    pill.onclick = ()=> switchEmployee(id);
-    pill.appendChild(del);
-    row.appendChild(pill);
-  });
+function escapeHtml(str){ const d=document.createElement("div"); d.textContent=str||""; return d.innerHTML; }
+
+/* ---------- Stepper ---------- */
+function renderStepper(){
+  const el = document.getElementById("stepper");
+  el.innerHTML = STEP_NAMES.map((name,i)=>{
+    const cls = "step-btn" + (i===currentStep ? " active" : "") + (i<currentStep ? " done" : "");
+    return `<button type="button" class="${cls}" onclick="goToStep(${i})"><span class="step-num">Step ${i+1}</span><span class="step-name">${escapeHtml(name)}</span></button>`;
+  }).join("");
 }
 
-function addEmployee(){
-  const input = document.getElementById("newEmployeeName");
-  const name = input.value.trim();
-  if(!name) return;
-  const id = "emp_" + Date.now();
-  employees[id] = newEmployeeData(name);
-  activeId = id;
-  input.value = "";
+function goToStep(i){
+  saveCurrentStepInputs();
+  currentStep = Math.max(0, Math.min(STEP_NAMES.length-1, i));
+  renderAll();
   saveState();
-  renderRoster();
-  loadEmployeeIntoForm();
+  window.scrollTo({top: document.getElementById("cpb").offsetTop - 20, behavior:"smooth"});
 }
 
-function removeEmployee(id){
-  if(Object.keys(employees).length <= 1) return;
-  delete employees[id];
-  if(activeId === id) activeId = Object.keys(employees)[0];
+function renderAll(){
+  renderStepper();
+  document.querySelectorAll("#cpb .steppanel").forEach(p=>p.classList.remove("active"));
+  const ids = ["stepDirection","stepGaps","stepRoadmap","stepPractice","stepPlan"];
+  document.getElementById(ids[currentStep]).classList.add("active");
+
+  renderSummaryStrip();
+  if(currentStep===0) renderDirectionStep();
+  if(currentStep===1) renderGapsStep();
+  if(currentStep===2) renderRoadmapStep();
+  if(currentStep===3) renderPracticeStep();
+  if(currentStep===4) renderPlanStep();
+}
+
+function renderSummaryStrip(){
+  const strip = document.getElementById("summaryStrip");
+  if(currentStep===0 || (!plan.direction.currentRole && !plan.direction.targetRole)){
+    strip.style.display = "none";
+    return;
+  }
+  strip.style.display = "flex";
+  const cur = plan.direction.currentRole || "your current role";
+  const tgt = plan.direction.targetRole || "your target role";
+  strip.innerHTML = `<div class="goal"><b>${escapeHtml(cur)}</b> → <b>${escapeHtml(tgt)}</b></div><a href="#" onclick="goToStep(0);return false;">Edit my direction →</a>`;
+}
+
+/* ---------- Step 1: Direction ---------- */
+function renderDirectionStep(){
+  document.getElementById("dCurrentRole").value = plan.direction.currentRole;
+  document.getElementById("dTargetRole").value = plan.direction.targetRole;
+  document.getElementById("dReasonOther").value = plan.direction.reasonOther;
+  document.getElementById("dExploreEnjoy").value = plan.direction.explore.enjoy;
+  document.getElementById("dExploreMore").value = plan.direction.explore.more;
+  document.getElementById("dExploreLess").value = plan.direction.explore.less;
+
+  document.getElementById("reasonPills").innerHTML = REASONS.map(r=>{
+    const active = plan.direction.reasons.includes(r);
+    return `<button type="button" class="pill${active?" active":""}" onclick="toggleReason('${escapeAttr(r)}')">${escapeHtml(r)}</button>`;
+  }).join("");
+
+  document.getElementById("timeframePills").innerHTML = TIMEFRAMES.map(t=>{
+    const active = plan.direction.timeframe === t.v;
+    return `<button type="button" class="pill${active?" active":""}" onclick="setTimeframe('${t.v}')">${escapeHtml(t.label)}</button>`;
+  }).join("");
+
+  document.getElementById("confidencePills").innerHTML = CONFIDENCE_OPTIONS.map(c=>{
+    const active = plan.direction.confidence === c.v;
+    return `<button type="button" class="pill${active?" active":""}" style="text-align:left;white-space:normal;" onclick="setConfidence('${c.v}')">${escapeHtml(c.label)}</button>`;
+  }).join("");
+
+  document.getElementById("exploreBlock").style.display = plan.direction.confidence === "unsure" ? "block" : "none";
+
+  renderGoalSummary();
+}
+
+function toggleReason(r){
+  saveCurrentStepInputs();
+  const idx = plan.direction.reasons.indexOf(r);
+  if(idx>-1) plan.direction.reasons.splice(idx,1); else plan.direction.reasons.push(r);
   saveState();
-  renderRoster();
-  loadEmployeeIntoForm();
+  renderDirectionStep();
 }
-
-function switchEmployee(id){
-  saveCurrent();
-  activeId = id;
+function setTimeframe(v){
+  saveCurrentStepInputs();
+  plan.direction.timeframe = v;
+  if(!plan.roadmap.horizonTouched){
+    plan.roadmap.horizonMonths = v==="6" ? 6 : v==="12" ? 12 : 3;
+  }
   saveState();
-  renderRoster();
-  loadEmployeeIntoForm();
+  renderDirectionStep();
 }
-
-/* ---------- Plan form ---------- */
-function populateLevelSelects(){
-  const cur = document.getElementById("currentLevel");
-  const fut = document.getElementById("futureLevel");
-  cur.innerHTML = LEVELS.map(l=>`<option>${l}</option>`).join("");
-  fut.innerHTML = LEVELS.map(l=>`<option>${l}</option>`).join("");
-}
-
-function collectFormIntoEmployee(emp){
-  emp.currentLevel = document.getElementById("currentLevel").value;
-  emp.futureLevel = document.getElementById("futureLevel").value;
-  emp.m1 = document.getElementById("m1").value;
-  emp.m2 = document.getElementById("m2").value;
-  emp.m3 = document.getElementById("m3").value;
-  emp.strengths = document.getElementById("strengths").value;
-  emp.gap = document.getElementById("gap").value;
-
-  const expNodes = document.querySelectorAll("#experiences .experience");
-  emp.experiences = Array.from(expNodes).map(node=>({
-    title: node.querySelector(".experience-title").textContent.trim(),
-    desc: node.querySelector(".description").textContent.trim(),
-    good: node.querySelector(".good-text").value,
-    coach: node.querySelector(".coach-text").value,
-    checked: node.querySelector("input[type=checkbox]").checked
-  }));
-}
-
-function saveCurrent(){
-  if(!activeId || !employees[activeId]) return;
-  collectFormIntoEmployee(employees[activeId]);
+function setConfidence(v){
+  saveCurrentStepInputs();
+  plan.direction.confidence = v;
   saveState();
+  renderDirectionStep();
 }
 
-function loadEmployeeIntoForm(){
-  const emp = employees[activeId];
-  if(!emp) return;
+function renderGoalSummary(){
+  const card = document.getElementById("goalSummaryCard");
+  const d = plan.direction;
+  if(!d.currentRole && !d.targetRole){ card.style.display = "none"; return; }
+  card.style.display = "block";
+  const tf = TIMEFRAMES.find(t=>t.v===d.timeframe);
+  const cf = CONFIDENCE_OPTIONS.find(c=>c.v===d.confidence);
+  document.getElementById("goalSummaryBody").innerHTML = `
+    <div class="plan-row"><span class="plan-row-label">Current role:</span> ${escapeHtml(d.currentRole)||'<span style="opacity:.6">Not set yet</span>'}</div>
+    <div class="plan-row"><span class="plan-row-label">Target role:</span> ${escapeHtml(d.targetRole)||'<span style="opacity:.6">Not set yet</span>'}</div>
+    <div class="plan-row"><span class="plan-row-label">Why this matters:</span> ${d.reasons.map(escapeHtml).join(", ") || '<span style="opacity:.6">Not set yet</span>'}${d.reasonOther ? " — "+escapeHtml(d.reasonOther) : ""}</div>
+    <div class="plan-row"><span class="plan-row-label">Target timeframe:</span> ${tf ? escapeHtml(tf.label) : '<span style="opacity:.6">Not set yet</span>'}</div>
+    <div class="plan-row"><span class="plan-row-label">Confidence in understanding the role:</span> ${cf ? escapeHtml(cf.label) : '<span style="opacity:.6">Not set yet</span>'}</div>
+  `;
+}
 
-  document.getElementById("currentLevel").value = emp.currentLevel;
-  document.getElementById("futureLevel").value = emp.futureLevel;
-  document.getElementById("m1").value = emp.m1;
-  document.getElementById("m2").value = emp.m2;
-  document.getElementById("m3").value = emp.m3;
-  document.getElementById("strengths").value = emp.strengths;
-  document.getElementById("gap").value = emp.gap;
-
-  if(emp.experiences && emp.experiences.length){
-    renderExperiences(emp.experiences);
+/* ---------- Step 2: Gaps ---------- */
+function renderGapsStep(){
+  const researchCard = document.getElementById("researchCard");
+  if(plan.direction.confidence !== "understand" && plan.direction.confidence !== ""){
+    researchCard.style.display = "block";
+    document.getElementById("researchList").innerHTML = RESEARCH_PROMPTS.map((p,i)=>{
+      const checked = plan.gaps.research[i] ? "checked" : "";
+      return `<div class="research-row"><input type="checkbox" id="rp${i}" ${checked} onchange="toggleResearch(${i})"><label for="rp${i}" style="text-transform:none;font-size:13.5px;font-weight:400;color:var(--text);margin:0;">${escapeHtml(p)}</label></div>`;
+    }).join("");
   } else {
-    loadTemplateForTransition(true);
+    researchCard.style.display = "none";
   }
 
-  updateTransitionTrack();
-  renderTargetCompetencies();
-  generatePlan();
-}
-
-function onLevelChange(){
-  const cur = document.getElementById("currentLevel").value;
-  const fut = document.getElementById("futureLevel").value;
-  const curIdx = LEVELS.indexOf(cur);
-  const futIdx = LEVELS.indexOf(fut);
-  if(futIdx <= curIdx){
-    const nextIdx = Math.min(curIdx+1, LEVELS.length-1);
-    document.getElementById("futureLevel").value = LEVELS[nextIdx];
-  }
-  updateTransitionTrack();
-  loadTemplateForTransition(false);
-  renderTargetCompetencies();
-  generatePlan();
-}
-
-function updateTransitionTrack(){
-  const cur = document.getElementById("currentLevel").value;
-  const fut = document.getElementById("futureLevel").value;
-  const curIdx = LEVELS.indexOf(cur);
-  const futIdx = LEVELS.indexOf(fut);
-  const track = document.getElementById("transitionTrack");
-  track.innerHTML = "";
-  LEVELS.forEach((lvl,i)=>{
-    if(i < curIdx || i > futIdx) return;
-    if(i > curIdx){
-      const arrow = document.createElement("div");
-      arrow.className = "arrow"; arrow.textContent = "→";
-      track.appendChild(arrow);
-    }
-    const tier = document.createElement("div");
-    tier.className = "tier" + (i===curIdx||i===futIdx ? " active" : "");
-    tier.textContent = lvl;
-    track.appendChild(tier);
-  });
-}
-
-function renderTargetCompetencies(){
-  const fut = document.getElementById("futureLevel").value;
-  const container = document.getElementById("targetCompetencies");
+  const container = document.getElementById("gapCategories");
   container.innerHTML = "";
-  const box = document.createElement("div");
-  box.className = "target-box";
-  box.innerHTML = `<h3>${escapeHtml(fut)}</h3>`;
-  compOrder.forEach(compName=>{
-    const text = (framework[fut] && framework[fut][compName]) || "";
-    const row = document.createElement("div");
-    row.className = "target-comp";
-    row.innerHTML = `<div class="cname">${escapeHtml(compName)}</div><div class="ctext">${text ? escapeHtml(text) : '<span style="opacity:.6">Not defined yet</span>'}</div>`;
-    box.appendChild(row);
+  GAP_CATEGORIES.forEach(cat=>{
+    const items = plan.gaps.categories[cat.key] || [];
+    const wrap = document.createElement("div");
+    wrap.className = "gap-cat";
+    wrap.innerHTML = `
+      <div class="gap-cat-head">
+        <h3>${escapeHtml(cat.label)}</h3>
+        <button class="edit" style="padding:6px 12px;font-size:11px;" onclick="addGapItem('${cat.key}')">+ Add my own</button>
+      </div>
+      <div class="hint" style="margin-top:0;">${escapeHtml(cat.hint)}</div>
+      <div id="gapItems_${cat.key}"></div>
+    `;
+    container.appendChild(wrap);
+    const itemsEl = wrap.querySelector(`#gapItems_${cat.key}`);
+    items.forEach(item=>{
+      itemsEl.appendChild(buildGapItemNode(cat.key, item));
+    });
   });
-  container.appendChild(box);
+
+  renderPrioritiesSummary();
 }
 
-function loadTemplateForTransition(force){
-  const emp = employees[activeId];
-  const cur = document.getElementById("currentLevel").value;
-  const fut = document.getElementById("futureLevel").value;
-  const key = templateKey(cur, fut);
-  if(!force && emp && emp.templateLoaded === key) return;
-  const tmpl = getTemplate(cur, fut);
-  document.getElementById("tierHint").textContent = tmpl.hint;
-  const expData = tmpl.experiences.map(e=>({title:e.title,desc:e.desc,good:e.good,coach:e.coach,checked:true}));
-  renderExperiences(expData);
-  if(emp) emp.templateLoaded = key;
+function toggleResearch(i){
+  plan.gaps.research[i] = !plan.gaps.research[i];
+  saveState();
 }
 
-/* ---------- Experiences ---------- */
-function renderExperiences(list){
-  const container = document.getElementById("experiences");
-  container.innerHTML = "";
-  list.forEach(item=> container.appendChild(buildExperienceNode(item)));
-}
-
-function buildExperienceNode(item){
+function buildGapItemNode(catKey, item){
+  const isPriority = plan.gaps.priorities.some(p=>p.id===item.id);
   const wrap = document.createElement("div");
-  wrap.className = "experience";
+  wrap.className = "gap-item";
   wrap.innerHTML = `
-    <div class="experience-top">
-      <input type="checkbox" ${item.checked!==false ? "checked" : ""}>
-      <div class="experience-title" contenteditable="true">${escapeHtml(item.title||"")}</div>
-      <div class="exp-actions">
-        <button class="edit" onclick="toggleDetails(this)">Details</button>
-        <button class="remove" onclick="removeExperience(this)">Remove</button>
+    <div class="gap-item-top">
+      <div class="gap-item-name" contenteditable="true" data-id="${item.id}" data-cat="${catKey}" onblur="onGapNameEdit(this)">${escapeHtml(item.name)}</div>
+      <div class="gap-item-actions">
+        ${isPriority ? `<span class="priority-tag">★ Priority <button class="remove-x" onclick="togglePriority('${catKey}','${item.id}')">✕</button></span>` : `<button class="edit" style="padding:6px 12px;font-size:11px;" onclick="togglePriority('${catKey}','${item.id}')">☆ Mark as priority</button>`}
+        <button class="remove-x" title="Remove" onclick="removeGapItem('${catKey}','${item.id}')">✕</button>
       </div>
     </div>
-    <div class="description" contenteditable="true">${escapeHtml(item.desc||"")}</div>
-    <div class="details">
-      <p><strong>What good looks like</strong></p>
-      <textarea class="good-text">${escapeHtml(item.good||"")}</textarea>
-      <p><strong>Coaching questions</strong></p>
-      <textarea class="coach-text">${escapeHtml(item.coach||"")}</textarea>
-    </div>
+    <div class="level-pills" id="levels_${item.id}"></div>
   `;
+  const levelsEl = wrap.querySelector(`#levels_${item.id}`);
+  LEVELS.forEach(l=>{
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "pill small" + (item.level===l.v ? " active" : "");
+    btn.textContent = l.label;
+    btn.onclick = ()=> setGapLevel(catKey, item.id, l.v);
+    levelsEl.appendChild(btn);
+  });
   return wrap;
 }
 
-function escapeHtml(str){ const d=document.createElement("div"); d.textContent=str||""; return d.innerHTML; }
-function escapeAttr(str){ return (str||"").replace(/'/g,"\\'"); }
-
-function toggleDetails(button){
-  const details = button.closest(".experience").querySelector(".details");
-  details.classList.toggle("open");
-  button.textContent = details.classList.contains("open") ? "Close" : "Details";
-}
-function removeExperience(button){ button.closest(".experience").remove(); }
-function addExperience(){
-  const title = prompt("What development experience would you like to add?");
-  if(!title) return;
-  const node = buildExperienceNode({title:title,desc:"Customize this development experience.",good:"",coach:"",checked:true});
-  document.getElementById("experiences").appendChild(node);
+function findGapItem(catKey, id){
+  return (plan.gaps.categories[catKey]||[]).find(i=>i.id===id);
 }
 
-/* ---------- Preview ---------- */
-function generatePlan(){
-  const cur = document.getElementById("currentLevel").value;
-  const fut = document.getElementById("futureLevel").value;
-  document.getElementById("previewRole").textContent = cur + " → " + fut;
-
-  const previewComps = document.getElementById("previewCompetencies");
-  previewComps.innerHTML = "";
-  compOrder.forEach(compName=>{
-    const text = (framework[fut] && framework[fut][compName]) || "";
-    if(!text) return;
-    const div = document.createElement("div");
-    div.className = "preview-item";
-    div.innerHTML = `<strong>${escapeHtml(compName)}:</strong> ${escapeHtml(text)}`;
-    previewComps.appendChild(div);
-  });
-  if(!previewComps.innerHTML){
-    previewComps.innerHTML = '<div class="preview-item" style="opacity:.6">No competencies defined for this level yet</div>';
-  }
-
-  const selected = document.querySelectorAll("#experiences input[type=checkbox]:checked");
-  const previewItems = document.getElementById("previewItems");
-  previewItems.innerHTML = "";
-  selected.forEach(box=>{
-    const title = box.closest(".experience").querySelector(".experience-title").textContent;
-    const div = document.createElement("div");
-    div.className = "preview-item";
-    div.textContent = title;
-    previewItems.appendChild(div);
-  });
-  if(selected.length===0) previewItems.innerHTML = '<div class="preview-item" style="opacity:.6">No experiences selected</div>';
-
-  const m1 = document.getElementById("m1").value.trim();
-  const m2 = document.getElementById("m2").value.trim();
-  const m3 = document.getElementById("m3").value.trim();
-  const previewMilestones = document.getElementById("previewMilestones");
-  previewMilestones.innerHTML = "";
-  [["Days 1–30",m1],["Days 31–60",m2],["Days 61–90",m3]].forEach(([label,val])=>{
-    const div = document.createElement("div");
-    div.className = "preview-item";
-    div.innerHTML = `<strong>${label}:</strong> ${val ? escapeHtml(val) : '<span style="opacity:.6">Not filled in</span>'}`;
-    previewMilestones.appendChild(div);
-  });
-
-  const strengths = document.getElementById("strengths").value.trim();
-  const gap = document.getElementById("gap").value.trim();
-  const previewNotes = document.getElementById("previewNotes");
-  previewNotes.innerHTML = "";
-  if(strengths){
-    const d = document.createElement("div"); d.className="preview-note";
-    d.innerHTML = `<strong>Strengths:</strong> ${escapeHtml(strengths)}`;
-    previewNotes.appendChild(d);
-  }
-  if(gap){
-    const d = document.createElement("div"); d.className="preview-note"; d.style.marginTop="8px";
-    d.innerHTML = `<strong>Key gap:</strong> ${escapeHtml(gap)}`;
-    previewNotes.appendChild(d);
-  }
-  if(!strengths && !gap) previewNotes.innerHTML = '<div class="preview-note" style="opacity:.6">No notes yet</div>';
-
-  document.getElementById("preview").scrollIntoView({behavior:"smooth"});
-  saveCurrent();
+function setGapLevel(catKey, id, level){
+  const item = findGapItem(catKey, id);
+  if(!item) return;
+  item.level = item.level === level ? "" : level;
+  saveState();
+  renderGapsStep();
 }
+
+function onGapNameEdit(el){
+  const item = findGapItem(el.dataset.cat, el.dataset.id);
+  if(!item) return;
+  item.name = el.textContent.trim() || item.name;
+  const pr = plan.gaps.priorities.find(p=>p.id===item.id);
+  if(pr) pr.name = item.name;
+  saveState();
+}
+
+function addGapItem(catKey){
+  const name = prompt("What would you like to add?");
+  if(!name) return;
+  plan.gaps.categories[catKey].push({ id: nextId(), name: name, level: "" });
+  saveState();
+  renderGapsStep();
+}
+
+function removeGapItem(catKey, id){
+  plan.gaps.categories[catKey] = plan.gaps.categories[catKey].filter(i=>i.id!==id);
+  plan.gaps.priorities = plan.gaps.priorities.filter(p=>p.id!==id);
+  saveState();
+  renderGapsStep();
+}
+
+function togglePriority(catKey, id){
+  const existing = plan.gaps.priorities.find(p=>p.id===id);
+  if(existing){
+    plan.gaps.priorities = plan.gaps.priorities.filter(p=>p.id!==id);
+  } else {
+    if(plan.gaps.priorities.length >= 3){
+      alert("You can choose up to three priorities. Remove one before adding another.");
+      return;
+    }
+    const item = findGapItem(catKey, id);
+    const catLabel = GAP_CATEGORIES.find(c=>c.key===catKey).label;
+    plan.gaps.priorities.push({ id:id, cat:catKey, catLabel:catLabel, name:item.name });
+  }
+  saveState();
+  renderGapsStep();
+}
+
+function renderPrioritiesSummary(){
+  const el = document.getElementById("prioritiesSummary");
+  if(plan.gaps.priorities.length === 0){
+    el.innerHTML = `<div class="ps-empty">No priorities chosen yet. Mark up to three items above.</div>`;
+    return;
+  }
+  el.innerHTML = "<ul>" + plan.gaps.priorities.map(p=>`<li><span class="cat">${escapeHtml(p.catLabel)}</span>${escapeHtml(p.name)}</li>`).join("") + "</ul>";
+}
+
+/* ---------- Step 3: Roadmap ---------- */
+function renderRoadmapStep(){
+  document.getElementById("horizonSelect").value = String(plan.roadmap.horizonMonths || 3);
+  if(!plan.roadmap.months || plan.roadmap.months.length === 0){
+    buildRoadmapFromPriorities();
+  }
+  renderMonths();
+}
+
+function monthFocusDefault(i){
+  const priorities = plan.gaps.priorities;
+  if(priorities.length === 0) return "";
+  return priorities[i % priorities.length].name;
+}
+
+function buildRoadmapFromPriorities(){
+  const horizon = plan.roadmap.horizonMonths || 3;
+  const months = [];
+  for(let i=0;i<horizon;i++){
+    months.push({ label:"Month "+(i+1), focus: monthFocusDefault(i), action:"", practice:"", evidence:"", review:"", status:"not_started" });
+  }
+  plan.roadmap.months = months;
+  saveState();
+}
+
+function regenerateRoadmap(){
+  if(plan.roadmap.months.some(m=>m.action||m.practice||m.evidence||m.review)){
+    if(!confirm("This replaces your current roadmap entries with a fresh one based on your priorities. Continue?")) return;
+  }
+  buildRoadmapFromPriorities();
+  renderMonths();
+}
+
+function onHorizonChange(){
+  saveCurrentStepInputs();
+  const n = parseInt(document.getElementById("horizonSelect").value, 10);
+  const months = plan.roadmap.months;
+  plan.roadmap.horizonMonths = n;
+  plan.roadmap.horizonTouched = true;
+  if(n > months.length){
+    for(let i=months.length;i<n;i++){
+      months.push({ label:"Month "+(i+1), focus: monthFocusDefault(i), action:"", practice:"", evidence:"", review:"", status:"not_started" });
+    }
+  } else if(n < months.length){
+    const trimmed = months.slice(n);
+    const hasContent = trimmed.some(m=>m.action||m.practice||m.evidence||m.review);
+    if(hasContent && !confirm("Shortening the horizon will remove the later months you've already filled in. Continue?")){
+      document.getElementById("horizonSelect").value = String(months.length);
+      plan.roadmap.horizonMonths = months.length;
+      return;
+    }
+    plan.roadmap.months = months.slice(0, n);
+  }
+  saveState();
+  renderMonths();
+}
+
+function addMonth(){
+  const i = plan.roadmap.months.length;
+  plan.roadmap.months.push({ label:"Month "+(i+1), focus:"", action:"", practice:"", evidence:"", review:"", status:"not_started" });
+  saveState();
+  renderMonths();
+}
+
+function removeMonth(i){
+  if(!confirm("Remove this month from your roadmap?")) return;
+  plan.roadmap.months.splice(i,1);
+  plan.roadmap.months.forEach((m,idx)=>{ m.label = "Month "+(idx+1); });
+  saveState();
+  renderMonths();
+}
+
+function moveMonth(i, dir){
+  const months = plan.roadmap.months;
+  const j = i + dir;
+  if(j<0 || j>=months.length) return;
+  const tmp = months[i]; months[i] = months[j]; months[j] = tmp;
+  months.forEach((m,idx)=>{ m.label = "Month "+(idx+1); });
+  saveState();
+  renderMonths();
+}
+
+function renderMonths(){
+  const list = document.getElementById("monthsList");
+  list.innerHTML = "";
+  plan.roadmap.months.forEach((m,i)=>{
+    const card = document.createElement("div");
+    card.className = "month-card";
+    card.innerHTML = `
+      <div class="month-card-top">
+        <div class="month-label">${escapeHtml(m.label)}</div>
+        <div style="display:flex;gap:8px;align-items:center;">
+          <select class="status-select" onchange="updateMonth(${i},'status',this.value)">
+            ${STATUS_OPTIONS.map(s=>`<option value="${s.v}" ${m.status===s.v?"selected":""}>${s.label}</option>`).join("")}
+          </select>
+          <div class="month-order-actions">
+            <button onclick="moveMonth(${i},-1)" title="Move up">↑</button>
+            <button onclick="moveMonth(${i},1)" title="Move down">↓</button>
+            <button onclick="removeMonth(${i})" title="Remove">✕</button>
+          </div>
+        </div>
+      </div>
+      <div class="field month-focus-field">
+        <label>Focus — what skill or experience are you developing?</label>
+        <input type="text" value="${escapeAttr(m.focus)}" placeholder="e.g. Project scoping" onchange="updateMonth(${i},'focus',this.value)">
+      </div>
+      <div class="month-grid">
+        <div class="field">
+          <label>Action — what will you actually do?</label>
+          <textarea placeholder="e.g. Volunteer to scope a small internal initiative." onchange="updateMonth(${i},'action',this.value)">${escapeHtml(m.action)}</textarea>
+        </div>
+        <div class="field">
+          <label>Practice opportunity — where in real work?</label>
+          <textarea placeholder="Where can you apply this in work you're already doing?" onchange="updateMonth(${i},'practice',this.value)">${escapeHtml(m.practice)}</textarea>
+        </div>
+        <div class="field">
+          <label>Evidence of progress</label>
+          <textarea placeholder="What will show that you made progress?" onchange="updateMonth(${i},'evidence',this.value)">${escapeHtml(m.evidence)}</textarea>
+        </div>
+        <div class="field">
+          <label>Review — when and with whom?</label>
+          <textarea placeholder="When will you review this and decide what's next?" onchange="updateMonth(${i},'review',this.value)">${escapeHtml(m.review)}</textarea>
+        </div>
+      </div>
+    `;
+    list.appendChild(card);
+  });
+}
+
+function updateMonth(i, field, value){
+  plan.roadmap.months[i][field] = value;
+  saveState();
+}
+
+/* ---------- Step 4: Practice & visibility ---------- */
+function ensurePracticeItems(){
+  const priorities = plan.gaps.priorities;
+  const existing = plan.practice.items;
+  const kept = [];
+  priorities.forEach(p=>{
+    let match = existing.find(e=>e.priorityId===p.id);
+    if(!match){
+      match = existing.find(e=>!e.priorityId && e.priorityName===p.name);
+    }
+    if(match){
+      match.priorityId = p.id;
+      match.priorityName = p.name;
+      match.priorityCat = p.catLabel;
+      match.active = true;
+      kept.push(match);
+    } else {
+      kept.push({ priorityId:p.id, priorityName:p.name, priorityCat:p.catLabel, active:true, opportunity:"", person:"", visibility:"", outcome:"" });
+    }
+  });
+  existing.forEach(e=>{
+    if(!kept.includes(e)){
+      e.active = false;
+      kept.push(e);
+    }
+  });
+  plan.practice.items = kept;
+}
+
+function renderPracticeStep(){
+  ensurePracticeItems();
+  const list = document.getElementById("practiceList");
+  list.innerHTML = "";
+  if(plan.practice.items.length === 0){
+    list.innerHTML = `<p class="hint" style="margin:0 0 16px;">Choose your top priorities in Step 2 to see them here.</p>`;
+  }
+  plan.practice.items.forEach((item,i)=>{
+    const card = document.createElement("div");
+    card.className = "practice-card";
+    card.innerHTML = `
+      <div class="priority-title">${escapeHtml(item.priorityName)}${item.active ? "" : " (no longer a priority)"}</div>
+      <div class="priority-cat">${escapeHtml(item.priorityCat||"")}</div>
+      <div class="field">
+        <label>A realistic way to practice this in your current role</label>
+        <textarea placeholder="e.g. Volunteer to improve a broken process, coordinate a limited project, train a colleague..." onchange="updatePractice(${i},'opportunity',this.value)">${escapeHtml(item.opportunity)}</textarea>
+      </div>
+      <div class="field">
+        <label>Who could help you learn this?</label>
+        <input type="text" value="${escapeAttr(item.person)}" placeholder="A name or role" onchange="updatePractice(${i},'person',this.value)">
+      </div>
+      <div class="field">
+        <label>How will you make the result visible, without bragging?</label>
+        <textarea placeholder="e.g. Share a short update at a milestone, give credit to people who helped, mention it in a one on one..." onchange="updatePractice(${i},'visibility',this.value)">${escapeHtml(item.visibility)}</textarea>
+      </div>
+      <div class="field" style="margin-bottom:0;">
+        <label>Outcome / notes</label>
+        <textarea placeholder="What happened? What did you learn?" onchange="updatePractice(${i},'outcome',this.value)">${escapeHtml(item.outcome)}</textarea>
+      </div>
+    `;
+    list.appendChild(card);
+  });
+
+  renderAccomplishments();
+}
+
+function updatePractice(i, field, value){
+  plan.practice.items[i][field] = value;
+  saveState();
+}
+
+function addAccomplishment(){
+  plan.accomplishments.unshift({
+    id: nextId(), date:new Date().toISOString().slice(0,10), problem:"", action:"", people:"", result:"", skills:"", notes:""
+  });
+  saveState();
+  renderAccomplishments();
+}
+
+function removeAccomplishment(id){
+  if(!confirm("Remove this accomplishment?")) return;
+  plan.accomplishments = plan.accomplishments.filter(a=>a.id!==id);
+  saveState();
+  renderAccomplishments();
+}
+
+function updateAccomplishment(id, field, value){
+  const a = plan.accomplishments.find(a=>a.id===id);
+  if(a){ a[field] = value; saveState(); }
+}
+
+function renderAccomplishments(){
+  const list = document.getElementById("accomplishmentsList");
+  if(!list) return;
+  list.innerHTML = "";
+  if(plan.accomplishments.length === 0){
+    list.innerHTML = `<p class="hint" style="margin:0;">No accomplishments logged yet.</p>`;
+  }
+  plan.accomplishments.forEach(a=>{
+    const card = document.createElement("div");
+    card.className = "accomplishment-card";
+    card.innerHTML = `
+      <button class="remove" onclick="removeAccomplishment('${a.id}')">Remove</button>
+      <div class="field">
+        <label>Date</label>
+        <input type="date" value="${escapeAttr(a.date)}" onchange="updateAccomplishment('${a.id}','date',this.value)" style="max-width:200px;">
+      </div>
+      <div class="accomplishment-grid">
+        <div class="field">
+          <label>Problem or opportunity</label>
+          <textarea onchange="updateAccomplishment('${a.id}','problem',this.value)">${escapeHtml(a.problem)}</textarea>
+        </div>
+        <div class="field">
+          <label>Action taken</label>
+          <textarea onchange="updateAccomplishment('${a.id}','action',this.value)">${escapeHtml(a.action)}</textarea>
+        </div>
+        <div class="field">
+          <label>People or teams involved</label>
+          <input type="text" value="${escapeAttr(a.people)}" onchange="updateAccomplishment('${a.id}','people',this.value)">
+        </div>
+        <div class="field">
+          <label>Result or measurable impact</label>
+          <textarea onchange="updateAccomplishment('${a.id}','result',this.value)">${escapeHtml(a.result)}</textarea>
+        </div>
+        <div class="field">
+          <label>Skills demonstrated</label>
+          <input type="text" value="${escapeAttr(a.skills)}" onchange="updateAccomplishment('${a.id}','skills',this.value)">
+        </div>
+        <div class="field" style="margin-bottom:0;">
+          <label>Notes / feedback</label>
+          <textarea onchange="updateAccomplishment('${a.id}','notes',this.value)">${escapeHtml(a.notes)}</textarea>
+        </div>
+      </div>
+    `;
+    list.appendChild(card);
+  });
+}
+
+/* ---------- Step 5: Plan ---------- */
+function renderPlanStep(){
+  const d = plan.direction;
+  const tf = TIMEFRAMES.find(t=>t.v===d.timeframe);
+
+  document.getElementById("planCallout").innerHTML = `
+    Your plan is ready. Start with <b>${escapeHtml(plan.roadmap.months[0] ? plan.roadmap.months[0].label : "Month 1")}</b> of your roadmap this week.
+    This plan reflects what you can control. It does not guarantee a promotion or a title change, that depends on your company, your manager, and timing too.
+  `;
+
+  document.getElementById("planDirection").innerHTML = `
+    <div class="plan-row"><span class="plan-row-label">Current role:</span> ${escapeHtml(d.currentRole)||"—"}</div>
+    <div class="plan-row"><span class="plan-row-label">Target role:</span> ${escapeHtml(d.targetRole)||"—"}</div>
+    <div class="plan-row"><span class="plan-row-label">Why this matters:</span> ${d.reasons.map(escapeHtml).join(", ")||"—"}${d.reasonOther?" — "+escapeHtml(d.reasonOther):""}</div>
+    <div class="plan-row"><span class="plan-row-label">Target timeframe:</span> ${tf?escapeHtml(tf.label):"—"}</div>
+  `;
+
+  document.getElementById("planPriorities").innerHTML = plan.gaps.priorities.length
+    ? plan.gaps.priorities.map(p=>`<div class="plan-row"><span class="plan-row-label">${escapeHtml(p.catLabel)}:</span> ${escapeHtml(p.name)}</div>`).join("")
+    : `<div class="plan-row" style="opacity:.6">No priorities chosen yet — go back to Step 2.</div>`;
+
+  document.getElementById("planRoadmap").innerHTML = plan.roadmap.months.map(m=>{
+    const st = STATUS_OPTIONS.find(s=>s.v===m.status);
+    return `<div class="plan-row">
+      <span class="plan-row-label">${escapeHtml(m.label)}${m.focus?" — "+escapeHtml(m.focus):""}:</span>
+      ${m.action?escapeHtml(m.action):"<span style=\"opacity:.6\">No action set yet</span>"}
+      <div style="margin-top:4px;font-size:12.5px;color:var(--muted);">Status: ${st?escapeHtml(st.label):"Not started"}${m.evidence?" · Evidence: "+escapeHtml(m.evidence):""}</div>
+    </div>`;
+  }).join("") || `<div class="plan-row" style="opacity:.6">No roadmap yet — go back to Step 3.</div>`;
+
+  document.getElementById("mgrQuestions").innerHTML = MGR_QUESTIONS.map((q,i)=>{
+    const checked = plan.managerGuide.questions[i] !== false;
+    return `<div class="mgr-question-row"><input type="checkbox" id="mq${i}" ${checked?"checked":""} onchange="toggleMgrQuestion(${i})"><label for="mq${i}" style="text-transform:none;font-size:13.5px;font-weight:400;color:var(--text);margin:0;">${escapeHtml(q)}</label></div>`;
+  }).join("");
+
+  document.getElementById("mgrNotes").value = plan.managerGuide.notes;
+  document.getElementById("mgrFeedback").value = plan.managerGuide.feedback;
+
+  document.getElementById("planAccomplishments").innerHTML = plan.accomplishments.length
+    ? plan.accomplishments.map(a=>`<div class="plan-row"><span class="plan-row-label">${escapeHtml(a.date)}:</span> ${escapeHtml(a.result)||escapeHtml(a.action)||"—"}${a.skills?" · "+escapeHtml(a.skills):""}</div>`).join("")
+    : `<div class="plan-row" style="opacity:.6">No accomplishments logged yet — add them in Step 4.</div>`;
+}
+
+function toggleMgrQuestion(i){
+  plan.managerGuide.questions[i] = plan.managerGuide.questions[i] === false ? true : false;
+  saveState();
+}
+
+function printPlan(){
+  saveCurrentStepInputs();
+  currentStep = 4;
+  renderAll();
+  saveState();
+  setTimeout(()=>window.print(), 50);
+}
+
+/* ---------- Persist whatever is on screen before navigating ---------- */
+function saveCurrentStepInputs(){
+  if(!plan) return;
+  if(currentStep===0){
+    plan.direction.currentRole = val("dCurrentRole");
+    plan.direction.targetRole = val("dTargetRole");
+    plan.direction.reasonOther = val("dReasonOther");
+    plan.direction.explore.enjoy = val("dExploreEnjoy");
+    plan.direction.explore.more = val("dExploreMore");
+    plan.direction.explore.less = val("dExploreLess");
+  }
+  if(currentStep===4){
+    plan.managerGuide.notes = val("mgrNotes");
+    plan.managerGuide.feedback = val("mgrFeedback");
+  }
+  saveState();
+}
+function val(id){ const el = document.getElementById(id); return el ? el.value : ""; }
+function escapeAttr(str){ return (str||"").replace(/"/g,"&quot;"); }
 
 /* ---------- Export / Import ---------- */
 async function exportData(){
-  saveCurrent();
-  const payload = { employees, activeId, exportedAt: new Date().toISOString(), version: 3 };
+  saveCurrentStepInputs();
+  const payload = Object.assign({}, plan, { exportedAt: new Date().toISOString() });
   const dateStr = new Date().toISOString().slice(0,10);
-  const filename = `career-path-builder-backup-${dateStr}.json`;
+  const filename = `career-plan-backup-${dateStr}.json`;
   const blob = new Blob([JSON.stringify(payload, null, 2)], {type:"application/json"});
 
-  // Mobile Safari (and some other mobile browsers) don't reliably honor the
-  // <a download> attribute on a blob: URL, it just navigates to the raw JSON
-  // instead of saving a file. Prefer the share sheet there, it lets you pick
-  // "Save to Files." Desktop browsers fall through to the normal download.
   try{
     const file = new File([blob], filename, {type:"application/json"});
     if(navigator.canShare && navigator.canShare({files:[file]})){
@@ -802,7 +1253,7 @@ async function exportData(){
       return;
     }
   }catch(err){
-    if(err && err.name === "AbortError") return; // user closed the share sheet
+    if(err && err.name === "AbortError") return;
   }
 
   const url = URL.createObjectURL(blob);
@@ -822,27 +1273,15 @@ function importData(event){
   reader.onload = function(e){
     try{
       const parsed = JSON.parse(e.target.result);
-      if(!parsed.employees){
+      if(!parsed.direction || !parsed.gaps || !parsed.roadmap){
         alert("This doesn't look like a Career Path Builder backup file.");
         return;
       }
-      const mode = confirm(
-        "Click OK to MERGE this backup with your current data (adds/updates people).\n\nClick Cancel to REPLACE everyone currently loaded with this backup instead."
-      ) ? "merge" : "replace";
-
-      if(mode === "replace"){
-        employees = parsed.employees;
-        activeId = parsed.activeId && parsed.employees[parsed.activeId] ? parsed.activeId : Object.keys(parsed.employees)[0];
-      } else {
-        Object.keys(parsed.employees || {}).forEach(id=>{
-          employees[id] = parsed.employees[id];
-        });
-        if(!activeId || !employees[activeId]) activeId = Object.keys(employees)[0];
-      }
-
+      if(!confirm("This will replace your current plan with the one in this file. Continue?")) return;
+      plan = Object.assign(defaultPlan(), parsed);
+      currentStep = 0;
       saveState();
-      renderRoster();
-      loadEmployeeIntoForm();
+      renderAll();
       alert("Backup imported successfully.");
     }catch(err){
       alert("Couldn't read that file. Make sure it's an unedited export from this tool.");
@@ -853,14 +1292,13 @@ function importData(event){
 }
 
 /* ---------- Boot ---------- */
-populateLevelSelects();
 loadState();
-renderRoster();
-loadEmployeeIntoForm();
+renderAll();
 
 document.addEventListener("input", (e)=>{
+  if(!e.target.closest || !e.target.closest("#cpb")) return;
   clearTimeout(window._cpbSaveT);
-  window._cpbSaveT = setTimeout(()=>{ saveCurrent(); }, 500);
+  window._cpbSaveT = setTimeout(()=>{ saveCurrentStepInputs(); }, 400);
 });
 </script>
 
