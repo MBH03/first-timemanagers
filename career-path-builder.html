@@ -13,18 +13,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Career Path Builder | Tools</title>
-<meta name="description" content="Build your team's competency framework once, by level. Then generate a real development plan for each report: target competencies, development experiences, a 90-day plan, and manager notes. Saved in your browser, exportable as backup.">
+<meta name="description" content="Generate a real development plan for each report: target competencies, development experiences, a 90-day plan, and manager notes. Saved in your browser, exportable as backup.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="First-Time Managers">
 <meta property="og:title" content="Career Path Builder | Tools">
-<meta property="og:description" content="Build your team's competency framework once, by level. Then generate a real development plan for each report: target competencies, development experiences, a 90-day plan, and manager notes.">
+<meta property="og:description" content="Generate a real development plan for each report: target competencies, development experiences, a 90-day plan, and manager notes.">
 <meta property="og:url" content="https://first-timemanagers.com/career-path-builder.html">
 <meta property="og:image" content="https://first-timemanagers.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Career Path Builder | Tools">
-<meta name="twitter:description" content="Build your team's competency framework once, by level. Then generate a real development plan for each report: target competencies, development experiences, a 90-day plan, and manager notes.">
+<meta name="twitter:description" content="Generate a real development plan for each report: target competencies, development experiences, a 90-day plan, and manager notes.">
 <meta name="twitter:image" content="https://first-timemanagers.com/og-image.png">
 <link rel="icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -37,10 +37,10 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Career Path Builder",
-  "description": "Build your team's competency framework once, by level. Then generate a real development plan for each report: target competencies, development experiences, a 90-day plan, and manager notes.",
+  "description": "Generate a real development plan for each report: target competencies, development experiences, a 90-day plan, and manager notes.",
   "url": "https://first-timemanagers.com/career-path-builder.html",
   "datePublished": "2026-09-22",
-  "dateModified": "2026-09-22",
+  "dateModified": "2026-10-13",
   "author": {
     "@type": "Person",
     "name": "Michael Henrie",
@@ -84,12 +84,6 @@
   #cpb h1{ display:none; } /* page-head already carries the title */
   #cpb .subtitle{ display:none; } /* replaced by the site's own page-head copy */
 
-  #cpb .tabs{ display:flex; gap:8px; margin-bottom:32px; border-bottom:1px solid var(--line); flex-wrap:wrap; }
-  #cpb .tab{ padding:12px 18px; font-weight:700; font-size:13px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); cursor:pointer; border-bottom:2px solid transparent; margin-bottom:-1px; }
-  #cpb .tab.active{ color:var(--gold); border-bottom-color:var(--gold); }
-  #cpb .tabpanel{ display:none; }
-  #cpb .tabpanel.active{ display:block; }
-
   #cpb .card{ background:var(--panel); border:1px solid var(--line); border-radius:2px; padding:26px; margin-bottom:22px; }
   #cpb h2{ margin:0 0 18px; font-size:16px; font-weight:600; color:var(--text); }
   #cpb .hint{ font-size:13px; color:var(--muted); margin-top:-10px; margin-bottom:18px; line-height:1.6; }
@@ -125,8 +119,6 @@
   #cpb .primary:hover{ background:#f0b552; }
   #cpb .secondary{ background:transparent; color:var(--text); border:1px solid rgba(237,235,228,.25); }
   #cpb .secondary:hover{ border-color:var(--gold); color:var(--gold); }
-  #cpb .ghost{ background:transparent; border:1px dashed rgba(237,235,228,.3); color:var(--muted); width:100%; padding:12px; border-radius:2px; }
-  #cpb .ghost:hover{ border-color:var(--gold); color:var(--gold); }
 
   #cpb .exp-header-row{ display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:10px; }
   #cpb .experience{ border:1px solid var(--line); border-radius:2px; padding:16px; margin-bottom:12px; background:rgba(255,255,255,.015); }
@@ -156,14 +148,6 @@
   #cpb .preview-note{ font-size:13px; color:var(--text); opacity:.9; white-space:pre-wrap; line-height:1.6; }
   #cpb .actions{ display:flex; justify-content:flex-end; gap:10px; margin-top:18px; flex-wrap:wrap; }
 
-  #cpb .fw-level-select{ margin-bottom:18px; max-width:360px; }
-  #cpb .fw-comp{ border:1px solid var(--line); border-radius:2px; padding:16px; margin-bottom:14px; background:rgba(255,255,255,.015); }
-  #cpb .fw-comp label{ color:var(--gold); font-size:13px; margin-bottom:8px; text-transform:none; letter-spacing:0; }
-  #cpb .fw-comp textarea{ min-height:70px; }
-  #cpb .comp-name-row{ display:flex; gap:10px; align-items:center; margin-bottom:8px; }
-  #cpb .comp-name-row input{ font-weight:600; color:var(--gold); border:none; background:transparent; padding:4px 0; font-size:14px; }
-  #cpb .comp-name-row input:focus{ outline:none; border-bottom:1px solid var(--gold); }
-  #cpb .comp-remove{ background:transparent; color:var(--danger); padding:4px 10px; font-size:11px; border:none; }
   #cpb .target-box{ background:var(--soft); border:1px solid rgba(227,166,62,.2); border-radius:2px; padding:18px; margin-bottom:18px; }
   #cpb .target-box h3{ margin:0 0 4px; color:var(--gold); font-size:14px; }
   #cpb .target-comp{ margin-bottom:10px; }
@@ -216,46 +200,18 @@
 
 <main>
   <div style="max-width:680px; margin:56px auto 0; padding:0 56px;">
-    <p style="font-size:19px; font-weight:300; color:#fff; line-height:1.6; margin-bottom:12px;">Build your team's competency framework once, by level. Then generate a real, specific development plan for each report: what "ready" looks like at the next level, the experiences that get them there, and a 90-day plan.</p>
+    <p style="font-size:19px; font-weight:300; color:#fff; line-height:1.6; margin-bottom:12px;">Generate a real, specific development plan for each report: what "ready" looks like at the next level, the experiences that get them there, and a 90-day plan.</p>
     <p style="font-size:14px; color:var(--muted); line-height:1.7; margin-bottom:0;">Everything here saves automatically to this browser as you type. Nothing is sent anywhere. Use <strong style="color:var(--text);">Export backup</strong> before you clear your browser data or switch devices, and <strong style="color:var(--text);">Import backup</strong> to bring it back.</p>
   </div>
 
   <div id="cpb">
   <div class="container">
 
-  <div class="tabs" style="justify-content:space-between;align-items:center">
-  <div style="display:flex">
-  <div class="tab active" id="tabBtnFramework" onclick="switchTab('framework')">Team Framework</div>
-  <div class="tab" id="tabBtnPlans" onclick="switchTab('plans')">Employee Plans</div>
-  </div>
-  <div style="display:flex;gap:8px;align-items:center;padding-bottom:10px">
+  <div style="display:flex;justify-content:flex-end;gap:8px;align-items:center;margin-bottom:28px;flex-wrap:wrap">
   <button class="edit" onclick="exportData()">⬇ Export backup</button>
   <button class="edit" onclick="document.getElementById('importFile').click()">⬆ Import backup</button>
   <input type="file" id="importFile" accept="application/json" style="display:none" onchange="importData(event)">
   </div>
-  </div>
-
-  <!-- ============ FRAMEWORK TAB ============ -->
-  <div class="tabpanel active" id="tabFramework">
-
-  <div class="card">
-  <h2>Core competencies, by level</h2>
-  <div class="hint">This is your team's rubric: what "good" actually looks like at each level, across the categories that matter for your function. Fill it in once — every employee plan will pull from it. Starter text is provided, edit it to match how your team actually works.</div>
-
-  <div class="fw-level-select">
-  <label>Editing level</label>
-  <select id="fwLevel" onchange="renderFrameworkLevel()"></select>
-  </div>
-
-  <div id="fwComps"></div>
-
-  <button class="ghost" onclick="addCompetency()">+ Add a competency category</button>
-  </div>
-
-  </div>
-
-  <!-- ============ PLANS TAB ============ -->
-  <div class="tabpanel" id="tabPlans">
 
   <div class="card">
   <h2>Your team</h2>
@@ -284,7 +240,7 @@
 
   <div class="card">
   <h2>2. What "ready" looks like at the target level</h2>
-  <div class="hint">Pulled straight from your Team Framework tab for the target level. Edit the framework, not this — it'll update here automatically.</div>
+  <div class="hint">A generic starting rubric for the target level. Want to define your own, by level, for your team? Download the <a href="team-leveling-framework-template.html" style="color:var(--gold);">Team Leveling Framework Template</a> and build it there.</div>
   <div id="targetCompetencies"></div>
   </div>
 
@@ -352,9 +308,6 @@
   </div>
 
   </div>
-  <!-- end plans tab -->
-
-  </div>
   </div>
 
   <div class="resources" style="max-width:680px; margin:16px auto 0; padding:0 56px;">
@@ -365,6 +318,10 @@
     <a class="resource-card" href="delegation-framework-template.html">
       <div class="kicker" data-pagefind-ignore>Templates</div>
       <div class="title">Delegation Framework Template →</div>
+    </a>
+    <a class="resource-card" href="team-leveling-framework-template.html">
+      <div class="kicker" data-pagefind-ignore>Templates</div>
+      <div class="title">Team Leveling Framework Template →</div>
     </a>
   </div>
 </main>
@@ -494,12 +451,10 @@ function templateKey(from,to){ return from+"|"+to; }
 function getTemplate(from,to){ return TEMPLATES[templateKey(from,to)] || GENERIC_FALLBACK; }
 
 /* ---------- Global state ---------- */
-let framework = {};
-let compOrder = [];
-let employees = {};
-let activeId = null;
-
-function defaultFramework(){
+/* Target Competencies is a fixed, read-only reference rubric — not user-editable here.
+   Teams that want to define their own, by level, use the Team Leveling Framework Template instead. */
+const compOrder = DEFAULT_COMPS.slice();
+const framework = (function(){
   const fw = {};
   LEVELS.forEach(l=>{
     fw[l] = {};
@@ -508,7 +463,9 @@ function defaultFramework(){
     });
   });
   return fw;
-}
+})();
+let employees = {};
+let activeId = null;
 
 function newEmployeeData(name){
   return {
@@ -528,12 +485,8 @@ function loadState(){
       const parsed = JSON.parse(raw);
       employees = parsed.employees || {};
       activeId = parsed.activeId || null;
-      framework = parsed.framework || null;
-      compOrder = parsed.compOrder || null;
     }
   }catch(e){}
-  if(!framework || Object.keys(framework).length === 0){ framework = defaultFramework(); }
-  if(!compOrder || compOrder.length === 0){ compOrder = DEFAULT_COMPS.slice(); }
   if(Object.keys(employees).length === 0){
     const id = "emp_" + Date.now();
     employees[id] = newEmployeeData("");
@@ -544,96 +497,8 @@ function loadState(){
 
 function saveState(){
   try{
-    localStorage.setItem("cpb_state_v3", JSON.stringify({employees, activeId, framework, compOrder}));
+    localStorage.setItem("cpb_state_v3", JSON.stringify({employees, activeId}));
   }catch(e){}
-}
-
-/* ---------- Tabs ---------- */
-function switchTab(name){
-  document.getElementById("tabFramework").classList.toggle("active", name==="framework");
-  document.getElementById("tabPlans").classList.toggle("active", name==="plans");
-  document.getElementById("tabBtnFramework").classList.toggle("active", name==="framework");
-  document.getElementById("tabBtnPlans").classList.toggle("active", name==="plans");
-  if(name==="plans") renderTargetCompetencies();
-}
-
-/* ---------- Framework tab ---------- */
-function populateFwLevelSelect(){
-  const sel = document.getElementById("fwLevel");
-  sel.innerHTML = LEVELS.map(l=>`<option>${l}</option>`).join("");
-}
-
-function renderFrameworkLevel(){
-  const level = document.getElementById("fwLevel").value;
-  const container = document.getElementById("fwComps");
-  container.innerHTML = "";
-  compOrder.forEach(compName=>{
-    const val = (framework[level] && framework[level][compName]) || "";
-    const div = document.createElement("div");
-    div.className = "fw-comp";
-    div.innerHTML = `
-      <div class="comp-name-row">
-        <input type="text" class="comp-name-input" value="${escapeHtml(compName)}" data-original="${escapeHtml(compName)}">
-        <button class="comp-remove" onclick="removeCompetency('${escapeAttr(compName)}')">Remove category</button>
-      </div>
-      <textarea class="comp-text" data-comp="${escapeAttr(compName)}">${escapeHtml(val)}</textarea>
-    `;
-    container.appendChild(div);
-  });
-}
-
-function collectFrameworkLevel(){
-  const level = document.getElementById("fwLevel").value;
-  if(!framework[level]) framework[level] = {};
-
-  const nameInputs = document.querySelectorAll("#fwComps .comp-name-input");
-  const renameMap = {};
-  nameInputs.forEach(inp=>{
-    const orig = inp.dataset.original;
-    const now = inp.value.trim() || orig;
-    if(orig !== now) renameMap[orig] = now;
-  });
-  if(Object.keys(renameMap).length){
-    LEVELS.forEach(l=>{
-      Object.keys(renameMap).forEach(orig=>{
-        if(framework[l] && Object.prototype.hasOwnProperty.call(framework[l], orig)){
-          framework[l][renameMap[orig]] = framework[l][orig];
-          delete framework[l][orig];
-        }
-      });
-    });
-    compOrder = compOrder.map(c => renameMap[c] || c);
-  }
-
-  const textAreas = document.querySelectorAll("#fwComps .comp-text");
-  textAreas.forEach(ta=>{
-    let compName = ta.dataset.comp;
-    if(renameMap[compName]) compName = renameMap[compName];
-    framework[level][compName] = ta.value;
-  });
-
-  saveState();
-}
-
-function addCompetency(){
-  const name = prompt("Name this competency category (e.g. 'Ownership', 'Client Relationships'):");
-  if(!name) return;
-  if(compOrder.includes(name)){ alert("That category already exists."); return; }
-  compOrder.push(name);
-  LEVELS.forEach(l=>{
-    if(!framework[l]) framework[l] = {};
-    framework[l][name] = "";
-  });
-  saveState();
-  renderFrameworkLevel();
-}
-
-function removeCompetency(name){
-  if(!confirm(`Remove "${name}" from all levels? This can't be undone.`)) return;
-  compOrder = compOrder.filter(c=>c!==name);
-  LEVELS.forEach(l=>{ if(framework[l]) delete framework[l][name]; });
-  saveState();
-  renderFrameworkLevel();
 }
 
 /* ---------- Employee roster ---------- */
@@ -714,9 +579,6 @@ function collectFormIntoEmployee(emp){
 }
 
 function saveCurrent(){
-  if(document.getElementById("tabFramework").classList.contains("active")){
-    collectFrameworkLevel();
-  }
   if(!activeId || !employees[activeId]) return;
   collectFormIntoEmployee(employees[activeId]);
   saveState();
@@ -792,7 +654,7 @@ function renderTargetCompetencies(){
     const text = (framework[fut] && framework[fut][compName]) || "";
     const row = document.createElement("div");
     row.className = "target-comp";
-    row.innerHTML = `<div class="cname">${escapeHtml(compName)}</div><div class="ctext">${text ? escapeHtml(text) : '<span style="opacity:.6">Not defined yet — add this in the Team Framework tab</span>'}</div>`;
+    row.innerHTML = `<div class="cname">${escapeHtml(compName)}</div><div class="ctext">${text ? escapeHtml(text) : '<span style="opacity:.6">Not defined yet</span>'}</div>`;
     box.appendChild(row);
   });
   container.appendChild(box);
@@ -924,7 +786,7 @@ function generatePlan(){
 /* ---------- Export / Import ---------- */
 async function exportData(){
   saveCurrent();
-  const payload = { employees, activeId, framework, compOrder, exportedAt: new Date().toISOString(), version: 3 };
+  const payload = { employees, activeId, exportedAt: new Date().toISOString(), version: 3 };
   const dateStr = new Date().toISOString().slice(0,10);
   const filename = `career-path-builder-backup-${dateStr}.json`;
   const blob = new Blob([JSON.stringify(payload, null, 2)], {type:"application/json"});
@@ -960,40 +822,25 @@ function importData(event){
   reader.onload = function(e){
     try{
       const parsed = JSON.parse(e.target.result);
-      if(!parsed.employees || !parsed.framework){
+      if(!parsed.employees){
         alert("This doesn't look like a Career Path Builder backup file.");
         return;
       }
       const mode = confirm(
-        "Click OK to MERGE this backup with your current data (adds/updates people and keeps your framework edits where they don't conflict).\n\nClick Cancel to REPLACE everything currently loaded with this backup instead."
+        "Click OK to MERGE this backup with your current data (adds/updates people).\n\nClick Cancel to REPLACE everyone currently loaded with this backup instead."
       ) ? "merge" : "replace";
 
       if(mode === "replace"){
         employees = parsed.employees;
         activeId = parsed.activeId && parsed.employees[parsed.activeId] ? parsed.activeId : Object.keys(parsed.employees)[0];
-        framework = parsed.framework;
-        compOrder = parsed.compOrder || DEFAULT_COMPS.slice();
       } else {
         Object.keys(parsed.employees || {}).forEach(id=>{
           employees[id] = parsed.employees[id];
-        });
-        (parsed.compOrder || []).forEach(c=>{
-          if(!compOrder.includes(c)) compOrder.push(c);
-        });
-        LEVELS.forEach(l=>{
-          if(parsed.framework && parsed.framework[l]){
-            if(!framework[l]) framework[l] = {};
-            Object.keys(parsed.framework[l]).forEach(comp=>{
-              const incoming = parsed.framework[l][comp];
-              if(incoming && incoming.trim()) framework[l][comp] = incoming;
-            });
-          }
         });
         if(!activeId || !employees[activeId]) activeId = Object.keys(employees)[0];
       }
 
       saveState();
-      renderFrameworkLevel();
       renderRoster();
       loadEmployeeIntoForm();
       alert("Backup imported successfully.");
@@ -1007,21 +854,13 @@ function importData(event){
 
 /* ---------- Boot ---------- */
 populateLevelSelects();
-populateFwLevelSelect();
 loadState();
-renderFrameworkLevel();
 renderRoster();
 loadEmployeeIntoForm();
 
 document.addEventListener("input", (e)=>{
   clearTimeout(window._cpbSaveT);
-  window._cpbSaveT = setTimeout(()=>{
-    if(document.getElementById("tabFramework").classList.contains("active")){
-      collectFrameworkLevel();
-    } else {
-      saveCurrent();
-    }
-  }, 500);
+  window._cpbSaveT = setTimeout(()=>{ saveCurrent(); }, 500);
 });
 </script>
 
