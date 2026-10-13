@@ -80,7 +80,7 @@
     --chip:rgba(227,166,62,.12); --soft:rgba(227,166,62,.06); --danger:var(--richmond);
   }
   #cpb{ font-family:inherit; color:var(--text); }
-  #cpb .container{ max-width:1200px; margin:0 auto; padding:0 56px 130px; }
+  #cpb .container{ max-width:1200px; margin:0 auto; padding:40px 56px 130px; }
   #cpb h1{ display:none; }
   #cpb .subtitle{ display:none; }
 
@@ -219,7 +219,7 @@
   #cpb .cadence-box li{ font-size:13.5px; color:var(--text); line-height:1.7; margin-bottom:4px; }
   #cpb .export-row{ display:flex; gap:10px; flex-wrap:wrap; margin:28px 0 8px; }
 
-  @media(max-width:900px){ #cpb .container{ padding:0 20px 90px; } }
+  @media(max-width:900px){ #cpb .container{ padding:32px 20px 90px; } }
   @media(max-width:750px){
     #cpb .two-col, #cpb .month-grid, #cpb .accomplishment-grid{ grid-template-columns:1fr; }
     #cpb .stepper{ gap:6px; }
@@ -281,7 +281,7 @@
 <main>
   <div style="max-width:680px; margin:56px auto 0; padding:0 56px;">
     <p style="font-size:19px; font-weight:300; color:#fff; line-height:1.6; margin-bottom:12px;">Turn your career goal into a practical plan you can work on every month. Five short steps: your direction, your development gaps, a monthly roadmap, how to build visibility, and a plan you can print and bring to your manager.</p>
-    <p style="font-size:14px; color:var(--muted); line-height:1.7; margin-bottom:0;">This is your plan, not a performance review. Everything saves automatically to this browser as you type, and nothing is sent anywhere. Use <strong style="color:var(--text);">Export backup</strong> before you clear your browser data or switch devices, and <strong style="color:var(--text);">Import backup</strong> to bring it back.</p>
+    <p style="font-size:14px; color:var(--muted); line-height:1.7; margin-bottom:0;">This is your plan, not a performance review. Everything saves automatically to this browser as you type, and nothing is sent anywhere. Use <strong style="color:var(--text);">Export backup</strong> on your finished plan before you clear your browser data or switch devices.</p>
   </div>
 
   <div id="cpb">
@@ -485,8 +485,6 @@
       <div class="export-row">
         <button class="primary" onclick="printPlan()">🖨 Print my plan</button>
         <button class="edit" onclick="exportData()">⬇ Export backup</button>
-        <button class="edit" onclick="document.getElementById('importFile').click()">⬆ Import backup</button>
-        <input type="file" id="importFile" accept="application/json" style="display:none" onchange="importData(event)">
       </div>
     </div>
 
@@ -1264,31 +1262,6 @@ async function exportData(){
   a.click();
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
-}
-
-function importData(event){
-  const file = event.target.files && event.target.files[0];
-  if(!file) return;
-  const reader = new FileReader();
-  reader.onload = function(e){
-    try{
-      const parsed = JSON.parse(e.target.result);
-      if(!parsed.direction || !parsed.gaps || !parsed.roadmap){
-        alert("This doesn't look like a Career Path Builder backup file.");
-        return;
-      }
-      if(!confirm("This will replace your current plan with the one in this file. Continue?")) return;
-      plan = Object.assign(defaultPlan(), parsed);
-      currentStep = 0;
-      saveState();
-      renderAll();
-      alert("Backup imported successfully.");
-    }catch(err){
-      alert("Couldn't read that file. Make sure it's an unedited export from this tool.");
-    }
-  };
-  reader.readAsText(file);
-  event.target.value = "";
 }
 
 /* ---------- Boot ---------- */
