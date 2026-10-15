@@ -12,19 +12,19 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>The First 90 Days | The Playbook</title>
-<meta name="description" content="Setting expectations, running your first 1:1s, and earning credibility in your first 90 days, without overcorrecting.">
-<meta property="og:type" content="website">
+<title>First 90 Days as a New Manager: Free Week by Week Plan</title>
+<meta name="description" content="Your first 90 days as a new manager, week by week: what to do, what to say, what to avoid. Free 28 page workbook with scripts and worksheets.">
+<meta property="og:type" content="article">
 <meta property="og:site_name" content="First-Time Managers">
-<meta property="og:title" content="The First 90 Days | The Playbook">
-<meta property="og:description" content="Setting expectations, running your first 1:1s, and earning credibility in your first 90 days, without overcorrecting.">
+<meta property="og:title" content="First 90 Days as a New Manager: Free Week by Week Plan">
+<meta property="og:description" content="Your first 90 days as a new manager, week by week: what to do, what to say, what to avoid. Free 28 page workbook with scripts and worksheets.">
 <meta property="og:url" content="https://first-timemanagers.com/first-90-days.html">
 <meta property="og:image" content="https://first-timemanagers.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="The First 90 Days | The Playbook">
-<meta name="twitter:description" content="Setting expectations, running your first 1:1s, and earning credibility in your first 90 days, without overcorrecting.">
+<meta name="twitter:title" content="First 90 Days as a New Manager: Free Week by Week Plan">
+<meta name="twitter:description" content="Your first 90 days as a new manager, week by week: what to do, what to say, what to avoid. Free 28 page workbook with scripts and worksheets.">
 <meta name="twitter:image" content="https://first-timemanagers.com/og-image.png">
 <link rel="icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -32,20 +32,119 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="canonical" href="https://first-timemanagers.com/first-90-days.html">
 <link rel="stylesheet" href="css/style.css">
+<style>
+/* First 90 Days page: prefixed, uses tokens from css/style.css */
+main.article.f90{ max-width:860px; }
+main.article.f90 > p.lead{ font-size:20px; font-weight:300; color:#fff; line-height:1.65; margin-bottom:36px; }
+.f90 h2{ font-size:30px; font-weight:300; line-height:1.25; color:#fff; margin:0 0 18px; letter-spacing:-.005em; }
+.f90 h3{ font-size:17px; font-weight:600; color:#fff; margin:38px 0 12px; }
+.f90 p{ color:var(--text); }
+.f90 a{ color:var(--gold); }
+.f90 a:hover{ text-decoration:underline; }
+.f90-kick{ font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:var(--gold); font-weight:600; margin-bottom:12px; }
+
+/* download card */
+.f90-cta{ display:grid; grid-template-columns:1fr 220px; gap:40px; align-items:center; background:var(--bg2); border:1px solid rgba(227,166,62,.45); border-radius:3px; padding:38px; margin:0 0 28px; }
+.f90-cta h2{ font-size:28px; margin-bottom:14px; }
+.f90-cta p{ font-size:15px; line-height:1.7; color:var(--muted); margin:0 0 16px; }
+.f90-cta ul{ list-style:none; padding:0; margin:0 0 24px; }
+.f90-cta li{ font-size:14.5px; line-height:1.6; color:var(--text); padding:6px 0 6px 24px; position:relative; }
+.f90-cta li::before{ content:''; position:absolute; left:0; top:13px; width:10px; height:6px; border-left:2px solid var(--gold); border-bottom:2px solid var(--gold); transform:rotate(-45deg); }
+.f90-cover{ width:100%; height:auto; border-radius:2px; box-shadow:0 18px 40px rgba(0,0,0,.45); transform:rotate(2deg); }
+.f90-btns{ display:flex; gap:12px; flex-wrap:wrap; }
+.f90-primary{ background:var(--gold); color:#1B1B1A !important; border-color:var(--gold); font-weight:600; }
+.f90-primary:hover{ background:#f0b550; color:#1B1B1A !important; }
+.f90-fine{ font-size:12.5px !important; margin:14px 0 0 !important; }
+.f90-cta-mini{ grid-template-columns:1fr auto; padding:26px 30px; margin:48px 0 0; }
+.f90-cta-mini h3{ margin:0 0 8px; font-size:19px; font-weight:400; }
+.f90-cta-mini p{ margin:0; }
+.f90-cta-end{ grid-template-columns:1fr; margin-top:64px; text-align:left; }
+
+/* page previews */
+.f90-peek{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin:0 0 44px; }
+.f90-peek figure{ margin:0; }
+.f90-peek img{ width:100%; height:auto; display:block; border-radius:2px; box-shadow:0 10px 26px rgba(0,0,0,.4); }
+.f90-peek figcaption{ font-size:12px; color:var(--muted); margin-top:10px; letter-spacing:.02em; }
+
+.f90-glance{ margin:0 0 36px; padding:0 0 8px; }
+.f90-table{ width:100%; }
+.f90-table td:first-child{ white-space:normal; }
+.f90-glance .f90-table td:first-child, .f90-glance .f90-table td:last-child{ white-space:nowrap; }
+
+/* sticky jump bar */
+.f90-jump{ position:sticky; top:0; z-index:8; display:flex; gap:8px; overflow-x:auto; white-space:nowrap; padding:12px 0; margin:0 0 8px; background:var(--bg); border-bottom:1px solid rgba(237,235,228,.1); scrollbar-width:thin; }
+.f90-jump a{ flex-shrink:0; font-size:12.5px; color:var(--muted); border:1px solid rgba(237,235,228,.18); border-radius:20px; padding:6px 13px; }
+.f90-jump a:hover, .f90-jump a.on{ color:var(--gold); border-color:var(--gold); text-decoration:none; }
+
+/* months and weeks */
+.f90-month{ display:flex; gap:24px; align-items:baseline; margin:72px 0 0; padding:26px 28px; background:linear-gradient(155deg,#2a1a1a 0%,#3a1e1e 100%); border-left:3px solid var(--richmond); }
+.f90-month-n{ flex-shrink:0; font-size:11px; text-transform:uppercase; letter-spacing:.12em; color:#e6a0a0; font-weight:600; }
+.f90-month-t{ font-size:15px; line-height:1.7; color:var(--muted); }
+.f90-month-t strong{ color:#fff; font-weight:600; margin-right:6px; }
+.f90-week{ padding:60px 0 8px; scroll-margin-top:64px; border-top:1px solid rgba(237,235,228,.08); margin-top:12px; }
+.f90-month + .f90-week{ border-top:none; }
+.f90-days{ font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:var(--richmond); font-weight:600; margin-bottom:12px; }
+.f90-week > p.lead{ font-size:18px; font-weight:300; color:#fff; line-height:1.6; margin-bottom:26px; }
+
+/* checklists */
+.f90-check{ list-style:none; padding:0; margin:0 0 30px; }
+.f90-check li{ display:grid; grid-template-columns:28px 1fr auto; gap:0 10px; align-items:start; padding:15px 0; border-top:1px solid rgba(237,235,228,.1); }
+.f90-check li:last-child{ border-bottom:1px solid rgba(237,235,228,.1); }
+.f90-check li::before{ content:''; width:16px; height:16px; border:1.5px solid var(--gold); border-radius:3px; margin-top:3px; }
+.f90-check .t{ display:block; font-size:15.5px; font-weight:600; color:#fff; line-height:1.45; }
+.f90-check .d{ display:block; font-size:14.5px; line-height:1.65; color:var(--muted); margin-top:3px; }
+.f90-check .m{ font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--gold); white-space:nowrap; padding-top:5px; font-weight:600; }
+.f90-list{ margin:0 0 26px; padding-left:20px; }
+.f90-list li{ font-size:15.5px; line-height:1.7; color:var(--text); margin-bottom:8px; }
+.f90-list li::marker{ color:var(--gold); }
+
+/* scripts and stories reuse .try-block */
+.f90-try{ margin:0 0 24px; }
+.f90-try p{ margin-bottom:0 !important; }
+.f90-try p + p{ margin-top:12px; }
+.f90-story p{ font-style:italic; color:#d8d5cb; }
+.f90-ref{ font-size:13.5px !important; line-height:1.6 !important; color:var(--muted) !important; margin:8px 0 28px !important; padding:12px 16px; border:1px dashed rgba(227,166,62,.4); border-radius:2px; }
+.f90-ref span{ font-size:11px; text-transform:uppercase; letter-spacing:.1em; color:var(--gold); font-weight:600; margin-right:8px; }
+.f90 table.f90-table td{ font-size:14px; }
+
+/* sticky download bar */
+.f90-sticky{ position:fixed; left:50%; bottom:18px; transform:translate(-50%,140%); z-index:30; background:var(--gold); color:#1B1B1A !important; font-size:13.5px; font-weight:600; padding:13px 22px; border-radius:30px; box-shadow:0 10px 30px rgba(0,0,0,.5); transition:transform .25s ease; white-space:nowrap; }
+.f90-sticky.show{ transform:translate(-50%,0); }
+.f90-sticky:hover{ background:#f0b550; text-decoration:none !important; }
+
+@media (max-width:900px){
+  main.article.f90{ padding:36px 22px 40px; }
+  .f90 h2{ font-size:25px; }
+  .f90-cta{ grid-template-columns:1fr; padding:26px 22px; gap:26px; }
+  .f90-cover{ max-width:210px; margin:0 auto; order:-1; transform:none; }
+  .f90-cta-mini{ grid-template-columns:1fr; }
+  .f90-peek{ grid-template-columns:repeat(3,72%); overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:8px; }
+  .f90-peek figure{ scroll-snap-align:start; }
+  .f90-month{ flex-direction:column; gap:8px; padding:22px 20px; margin-top:56px; }
+  .f90-check li{ grid-template-columns:28px 1fr; }
+  .f90-check .m{ grid-column:2; padding-top:6px; }
+  .f90-sticky{ width:calc(100% - 28px); text-align:center; white-space:normal; border-radius:10px; bottom:12px; }
+}
+@media print{ .f90-sticky, .f90-jump, .f90-cta-mini{ display:none !important; } }
+
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "The First 90 Days",
-  "description": "Setting expectations, running your first 1:1s, and earning credibility in your first 90 days, without overcorrecting.",
+  "headline": "The First 90 Days as a New Manager: A Week by Week Plan",
+  "description": "Your first 90 days as a new manager, week by week: what to do, what to say, what to avoid. Free 28 page workbook with scripts and worksheets.",
   "url": "https://first-timemanagers.com/first-90-days.html",
+  "image": "https://first-timemanagers.com/img/first-90-days-workbook-cover.jpg",
   "datePublished": "2024-01-01",
-  "dateModified": "2026-09-02",
+  "dateModified": "2026-10-14",
   "author": {
     "@type": "Person",
     "name": "Michael Henrie",
     "url": "https://first-timemanagers.com/about.html",
-    "sameAs": ["https://www.linkedin.com/in/michael-henrie"]
+    "sameAs": [
+      "https://www.linkedin.com/in/michael-henrie"
+    ]
   },
   "publisher": {
     "@type": "Organization",
@@ -94,10 +193,50 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "The First 90 Days",
+      "name": "What should a new manager do in the first 90 days?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Setting expectations, running your first 1:1s, and earning credibility without overcorrecting."
+        "text": "Spend month 1 listening: meet everyone one on one, learn what your boss needs, and change almost nothing. In month 2, write down what good looks like for each person, build a weekly one on one, and fix one visible thing. In month 3, hand off real work, document what only one person knows, and review the 90 days with your boss."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What should I do in my first week as a new manager?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tell the team who you are and how you work, meet every person one on one, sit in on real work, and write down what you hear each day. Do not change anything yet. The first week decides whether people think you will listen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a 30 60 90 day plan for a new manager?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is the same plan in three stages. Days 1 to 30 are for learning: your team, your boss, your peers. Days 31 to 60 are for clarity: expectations, one on ones, priorities. Days 61 to 90 are for making it last: delegation, written processes, and a review with your boss. The workbook lays it out week by week."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is the first 90 days different if I was promoted from my own team?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You skip the introductions but you inherit harder ones. Your friends are now your team, so name the shift out loud once, talk early to anyone who wanted the job, and watch where your time and information go. Most of the plan still applies."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I run my first one on one as a new manager?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Keep it light and let them talk. Ask what made them take the role, how they like to get feedback, what they would change about how the team works, and what would make this a good year. Do not make promises yet. Write down what you heard afterward."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the First 90 Days workbook free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. It is a 28 page Word document with a page for each week, plus the scripts and worksheets. You can tick the boxes and type into the tables. No signup is needed."
       }
     }
   ]
@@ -133,103 +272,254 @@
 <div class="crumb" data-pagefind-ignore><a href="index.html">Home</a> / <a href="playbook.html">The Playbook</a> / The First 90 Days</div>
 
 <div class="content-hero on-red cv2">
-  <div class="content-tag">Stage 02 · Day 90</div>
-  <h1>The First 90 Days</h1>
+  <div class="content-tag">Playbook 01 · Days 1 to 90</div>
+  <h1>The First 90 Days as a New Manager</h1>
 </div>
 
-<main class="article">
-  <p class="intro">Setting expectations, running your first 1:1s, and earning credibility without overcorrecting.</p>
+<main class="article f90">
+  <p class="lead">Your first 90 days come down to three jobs. In month 1 you listen. In month 2 you make expectations clear. In month 3 you hand off real work and review it all with your boss. This page walks through all twelve weeks, and the free workbook has every script and worksheet in one Word file.</p>
 
-  <div class="template-actions">
-    <a class="download-btn" href="downloads/first-90-days-checklist.docx" download>Download the First 90 Days Checklist (Word) →</a>
+  <section class="f90-cta" id="download">
+    <div class="f90-cta-text">
+      <div class="f90-kick">Free download · Word</div>
+      <h2>The First 90 Days workbook</h2>
+      <p>28 pages. One page for each week, with the exact things to do, say and write down. Tick the boxes and type straight into the tables, in Word.</p>
+      <ul>
+        <li>12 weekly plans, from Day 1 to the 90 day review</li>
+        <li>20 plus scripts and worksheets to fill in</li>
+        <li>Split paths for promoted from the team and new to the team</li>
+        <li>A "going wrong or normal?" check for each month</li>
+      </ul>
+      <div class="f90-btns">
+        <a class="download-btn f90-primary" href="downloads/first-90-days-playbook.docx" download data-f90="download_hero_word">Download the workbook (Word) →</a>
+        <a class="download-btn" href="downloads/first-90-days-playbook.pdf" download data-f90="download_hero_pdf">Print version (PDF) →</a>
+      </div>
+      <p class="f90-fine">Free. No signup.</p>
+    </div>
+    <img class="f90-cover" src="img/first-90-days-workbook-cover.jpg" width="380" height="492" alt="Cover of The First 90 Days workbook for new managers" loading="eager">
+  </section>
+
+  <div class="f90-peek" aria-label="Pages from the workbook">
+    <figure><img src="img/first-90-days-week-1-page.jpg" width="380" height="492" alt="Week 1 page of the workbook with a checklist and a story" loading="lazy"><figcaption>Week 1 plan</figcaption></figure>
+    <figure><img src="img/first-90-days-one-on-one-tracker.jpg" width="380" height="492" alt="One on one question list and a team tracker table to fill in" loading="lazy"><figcaption>One on one tracker</figcaption></figure>
+    <figure><img src="img/first-90-days-handoff-brief.jpg" width="380" height="492" alt="Week 9 handoff brief with a fill in table and a script" loading="lazy"><figcaption>Week 9 handoff brief</figcaption></figure>
   </div>
 
-  <div class="moves">
-    <a class="move" href="set-expectations-explicitly.html">
-      <span class="move-num">01</span>
-      <span class="move-body">
-        <span class="move-title">Set expectations explicitly, don't assume they're shared</span>
-        <span class="move-text">Write down what "good" looks like for each person's role, and check it against what they think it is. The gap between those two lists is where most early friction comes from.</span>
-      </span>
-      <span class="move-arrow">Read →</span>
-    </a>
-    <a class="move" href="build-a-real-1-on-1-rhythm.html">
-      <span class="move-num">02</span>
-      <span class="move-body">
-        <span class="move-title">Build a real 1:1 rhythm</span>
-        <span class="move-text">Same time, same structure, every week. The rhythm itself builds trust before any single conversation does, cancelling early trains people to expect it'll keep happening.</span>
-      </span>
-      <span class="move-arrow">Read →</span>
-    </a>
-    <a class="move" href="make-one-visible-improvement.html">
-      <span class="move-num">03</span>
-      <span class="move-body">
-        <span class="move-title">Make one visible improvement, not ten invisible ones</span>
-        <span class="move-text">Pick a single small thing your team has been annoyed by and fix it fast. It buys more credibility than a strategy document nobody reads.</span>
-      </span>
-      <span class="move-arrow">Read →</span>
-    </a>
-    <a class="move" href="ask-for-feedback-on-yourself.html">
-      <span class="move-num">04</span>
-      <span class="move-body">
-        <span class="move-title">Ask for feedback on yourself before day 90 ends</span>
-        <span class="move-text">You're setting the norm that feedback runs in both directions from the start. Wait too long and asking starts to feel like an event instead of a habit.</span>
-      </span>
-      <span class="move-arrow">Read →</span>
-    </a>
-    <a class="move" href="focus-on-what-matters.html">
-      <span class="move-num">05</span>
-      <span class="move-body">
-        <span class="move-title">Cut the list to what actually matters</span>
-        <span class="move-text">A team with ten priorities has zero priorities. Naming the one or two things that matter enough to say no to everything else is the job, not doing more.</span>
-      </span>
-      <span class="move-arrow">Read →</span>
-    </a>
-    <a class="move" href="map-who-has-influence.html">
-      <span class="move-num">06</span>
-      <span class="move-body">
-        <span class="move-title">Map who actually has influence beyond your team</span>
-        <span class="move-text">Identify the peer managers and stakeholders you'll depend on before you need something from them. Introducing yourself in a moment of urgency is too late.</span>
-      </span>
-      <span class="move-arrow">Read →</span>
-    </a>
-    <a class="move" href="learn-the-metrics-that-matter.html">
-      <span class="move-num">07</span>
-      <span class="move-body">
-        <span class="move-title">Learn the metrics your manager is actually watching</span>
-        <span class="move-text">Ask directly what numbers get reported up, and where your team stands on them. You'll be judged against these whether or not you agree they're right yet.</span>
-      </span>
-      <span class="move-arrow">Read →</span>
-    </a>
-    <a class="move" href="delegate-one-real-thing.html">
-      <span class="move-num">08</span>
-      <span class="move-body">
-        <span class="move-title">Delegate one thing you're tempted to keep doing yourself</span>
-        <span class="move-text">The instinct to stay hands-on with the work you're personally good at is common and costly. Hand off one real thing, deliberately, before day 90.</span>
-      </span>
-      <span class="move-arrow">Read →</span>
-    </a>
-    <a class="move" href="sops-that-work.html">
-      <span class="move-num">09</span>
-      <span class="move-body">
-        <span class="move-title">Start rolling out SOPs, not just doing the work</span>
-        <span class="move-text">Have the team list out what they each do that nobody's written down, assign it out, set a real deadline, and use one shared template. It builds organization now and shows other teams what you actually do.</span>
-      </span>
-      <span class="move-arrow">Read →</span>
-    </a>
+  <div class="f90-glance">
+    <div class="f90-kick">The 90 days at a glance</div>
+    <table class="move-table f90-table"><thead><tr><th>Month</th><th>The job</th><th>Weeks</th></tr></thead><tbody>
+      <tr><td>Month 1</td><td>Listen, meet everyone, line up with your boss. Change almost nothing.</td><td><a href="#week-1">1 to 4</a></td></tr>
+      <tr><td>Month 2</td><td>Say what good looks like, build a real one on one rhythm, cut the list, fix one thing.</td><td><a href="#week-5">5 to 8</a></td></tr>
+      <tr><td>Month 3</td><td>Hand off real work, write things down, and review the 90 days with your boss.</td><td><a href="#week-9">9 to 12</a></td></tr>
+    </tbody></table>
   </div>
+
+  <nav class="f90-jump" aria-label="Jump to a week" data-pagefind-ignore><a href="#day-1">Day 1</a><a href="#week-1">Week 1</a><a href="#week-2">Week 2</a><a href="#week-3">Week 3</a><a href="#week-4">Week 4</a><a href="#week-5">Week 5</a><a href="#week-6">Week 6</a><a href="#week-7">Week 7</a><a href="#week-8">Week 8</a><a href="#week-9">Week 9</a><a href="#week-10">Week 10</a><a href="#week-11">Week 11</a><a href="#week-12">Week 12</a><a href="#faq">FAQ</a></nav>
+
+<section class="f90-week" id="day-1">
+<div class="f90-days">Day 1</div>
+<h2>Day 1 as a new manager: walk in curious</h2>
+<p class="lead">Nobody expects you to fix anything on day one. Your team is deciding whether you are easy to talk to, so today is for names, questions, and getting a one on one on every calendar.</p>
+<ul class="f90-check">
+<li><span class="b"><span class="t">Learn every name and what each person does</span><span class="d">Check how each name is pronounced. People notice when you try.</span></span><span class="m">20 min</span></li>
+<li><span class="b"><span class="t">Pick one sentence about why you are glad to be here</span><span class="d">You will say it about twenty times. Make it true.</span></span><span class="m">5 min</span></li>
+<li><span class="b"><span class="t">Say hello to each person before any meeting</span><span class="d">Ask what they are working on, and ask one thing you do not know. Do not offer an opinion yet.</span></span><span class="m">30 min</span></li>
+<li><span class="b"><span class="t">Put a one on one on the calendar with every person this week</span><span class="d">Send the invites tonight so they are waiting tomorrow.</span></span><span class="m">10 min</span></li>
+<li><span class="b"><span class="t">Write three things that surprised you</span><span class="d">By week 3 you will have stopped noticing them.</span></span><span class="m">5 min</span></li>
+<li><span class="b"><span class="t">Ask your boss what you should be careful about this week</span><span class="d">A short answer is fine. You are learning how they think.</span></span><span class="m">5 min</span></li>
+</ul><p><strong>If you were promoted from the team:</strong> everyone already knows you, so the question is what changes. Skip the speech. Say hello the way you always have, then book the one on ones.</p><p><strong>If you came in from outside:</strong> nobody has a picture of you yet. Say who you are in two sentences and spend the rest of the day asking what they are working on.</p>
+<p class="f90-ref"><span>In the workbook</span> page 5, your Day 1 checklist. <a href="downloads/first-90-days-playbook.docx" download data-f90="download_inline">Download it free →</a></p>
+</section>
+<div class="f90-month"><div class="f90-month-n">Month 1</div><div class="f90-month-t"><strong>The first impression.</strong> People start forming their read on you the minute you walk in. This month you listen, line up with your boss, and meet the people your team depends on. Change almost nothing.</div></div>
+<section class="f90-week" id="week-1">
+<div class="f90-days">Week 1 · Days 1 to 7</div>
+<h2>Week 1: listen and change nothing</h2>
+<p class="lead">Every part of you wants to prove you deserved this. Hold off. Everyone gets a real conversation with you, and nobody gets surprised by a change.</p>
+<ul class="f90-check">
+<li><span class="b"><span class="t">Tell the team who you are and how you work</span><span class="d">One short group meeting. The script is below.</span></span><span class="m">30 min</span></li>
+<li><span class="b"><span class="t">Meet every person one on one</span><span class="d">Each person gets their own half hour. Book them all on Monday. Whoever you meet last will notice.</span></span><span class="m">30 to 45 min</span></li>
+<li><span class="b"><span class="t">Sit in on real work</span><span class="d">Ask: is there a step everyone skips? A workaround is a complaint nobody has filed yet.</span></span><span class="m">2 hours total</span></li>
+<li><span class="b"><span class="t">Write down what you hear, every day</span><span class="d">What people told you and what you have confirmed are two different lists.</span></span><span class="m">10 min</span></li>
+</ul><div class="try-block f90-try f90-story"><div class="try-label">A story from Mike</div><p>My first leadership job, I wanted to impress my boss, so I came in hot. Never missing another deadline. A six month project done in five. I had no idea how.</p><p>I burned trust in a week. It took months to learn that one person needed a push, one needed space, one wanted help, and one wanted me to leave him alone. I had treated them all the same.</p></div><h3>What to say in your first team meeting</h3><div class="try-block f90-try"><div class="try-label">If you came in from outside</div><p>Hi everyone, I am ________, your new ________. I have spent ___ years working on ________, and I have a lot to learn about how things work here.</p><p>My priority right now is not changing things. It is getting to know each of you. I would love to hear your role, what you like working on, and anything I should know.</p></div><div class="try-block f90-try"><div class="try-label">If you were promoted from the team</div><p>I know this is a little different now that I am your manager. Here is what I do not want to change, and here is what will be different.</p></div><p>Notice who talks first and who stays quiet. Do not comment on it yet. If someone on the team also wanted your job, have that one on one first.</p><h3>Four questions for your first one on ones</h3><ul class="f90-list"><li>What made you take this role in the first place?</li><li>What is the best way for me to give you feedback? (Find out now, not the day you need it.)</li><li>If you could change one thing about how we work, what would it be?</li><li>What would make this a good year for you? (Ask, then stay quiet.)</li></ul><p>&ldquo;I heard it&rdquo; is an answer. &ldquo;I will fix it&rdquo; is a promise. Do not make promises yet.</p><h3>How your team learns about you</h3><p>They will not say what they think yet. They will show it in how they act around you, and they are watching how you act first.</p><table class="move-table f90-table"><thead><tr><th>What they see you do</th><th>What they take from it</th></tr></thead><tbody><tr><td>Who you talk to first</td><td>Who you trust, and who does not count.</td></tr><tr><td>Whether you ask before you change something</td><td>Whether their experience matters to you.</td></tr><tr><td>How you react to the first bit of bad news</td><td>Whether it is safe to bring you the next one.</td></tr><tr><td>Whether you do the small thing you said you would do</td><td>Whether to believe the big things.</td></tr></tbody></table><h3>If you were promoted: your friends are now your team</h3><div class="try-block f90-try f90-story"><div class="try-label">A story from Mike</div><p>A friend of mine was the most liked of twelve project managers. I promoted her to run the group, and she kept going to lunch with everyone like always.</p><p>It could not last. Her job now was to hit numbers, which meant pushing people. If she went soft, her team would pay for it.</p><p>Then she stopped getting invited to lunch, and found a team Slack channel she was not in. I told her this was normal. People need somewhere to vent that does not include the boss. Do not force your way in. She never invited me to every lunch either.</p></div><ul class="f90-list"><li>Say the shift out loud, once. Use the &quot;what will be different&quot; line above.</li><li>Talk early to anyone who wanted your job. If you wait, it becomes a story the team tells without you.</li><li>Watch where your time and information go. If your old lunch crowd hears things first, everyone notices.</li></ul><h3>Everybody wants something different</h3><p>Nobody teaches this, and it changes how you manage every person.</p><div class="try-block f90-try f90-story"><div class="try-label">A story from Mike</div><p>I have always been driven by money and title, so I assumed everyone was. Some of my best people wanted to leave at five and never work a weekend. They wanted stable. I had been managing them like they wanted my life instead of theirs.</p></div><table class="move-table f90-table"><thead><tr><th>They want</th><th>What helps</th><th>What backfires</th></tr></thead><tbody><tr><td>Money and title</td><td>A clear path with real dates.</td><td>Vague promises about someday.</td></tr><tr><td>Stability</td><td>Predictable hours, early notice, a protected weekend.</td><td>A 4:45 request. Reading limits as low ambition.</td></tr><tr><td>Learning</td><td>New problems, someone to learn from.</td><td>The same work forever.</td></tr><tr><td>Recognition</td><td>Specific praise, sometimes in public.</td><td>A generic &quot;great job.&quot;</td></tr><tr><td>Autonomy</td><td>A clear outcome, then room.</td><td>Hovering and status checks.</td></tr><tr><td>Belonging</td><td>Time with the team, being asked.</td><td>Weeks without a real conversation.</td></tr></tbody></table><p>Most people are a mix. Use this to notice, not to label. And never use what someone tells you as leverage later.</p><h3>If the team already seems to dislike you</h3><ul class="f90-list"><li>Check whether it is one person or the whole room. One cold person on a team of eight is a person. Four is a pattern.</li><li>Find out what happened before you arrived: a reorg, a bad manager, a colleague passed over.</li><li>Say it once, privately: &quot;I get the sense this hasn&#x27;t been easy. What would I need to do for it to feel better?&quot; Then listen.</li><li>Keep one small promise, where people can see it. Trust comes back in small deliveries, not speeches.</li></ul><h3>Check yourself</h3><p><strong>Going wrong:</strong> you have said "we are going to" more than "I am learning," or you set a goal without asking what is realistic. <strong>Normal:</strong> feeling like you do not know enough, and quiet, polite one on ones. Worry only if you have stopped asking.</p>
+<p class="f90-ref"><span>In the workbook</span> pages 6 to 11: the week 1 plan, how your team learns about you, your intro script, the one on one tracker, the promoted page and the motivation table. <a href="downloads/first-90-days-playbook.docx" download data-f90="download_inline">Download it free →</a></p>
+</section>
+<section class="f90-week" id="week-2">
+<div class="f90-days">Week 2 · Days 8 to 14</div>
+<h2>Week 2: find out what your boss needs</h2>
+<p class="lead">One boss lives in the metrics. Another in the budget. Another only cares whether customers are happy. Do not assume yours wants what your last one did.</p>
+<ul class="f90-check">
+<li><span class="b"><span class="t">Have the day 90 conversation</span><span class="d">Write your own answer first and bring it.</span></span><span class="m">45 min</span></li>
+<li><span class="b"><span class="t">Email back what you heard, the same day</span><span class="d">Any mismatch shows up now instead of in month five.</span></span><span class="m">15 min</span></li>
+<li><span class="b"><span class="t">Get the numbers your boss reports upward</span><span class="d">And where your team stands on each. No baseline is a finding.</span></span><span class="m">30 min</span></li>
+<li><span class="b"><span class="t">Set a standing weekly one on one with your boss</span><span class="d">Bring what moved, what is at risk, and what you need.</span></span><span class="m">5 min</span></li>
+</ul><div class="try-block f90-try"><div class="try-label">Ask this</div><p>At the end of 90 days, what would make you confident I am succeeding? What must not slip while I am learning? Which decisions are mine, and which should I bring to you first?</p></div><p>If you hear "just get up to speed," ask what that would look like on a Friday afternoon.</p><div class="try-block f90-try"><div class="try-label">Then send this</div><p>Thanks for today. Here is what I heard: success at day 90 looks like ________. What cannot slip is ________. I will decide ________ on my own and bring ________ to you. If I have got any of it wrong, tell me this week.</p></div><h3>Learn how your boss works</h3><p>They will tell you in pieces over the first month. Write each piece down while it is fresh: how they like to get news, how often they want to hear from you, what makes them nervous, what a good update sounds like to them, and how they react to bad news the first time you bring it.</p>
+<p class="f90-ref"><span>In the workbook</span> pages 12 and 13, the boss conversation scripts and the worksheet for how your boss works. <a href="downloads/first-90-days-playbook.docx" download data-f90="download_inline">Download it free →</a></p>
+</section>
+<section class="f90-week" id="week-3">
+<div class="f90-days">Week 3 · Days 15 to 21</div>
+<h2>Week 3: meet your peers before you need them</h2>
+<p class="lead">What slows new managers down in month two is usually someone outside the team they have not met. Meet them now, while you need nothing.</p>
+<ul class="f90-check">
+<li><span class="b"><span class="t">List the three to five people your team depends on most</span><span class="d">Who hands your team work, and who receives it.</span></span><span class="m">15 min</span></li>
+<li><span class="b"><span class="t">Meet each one, with nothing to ask for</span><span class="d">Ask what your team does that matters most to theirs, and what you should tell them earlier.</span></span><span class="m">20 min each</span></li>
+<li><span class="b"><span class="t">Find who your predecessor always looped in</span><span class="d">Usually someone in finance, legal, or ops.</span></span></li>
+<li><span class="b"><span class="t">Pick one peer you can be honest with</span><span class="d">Someone who will tell you how things really work.</span></span></li>
+</ul><h3>It gets lonely</h3><p>Around now you notice you cannot vent to your team like you used to, and the other managers are not really your peers yet. You are between groups for a while. It is normal and it ends, faster if you have somewhere to put it: a manager outside your team, someone from a past job, and your honest peer.</p><p>Do not vent to your team about your boss or the company. It feels like honesty. It lands like a weight.</p><p><strong>Going wrong:</strong> putting off a conversation to stay popular, or bending a standard for a friend. <strong>Normal:</strong> not being invited to lunch anymore, or someone cold if they wanted your job. Talk to them early.</p>
+<p class="f90-ref"><span>In the workbook</span> pages 14 and 15, the week 3 plan and the map of people you depend on. <a href="downloads/first-90-days-playbook.docx" download data-f90="download_inline">Download it free →</a></p>
+</section>
+<section class="f90-week" id="week-4">
+<div class="f90-days">Week 4 · Days 22 to 28</div>
+<h2>Week 4: write the month 1 readout</h2>
+<p class="lead">One page on what you learned, in your boss&#x27;s hands before they ask for it.</p>
+<ul class="f90-check">
+<li><span class="b"><span class="t">Close every &quot;I do not know yet&quot;</span><span class="d">Answer it, or give a new date.</span></span></li>
+<li><span class="b"><span class="t">Write the readout and walk your boss through it</span><span class="d">If it takes more than fifteen minutes to read, cut it.</span></span><span class="m">45 min</span></li>
+<li><span class="b"><span class="t">Tell the team one thing you heard and one thing you will do</span><span class="d">Small is fine. They are watching for follow through.</span></span><span class="m">10 min</span></li>
+</ul><h3>What goes on the readout</h3><ul class="f90-list"><li>What I have learned: the three things that matter most.</li><li>What is working that I will protect.</li><li>What I am not changing yet, and why.</li><li>What I will do in month 2: three things at most.</li><li>What I need from you.</li></ul><p><strong>Month 1 is done when</strong> you have had a real one on one with everyone, you and your boss agree in writing on what success looks like at day 90, you have met the people your team depends on, and you have told the team one thing you heard and one thing you will do.</p>
+<p class="f90-ref"><span>In the workbook</span> page 16, the readout worksheet and the month 1 checklist. <a href="downloads/first-90-days-playbook.docx" download data-f90="download_inline">Download it free →</a></p>
+</section>
+<aside class="f90-cta f90-cta-mini">
+<div><div class="f90-kick">Free download</div><h3>Keep this open in a Word doc</h3><p>Everything on this page, plus every worksheet, is in the free workbook. Tick the boxes and type straight into the tables.</p></div>
+<div class="f90-btns"><a class="download-btn f90-primary" href="downloads/first-90-days-playbook.docx" download data-f90="download_mid_a">Download the workbook (Word) →</a></div>
+</aside>
+<div class="f90-month"><div class="f90-month-n">Month 2</div><div class="f90-month-t"><strong>Make it clear.</strong> You have listened for a month. Now turn it into clarity people can feel.</div></div>
+<section class="f90-week" id="week-5">
+<div class="f90-days">Week 5 · Days 29 to 35</div>
+<h2>Week 5: say what good looks like</h2>
+<p class="lead">Most early friction is two people with different definitions of a good job, each assuming the other knows.</p>
+<ul class="f90-check">
+<li><span class="b"><span class="t">Write what good looks like for each role</span><span class="d">The outputs they own, the quality bar, and how they flag problems.</span></span><span class="m">30 min a role</span></li>
+<li><span class="b"><span class="t">Ask each person to write their own version first</span><span class="d">If they see yours first, they will just agree with it.</span></span><span class="m">5 min</span></li>
+<li><span class="b"><span class="t">Book 45 minutes with each person for next week</span><span class="d">Tell them what you are asking for so they can come ready.</span></span><span class="m">10 min</span></li>
+</ul><div class="try-block f90-try"><div class="try-label">Ask each person to write this first</div><p>Three lines: what you think this job is for, what a great month looks like, and what gets in your way.</p></div>
+<p class="f90-ref"><span>In the workbook</span> page 18, the &quot;what good looks like&quot; worksheet. <a href="downloads/first-90-days-playbook.docx" download data-f90="download_inline">Download it free →</a></p>
+</section>
+<section class="f90-week" id="week-6">
+<div class="f90-days">Week 6 · Days 36 to 42</div>
+<h2>Week 6: compare the two lists</h2>
+<p class="lead">The gap between what you wrote and what they wrote is the conversation. Do not rush to close it.</p>
+<ul class="f90-check">
+<li><span class="b"><span class="t">Compare the two lists side by side in a one on one</span><span class="d">Start with where you agree.</span></span><span class="m">45 min</span></li>
+<li><span class="b"><span class="t">Write down what you agreed</span><span class="d">Send it to them the same day.</span></span><span class="m">10 min</span></li>
+<li><span class="b"><span class="t">Book a recheck</span><span class="d">Four weeks out. Expectations drift if nobody looks.</span></span><span class="m">5 min</span></li>
+</ul><h3>The three usual gaps</h3><table class="move-table f90-table"><thead><tr><th>Gap</th><th>Sounds like</th><th>How to close it</th></tr></thead><tbody><tr><td>Priority</td><td>They are busy on something you see as low value.</td><td>Name which work actually moves the business.</td></tr><tr><td>Quality</td><td>Their &quot;done&quot; is your rough draft.</td><td>Show a real example of finished.</td></tr><tr><td>Autonomy</td><td>They think good means asking first. You think it means deciding.</td><td>Say exactly which decisions are theirs.</td></tr></tbody></table><div class="try-block f90-try"><div class="try-label">Say this</div><p>I want us to have the same picture of success. Here is what I think this role needs to deliver. How does that compare with yours? Where are we not lined up yet?</p></div><p><strong>Going wrong:</strong> saying "be more proactive" without saying what you mean, or holding someone to a standard you never said out loud. <strong>Normal:</strong> they push back on your list. Better now than at review time.</p>
+<p class="f90-ref"><span>In the workbook</span> page 19, the comparison script and the three gaps. <a href="downloads/first-90-days-playbook.docx" download data-f90="download_inline">Download it free →</a></p>
+</section>
+<section class="f90-week" id="week-7">
+<div class="f90-days">Week 7 · Days 43 to 49</div>
+<h2>Week 7: make one on ones do real work</h2>
+<p class="lead">A one on one that gets moved twice teaches people it is optional. Make it the most reliable meeting on your calendar.</p>
+<ul class="f90-check">
+<li><span class="b"><span class="t">Lock the one on one rhythm</span><span class="d">Same time weekly. One running shared doc. They add to it during the week.</span></span></li>
+<li><span class="b"><span class="t">Let them own the first half</span><span class="d">Their agenda first. Status updates belong in a tracker, not here.</span></span></li>
+<li><span class="b"><span class="t">Ask for feedback on yourself, specifically</span><span class="d">&quot;What is one thing I could do differently in our one on ones?&quot;</span></span><span class="m">5 min each</span></li>
+<li><span class="b"><span class="t">Change one small thing because of what you heard, and say so</span><span class="d">Silence after asking teaches people not to bother.</span></span></li>
+</ul><h3>The 30 minute one on one</h3><table class="move-table f90-table"><thead><tr><th>Time</th><th>What happens</th></tr></thead><tbody><tr><td>5 min</td><td>Check in. &quot;What is top of mind? Doesn&#x27;t have to be work.&quot;</td></tr><tr><td>10 min</td><td>Their agenda. Whatever they added to the doc.</td></tr><tr><td>10 min</td><td>Follow ups. &quot;Last time you mentioned this. Where did it land?&quot; and &quot;What is in your way that I could remove?&quot;</td></tr><tr><td>5 min</td><td>Close. Who owns what, by when.</td></tr></tbody></table><p>"What is in your way that I could remove?" is the question most one on ones skip.</p>
+<p class="f90-ref"><span>In the workbook</span> page 20, the 30 minute agenda. <a href="downloads/first-90-days-playbook.docx" download data-f90="download_inline">Download it free →</a></p>
+</section>
+<section class="f90-week" id="week-8">
+<div class="f90-days">Week 8 · Days 50 to 56</div>
+<h2>Week 8: cut the list and fix one thing</h2>
+<p class="lead">A team with ten priorities has none. And one small fix people can feel beats a strategy nobody reads.</p>
+<ul class="f90-check">
+<li><span class="b"><span class="t">Ask three people, separately, what the top priority is</span><span class="d">Three different answers means a focus problem.</span></span><span class="m">15 min</span></li>
+<li><span class="b"><span class="t">Name the one or two things that matter most, out loud</span><span class="d">Say what is waiting, too. Not doing something on purpose is a decision.</span></span></li>
+<li><span class="b"><span class="t">Pick one annoyance from month 1 and fix it fast</span><span class="d">Choose by how fast people will feel it, not how impressive it looks.</span></span></li>
+<li><span class="b"><span class="t">Announce it before you do it</span><span class="d">A quiet fix gets a fraction of the credit for the same work.</span></span></li>
+</ul><div class="try-block f90-try"><div class="try-label">When something new lands on the team</div><p>We can take this on, but something else moves. Right now it is ________ and ________. Which matters more, and what are we willing to delay?</p></div><p><strong>Month 2 is done when</strong> every person and you agree on what good looks like in writing, one on ones happen every week and they own the agenda, you asked for feedback on yourself and changed something, the team can name its top one or two priorities, and one fix is announced and underway.</p>
+<p class="f90-ref"><span>In the workbook</span> page 21, the priority script and the month 2 checklist. <a href="downloads/first-90-days-playbook.docx" download data-f90="download_inline">Download it free →</a></p>
+</section>
+<aside class="f90-cta f90-cta-mini">
+<div><div class="f90-kick">Free download</div><h3>You are about halfway. Take the workbook with you</h3><p>The expectations worksheet, the one on one agenda and the handoff brief are ready to fill in. They are in the free download.</p></div>
+<div class="f90-btns"><a class="download-btn f90-primary" href="downloads/first-90-days-playbook.docx" download data-f90="download_mid_b">Download the workbook (Word) →</a></div>
+</aside>
+<div class="f90-month"><div class="f90-month-n">Month 3</div><div class="f90-month-t"><strong>Make it last.</strong> Stop being the answer to everything. Hand off real work, write things down, and show your boss what changed.</div></div>
+<section class="f90-week" id="week-9">
+<div class="f90-days">Week 9 · Days 57 to 63</div>
+<h2>Week 9: hand off something real</h2>
+<p class="lead">Staying in your old work feels safe. Every hour there is an hour not spent on the new job, and your team notices which one you show up for.</p>
+<ul class="f90-check">
+<li><span class="b"><span class="t">Pick one thing you are still doing that someone else should own</span><span class="d">Something that matters. A token task does not count.</span></span></li>
+<li><span class="b"><span class="t">Hand it off with the why, and the limits</span><span class="d">Use the brief below.</span></span><span class="m">30 min</span></li>
+<li><span class="b"><span class="t">Let the first version be worse than yours</span><span class="d">Rescue it only if something is truly at risk.</span></span></li>
+</ul><h3>The handoff brief</h3><ul class="f90-list"><li>The outcome, and why it matters.</li><li>What done looks like: quality and timing.</li><li>What they decide on their own.</li><li>What they check with you before doing.</li><li>When you will check in, based on risk.</li></ul><div class="try-block f90-try"><div class="try-label">Say this</div><p>I would like you to own ________ because I trust your judgment on it. You can decide ________ on your own. Check with me before ________. Let us look at it together on ________.</p></div><p><strong>Going wrong:</strong> taking the work back at the first wobble, or staying the only person who can approve every step. <strong>Normal:</strong> the first version is slower and worse than yours, and handing work away feels a little guilty. That is the job now.</p>
+<p class="f90-ref"><span>In the workbook</span> page 23, the handoff brief worksheet. <a href="downloads/first-90-days-playbook.docx" download data-f90="download_inline">Download it free →</a></p>
+</section>
+<section class="f90-week" id="week-10">
+<div class="f90-days">Week 10 · Days 64 to 70</div>
+<h2>Week 10: get it out of one person's head</h2>
+<p class="lead">Every team has something only one person knows how to do. That is a risk to them and to you.</p>
+<ul class="f90-check">
+<li><span class="b"><span class="t">Have each person list the work only they know how to do</span><span class="d">Ask in a one on one, not a group.</span></span><span class="m">15 min</span></li>
+<li><span class="b"><span class="t">Pick the riskiest one and give it an owner and a deadline</span><span class="d">The one that hurts most if that person is out for a week.</span></span></li>
+<li><span class="b"><span class="t">Write the first version down on one shared template</span><span class="d">Five steps, not fifty. It can be rough.</span></span></li>
+<li><span class="b"><span class="t">Have someone else follow it</span><span class="d">Wherever they get stuck is where the page is missing something.</span></span></li>
+</ul>
+<p class="f90-ref"><span>In the workbook</span> page 24, the table for work that lives in one person&#x27;s head. <a href="downloads/first-90-days-playbook.docx" download data-f90="download_inline">Download it free →</a></p>
+</section>
+<section class="f90-week" id="week-11">
+<div class="f90-days">Week 11 · Days 71 to 77</div>
+<h2>Week 11: close the loops</h2>
+<p class="lead">Finish what you started in months 1 and 2, and start collecting proof that things changed.</p>
+<ul class="f90-check">
+<li><span class="b"><span class="t">Finish the visible fix and name it again</span><span class="d">&quot;Here is what you flagged. Here is what changed.&quot;</span></span></li>
+<li><span class="b"><span class="t">Recheck expectations with each person</span><span class="d">Is what we wrote still true? Change whatever is not.</span></span><span class="m">20 min each</span></li>
+<li><span class="b"><span class="t">Ask for feedback on yourself again</span><span class="d">Ask once and it is an event. Ask on a schedule and it is a habit.</span></span><span class="m">5 min each</span></li>
+<li><span class="b"><span class="t">List what changed and who noticed</span><span class="d">You will need it for the review next week.</span></span><span class="m">20 min</span></li>
+</ul>
+<p class="f90-ref"><span>In the workbook</span> page 25, the proof list. <a href="downloads/first-90-days-playbook.docx" download data-f90="download_inline">Download it free →</a></p>
+</section>
+<section class="f90-week" id="week-12">
+<div class="f90-days">Week 12 · Days 78 to 84</div>
+<h2>Week 12: the 90 day review</h2>
+<p class="lead">A clear picture of what changed, what did not, and what is next. It is not a graduation.</p>
+<ul class="f90-check">
+<li><span class="b"><span class="t">Write the 90 day summary</span><span class="d">One page: what I learned, what changed and the proof, what still needs attention, what I need from you.</span></span><span class="m">45 min</span></li>
+<li><span class="b"><span class="t">Walk your boss through it</span><span class="d">Bring the summary and the proof list. Let them react before you defend anything.</span></span><span class="m">45 min</span></li>
+<li><span class="b"><span class="t">Agree on next quarter with your boss</span><span class="d">Three priorities at most, each with an owner and a date.</span></span><span class="m">45 min</span></li>
+<li><span class="b"><span class="t">Tell the team where you landed</span><span class="d">What you learned, what changed, and what is next. They helped build it.</span></span><span class="m">15 min</span></li>
+</ul><div class="try-block f90-try"><div class="try-label">Say this to your boss</div><p>Here is what I understand now that I did not when I started. Here is what improved, what did not, and what I think we should focus on next. Where does your view differ from mine?</p></div><div class="try-block f90-try"><div class="try-label">Then tell the team</div><p>Here is what I learned from you in the first 90 days, here is what we changed, and here is what we are working on next. Thanks for being patient while I figured it out.</p></div>
+<p class="f90-ref"><span>In the workbook</span> pages 26 and 27, the 90 day summary and the boss script. <a href="downloads/first-90-days-playbook.docx" download data-f90="download_inline">Download it free →</a></p>
+</section>
+<section class="f90-week" id="days-85-90">
+<div class="f90-days">Days 85 to 90</div>
+<h2>Days 85 to 90: check the foundation</h2>
+<p class="lead">Nothing new to start. Here is how to know it worked.</p>
+<ul class="f90-list"><li>Everyone on my team knows what good looks like, and so do I.</li><li>One on ones happen every week, and they lead them.</li><li>My boss and I agree on how I am doing, and on next quarter.</li><li>I know the people my team depends on, and they know me.</li><li>Something real is owned by someone who is not me.</li><li>At least one process lives on paper, not in one person&#x27;s head.</li><li>The team felt one thing get better.</li></ul><p>Next is day 90 to month 6, where the conversations get harder: performance, your first real conflict, your first review cycle. That is <a href="month-six.html">The Hard Middle</a>.</p>
+<p class="f90-ref"><span>In the workbook</span> page 28, the day 90 checklist. <a href="downloads/first-90-days-playbook.docx" download data-f90="download_inline">Download it free →</a></p>
+</section>
+
+<section class="f90-week" id="faq"><div class="f90-days">Questions</div><h2>First 90 days as a manager: common questions</h2><h3>What should a new manager do in the first 90 days?</h3><p>Spend month 1 listening: meet everyone one on one, learn what your boss needs, and change almost nothing. In month 2, write down what good looks like for each person, build a weekly one on one, and fix one visible thing. In month 3, hand off real work, document what only one person knows, and review the 90 days with your boss.</p><h3>What should I do in my first week as a new manager?</h3><p>Tell the team who you are and how you work, meet every person one on one, sit in on real work, and write down what you hear each day. Do not change anything yet. The first week decides whether people think you will listen.</p><h3>What is a 30 60 90 day plan for a new manager?</h3><p>It is the same plan in three stages. Days 1 to 30 are for learning: your team, your boss, your peers. Days 31 to 60 are for clarity: expectations, one on ones, priorities. Days 61 to 90 are for making it last: delegation, written processes, and a review with your boss. The workbook lays it out week by week.</p><h3>How is the first 90 days different if I was promoted from my own team?</h3><p>You skip the introductions but you inherit harder ones. Your friends are now your team, so name the shift out loud once, talk early to anyone who wanted the job, and watch where your time and information go. Most of the plan still applies.</p><h3>How do I run my first one on one as a new manager?</h3><p>Keep it light and let them talk. Ask what made them take the role, how they like to get feedback, what they would change about how the team works, and what would make this a good year. Do not make promises yet. Write down what you heard afterward.</p><h3>Is the First 90 Days workbook free?</h3><p>Yes. It is a 28 page Word document with a page for each week, plus the scripts and worksheets. You can tick the boxes and type into the tables. No signup is needed.</p></section>
+
+  <aside class="f90-cta f90-cta-end">
+    <div class="f90-cta-text">
+      <div class="f90-kick">Free download · Word</div>
+      <h2>Take the whole 90 days with you</h2>
+      <p>The same plan as this page, set up to work in. Print it, or fill it in on your computer.</p>
+      <div class="f90-btns">
+        <a class="download-btn f90-primary" href="downloads/first-90-days-playbook.docx" download data-f90="download_end_word">Download the workbook (Word) →</a>
+        <a class="download-btn" href="downloads/first-90-days-playbook.pdf" download data-f90="download_end_pdf">Print version (PDF) →</a>
+      </div>
+    </div>
+  </aside>
 
   <div class="resources">
+    <a class="resource-card" href="new-manager-action-plan-template.html">
+      <div class="kicker" data-pagefind-ignore>Template</div>
+      <div class="title">New Manager Action Plan Template →</div>
+    </a>
     <a class="resource-card" href="one-on-one-script.html">
       <div class="kicker" data-pagefind-ignore>Template</div>
       <div class="title">One on One Script →</div>
     </a>
     <a class="resource-card" href="month-six.html">
-      <div class="kicker" data-pagefind-ignore>Next stage</div>
+      <div class="kicker" data-pagefind-ignore>Next playbook</div>
       <div class="title">The Hard Middle →</div>
     </a>
   </div>
 </main>
+
+<a class="f90-sticky" id="f90-sticky" href="downloads/first-90-days-playbook.docx" download data-f90="download_sticky">Free workbook: download the 90 day plan (Word) →</a>
 
 <footer data-pagefind-ignore>
   <div>first-timemanagers.com</div>
@@ -238,5 +528,44 @@
 </footer>
 
 <script src="js/nav.js"></script>
+<script>
+(function () {
+  var bar = document.getElementById('f90-sticky');
+  var ctas = document.querySelectorAll('.f90-cta');
+  var hero = document.getElementById('download');
+  var ctaVisible = 0, heroPassed = false;
+  function update() { if (bar) bar.classList.toggle('show', heroPassed && ctaVisible === 0); }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { ctaVisible += e.isIntersecting ? 1 : -1; });
+      if (ctaVisible < 0) ctaVisible = 0;
+      update();
+    });
+    ctas.forEach(function (c) { io.observe(c); });
+    if (hero) new IntersectionObserver(function (es) {
+      es.forEach(function (e) { heroPassed = !e.isIntersecting && e.boundingClientRect.top < 0; });
+      update();
+    }).observe(hero);
+    var links = {};
+    document.querySelectorAll('.f90-jump a').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
+    var so = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting && links[e.target.id]) {
+          Object.keys(links).forEach(function (k) { links[k].classList.remove('on'); });
+          links[e.target.id].classList.add('on');
+          var j = links[e.target.id].parentNode, a = links[e.target.id];
+          j.scrollTo({ left: a.offsetLeft - 20, behavior: 'smooth' });
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+    document.querySelectorAll('.f90-week').forEach(function (s) { so.observe(s); });
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[data-f90]') : null;
+    if (a && typeof gtag === 'function') gtag('event', 'playbook_download', { link_id: a.getAttribute('data-f90'), file_name: a.getAttribute('href') });
+  });
+})();
+
+</script>
 </body>
 </html>
