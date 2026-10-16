@@ -54,7 +54,7 @@
   .doors-head h2{ font-size:30px; font-weight:300; line-height:1.25; margin:0; }
   .doors-head h2 b{ font-weight:600; }
   .doors .grid{ padding:0; grid-template-columns:repeat(2,1fr); gap:24px; }
-  .doors .tile-visual{ min-height:200px; transition:transform .2s ease, box-shadow .25s ease; }
+  .doors .tile-visual{ min-height:200px; border-radius:14px; transition:transform .2s ease, box-shadow .25s ease; }
   .doors .tile-visual::before{ opacity:.25; }
   .doors .tile-visual::after{ content:''; position:absolute; inset:0; background:rgba(22,22,21,.38); z-index:1; pointer-events:none; }
   .doors .tile:hover .tile-visual{ box-shadow:0 16px 36px rgba(0,0,0,.3); }
@@ -75,7 +75,6 @@
     nav{ order:0; position:sticky; top:0; background:var(--bg); z-index:50; }
     .hero{ order:1; min-height:0; padding:24px 20px 14px; }
     .free-line{ order:2; }
-    .new-banner{ display:none; }
     .doors{ order:3; }
     .nav-strip{ order:4; }
     .wr-teaser{ order:4; }
@@ -103,6 +102,14 @@
   .nav-strip h3{ font-size:44px !important; }
   .chips{ gap:12px 16px !important; }
   .chip{ border-color:rgba(237,235,228,.14) !important; }
+  .chips a:nth-child(n+9){ display:none; }
+  .chips.expanded a{ display:flex; }
+  .chip-toggle{
+    display:inline-flex; align-items:center; gap:6px; margin-top:16px; padding:11px 22px;
+    border:1.5px dashed rgba(227,166,62,.4); border-radius:999px; color:var(--gold); font-weight:600;
+    font-size:13px; background:none; cursor:pointer; font-family:inherit; transition:border-color .2s ease;
+  }
+  .chip-toggle:hover{ border-color:var(--gold); }
   .wr-teaser{ margin-top:76px !important; }
   .email-capture-inner{ max-width:480px; margin:0 auto; }
   .email-capture .eyebrow{ justify-content:center; }
@@ -219,11 +226,6 @@
 
 <div class="free-line" style="text-align:center; padding:18px 24px; font-size:13px; color:var(--muted); border-top:1px solid rgba(237,235,228,.06); border-bottom:1px solid rgba(237,235,228,.06);">
   Everything on this site is free. No paywall, no email required, no account. <a href="about.html" style="color:var(--gold); font-weight:600;">Why? →</a>
-</div>
-
-<div class="new-banner" style="text-align:center; padding:16px 24px; font-size:13px; color:var(--muted);">
-  <span style="color:var(--gold); font-weight:700; text-transform:uppercase; font-size:11px; letter-spacing:.08em; margin-right:10px;">New</span>
-  <a href="how-to-quit-your-job.html" style="color:var(--text); font-weight:600;">How to Quit Your Job Like a Pro →</a>
 </div>
 
 <section class="doors">
