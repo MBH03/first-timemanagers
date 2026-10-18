@@ -61,15 +61,6 @@
   .doors .icon-bg{ transition:opacity .25s ease, transform .3s ease; }
   .doors .tile:hover .icon-bg{ opacity:.22; transform:scale(1.08) rotate(-4deg); }
 
-  .doors .tile-visual.photo{
-    background-size:cover; background-position:center; background-color:#1b1b1a;
-  }
-  .doors .tile-visual.photo::before{ display:none; }
-  .doors .tile-visual.photo::after{
-    background:linear-gradient(180deg, rgba(14,14,13,.46) 0%, rgba(14,14,13,.62) 55%, rgba(14,14,13,.9) 100%);
-  }
-  .doors .tile-visual.photo .icon-bg{ display:none; }
-
   @media (max-width:900px){
     body{ display:flex; flex-direction:column; }
     nav{ order:0; position:sticky; top:0; background:var(--bg); z-index:50; }

@@ -144,6 +144,15 @@ nav{ display:flex; align-items:center; justify-content:space-between; padding:32
 }
 .icon-bg{ position:absolute; width:220px; height:220px; opacity:.14; z-index:1; bottom:-50px; right:-40px; stroke:#fff; fill:none; stroke-width:1; }
 
+/* Photo tile variant — background-image set inline per card */
+.tile-visual.photo{ background-size:cover; background-position:center; background-color:#1b1b1a; }
+.tile-visual.photo::before{ display:none; }
+.tile-visual.photo::after{
+  content:''; position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:linear-gradient(180deg, rgba(14,14,13,.46) 0%, rgba(14,14,13,.62) 55%, rgba(14,14,13,.9) 100%);
+}
+.tile-visual.photo .icon-bg{ display:none; }
+
 .tile-index{ position:relative; z-index:2; font-size:11px; letter-spacing:.1em; color:rgba(255,255,255,.55); font-weight:600; display:flex; justify-content:space-between; }
 .tile-index .read{ opacity:.85; transition:opacity .2s ease; font-weight:600; color:#fff; }
 .tile:hover .tile-index .read{ opacity:1; }
